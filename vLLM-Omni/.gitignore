@@ -1,0 +1,15 @@
+.codex
+.venv/
+.hf-cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+*.wav
+*.pcm
+*.log
+
+txt
+tts-io/custom_voice.env
+tts-io/custom_voice_embedding.json
+text-llm/.env
