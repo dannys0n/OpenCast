@@ -100,13 +100,11 @@ parse_sse_chunks() {
         json_payload="${line#data: }"
         content="$(printf '%s' "$json_payload" | jq -r '.choices[0].delta.content // empty')"
         if [ -n "$content" ]; then
-          printf '%s' "$content" >&2
           printf '%s\n' "$content"
         fi
         ;;
     esac
   done
-  printf '\n' >&2
 }
 
 curl -sN "$MODEL_API_BASE/v1/chat/completions" \

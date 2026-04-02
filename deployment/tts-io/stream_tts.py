@@ -13,12 +13,20 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import time
 
 import websockets
 
 DEFAULT_WS_URL = "ws://localhost:8091/v1/audio/speech/stream"
 DEFAULT_LANGUAGE = "English"
 DEFAULT_SAMPLE_RATE = 24000
+
+
+def shorten_text(text: str, limit: int = 72) -> str:
+    clean = " ".join(text.split())
+    if len(clean) <= limit:
+        return clean
+    return clean[: limit - 3] + "..."
 
 
 def parse_args() -> argparse.Namespace:
@@ -116,6 +124,14 @@ async def main_async(args: argparse.Namespace) -> int:
     player = None
     bytes_written = 0
     speaker_embedding = load_speaker_embedding(args.speaker_embedding_file)
+    current_sentence_index: int | None = None
+    current_sentence_bytes = 0
+    saw_first_audio_byte = False
+    start_time = time.perf_counter()
+
+    def log_event(message: str) -> None:
+        delta_s = time.perf_counter() - start_time
+        print(f"[+{delta_s:0.3f}s] {message}", file=sys.stderr, flush=True)
 
     try:
         async with websockets.connect(args.url, max_size=None) as websocket:
@@ -133,18 +149,32 @@ async def main_async(args: argparse.Namespace) -> int:
                     }
                 )
             )
+            log_event("session configured")
 
-            if args.stdin_chunks:
-                send_task = asyncio.create_task(send_stdin_chunks(websocket))
-            else:
-                text = get_text(args)
-                send_task = asyncio.create_task(send_text(websocket, text))
+            async def run_sender() -> None:
+                if args.stdin_chunks:
+                    await send_stdin_chunks(websocket)
+                else:
+                    text = get_text(args)
+                    await send_text(websocket, text)
+                log_event("input.done sent")
+
+            send_task = asyncio.create_task(run_sender())
 
             while True:
                 message = await websocket.recv()
 
                 if isinstance(message, bytes):
                     bytes_written += len(message)
+                    current_sentence_bytes += len(message)
+                    if not saw_first_audio_byte:
+                        sentence_label = (
+                            str(current_sentence_index)
+                            if current_sentence_index is not None
+                            else "unknown"
+                        )
+                        log_event(f"sentence {sentence_label} first audio byte")
+                        saw_first_audio_byte = True
                     if player is None:
                         player = open_player(sample_rate)
                     if player.stdin:
@@ -156,7 +186,21 @@ async def main_async(args: argparse.Namespace) -> int:
                 event_type = event.get("type")
                 if event_type == "audio.start":
                     sample_rate = int(event.get("sample_rate", sample_rate))
+                    current_sentence_index = event.get("sentence_index")
+                    current_sentence_bytes = 0
+                    saw_first_audio_byte = False
+                    sentence_text = shorten_text(event.get("sentence_text", ""))
+                    log_event(
+                        f"sentence {current_sentence_index} start @ {sample_rate} Hz: {sentence_text!r}"
+                    )
+                elif event_type == "audio.done":
+                    log_event(
+                        f"sentence {event.get('sentence_index', current_sentence_index)} done "
+                        f"({event.get('total_bytes', current_sentence_bytes)} bytes, "
+                        f"error={event.get('error', False)})"
+                    )
                 elif event_type == "session.done":
+                    log_event(f"session done ({event.get('total_sentences', 'unknown')} sentences)")
                     break
                 elif event_type == "error":
                     raise SystemExit(f"TTS stream error: {event.get('message', event)}")
