@@ -18,7 +18,6 @@ Files:
 Flow:
 
 ```bash
-cd /home/danny/Desktop/vLLM-Omni
 sh tts-io/setup_linux_env.sh
 sh tts-io/start_tts_model.sh
 ```
@@ -26,7 +25,6 @@ sh tts-io/start_tts_model.sh
 In another terminal:
 
 ```bash
-cd /home/danny/Desktop/vLLM-Omni
 sh tts-io/add_custom_voice.sh
 ```
 
@@ -38,7 +36,6 @@ That step computes a local speaker embedding from `tts-io/scotty_full.wav` and s
 Direct TTS test:
 
 ```bash
-cd /home/danny/Desktop/vLLM-Omni
 source .venv/bin/activate
 source tts-io/custom_voice.env
 python tts-io/stream_tts.py --speaker-embedding-file "$CUSTOM_VOICE_EMBEDDING_FILE" \
@@ -56,7 +53,7 @@ Files:
 Copy the example config if you want to change model or defaults:
 
 ```bash
-cd /home/danny/Desktop/vLLM-Omni/text-llm
+cd /text-llm
 cp .env.example .env
 ```
 
@@ -75,14 +72,13 @@ MODEL_NAME="hf.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF:Q4_K_M"
 Start the text model:
 
 ```bash
-cd /home/danny/Desktop/vLLM-Omni/text-llm
+cd /text-llm
 ./start_text_model.sh
 ```
 
 End-to-end prompt to TTS:
 
 ```bash
-cd /home/danny/Desktop/vLLM-Omni
 ./text-llm/prompt_to_tts.sh "Call a clutch team wipe in one or two short esports lines."
 ```
 
