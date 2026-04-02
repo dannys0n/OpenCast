@@ -1,0 +1,7 @@
+TTS:
+Qwen3-TTS-12Hz-0.6B-Base
+Qwen3-TTS-12Hz-1.7B-Base
+
+Text:
+docker model run hf.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF:Q4_K_M
+docker model run hf.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF:Q4_K_M
