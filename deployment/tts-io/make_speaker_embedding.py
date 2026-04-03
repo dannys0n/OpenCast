@@ -38,6 +38,16 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Compute a Qwen3-TTS speaker embedding.")
     parser.add_argument("audio_file", help="Path to the reference audio file.")
     parser.add_argument(
+        "--voice-name",
+        default=None,
+        help="Optional voice name to include in the output metadata.",
+    )
+    parser.add_argument(
+        "--source-file",
+        default=None,
+        help="Optional original source file path to include in the output metadata.",
+    )
+    parser.add_argument(
         "--model-dir",
         default=str(default_model_dir),
         help="Path to the downloaded Qwen3-TTS-0.6B-Base snapshot dir or snapshots dir.",
@@ -111,7 +121,17 @@ def main() -> int:
     with torch.inference_mode():
         embedding = model(mel.float())[0].cpu().tolist()
 
-    print(json.dumps(embedding))
+    payload = {
+        "speaker_embedding": embedding,
+        "audio_file": str(audio_path),
+        "embedding_dim": len(embedding),
+    }
+    if args.voice_name:
+        payload["voice_name"] = args.voice_name
+    if args.source_file:
+        payload["source_file"] = str(Path(args.source_file).expanduser().resolve())
+
+    print(json.dumps(payload))
     return 0
 
 

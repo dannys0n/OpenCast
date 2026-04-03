@@ -28,7 +28,9 @@ SERVER_URL="${SERVER_URL:-$SERVER_URL_DEFAULT}"
 TEMPERATURE="${TEMPERATURE:-$TEMPERATURE_DEFAULT}"
 MAX_TOKENS="${MAX_TOKENS:-$MAX_TOKENS_DEFAULT}"
 PROMPT_TEXT="${*:-$DEFAULT_PROMPT}"
-VOICE_CONFIG_FILE="${VOICE_CONFIG_FILE:-$REPO_ROOT/tts-io/custom_voice.env}"
+VOICE_NAME="${VOICE_NAME:-}"
+VOICE_CONFIG_FILE="${VOICE_CONFIG_FILE:-}"
+VOICE_MANIFEST_FILE="${VOICE_MANIFEST_FILE:-$REPO_ROOT/tts-io/voices/generated/voices.json}"
 
 if ! command -v curl >/dev/null 2>&1; then
   echo "Missing curl."
@@ -38,6 +40,32 @@ fi
 if ! command -v jq >/dev/null 2>&1; then
   echo "Missing jq."
   exit 1
+fi
+
+if [ -z "$VOICE_CONFIG_FILE" ]; then
+  if [ ! -f "$VOICE_MANIFEST_FILE" ]; then
+    echo "Missing voices manifest: $VOICE_MANIFEST_FILE"
+    echo "Run: sh tts-io/add_custom_voice.sh"
+    exit 1
+  fi
+  if [ -n "$VOICE_NAME" ]; then
+    VOICE_CONFIG_FILE="$(
+      jq -r --arg voice_name "$VOICE_NAME" \
+        '.voices[] | select(.name == $voice_name) | .env_file' \
+        "$VOICE_MANIFEST_FILE"
+    )"
+    if [ -z "$VOICE_CONFIG_FILE" ] || [ "$VOICE_CONFIG_FILE" = "null" ]; then
+      echo "Voice '$VOICE_NAME' was not found in: $VOICE_MANIFEST_FILE"
+      exit 1
+    fi
+  else
+    VOICE_CONFIG_FILE="$(jq -r '.default_env_file // empty' "$VOICE_MANIFEST_FILE")"
+    if [ -z "$VOICE_CONFIG_FILE" ] || [ "$VOICE_CONFIG_FILE" = "null" ]; then
+      echo "No default voice was recorded in: $VOICE_MANIFEST_FILE"
+      echo "Run: sh tts-io/add_custom_voice.sh"
+      exit 1
+    fi
+  fi
 fi
 
 if [ ! -d "$REPO_ROOT/.venv" ]; then

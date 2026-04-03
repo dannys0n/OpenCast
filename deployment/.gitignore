@@ -10,6 +10,5 @@ __pycache__/
 *.log
 
 txt
-tts-io/custom_voice.env
-tts-io/custom_voice_embedding.json
+tts-io/voices/generated/
 text-llm/.env

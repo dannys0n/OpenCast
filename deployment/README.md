@@ -28,16 +28,26 @@ In another terminal:
 sh tts-io/add_custom_voice.sh
 ```
 
-That step computes a local speaker embedding from `tts-io/scotty_full.wav` and saves:
+That step reads every source file under `tts-io/voices/`, converts each one to a compatible mono 24 kHz WAV, computes a local speaker embedding for each voice, and saves:
 
-- `tts-io/custom_voice.env`
-- `tts-io/custom_voice_embedding.json`
+- `tts-io/voices/generated/default.env`
+- `tts-io/voices/generated/voices.json`
+- `tts-io/voices/generated/env/`
+- `tts-io/voices/generated/embeddings/`
+
+Voice names are derived from the audio filename. For example, `tts-io/voices/June Showcase.m4a` becomes the voice name `june_showcase`.
+
+If you want a specific default caster, set it when you build voices:
+
+```bash
+DEFAULT_VOICE_NAME="june_showcase" sh tts-io/add_custom_voice.sh
+```
 
 Direct TTS test:
 
 ```bash
 source .venv/bin/activate
-source tts-io/custom_voice.env
+source tts-io/voices/generated/default.env
 python tts-io/stream_tts.py --speaker-embedding-file "$CUSTOM_VOICE_EMBEDDING_FILE" \
   "Team Alpha are pushing through mid. That is a huge opening pick."
 ```
@@ -82,9 +92,16 @@ End-to-end prompt to TTS:
 ./text-llm/prompt_to_tts.sh "Call a clutch team wipe in one or two short esports lines."
 ```
 
+To select a specific caster that was built from `tts-io/voices/`, set `VOICE_NAME`:
+
+```bash
+VOICE_NAME="june_showcase" ./text-llm/prompt_to_tts.sh "Call a clutch team wipe in one or two short esports lines."
+```
+
 ## Notes
 
 - The TTS path uses the WebSocket streaming text-input endpoint.
+- Voice inputs live in `tts-io/voices/`; generated normalized audio, env files, and embeddings live under `tts-io/voices/generated/`.
 - The custom voice is a local precomputed speaker embedding, not a server-side uploaded WAV.
 - The repo uses `Base + x-vector-only` only, with `speaker_embedding` passed directly.
 - Audio is played live through SoX `play`.
