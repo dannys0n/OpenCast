@@ -4,7 +4,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-ENV_FILE="$SCRIPT_DIR/.env"
+ENV_FILE="$REPO_ROOT/text-llm/.env"
 
 MODEL_API_BASE_DEFAULT="http://127.0.0.1:12434"
 MODEL_NAME_DEFAULT="hf.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF:Q4_K_M"

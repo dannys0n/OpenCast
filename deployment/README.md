@@ -4,6 +4,7 @@ This repo is reduced to two working directories:
 
 - `tts-io/` for Qwen3-TTS
 - `text-llm/` for the small text model
+- `testing/` for manual prompt and TTS test scripts
 
 ## TTS IO
 
@@ -52,12 +53,20 @@ python tts-io/stream_tts.py --speaker-embedding-file "$CUSTOM_VOICE_EMBEDDING_FI
   "Team Alpha are pushing through mid. That is a huge opening pick."
 ```
 
+Manual multi-caster TTS test from a JSON array:
+
+```bash
+python testing/manual_tts.py --requests-json '[
+  {"voice": "june", "text": "Blue team crack the fight wide open."},
+  {"voice": "scotty", "text": "That is a massive swing in momentum."}
+]'
+```
+
 ## Text LLM
 
 Files:
 
 - `text-llm/start_text_model.sh`
-- `text-llm/prompt_to_tts.sh`
 - `text-llm/.env.example`
 
 Copy the example config if you want to change model or defaults:
@@ -89,14 +98,23 @@ cd /text-llm
 End-to-end prompt to TTS:
 
 ```bash
-./text-llm/prompt_to_tts.sh "Call a clutch team wipe in one or two short esports lines."
+./testing/prompt_to_tts.sh "Call a clutch team wipe in one or two short esports lines."
 ```
 
 To select a specific caster that was built from `tts-io/voices/`, set `VOICE_NAME`:
 
 ```bash
-VOICE_NAME="june_showcase" ./text-llm/prompt_to_tts.sh "Call a clutch team wipe in one or two short esports lines."
+VOICE_NAME="june_showcase" ./testing/prompt_to_tts.sh "Call a clutch team wipe in one or two short esports lines."
 ```
+
+## Testing
+
+Files:
+
+- `testing/prompt_to_tts.sh`
+- `testing/manual_tts.py`
+
+These are manual test harnesses. They use the `text-llm/.env` config, the generated voice manifest under `tts-io/voices/generated/`, and the live TTS websocket endpoint.
 
 ## Notes
 
