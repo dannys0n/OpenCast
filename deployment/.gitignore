@@ -11,4 +11,5 @@ __pycache__/
 
 txt
 tts-io/voices/generated/
+tts-io/.env
 text-llm/.env

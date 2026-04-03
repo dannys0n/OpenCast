@@ -27,12 +27,9 @@ from vllm_omni.model_executor.models.qwen3_tts.qwen3_tts_talker import (
 def parse_args() -> argparse.Namespace:
     script_dir = Path(__file__).resolve().parent
     repo_root = script_dir.parent
+    default_model_name = "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
     default_model_dir = (
-        repo_root
-        / ".hf-cache"
-        / "hub"
-        / "models--Qwen--Qwen3-TTS-12Hz-0.6B-Base"
-        / "snapshots"
+        repo_root / ".hf-cache" / "hub" / "models--Qwen--Qwen3-TTS-12Hz-0.6B-Base" / "snapshots"
     )
 
     parser = argparse.ArgumentParser(description="Compute a Qwen3-TTS speaker embedding.")
@@ -48,11 +45,21 @@ def parse_args() -> argparse.Namespace:
         help="Optional original source file path to include in the output metadata.",
     )
     parser.add_argument(
+        "--model-name",
+        default=default_model_name,
+        help=f"TTS Base model name used to derive the speaker encoder path (default: {default_model_name}).",
+    )
+    parser.add_argument(
         "--model-dir",
         default=str(default_model_dir),
         help="Path to the downloaded Qwen3-TTS-0.6B-Base snapshot dir or snapshots dir.",
     )
     return parser.parse_args()
+
+
+def model_name_to_snapshot_dir(repo_root: Path, model_name: str) -> Path:
+    normalized = model_name.strip().replace("/", "--")
+    return repo_root / ".hf-cache" / "hub" / f"models--{normalized}" / "snapshots"
 
 
 def resolve_model_dir(model_dir_arg: str) -> Path:
@@ -87,7 +94,15 @@ def load_audio(audio_path: Path, target_sr: int) -> np.ndarray:
 
 def main() -> int:
     args = parse_args()
-    model_dir = resolve_model_dir(args.model_dir)
+    script_dir = Path(__file__).resolve().parent
+    repo_root = script_dir.parent
+    model_dir_arg = args.model_dir
+    default_model_dir = (
+        repo_root / ".hf-cache" / "hub" / "models--Qwen--Qwen3-TTS-12Hz-0.6B-Base" / "snapshots"
+    )
+    if model_dir_arg == str(default_model_dir) and args.model_name:
+        model_dir_arg = str(model_name_to_snapshot_dir(repo_root, args.model_name))
+    model_dir = resolve_model_dir(model_dir_arg)
     audio_path = Path(args.audio_file).expanduser().resolve()
 
     if not audio_path.is_file():
@@ -125,6 +140,8 @@ def main() -> int:
         "speaker_embedding": embedding,
         "audio_file": str(audio_path),
         "embedding_dim": len(embedding),
+        "model_name": args.model_name,
+        "model_dir": str(model_dir),
     }
     if args.voice_name:
         payload["voice_name"] = args.voice_name

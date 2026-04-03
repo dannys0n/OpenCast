@@ -12,6 +12,15 @@ ENV_DIR="$GENERATED_DIR/env"
 MANIFEST_FILE="$GENERATED_DIR/voices.json"
 DEFAULT_ENV_FILE="$GENERATED_DIR/default.env"
 DEFAULT_VOICE_NAME="${DEFAULT_VOICE_NAME:-}"
+ENV_FILE="$SCRIPT_DIR/.env"
+TTS_MODEL_NAME="${TTS_MODEL_NAME:-Qwen/Qwen3-TTS-12Hz-0.6B-Base}"
+
+if [ -f "$ENV_FILE" ]; then
+  set -a
+  source "$ENV_FILE"
+  set +a
+  TTS_MODEL_NAME="${TTS_MODEL_NAME:-$TTS_MODEL_NAME}"
+fi
 
 if [ ! -x "$REPO_ROOT/.venv/bin/python" ]; then
   echo "Missing .venv. Run sh tts-io/setup_linux_env.sh first."
@@ -22,6 +31,15 @@ if ! command -v ffmpeg >/dev/null 2>&1; then
   echo "Missing ffmpeg. Install it first."
   exit 1
 fi
+
+case "$TTS_MODEL_NAME" in
+  *-Base) ;;
+  *)
+    echo "TTS_MODEL_NAME must point to a Qwen3-TTS Base model for voice cloning."
+    echo "Current value: $TTS_MODEL_NAME"
+    exit 1
+    ;;
+esac
 
 mkdir -p "$VOICES_DIR" "$NORMALIZED_DIR" "$EMBEDDINGS_DIR" "$ENV_DIR"
 shopt -s nullglob
@@ -89,6 +107,7 @@ for source_file in "${voice_sources[@]}"; do
     "$normalized_file" \
     --voice-name "$voice_name" \
     --source-file "$source_path" \
+    --model-name "$TTS_MODEL_NAME" \
     > "$embedding_file"
 
   cat > "$voice_env_file" <<EOF
@@ -162,6 +181,7 @@ EOF
 
 echo "Prepared ${#voice_sources[@]} voice(s)"
 echo "Default voice        : $CUSTOM_VOICE_NAME"
+echo "TTS Base model       : $TTS_MODEL_NAME"
 echo "Saved default env to : $DEFAULT_ENV_FILE"
 echo "Saved manifest to    : $MANIFEST_FILE"
 echo "Saved per-voice envs : $ENV_DIR"

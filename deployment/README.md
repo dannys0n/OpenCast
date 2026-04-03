@@ -23,6 +23,10 @@ sh tts-io/setup_linux_env.sh
 sh tts-io/start_tts_model.sh
 ```
 
+If you want to override the TTS model, copy `tts-io/.env.example` to `tts-io/.env` and set `TTS_MODEL_NAME` there before starting the server.
+
+The checked-in launcher now defaults to the repo-local `tts-io/qwen3_tts_small_gpu.yaml` profile so the upstream downloaded stage config under `.venv/` stays untouched. If you want to try a different stage config, set `TTS_STAGE_CONFIG_PATH` in `tts-io/.env`.
+
 In another terminal:
 
 ```bash
