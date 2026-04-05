@@ -100,6 +100,8 @@ ENABLE_COMMENTARY = env_bool("CS2_GSI_ENABLE_COMMENTARY", False)
 COMMENTARY_ONLY_ON_EVENTS = env_bool("CS2_GSI_COMMENTARY_ONLY_ON_EVENTS", True)
 COMMENTARY_MIN_INTERVAL = env_float("CS2_GSI_COMMENTARY_MIN_INTERVAL", 2.0)
 MODEL_TIMEOUT = env_float("CS2_GSI_MODEL_TIMEOUT", 4.0)
+QUIET_IDLE_SECONDS = env_float("QUIET_IDLE_SECONDS", 5.0)
+QUIET_COMMENTARY_INTERVAL = env_float("QUIET_COMMENTARY_INTERVAL", 5.0)
 
 MODEL_API_BASE = env_text("MODEL_API_BASE", "http://127.0.0.1:12434").rstrip("/")
 MODEL_NAME = env_text(
@@ -113,6 +115,31 @@ SYSTEM_PROMPT = env_text(
         "caster lines. No markdown. No bullet points. No reasoning. No filler."
     ),
 )
+PLAY_BY_PLAY_SYSTEM_PROMPT = env_text(
+    "PLAY_BY_PLAY_SYSTEM_PROMPT",
+    (
+        "You are the play-by-play caster on a live Counter-Strike 2 broadcast. "
+        "Call only the freshest action from the supplied state. Output one very short, "
+        "high-energy line. No markdown. No bullet points. No reasoning. No filler."
+    ),
+)
+COLOR_SYSTEM_PROMPT = env_text(
+    "COLOR_SYSTEM_PROMPT",
+    (
+        "You are the color commentator on a live Counter-Strike 2 broadcast. "
+        "Add one short follow-up line that explains why the moment matters, the tactical "
+        "read, or the momentum shift. Do not repeat the play-by-play wording. "
+        "No markdown. No bullet points. No reasoning preamble."
+    ),
+)
+CHEMISTRY_SYSTEM_PROMPT = env_text(
+    "CHEMISTRY_SYSTEM_PROMPT",
+    (
+        "You are part of a two-person Counter-Strike 2 casting duo filling a quiet moment "
+        "in the round. Speak naturally, briefly, and conversationally from the supplied state. "
+        "No markdown. No bullet points. No filler."
+    ),
+)
 TEMPERATURE = env_float("TEMPERATURE", 0.4)
 MAX_TOKENS = env_int("MAX_TOKENS", 100)
 SERVER_URL = env_text("SERVER_URL", "ws://localhost:8091/v1/audio/speech/stream")
@@ -121,6 +148,7 @@ SECONDARY_VOICE_NAME = env_text("SECONDARY_VOICE_NAME", "")
 SECONDARY_VOICE_PROBABILITY = env_float("SECONDARY_VOICE_PROBABILITY", 0.25)
 VOICE_SELECTION_MODE = env_text("VOICE_SELECTION_MODE", "mono").strip().lower()
 DUAL_VOICE_HEURISTIC = env_text("DUAL_VOICE_HEURISTIC", "random").strip().lower()
+COLOR_FOLLOWUP_DELAY = env_float("COLOR_FOLLOWUP_DELAY", 2.0)
 VOICE_CONFIG_FILE = env_text("VOICE_CONFIG_FILE", "")
 VOICE_MANIFEST_FILE = env_text(
     "VOICE_MANIFEST_FILE",
@@ -135,9 +163,16 @@ STATE_LOCK = threading.Lock()
 LATEST_SNAPSHOT = {}
 LAST_PROMPT_HASH = None
 LAST_COMMENTARY_AT = 0.0
-COMMENTARY_QUEUE = queue.Queue(maxsize=4)
+COMMENTARY_QUEUE = queue.PriorityQueue(maxsize=16)
 SPEAKER_EMBEDDING_FILES = {}
 LAST_SELECTED_VOICE = None
+LAST_LINES_BY_VOICE = {}
+LAST_EVENT_AT = 0.0
+EVENT_SEQUENCE = 0
+LAST_QUIET_COMMENTARY_AT = 0.0
+LAST_QUIET_SPEAKER = None
+JOB_COUNTER = 0
+RECENT_BOOTH_LINES = []
 
 
 def now_stamp():
@@ -695,12 +730,85 @@ def detect_events(previous_snapshot, current_snapshot):
     return unique_events[:8]
 
 
-def build_commentary_prompt(llm_payload):
+def build_play_by_play_prompt(llm_payload):
     return (
-        "Generate live Counter-Strike 2 commentary from this structured state update. "
-        "Focus on the freshest event when one exists, otherwise call the current tension.\n\n"
+        "Call the live action as the play-by-play caster. Lead with the freshest event "
+        "and make it sound immediate. One very short line only.\n\n"
         + json.dumps(llm_payload, indent=2, sort_keys=True)
     )
+
+
+def build_color_prompt(llm_payload):
+    prompt = (
+        "Give one short color-commentary follow-up line. Focus on why the moment matters, "
+        "the tactical consequence, economy pressure, or momentum. Do not repeat the "
+        "play-by-play wording.\n\n"
+    )
+    play_by_play_line = LAST_LINES_BY_VOICE.get(VOICE_NAME, "")
+    if play_by_play_line:
+        prompt += f'Latest play-by-play line: "{play_by_play_line}"\n\n'
+    prompt += json.dumps(llm_payload, indent=2, sort_keys=True)
+    return prompt
+
+
+def build_quiet_color_prompt(llm_payload, recent_booth_context, co_caster_line):
+    prompt = (
+        "The round is in a quieter stretch. As the color commentator, give one short live-broadcast "
+        "line that fills dead air with a useful read, tactical note, player tendency, economy point, "
+        "or a light reaction to your co-caster. Keep it natural and concise.\n\n"
+    )
+    if co_caster_line:
+        prompt += f'Latest co-caster line: "{co_caster_line}"\n\n'
+    if recent_booth_context:
+        prompt += "Recent booth context:\n" + recent_booth_context + "\n\n"
+    prompt += json.dumps(llm_payload, indent=2, sort_keys=True)
+    return prompt
+
+
+def build_quiet_play_by_play_prompt(llm_payload, recent_booth_context, co_caster_line):
+    prompt = (
+        "The round is still calm. As the play-by-play caster, answer your co-caster with one short "
+        "conversational line that keeps the broadcast alive, sets the scene, or nudges the desk "
+        "back toward the next point of tension.\n\n"
+    )
+    if co_caster_line:
+        prompt += f'Latest co-caster line: "{co_caster_line}"\n\n'
+    if recent_booth_context:
+        prompt += "Recent booth context:\n" + recent_booth_context + "\n\n"
+    prompt += json.dumps(llm_payload, indent=2, sort_keys=True)
+    return prompt
+
+
+def role_for_voice(voice_name):
+    if voice_name == VOICE_NAME:
+        return "play_by_play"
+    if voice_name == SECONDARY_VOICE_NAME:
+        return "color"
+    return "commentator"
+
+
+def recent_booth_context():
+    if not RECENT_BOOTH_LINES:
+        return ""
+
+    rendered = []
+    for entry in RECENT_BOOTH_LINES[-4:]:
+        rendered.append(f"{entry['voice']} ({entry['role']}): {entry['text']}")
+    return "\n".join(rendered)
+
+
+def latest_line_from_other_voice(voice_name):
+    for entry in reversed(RECENT_BOOTH_LINES):
+        if entry["voice"] != voice_name:
+            return entry["text"]
+    return ""
+
+
+def remember_booth_line(voice_name, text):
+    role = role_for_voice(voice_name)
+    LAST_LINES_BY_VOICE[voice_name] = text
+    RECENT_BOOTH_LINES.append({"voice": voice_name, "role": role, "text": text})
+    del RECENT_BOOTH_LINES[:-4]
 
 
 def resolve_voice_config_file(voice_name=None):
@@ -749,7 +857,7 @@ def resolve_speaker_embedding_file(voice_name=None):
     return embedding_path
 
 
-def choose_voice_name():
+def choose_simple_dual_voice_name():
     global LAST_SELECTED_VOICE
 
     if VOICE_SELECTION_MODE != "dual" or not SECONDARY_VOICE_NAME:
@@ -772,6 +880,131 @@ def choose_voice_name():
 
     LAST_SELECTED_VOICE = VOICE_NAME
     return VOICE_NAME
+
+
+def is_casting_roles_mode():
+    return DUAL_VOICE_HEURISTIC in {"casting_roles", "casting_chemistry"}
+
+
+def is_spike_event(events):
+    text = " ".join(events).lower()
+    spike_markers = (
+        "kill",
+        "goes down",
+        "eliminated",
+        "bomb",
+        "score update",
+        "heavy damage",
+        "low:",
+        "round phase changed",
+    )
+    return any(marker in text for marker in spike_markers)
+
+
+def make_job(
+    kind,
+    voice_name,
+    llm_payload,
+    due_at=None,
+    required_event_sequence=None,
+    required_idle_seconds=None,
+):
+    return {
+        "kind": kind,
+        "voice_name": voice_name,
+        "llm_payload": llm_payload,
+        "due_at": due_at or time.time(),
+        "required_event_sequence": required_event_sequence,
+        "required_idle_seconds": required_idle_seconds,
+    }
+
+
+def role_for_job(job):
+    if job["kind"] in {"play_by_play", "quiet_play_by_play"}:
+        return "play_by_play"
+    if job["kind"] in {"color_followup", "quiet_color"}:
+        return "color"
+    return "commentator"
+
+
+def system_prompt_for_job(job):
+    if job["kind"] == "play_by_play":
+        return PLAY_BY_PLAY_SYSTEM_PROMPT
+    if job["kind"] == "color_followup":
+        return COLOR_SYSTEM_PROMPT
+    if job["kind"] in {"quiet_play_by_play", "quiet_color"}:
+        return CHEMISTRY_SYSTEM_PROMPT
+    return SYSTEM_PROMPT
+
+
+def prompt_for_job(job):
+    llm_payload = job["llm_payload"]
+    if job["kind"] == "play_by_play":
+        return build_play_by_play_prompt(llm_payload)
+    if job["kind"] == "color_followup":
+        return build_color_prompt(llm_payload)
+    if job["kind"] == "quiet_play_by_play":
+        return build_quiet_play_by_play_prompt(
+            llm_payload,
+            recent_booth_context(),
+            latest_line_from_other_voice(job["voice_name"]),
+        )
+
+    return build_quiet_color_prompt(
+        llm_payload,
+        recent_booth_context(),
+        latest_line_from_other_voice(job["voice_name"]),
+    )
+
+
+def job_is_stale(job):
+    required_event_sequence = job.get("required_event_sequence")
+    required_idle_seconds = job.get("required_idle_seconds")
+
+    with STATE_LOCK:
+        current_event_sequence = EVENT_SEQUENCE
+        last_event_at = LAST_EVENT_AT
+
+    if (
+        required_event_sequence is not None
+        and current_event_sequence != required_event_sequence
+    ):
+        return True
+
+    if required_idle_seconds is not None:
+        if time.time() - last_event_at < required_idle_seconds:
+            return True
+
+    return False
+
+
+def enqueue_job(job):
+    try:
+        COMMENTARY_QUEUE.put_nowait((job["due_at"], next_job_order(), job))
+        return True
+    except queue.Full:
+        return False
+
+
+def next_job_order():
+    global JOB_COUNTER
+
+    order = JOB_COUNTER
+    JOB_COUNTER += 1
+    return order
+
+
+def build_payload_for_logging(job):
+    return prune_empty(
+        {
+            "kind": job["kind"],
+            "voice": job["voice_name"],
+            "role": role_for_job(job),
+            "state": job["llm_payload"].get("state"),
+            "events": job["llm_payload"].get("events"),
+            "timestamp": job["llm_payload"].get("timestamp"),
+        }
+    )
 
 
 def iter_sse_content(response):
@@ -799,11 +1032,11 @@ def iter_sse_content(response):
             yield content
 
 
-def stream_commentary_to_tts(prompt_text, speaker_embedding_file):
+def stream_commentary_to_tts(prompt_text, speaker_embedding_file, system_prompt):
     request_body = {
         "model": MODEL_NAME,
         "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt_text},
         ],
         "temperature": TEMPERATURE,
@@ -875,7 +1108,7 @@ def stream_commentary_to_tts(prompt_text, speaker_embedding_file):
     return final_text
 
 
-def maybe_enqueue_commentary(prompt_text, events):
+def maybe_schedule_simple_commentary(llm_payload, events):
     global LAST_COMMENTARY_AT, LAST_PROMPT_HASH
 
     if not ENABLE_COMMENTARY:
@@ -884,34 +1117,191 @@ def maybe_enqueue_commentary(prompt_text, events):
     if COMMENTARY_ONLY_ON_EVENTS and not events:
         return False
 
-    prompt_hash = hashlib.sha1(prompt_text.encode("utf-8")).hexdigest()
+    selected_voice = choose_simple_dual_voice_name()
+    job = make_job("play_by_play", selected_voice, llm_payload)
+    job_hash = hashlib.sha1(
+        json.dumps(
+            {
+                "kind": job["kind"],
+                "voice": selected_voice,
+                "payload": llm_payload,
+            },
+            sort_keys=True,
+        ).encode("utf-8")
+    ).hexdigest()
     now = time.time()
 
     with STATE_LOCK:
-        if prompt_hash == LAST_PROMPT_HASH:
+        if job_hash == LAST_PROMPT_HASH:
             return False
         if now - LAST_COMMENTARY_AT < COMMENTARY_MIN_INTERVAL:
             return False
+        LAST_PROMPT_HASH = job_hash
 
-        LAST_PROMPT_HASH = prompt_hash
-        LAST_COMMENTARY_AT = now
+    return enqueue_job(job)
 
-    try:
-        COMMENTARY_QUEUE.put_nowait(prompt_text)
-        return True
-    except queue.Full:
+
+def maybe_schedule_role_commentary(llm_payload, events):
+    global LAST_PROMPT_HASH
+
+    if not ENABLE_COMMENTARY or not events:
         return False
+
+    job_hash = hashlib.sha1(
+        json.dumps(
+            {
+                "kind": "play_by_play",
+                "voice": VOICE_NAME,
+                "payload": llm_payload,
+            },
+            sort_keys=True,
+        ).encode("utf-8")
+    ).hexdigest()
+    now = time.time()
+
+    with STATE_LOCK:
+        if job_hash == LAST_PROMPT_HASH:
+            return False
+        if now - LAST_COMMENTARY_AT < COMMENTARY_MIN_INTERVAL:
+            return False
+        LAST_PROMPT_HASH = job_hash
+        event_sequence = EVENT_SEQUENCE
+
+    scheduled = enqueue_job(make_job("play_by_play", VOICE_NAME, llm_payload))
+
+    if (
+        scheduled
+        and SECONDARY_VOICE_NAME
+        and is_spike_event(events)
+    ):
+        color_due_at = time.time() + max(COLOR_FOLLOWUP_DELAY, COMMENTARY_MIN_INTERVAL)
+        enqueue_job(
+            make_job(
+                "color_followup",
+                SECONDARY_VOICE_NAME,
+                llm_payload,
+                due_at=color_due_at,
+                required_event_sequence=event_sequence,
+            )
+        )
+
+    return scheduled
+
+
+def choose_quiet_voice_name():
+    global LAST_QUIET_SPEAKER
+
+    if DUAL_VOICE_HEURISTIC == "casting_roles" or not SECONDARY_VOICE_NAME:
+        LAST_QUIET_SPEAKER = SECONDARY_VOICE_NAME
+        return SECONDARY_VOICE_NAME, "quiet_color"
+
+    if LAST_QUIET_SPEAKER in (None, VOICE_NAME):
+        LAST_QUIET_SPEAKER = SECONDARY_VOICE_NAME
+        return SECONDARY_VOICE_NAME, "quiet_color"
+
+    LAST_QUIET_SPEAKER = VOICE_NAME
+    return VOICE_NAME, "quiet_play_by_play"
+
+
+def maybe_schedule_commentary(llm_payload, events):
+    if not ENABLE_COMMENTARY:
+        return False
+
+    if VOICE_SELECTION_MODE != "dual":
+        return maybe_schedule_simple_commentary(llm_payload, events)
+
+    if DUAL_VOICE_HEURISTIC in {"random", "flip_flop"}:
+        return maybe_schedule_simple_commentary(llm_payload, events)
+
+    return maybe_schedule_role_commentary(llm_payload, events)
+
+
+def chemistry_scheduler_worker():
+    while True:
+        time.sleep(0.5)
+
+        if not (
+            ENABLE_COMMENTARY
+            and VOICE_SELECTION_MODE == "dual"
+            and DUAL_VOICE_HEURISTIC in {"casting_roles", "casting_chemistry"}
+            and SECONDARY_VOICE_NAME
+        ):
+            continue
+
+        with STATE_LOCK:
+            snapshot = copy.deepcopy(LATEST_SNAPSHOT)
+            event_sequence = EVENT_SEQUENCE
+            last_event_at = LAST_EVENT_AT
+            last_commentary_at = LAST_COMMENTARY_AT
+            last_quiet_commentary_at = LAST_QUIET_COMMENTARY_AT
+
+        if not snapshot:
+            continue
+
+        now = time.time()
+        if last_event_at <= 0:
+            continue
+        if now - last_event_at < QUIET_IDLE_SECONDS:
+            continue
+        if now - last_commentary_at < QUIET_COMMENTARY_INTERVAL:
+            continue
+        if now - last_quiet_commentary_at < QUIET_COMMENTARY_INTERVAL:
+            continue
+
+        llm_payload = build_llm_payload(snapshot, [])
+        quiet_voice_name, job_kind = choose_quiet_voice_name()
+        enqueue_job(
+            make_job(
+                job_kind,
+                quiet_voice_name,
+                llm_payload,
+                required_event_sequence=event_sequence,
+                required_idle_seconds=QUIET_IDLE_SECONDS,
+            )
+        )
 
 
 def commentary_worker():
+    global LAST_COMMENTARY_AT, LAST_QUIET_COMMENTARY_AT
+
     while True:
-        prompt_text = COMMENTARY_QUEUE.get()
         try:
-            selected_voice = choose_voice_name()
+            due_at, _, job = COMMENTARY_QUEUE.get(timeout=0.5)
+        except queue.Empty:
+            continue
+
+        try:
+            delay = due_at - time.time()
+            if delay > 0:
+                COMMENTARY_QUEUE.put_nowait((due_at, next_job_order(), job))
+                time.sleep(min(delay, 0.25))
+                continue
+
+            if job_is_stale(job):
+                continue
+
+            selected_voice = job["voice_name"]
             speaker_embedding_file = SPEAKER_EMBEDDING_FILES[selected_voice]
+            system_prompt = system_prompt_for_job(job)
+            prompt_text = prompt_for_job(job)
+            payload_for_logging = build_payload_for_logging(job)
+
+            with STATE_LOCK:
+                LAST_COMMENTARY_AT = time.time()
+                if job["kind"] in {"quiet_play_by_play", "quiet_color"}:
+                    LAST_QUIET_COMMENTARY_AT = LAST_COMMENTARY_AT
+
+            print("=== Commentary Payload ===", flush=True)
+            print(json.dumps(payload_for_logging, indent=2, sort_keys=True), flush=True)
             print("=== Commentary Stream ===", flush=True)
             print(f"Voice: {selected_voice}", flush=True)
-            commentary = stream_commentary_to_tts(prompt_text, speaker_embedding_file)
+            print(f"Role: {role_for_job(job)}", flush=True)
+            commentary = stream_commentary_to_tts(
+                prompt_text,
+                speaker_embedding_file,
+                system_prompt,
+            )
+            remember_booth_line(selected_voice, commentary)
             print("=== Commentary Complete ===", flush=True)
             print(commentary, flush=True)
         except Exception as error:
@@ -922,7 +1312,7 @@ def commentary_worker():
 
 class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
-        global LATEST_SNAPSHOT
+        global EVENT_SEQUENCE, LAST_EVENT_AT, LAST_QUIET_SPEAKER, LATEST_SNAPSHOT
 
         length = int(self.headers.get("Content-Length", 0))
         body = self.rfile.read(length)
@@ -947,14 +1337,18 @@ class Handler(BaseHTTPRequestHandler):
             previous_snapshot = copy.deepcopy(LATEST_SNAPSHOT)
             LATEST_SNAPSHOT = deep_merge(LATEST_SNAPSHOT, payload)
             current_snapshot = copy.deepcopy(LATEST_SNAPSHOT)
+            if LAST_EVENT_AT <= 0:
+                LAST_EVENT_AT = time.time()
 
         events = detect_events(previous_snapshot, current_snapshot)
         llm_payload = build_llm_payload(current_snapshot, events)
-        prompt_text = build_commentary_prompt(llm_payload)
+        if events:
+            with STATE_LOCK:
+                EVENT_SEQUENCE += 1
+                LAST_EVENT_AT = time.time()
+                LAST_QUIET_SPEAKER = None
 
-        if maybe_enqueue_commentary(prompt_text, events):
-            print("=== Commentary Payload ===", flush=True)
-            print(json.dumps(llm_payload, indent=2, sort_keys=True), flush=True)
+        if maybe_schedule_commentary(llm_payload, events):
             print("Commentary request queued.", flush=True)
 
         self.send_response(200)
@@ -976,6 +1370,8 @@ def main():
             )
         worker = threading.Thread(target=commentary_worker, daemon=True)
         worker.start()
+        chemistry_worker = threading.Thread(target=chemistry_scheduler_worker, daemon=True)
+        chemistry_worker.start()
 
     print(f"Listening on http://{HOST}:{PORT}", flush=True)
     print(f"Auth required: {'yes' if EXPECTED_TOKEN else 'no'}", flush=True)
@@ -1002,6 +1398,13 @@ def main():
                 f"{max(0.0, min(1.0, SECONDARY_VOICE_PROBABILITY))}",
                 flush=True,
             )
+            if DUAL_VOICE_HEURISTIC in {"casting_roles", "casting_chemistry"}:
+                print(
+                    f"Color follow-up delay: {max(COLOR_FOLLOWUP_DELAY, COMMENTARY_MIN_INTERVAL)}",
+                    flush=True,
+                )
+                print(f"Quiet idle seconds: {QUIET_IDLE_SECONDS}", flush=True)
+                print(f"Quiet commentary interval: {QUIET_COMMENTARY_INTERVAL}", flush=True)
 
     ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()
 
