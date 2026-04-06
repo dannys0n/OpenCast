@@ -11,7 +11,9 @@ Usage:
     python examples/test_streaming_optimized.py
 """
 
+import os
 import time
+from pathlib import Path
 import numpy as np
 import torch
 import soundfile as sf
@@ -19,6 +21,23 @@ from qwen_tts import Qwen3TTSModel
 
 # Enable TensorFloat32 for better performance on Ampere+ GPUs
 torch.set_float32_matmul_precision('high')
+
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_DIR = SCRIPT_DIR.parent
+DEFAULT_LOCAL_17B = Path(
+    "/home/danny/Desktop/OpenCast/deployment/.hf-cache/hub/models--Qwen--Qwen3-TTS-12Hz-1.7B-Base/"
+    "snapshots/fd4b254389122332181a7c3db7f27e918eec64e3"
+)
+
+
+def resolve_model_path() -> str:
+    configured = os.environ.get("TTS_LOCAL_MODEL_PATH")
+    if configured and Path(configured).expanduser().is_dir():
+        return str(Path(configured).expanduser().resolve())
+    if DEFAULT_LOCAL_17B.is_dir():
+        return str(DEFAULT_LOCAL_17B)
+    return "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
 
 
 def log_time(start, operation):
@@ -92,8 +111,9 @@ def main():
     print("=" * 60)
 
     start = time.time()
+    model_path = resolve_model_path()
     model = Qwen3TTSModel.from_pretrained(
-        "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+        model_path,
         device_map="cuda:0",
         dtype=torch.bfloat16,
         attn_implementation="flash_attention_2",
@@ -101,7 +121,7 @@ def main():
     log_time(start, "Model loaded")
 
     # Reference audio setup
-    ref_audio_path = "kuklina-1.wav"
+    ref_audio_path = str(REPO_DIR / "kuklina-1.wav")
     ref_text = (
         "Это брат Кэти, моей одноклассницы. А что у тебя с рукой? И почему ты голая? У него ведь куча наград по "
         "боевым искусствам. Кэти рассказывала, правда, Лео? Понимаешь кого ты побила, Лая? "

@@ -150,12 +150,12 @@ VOICE_SELECTION_MODE = env_text("VOICE_SELECTION_MODE", "mono").strip().lower()
 DUAL_VOICE_HEURISTIC = env_text("DUAL_VOICE_HEURISTIC", "random").strip().lower()
 COLOR_FOLLOWUP_DELAY = env_float("COLOR_FOLLOWUP_DELAY", 2.0)
 VOICE_CONFIG_FILE = env_text("VOICE_CONFIG_FILE", "")
-VOICE_MANIFEST_FILE = env_text(
-    "VOICE_MANIFEST_FILE",
-    str(REPO_ROOT / "tts-io" / "voices" / "generated" / "voices.json"),
-)
 TTS_STREAM_SCRIPT = env_text(
     "TTS_STREAM_SCRIPT", str(REPO_ROOT / "tts-io" / "stream_tts.py")
+)
+VOICE_MANIFEST_FILE = env_text(
+    "VOICE_MANIFEST_FILE",
+    str(Path(TTS_STREAM_SCRIPT).expanduser().resolve().parent / "voices" / "generated" / "voices.json"),
 )
 TTS_PYTHON = env_text("TTS_PYTHON", str(REPO_ROOT / ".venv" / "bin" / "python"))
 
@@ -173,6 +173,10 @@ LAST_QUIET_COMMENTARY_AT = 0.0
 LAST_QUIET_SPEAKER = None
 JOB_COUNTER = 0
 RECENT_BOOTH_LINES = []
+
+
+def tts_workspace_name():
+    return Path(TTS_STREAM_SCRIPT).expanduser().resolve().parent.name
 
 
 def now_stamp():
@@ -838,23 +842,26 @@ def resolve_voice_config_file(voice_name=None):
     return Path(default_env_file).expanduser().resolve()
 
 
-def resolve_speaker_embedding_file(voice_name=None):
+def resolve_voice_runtime_config(voice_name=None):
     voice_env_path = resolve_voice_config_file(voice_name=voice_name)
     if not voice_env_path.is_file():
         raise RuntimeError(f"missing voice config file: {voice_env_path}")
 
     voice_env = parse_env_file(str(voice_env_path))
+    config = {
+        "voice_env_path": voice_env_path,
+        "voice_name": voice_env.get("CUSTOM_VOICE_NAME") or voice_name or VOICE_NAME,
+        "embedding_file": None,
+    }
+
     embedding_file = voice_env.get("CUSTOM_VOICE_EMBEDDING_FILE")
-    if not embedding_file:
-        raise RuntimeError(
-            f"CUSTOM_VOICE_EMBEDDING_FILE was not found in: {voice_env_path}"
-        )
+    if embedding_file:
+        embedding_path = Path(embedding_file).expanduser().resolve()
+        if not embedding_path.is_file():
+            raise RuntimeError(f"missing speaker embedding file: {embedding_path}")
+        config["embedding_file"] = embedding_path
 
-    embedding_path = Path(embedding_file).expanduser().resolve()
-    if not embedding_path.is_file():
-        raise RuntimeError(f"missing speaker embedding file: {embedding_path}")
-
-    return embedding_path
+    return config
 
 
 def choose_simple_dual_voice_name():
@@ -1032,7 +1039,7 @@ def iter_sse_content(response):
             yield content
 
 
-def stream_commentary_to_tts(prompt_text, speaker_embedding_file, system_prompt):
+def stream_commentary_to_tts(prompt_text, voice_runtime_config, system_prompt):
     request_body = {
         "model": MODEL_NAME,
         "messages": [
@@ -1057,9 +1064,14 @@ def stream_commentary_to_tts(prompt_text, speaker_embedding_file, system_prompt)
         "--url",
         SERVER_URL,
         "--stdin-chunks",
-        "--speaker-embedding-file",
-        str(speaker_embedding_file),
     ]
+    if tts_workspace_name() == "tts-io-full":
+        tts_cmd.extend(["--voice-name", str(voice_runtime_config["voice_name"])])
+    else:
+        speaker_embedding_file = voice_runtime_config.get("embedding_file")
+        if speaker_embedding_file is None:
+            raise RuntimeError("No speaker embedding file was resolved for tts-io.")
+        tts_cmd.extend(["--speaker-embedding-file", str(speaker_embedding_file)])
     tts_proc = None
     commentary_chunks = []
     pending_error = None
@@ -1281,7 +1293,7 @@ def commentary_worker():
                 continue
 
             selected_voice = job["voice_name"]
-            speaker_embedding_file = SPEAKER_EMBEDDING_FILES[selected_voice]
+            voice_runtime_config = SPEAKER_EMBEDDING_FILES[selected_voice]
             system_prompt = system_prompt_for_job(job)
             prompt_text = prompt_for_job(job)
             payload_for_logging = build_payload_for_logging(job)
@@ -1298,7 +1310,7 @@ def commentary_worker():
             print(f"Role: {role_for_job(job)}", flush=True)
             commentary = stream_commentary_to_tts(
                 prompt_text,
-                speaker_embedding_file,
+                voice_runtime_config,
                 system_prompt,
             )
             remember_booth_line(selected_voice, commentary)
@@ -1363,9 +1375,9 @@ def main():
     global SPEAKER_EMBEDDING_FILES
 
     if ENABLE_COMMENTARY:
-        SPEAKER_EMBEDDING_FILES[VOICE_NAME] = resolve_speaker_embedding_file(VOICE_NAME)
+        SPEAKER_EMBEDDING_FILES[VOICE_NAME] = resolve_voice_runtime_config(VOICE_NAME)
         if VOICE_SELECTION_MODE == "dual" and SECONDARY_VOICE_NAME:
-            SPEAKER_EMBEDDING_FILES[SECONDARY_VOICE_NAME] = resolve_speaker_embedding_file(
+            SPEAKER_EMBEDDING_FILES[SECONDARY_VOICE_NAME] = resolve_voice_runtime_config(
                 SECONDARY_VOICE_NAME
             )
         worker = threading.Thread(target=commentary_worker, daemon=True)
@@ -1379,17 +1391,18 @@ def main():
     print(f"Model endpoint: {MODEL_API_BASE}/v1/chat/completions", flush=True)
     if ENABLE_COMMENTARY:
         print(f"TTS endpoint: {SERVER_URL}", flush=True)
+        print(f"TTS workspace: {tts_workspace_name()}", flush=True)
         print(f"Voice mode: {VOICE_SELECTION_MODE}", flush=True)
         print(f"Primary voice: {VOICE_NAME}", flush=True)
         print(
-            f"Primary speaker embedding: {SPEAKER_EMBEDDING_FILES.get(VOICE_NAME)}",
+            f"Primary voice runtime: {SPEAKER_EMBEDDING_FILES.get(VOICE_NAME)}",
             flush=True,
         )
         if VOICE_SELECTION_MODE == "dual" and SECONDARY_VOICE_NAME:
             print(f"Secondary voice: {SECONDARY_VOICE_NAME}", flush=True)
             print(f"Dual voice heuristic: {DUAL_VOICE_HEURISTIC}", flush=True)
             print(
-                "Secondary speaker embedding: "
+                "Secondary voice runtime: "
                 f"{SPEAKER_EMBEDDING_FILES.get(SECONDARY_VOICE_NAME)}",
                 flush=True,
             )

@@ -1,0 +1,33 @@
+{
+  "default_voice_name": "scrawny_e2_s0",
+  "default_env_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/env/scrawny_e2_s0.env",
+  "voices": [
+    {
+      "name": "scrawny_e0_s2",
+      "source_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/scrawny E0 S2.wav",
+      "normalized_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/normalized/scrawny_e0_s2.wav",
+      "transcript_source_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/scrawny E0 S2.txt",
+      "transcript_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/transcripts/scrawny_e0_s2.txt",
+      "transcript_text": "fights Fob into the background. but Tapson's tearing them up from within this bomb site. he's got Tapson in point blank. Searson's gonna give him good cover, these are the stars of big",
+      "env_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/env/scrawny_e0_s2.env"
+    },
+    {
+      "name": "scrawny_e1_s1",
+      "source_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/scrawny E1 S1.wav",
+      "normalized_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/normalized/scrawny_e1_s1.wav",
+      "transcript_source_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/scrawny E1 S1.txt",
+      "transcript_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/transcripts/scrawny_e1_s1.txt",
+      "transcript_text": "And a no-scope. Straight into the chest of Tapson. Bomb dropped, on site. That's so close to the mark. And Searson dropped, spotted by Nico. 7 seconds, as he's looking to use this",
+      "env_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/env/scrawny_e1_s1.env"
+    },
+    {
+      "name": "scrawny_e2_s0",
+      "source_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/scrawny E2 S0.wav",
+      "normalized_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/normalized/scrawny_e2_s0.wav",
+      "transcript_source_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/scrawny E2 S0.txt",
+      "transcript_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/transcripts/scrawny_e2_s0.txt",
+      "transcript_text": "Saw a sliver. Oh my. Oh my god, 1 v 5. An absolute beast. Bomb being defused, he has to run down reign. He has to get this kill. And he scores",
+      "env_file": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/voices/generated/env/scrawny_e2_s0.env"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[ -n "${BASH_VERSION:-}" ] || exec bash "$0" "$@"
+
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -30,7 +32,10 @@ MAX_TOKENS="${MAX_TOKENS:-$MAX_TOKENS_DEFAULT}"
 PROMPT_TEXT="${*:-$DEFAULT_PROMPT}"
 VOICE_NAME="${VOICE_NAME:-}"
 VOICE_CONFIG_FILE="${VOICE_CONFIG_FILE:-}"
-VOICE_MANIFEST_FILE="${VOICE_MANIFEST_FILE:-$REPO_ROOT/tts-io/voices/generated/voices.json}"
+TTS_STREAM_SCRIPT="${TTS_STREAM_SCRIPT:-$REPO_ROOT/tts-io/stream_tts.py}"
+TTS_WORKSPACE_DIR="$(dirname "$TTS_STREAM_SCRIPT")"
+TTS_WORKSPACE="$(basename "$TTS_WORKSPACE_DIR")"
+VOICE_MANIFEST_FILE="${VOICE_MANIFEST_FILE:-$TTS_WORKSPACE_DIR/voices/generated/voices.json}"
 
 if ! command -v curl >/dev/null 2>&1; then
   echo "Missing curl."
@@ -45,7 +50,7 @@ fi
 if [ -z "$VOICE_CONFIG_FILE" ]; then
   if [ ! -f "$VOICE_MANIFEST_FILE" ]; then
     echo "Missing voices manifest: $VOICE_MANIFEST_FILE"
-    echo "Run: sh tts-io/add_custom_voice.sh"
+    echo "Run the add_custom_voice.sh script for your selected TTS workspace."
     exit 1
   fi
   if [ -n "$VOICE_NAME" ]; then
@@ -75,19 +80,13 @@ fi
 
 if [ ! -f "$VOICE_CONFIG_FILE" ]; then
   echo "Missing custom voice config: $VOICE_CONFIG_FILE"
-  echo "Run: sh tts-io/add_custom_voice.sh"
+  echo "Run the add_custom_voice.sh script for your selected TTS workspace."
   exit 1
 fi
 
 cd "$REPO_ROOT"
 source .venv/bin/activate
 source "$VOICE_CONFIG_FILE"
-
-if [ ! -f "$CUSTOM_VOICE_EMBEDDING_FILE" ]; then
-  echo "Missing custom voice embedding file: $CUSTOM_VOICE_EMBEDDING_FILE"
-  echo "Run: sh tts-io/add_custom_voice.sh"
-  exit 1
-fi
 
 request_payload="$(
   jq -nc \
@@ -109,11 +108,25 @@ request_payload="$(
 )"
 
 tts_cmd=(
-  python "$REPO_ROOT/tts-io/stream_tts.py"
+  python "${TTS_STREAM_SCRIPT:-$REPO_ROOT/tts-io/stream_tts.py}"
   --url "$SERVER_URL"
   --stdin-chunks
-  --speaker-embedding-file "$CUSTOM_VOICE_EMBEDDING_FILE"
 )
+
+if [ "$TTS_WORKSPACE" = "tts-io-full" ]; then
+  if [ -z "${CUSTOM_VOICE_NAME:-}" ]; then
+    echo "Missing CUSTOM_VOICE_NAME in: $VOICE_CONFIG_FILE"
+    exit 1
+  fi
+  tts_cmd+=(--voice-name "$CUSTOM_VOICE_NAME")
+else
+  if [ ! -f "${CUSTOM_VOICE_EMBEDDING_FILE:-}" ]; then
+    echo "Missing custom voice embedding file: ${CUSTOM_VOICE_EMBEDDING_FILE:-}"
+    echo "Run the add_custom_voice.sh script for your selected TTS workspace."
+    exit 1
+  fi
+  tts_cmd+=(--speaker-embedding-file "$CUSTOM_VOICE_EMBEDDING_FILE")
+fi
 
 echo "Prompting text model and streaming chunks into TTS..."
 echo

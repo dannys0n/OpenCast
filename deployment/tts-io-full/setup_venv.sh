@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+[ -n "${BASH_VERSION:-}" ] || exec bash "$0" "$@"
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV_DIR="$SCRIPT_DIR/.venv"
+PYTHON_VERSION="3.12"
+PYTHON_BIN="python${PYTHON_VERSION}"
+STREAMING_REPO="${TTS_QWEN_STREAMING_REPO_PATH:-$SCRIPT_DIR/Qwen3-TTS-streaming}"
+TORCH_INDEX_URL="https://download.pytorch.org/whl/cu128"
+TORCH_VERSION="2.9.0+cu128"
+TORCHAUDIO_VERSION="2.9.0+cu128"
+FLASH_ATTN_WHEEL_URL="https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.9cxx11abiTRUE-cp312-cp312-linux_x86_64.whl"
+
+if [ ! -d "$STREAMING_REPO" ]; then
+  echo "Missing streaming repo: $STREAMING_REPO"
+  exit 1
+fi
+
+if ! command -v uv >/dev/null 2>&1; then
+  echo "Missing uv. Install uv first so Python ${PYTHON_VERSION} can be managed locally."
+  exit 1
+fi
+
+echo "Installing Python ${PYTHON_VERSION} via uv"
+uv python install "$PYTHON_VERSION"
+
+if [ -d "$VENV_DIR" ]; then
+  echo "Removing existing virtualenv at $VENV_DIR"
+  rm -rf "$VENV_DIR"
+fi
+
+echo "Creating virtualenv at $VENV_DIR with $PYTHON_BIN"
+"$PYTHON_BIN" -m venv "$VENV_DIR"
+
+sudo apt install sox
+
+source "$VENV_DIR/bin/activate"
+
+echo "Installing Python dependencies into $VENV_DIR"
+python -m pip install --upgrade pip
+python -m pip install --index-url "$TORCH_INDEX_URL" "torch==$TORCH_VERSION" "torchaudio==$TORCHAUDIO_VERSION"
+python -m pip install "$FLASH_ATTN_WHEEL_URL"
+python -m pip install "transformers>=4.57.3,<5"
+
+echo "Installing local streaming repo in editable mode"
+(
+  cd "$STREAMING_REPO"
+  python -m pip install -e .
+)
+echo "===================================================="
+echo "tts-io-full environment is ready."
