@@ -1,0 +1,75 @@
+services:
+  qwen3-tts-gpu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: qwen3-tts-api:opencast-official
+    container_name: qwen3-tts-api-official
+    ports:
+      - "8880:8880"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8880
+      WORKERS: 1
+      CORS_ORIGINS: "*"
+      TTS_BACKEND: official
+      TTS_WARMUP_ON_START: "false"
+      TTS_MODEL_NAME: Qwen/Qwen3-TTS-12Hz-0.6B-Base
+      TTS_CUSTOM_VOICES: /app/custom_voices
+      HF_HOME: /home/appuser/.cache/huggingface
+      CUDA_VISIBLE_DEVICES: "0"
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      - /home/danny/Desktop/OpenCast/deployment/.hf-cache:/home/appuser/.cache/huggingface
+      - ./custom_voices:/app/custom_voices
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8880/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+
+  qwen3-tts-vllm:
+    build:
+      context: .
+      dockerfile: Dockerfile.vllm
+    image: qwen3-tts-api:opencast-vllm
+    container_name: qwen3-tts-api-vllm
+    ports:
+      - "8880:8880"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8880
+      WORKERS: 1
+      CORS_ORIGINS: "*"
+      TTS_BACKEND: vllm_omni
+      TTS_WARMUP_ON_START: "true"
+      TTS_MODEL_NAME: Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice
+      VLLM_WORKER_MULTIPROC_METHOD: spawn
+      HF_HOME: /root/.cache/huggingface
+      CUDA_VISIBLE_DEVICES: "0"
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      - /home/danny/Desktop/OpenCast/deployment/.hf-cache:/root/.cache/huggingface
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8880/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 180s
