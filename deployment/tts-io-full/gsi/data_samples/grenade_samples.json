@@ -1,0 +1,114 @@
+{
+  "notes": [
+    "These are observed grenade object samples pulled from the 2026-04-06 listener logs.",
+    "They are seed examples for retrieval and schema understanding.",
+    "The grenade block was observed under top-level grenades, not allgrenades."
+  ],
+  "observed_grenade_objects": [
+    {
+      "grenade_id": "386",
+      "owner": "317",
+      "type": "frag",
+      "position": "145.9, 333.1, 73.2",
+      "velocity": "592.110, -405.672, 60.236",
+      "lifetime": "0.113",
+      "status_note": "Airborne sample with non-zero velocity."
+    },
+    {
+      "grenade_id": "386",
+      "owner": "317",
+      "type": "frag",
+      "position": "508.7, -130.8, -2.4",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "2.179",
+      "status_note": "Settled sample."
+    },
+    {
+      "grenade_id": "386",
+      "owner": "317",
+      "type": "frag",
+      "position": "508.7, -130.8, -2.4",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "4.306"
+    },
+    {
+      "grenade_id": "386",
+      "owner": "317",
+      "type": "frag",
+      "position": "508.7, -130.8, -2.4",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "6.094"
+    },
+    {
+      "grenade_id": "402",
+      "owner": "478",
+      "type": "frag",
+      "position": "-414.6, 401.3, -2.0",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "6.493"
+    },
+    {
+      "grenade_id": "404",
+      "owner": "253",
+      "type": "frag",
+      "position": "-471.8, 835.2, -16.2",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "6.415"
+    },
+    {
+      "grenade_id": "329",
+      "owner": "225",
+      "type": "frag",
+      "position": "-683.2, 1461.4, -109.3",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "6.495"
+    },
+    {
+      "grenade_id": "83",
+      "owner": "228",
+      "type": "frag",
+      "position": "-121.7, -637.6, 101.4",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "6.405"
+    },
+    {
+      "grenade_id": "238",
+      "owner": "309",
+      "type": "frag",
+      "position": "284.5, -694.4, -0.9",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "1.915"
+    },
+    {
+      "grenade_id": "238",
+      "owner": "309",
+      "type": "frag",
+      "position": "284.5, -694.4, -0.9",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "3.795"
+    },
+    {
+      "grenade_id": "238",
+      "owner": "309",
+      "type": "frag",
+      "position": "284.5, -694.4, -0.9",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "5.772"
+    },
+    {
+      "grenade_id": "238",
+      "owner": "309",
+      "type": "frag",
+      "position": "284.5, -694.4, -0.9",
+      "velocity": "0.000, 0.000, 0.000",
+      "lifetime": "6.525"
+    }
+  ],
+  "current_runtime_takeaway": {
+    "grenades_block_seen": true,
+    "grenades_block_non_empty": true,
+    "grenade_position_seen": true,
+    "allgrenades_block_seen": false,
+    "preferred_runtime_path": "grenades.*"
+  }
+}

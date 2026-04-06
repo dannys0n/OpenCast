@@ -1,0 +1,89 @@
+{
+  "player.activity": {
+    "observed_values": [
+      "menu",
+      "playing"
+    ],
+    "notes": "Seen across startup/menu and live gameplay payloads."
+  },
+  "map.mode": {
+    "observed_values": [
+      "casual"
+    ]
+  },
+  "bomb.state": {
+    "observed_values": [
+      "carried",
+      "dropped"
+    ]
+  },
+  "grenades.*.type": {
+    "observed_values": [
+      "frag"
+    ],
+    "notes": "Only frag has been observed so far. Add smoke, flash, molotov, incendiary, decoy, or other values if later seen."
+  },
+  "grenades.*.owner": {
+    "observed_examples": [
+      "225",
+      "228",
+      "253",
+      "309",
+      "317",
+      "478"
+    ],
+    "notes": "These appear to be player entity ids or similar runtime ids, not Steam IDs."
+  },
+  "grenades.*.position": {
+    "observed_examples": [
+      "145.9, 333.1, 73.2",
+      "508.7, -130.8, -2.4",
+      "-414.6, 401.3, -2.0",
+      "-471.8, 835.2, -16.2",
+      "-683.2, 1461.4, -109.3",
+      "-121.7, -637.6, 101.4",
+      "284.5, -694.4, -0.9"
+    ]
+  },
+  "grenades.*.velocity": {
+    "observed_examples": [
+      "592.110, -405.672, 60.236",
+      "0.000, 0.000, 0.000"
+    ],
+    "notes": "Non-zero velocity was observed while a grenade was airborne. Zero velocity was observed after the grenade settled."
+  },
+  "grenades.*.lifetime": {
+    "observed_examples": [
+      "0.113",
+      "1.915",
+      "2.179",
+      "2.230",
+      "3.795",
+      "4.306",
+      "4.524",
+      "5.772",
+      "6.094",
+      "6.405",
+      "6.493",
+      "6.495",
+      "6.525"
+    ]
+  },
+  "player.weapons.*.type": {
+    "observed_values": [
+      "Pistol",
+      "Grenade",
+      "C4"
+    ]
+  },
+  "player.weapons.*.name": {
+    "observed_values": [
+      "weapon_c4",
+      "weapon_fiveseven",
+      "weapon_glock",
+      "weapon_hegrenade",
+      "weapon_hkp2000",
+      "weapon_p250"
+    ]
+  }
+}

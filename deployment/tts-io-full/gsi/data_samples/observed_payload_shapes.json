@@ -1,0 +1,49 @@
+{
+  "top_level_blocks_observed": [
+    "auth",
+    "provider",
+    "map",
+    "phase_countdowns",
+    "round",
+    "bomb",
+    "player",
+    "allplayers",
+    "grenades",
+    "previously",
+    "added"
+  ],
+  "not_yet_observed_non_empty": [
+    "allgrenades"
+  ],
+  "important_runtime_notes": [
+    "Player position data has been observed at player.position.",
+    "Other player position data has been observed at allplayers.*.position.",
+    "Live grenade data has been observed at grenades.*.",
+    "Live grenade position data has been observed at grenades.*.position.",
+    "allgrenades has not yet been observed non-empty in the current test set.",
+    "Both added and previously blocks appear during delta/event payloads."
+  ],
+  "notable_paths_observed": [
+    "player.activity",
+    "player.position",
+    "player.state.health",
+    "player.weapons.*",
+    "allplayers.*.position",
+    "allplayers.*.state.health",
+    "allplayers.*.weapons.*",
+    "bomb.position",
+    "bomb.state",
+    "map.mode",
+    "map.phase",
+    "map.round",
+    "map.team_ct.score",
+    "map.team_t.score",
+    "phase_countdowns.phase",
+    "phase_countdowns.phase_ends_in",
+    "grenades.*.owner",
+    "grenades.*.position",
+    "grenades.*.type",
+    "grenades.*.velocity",
+    "grenades.*.lifetime"
+  ]
+}

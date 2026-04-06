@@ -1,0 +1,24 @@
+{
+  "name": "cs2_gsi_data_samples",
+  "purpose": "Local seed database for runtime-observed CS2 GSI payload formats and field values.",
+  "source_area": "/home/danny/Desktop/OpenCast/deployment/tts-io-full/gsi/.console",
+  "notes": [
+    "Seeded from listener logs and runtime observations captured on 2026-04-06.",
+    "Treat these as observed examples, not a guaranteed complete global schema.",
+    "Grenade runtime data has been observed under top-level grenades, not allgrenades."
+  ],
+  "files": [
+    {
+      "path": "observed_payload_shapes.json",
+      "description": "Curated summary of runtime payload sections and notable quirks."
+    },
+    {
+      "path": "observed_field_values.json",
+      "description": "Observed values and examples for important fields."
+    },
+    {
+      "path": "grenade_samples.json",
+      "description": "Observed grenade object samples, positions, owners, and types."
+    }
+  ]
+}
