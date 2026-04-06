@@ -1,0 +1,38 @@
+# Local OpenCast test config for the optimized backend.
+# Uses only snapshots already present under deployment/.hf-cache.
+
+default_model: 0.6B-CustomVoice
+
+models:
+  0.6B-CustomVoice:
+    hf_id: /home/danny/Desktop/OpenCast/deployment/.hf-cache/hub/models--Qwen--Qwen3-TTS-12Hz-0.6B-CustomVoice/snapshots/85e237c12c027371202489a0ec509ded67b5e4b5
+    type: customvoice
+  0.6B-Base:
+    hf_id: /home/danny/Desktop/OpenCast/deployment/.hf-cache/hub/models--Qwen--Qwen3-TTS-12Hz-0.6B-Base/snapshots/5d83992436eae1d760afd27aff78a71d676296fc
+    type: base
+  1.7B-Base:
+    hf_id: /home/danny/Desktop/OpenCast/deployment/.hf-cache/hub/models--Qwen--Qwen3-TTS-12Hz-1.7B-Base/snapshots/fd4b254389122332181a7c3db7f27e918eec64e3
+    type: base
+
+optimization:
+  attention: flash_attention_2
+  compile_mode: reduce-overhead
+  use_compile: true
+  use_cuda_graphs: false
+  use_fast_codebook: true
+  compile_codebook_predictor: true
+  streaming:
+    decode_window_frames: 80
+    emit_every_frames: 6
+
+server:
+  host: "127.0.0.1"
+  port: 8880
+
+voices:
+  - name: Vivian
+    language: Chinese
+  - name: Ryan
+    language: English
+  - name: Eric
+    language: Chinese

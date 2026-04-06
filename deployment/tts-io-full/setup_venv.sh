@@ -35,7 +35,7 @@ fi
 echo "Creating virtualenv at $VENV_DIR with $PYTHON_BIN"
 "$PYTHON_BIN" -m venv "$VENV_DIR"
 
-sudo apt install sox
+sudo apt install sox libportaudio2
 
 source "$VENV_DIR/bin/activate"
 
@@ -44,6 +44,7 @@ python -m pip install --upgrade pip
 python -m pip install --index-url "$TORCH_INDEX_URL" "torch==$TORCH_VERSION" "torchaudio==$TORCHAUDIO_VERSION"
 python -m pip install "$FLASH_ATTN_WHEEL_URL"
 python -m pip install "transformers>=4.57.3,<5"
+python -m pip install sounddevice
 
 echo "Installing local streaming repo in editable mode"
 (
