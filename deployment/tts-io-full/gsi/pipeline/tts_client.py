@@ -1,0 +1,165 @@
+import json
+import os
+import subprocess
+import urllib.error
+import urllib.request
+from dataclasses import dataclass
+from pathlib import Path
+
+
+def load_env_file(path):
+    values = {}
+    if not path.exists():
+        return values
+
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip("\"'")
+        if key:
+            values[key] = value
+
+    return values
+
+
+def first_value(name, default, *sources):
+    if name in os.environ:
+        return os.environ[name]
+    for source in sources:
+        if name in source:
+            return source[name]
+    return default
+
+
+@dataclass
+class TTSConfig:
+    api_base: str
+    model: str
+    voice_name: str
+    timeout_seconds: float
+    sample_rate: int
+
+
+def normalize_voice_name(raw_voice_name):
+    voice_name = (raw_voice_name or "").strip()
+    if not voice_name:
+        return "clone:scrawny_e0"
+    if voice_name.startswith("clone:"):
+        return voice_name
+    return f"clone:{voice_name}"
+
+
+def build_config(repo_root):
+    repo_root = Path(repo_root).resolve()
+    text_llm_env = load_env_file(repo_root / "deployment" / "text-llm" / ".env")
+    tts_env = load_env_file(repo_root / "deployment" / "tts-io-full" / ".env")
+
+    api_base = first_value("TTS_API_BASE", "http://127.0.0.1:8880", tts_env, text_llm_env)
+    model = first_value("TTS_MODEL", "tts-1", tts_env, text_llm_env)
+    voice_name = normalize_voice_name(
+        first_value("TTS_DEFAULT_VOICE_NAME", first_value("VOICE_NAME", "clone:scrawny_e0", tts_env, text_llm_env), tts_env, text_llm_env)
+    )
+    timeout_seconds = float(first_value("TTS_TIMEOUT", "120", tts_env, text_llm_env))
+    sample_rate = int(first_value("TTS_SAMPLE_RATE", "24000", tts_env, text_llm_env))
+
+    return TTSConfig(
+        api_base=api_base.rstrip("/"),
+        model=model,
+        voice_name=voice_name,
+        timeout_seconds=timeout_seconds,
+        sample_rate=sample_rate,
+    )
+
+
+def build_tts_instruct(tts_prompt):
+    emotion = (tts_prompt.get("emotion") or "").strip().lower()
+    caster = (tts_prompt.get("caster") or "").strip().lower()
+
+    if emotion == "screaming":
+        emotion_text = "Speak with intense hype and loud urgent energy."
+    elif emotion == "excited":
+        emotion_text = "Speak with energetic excitement and forward momentum."
+    else:
+        emotion_text = "Speak with a calm measured tone."
+
+    if caster == "play_by_play":
+        caster_text = "Deliver it as rapid play-by-play commentary."
+    else:
+        caster_text = "Deliver it as reflective color commentary."
+
+    return f"{caster_text} {emotion_text}"
+
+
+def play_pcm_stream(response, sample_rate, speed=1.0):
+    command = [
+        "play",
+        "-q",
+        "-t",
+        "raw",
+        "-b",
+        "16",
+        "-e",
+        "signed-integer",
+        "-c",
+        "1",
+        "-r",
+        str(sample_rate),
+        "-",
+    ]
+    if abs(float(speed) - 1.0) > 0.01:
+        command.extend(["tempo", f"{float(speed):.3f}"])
+
+    player = subprocess.Popen(
+        command,
+        stdin=subprocess.PIPE,
+    )
+
+    try:
+        if player.stdin is None:
+            raise RuntimeError("failed to open stdin for SoX play")
+
+        while True:
+            chunk = response.read(16384)
+            if not chunk:
+                break
+            player.stdin.write(chunk)
+            player.stdin.flush()
+    finally:
+        if player.stdin is not None:
+            player.stdin.close()
+        return_code = player.wait()
+        if return_code != 0:
+            raise RuntimeError(f"SoX play exited with status {return_code}")
+
+
+def stream_tts_playback(config, tts_prompt):
+    speed = float(tts_prompt.get("speed") or 1.0)
+    payload = {
+        "model": config.model,
+        "voice": normalize_voice_name(tts_prompt.get("voice_name") or config.voice_name),
+        "input": tts_prompt["commentary"],
+        "instruct": build_tts_instruct(tts_prompt),
+        "speed": speed,
+        "stream": True,
+        "response_format": "pcm",
+    }
+
+    request = urllib.request.Request(
+        f"{config.api_base}/v1/audio/speech",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(request, timeout=config.timeout_seconds) as response:
+            play_pcm_stream(response, config.sample_rate, speed=speed)
+    except urllib.error.HTTPError as error:
+        body = error.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"TTS HTTP {error.code}: {body}") from error
+    except urllib.error.URLError as error:
+        raise RuntimeError(f"TTS request failed: {error}") from error

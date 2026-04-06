@@ -9,7 +9,7 @@ CONFIG_FILE="${TTS_CONFIG:-$PROJECT_DIR/config.opencast.local.yaml}"
 VOICE_LIBRARY_DIR="${VOICE_LIBRARY_DIR:-$PROJECT_DIR/voice_library}"
 HOST="${HOST:-127.0.0.1}"
 PORT="${PORT:-8880}"
-VOICE_NAME="${VOICE_NAME:-clone:scrawny_e2_s0}"
+VOICE_NAME="${VOICE_NAME:-clone:scrawny_e2}"
 TEXT="${TEXT:-This is a live imported voice playback test.}"
 SERVER_LOG="${SERVER_LOG:-/tmp/qwen3_tts_openai_fastapi_test.log}"
 

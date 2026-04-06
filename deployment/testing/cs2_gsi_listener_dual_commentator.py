@@ -29,7 +29,7 @@ def set_dual_default(name, value):
 
 
 os.environ["VOICE_SELECTION_MODE"] = "dual"
-set_dual_default("VOICE_NAME", "scrawny_e0_s2")
+set_dual_default("VOICE_NAME", "scrawny_e0")
 set_dual_default("SECONDARY_VOICE_NAME", "june")
 set_dual_default("DUAL_VOICE_HEURISTIC", "casting_roles")
 set_dual_default("SECONDARY_VOICE_PROBABILITY", "0.5")

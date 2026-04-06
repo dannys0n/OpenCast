@@ -108,9 +108,9 @@ PY
     | play -q -t raw -b 16 -e signed-integer -c 1 -r 24000 -
 }
 
-play_voice "clone:scrawny_e2_s0" "This is scrawny e two s zero."
-play_voice "clone:scrawny_e1_s1" "This is scrawny e one s one."
-play_voice "clone:scrawny_e0_s2" "This is scrawny e zero s two."
+play_voice "clone:scrawny_e2" "This is scrawny e two."
+play_voice "clone:scrawny_e1" "This is scrawny e one."
+play_voice "clone:scrawny_e0" "This is scrawny e zero."
 
 echo
 echo "Sequence playback finished."
