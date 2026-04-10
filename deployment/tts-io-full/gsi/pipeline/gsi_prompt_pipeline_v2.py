@@ -300,6 +300,22 @@ def normalize_player(entity_id, player_dict):
     return strip_empty(normalized)
 
 
+def players_match(left_player, right_player):
+    left_player = as_dict(left_player)
+    right_player = as_dict(right_player)
+    if not left_player or not right_player:
+        return False
+
+    left_steamid = left_player.get("steamid")
+    right_steamid = right_player.get("steamid")
+    if left_steamid and right_steamid:
+        return left_steamid == right_steamid
+
+    left_name = left_player.get("name")
+    right_name = right_player.get("name")
+    return bool(left_name and right_name and left_name == right_name)
+
+
 def strip_empty(value):
     if isinstance(value, dict):
         cleaned = {key: strip_empty(item) for key, item in value.items()}
@@ -522,8 +538,13 @@ def collect_kill_increments(previous_snapshot, current_snapshot):
 
 
 def collect_local_player_kill_increment(previous_snapshot, current_snapshot):
-    previous_player = normalize_player(None, previous_snapshot.get("player"))
-    current_player = normalize_player(None, current_snapshot.get("player"))
+    previous_player_raw = previous_snapshot.get("player")
+    current_player_raw = current_snapshot.get("player")
+    if not players_match(previous_player_raw, current_player_raw):
+        return None
+
+    previous_player = normalize_player(None, previous_player_raw)
+    current_player = normalize_player(None, current_player_raw)
     if not previous_player or not current_player:
         return None
 

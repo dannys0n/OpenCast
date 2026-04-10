@@ -12,6 +12,7 @@ SPEC.loader.exec_module(MODULE)
 def make_player(name, team, health, round_kills=0, match_kills=0):
     return {
         "name": name,
+        "steamid": f"steam-{name}",
         "team": team,
         "activity": "playing",
         "state": {
@@ -279,6 +280,76 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual(kill_event["players"]["killer"]["name"], "GrowthHormones")
         self.assertEqual(kill_event["killer_round_kills_after"], 1)
         self.assertEqual(kill_event["killer_match_kills_after"], 2)
+
+    def test_player_identity_swap_does_not_create_fake_local_kill(self):
+        previous = make_snapshot(
+            round_number=6,
+            round_phase="over",
+            win_team="CT",
+            ct_score=2,
+            t_score=4,
+            player=make_player("Pines", "CT", 100, round_kills=1, match_kills=4),
+            allplayers={},
+        )
+        current = make_snapshot(
+            round_number=6,
+            round_phase="freezetime",
+            win_team=None,
+            ct_score=2,
+            t_score=4,
+            player=make_player("GrowthHormones", "T", 100, round_kills=0, match_kills=7),
+            allplayers={},
+        )
+
+        filtered = MODULE.filter_important_events(
+            previous,
+            current,
+            payload_sequence=10,
+            payload={
+                "previously": {
+                    "player": {
+                        "name": "Pines",
+                        "steamid": "steam-Pines",
+                        "match_stats": {"kills": 4},
+                        "state": {"round_kills": 1},
+                    },
+                    "round": {"win_team": "CT", "phase": "over"},
+                }
+            },
+        )
+
+        self.assertEqual([event["event_type"] for event in filtered["events"]], ["round_result"])
+
+    def test_observer_switch_from_dead_victim_does_not_emit_duplicate_kill(self):
+        previous = make_snapshot(
+            round_number=5,
+            player=make_player("Ulric", "T", 0, round_kills=0, match_kills=2),
+            allplayers={},
+        )
+        current = make_snapshot(
+            round_number=5,
+            player=make_player("Dashen", "CT", 21, round_kills=1, match_kills=6),
+            allplayers={},
+        )
+
+        filtered = MODULE.filter_important_events(
+            previous,
+            current,
+            payload_sequence=11,
+            payload={
+                "previously": {
+                    "player": {
+                        "name": "Ulric",
+                        "steamid": "steam-Ulric",
+                        "team": "T",
+                        "match_stats": {"kills": 2},
+                        "state": {"health": 0, "round_kills": 0},
+                    }
+                }
+            },
+        )
+
+        self.assertEqual(filtered["events"], [])
 
     def test_bomb_planted_event_is_emitted_for_local_player_session(self):
         previous = make_snapshot(
