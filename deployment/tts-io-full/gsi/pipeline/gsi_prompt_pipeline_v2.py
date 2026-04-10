@@ -9,6 +9,14 @@ from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
+from prompt_queue_v2 import (
+    PROMPT_QUEUE_HISTORY_PATH,
+    PROMPT_QUEUE_LATEST_PATH,
+    PROMPT_QUEUE_STATE_PATH,
+    enqueue_prompt_job,
+    reset_prompt_queue_state,
+)
+
 
 def load_local_env():
     env_path = Path(__file__).with_name(".env")
@@ -909,9 +917,11 @@ class Handler(BaseHTTPRequestHandler):
         if filtered_batch["events"]:
             append_pretty_json_record(FILTERED_EVENTS_PATH, filtered_batch)
             write_pretty_json_file(FILTERED_EVENTS_LATEST_PATH, filtered_batch)
+            prompt_job = enqueue_prompt_job(filtered_batch)
             print(
                 f"[gsi] #{payload_sequence} stored raw payload and emitted "
-                f"{len(filtered_batch['events'])} filtered event(s)",
+                f"{len(filtered_batch['events'])} filtered event(s)"
+                f"{f' -> prompt job #{prompt_job['job_id']}' if prompt_job else ''}",
                 flush=True,
             )
         else:
@@ -927,6 +937,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     reset_session_files()
+    reset_prompt_queue_state()
     PIPELINE_STATE.latest_snapshot = None
     PIPELINE_STATE.previous_snapshot = None
     PIPELINE_STATE.payload_count = 0
@@ -941,10 +952,13 @@ def main():
     print(f"Raw GSI latest:     {RAW_GSI_LATEST_PATH}", flush=True)
     print(f"Filtered history:   {FILTERED_EVENTS_PATH}", flush=True)
     print(f"Filtered latest:    {FILTERED_EVENTS_LATEST_PATH}", flush=True)
+    print(f"Prompt queue:       {PROMPT_QUEUE_HISTORY_PATH}", flush=True)
+    print(f"Prompt latest:      {PROMPT_QUEUE_LATEST_PATH}", flush=True)
+    print(f"Prompt queue state: {PROMPT_QUEUE_STATE_PATH}", flush=True)
     print(f"Pipeline log:       {PIPELINE_LOG}", flush=True)
     print(
         "This v2 listener keeps pretty-printed history files and overwrite-on-update "
-        "latest files for raw GSI and filtered events.",
+        "latest files for raw GSI, filtered events, and stub prompt queue jobs.",
         flush=True,
     )
 
