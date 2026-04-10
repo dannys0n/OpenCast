@@ -10,11 +10,10 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from prompt_queue_v2 import (
-    PROMPT_QUEUE_HISTORY_PATH,
-    PROMPT_QUEUE_LATEST_PATH,
-    PROMPT_QUEUE_STATE_PATH,
-    enqueue_prompt_job,
-    reset_prompt_queue_state,
+    PROMPT_RUNTIME_HISTORY_PATH,
+    PROMPT_RUNTIME_LATEST_PATH,
+    process_filtered_batch,
+    reset_prompt_runtime_state,
 )
 
 
@@ -41,6 +40,7 @@ def load_local_env():
 
 ENV_FILE_VALUES = load_local_env()
 SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parents[3]
 STATE_DIR = SCRIPT_DIR / ".state" / "v2"
 RAW_GSI_PATH = STATE_DIR / "gsi_received_pretty.jsonl"
 RAW_GSI_LATEST_PATH = STATE_DIR / "gsi_received_latest.json"
@@ -143,6 +143,18 @@ def append_log(text):
     with PIPELINE_LOG.open("a", encoding="utf-8") as handle:
         handle.write(text)
         handle.flush()
+
+
+def run_prompt_runtime_async(filtered_batch):
+    def worker():
+        prompt_result = process_filtered_batch(filtered_batch, REPO_ROOT)
+        prompt_status = prompt_result.get("status") if isinstance(prompt_result, dict) else None
+        payload_sequence = filtered_batch.get("payload_sequence")
+        if prompt_status:
+            print(f"[gsi] #{payload_sequence} prompt {prompt_status}", flush=True)
+
+    thread = threading.Thread(target=worker, daemon=True)
+    thread.start()
 
 
 def append_pretty_json_record(path, record):
@@ -308,6 +320,16 @@ def normalize_player(entity_id, player_dict):
     return strip_empty(normalized)
 
 
+def simplify_player_for_snapshot(player_dict):
+    player_dict = as_dict(player_dict)
+    return strip_empty(
+        {
+            "name": player_dict.get("name"),
+            "team": player_dict.get("team"),
+        }
+    )
+
+
 def players_match(left_player, right_player):
     left_player = as_dict(left_player)
     right_player = as_dict(right_player)
@@ -435,6 +457,79 @@ def normalize_grenade_state(grenade_id, grenade_dict, block_name, player_directo
     }
 
     return strip_empty(normalized)
+
+
+def simplify_grenade_for_snapshot(grenade_state):
+    grenade_state = as_dict(grenade_state)
+    return strip_empty(
+        {
+            "grenade_type": grenade_state.get("type"),
+            "owner_player": simplify_player_for_snapshot(grenade_state.get("owner_player")),
+        }
+    )
+
+
+def finalize_snapshot_event(event):
+    event = as_dict(event)
+    event_type = event.get("event_type")
+
+    if event_type == "kill":
+        players = as_dict(event.get("players"))
+        return strip_empty(
+            {
+                "event_type": "kill",
+                "killer": simplify_player_for_snapshot(players.get("killer")),
+                "victim": simplify_player_for_snapshot(players.get("victim")),
+                "victims": [simplify_player_for_snapshot(victim) for victim in event.get("victims", [])],
+                "kill_count": event.get("kill_count"),
+            }
+        )
+
+    if event_type == "kill_cluster":
+        return strip_empty(
+            {
+                "event_type": "kill_cluster",
+                "kill_count": event.get("total_kill_count"),
+                "killers": [simplify_player_for_snapshot(player) for player in event.get("killers", [])],
+                "victims": [simplify_player_for_snapshot(player) for player in event.get("victims", [])],
+            }
+        )
+
+    if event_type == "round_result":
+        return strip_empty(
+            {
+                "event_type": "round_result",
+                "winner": event.get("winner"),
+                "winner_score": event.get("winner_score"),
+                "round_phase_after": event.get("round_phase_after"),
+            }
+        )
+
+    if event_type == "team_counter":
+        return strip_empty(
+            {
+                "event_type": "team_counter",
+                "alive_counts_after": event.get("alive_counts_after"),
+            }
+        )
+
+    if event_type == "bomb_event":
+        return strip_empty(
+            {
+                "event_type": "bomb_event",
+                "state_after": event.get("state_after"),
+            }
+        )
+
+    if event_type == "grenade_thrown":
+        return strip_empty(
+            {
+                "event_type": "grenade_thrown",
+                **simplify_grenade_for_snapshot(event.get("grenade")),
+            }
+        )
+
+    return strip_empty({"event_type": event_type})
 
 
 def build_grenade_thrown_events(previous_snapshot, current_snapshot):
@@ -855,11 +950,13 @@ def filter_important_events(previous_snapshot, current_snapshot, payload_sequenc
     for index, event in enumerate(events, start=1):
         event["event_index"] = index
 
+    finalized_events = [finalize_snapshot_event(event) for event in events]
+
     return {
         "payload_sequence": payload_sequence,
         "created_at": created_at,
-        "important_delta_paths": prune_important_delta_paths(collect_important_delta_paths(payload), events),
-        "events": events,
+        "trigger_paths": prune_important_delta_paths(collect_important_delta_paths(payload), events),
+        "events": finalized_events,
     }
 
 
@@ -917,19 +1014,23 @@ class Handler(BaseHTTPRequestHandler):
         if filtered_batch["events"]:
             append_pretty_json_record(FILTERED_EVENTS_PATH, filtered_batch)
             write_pretty_json_file(FILTERED_EVENTS_LATEST_PATH, filtered_batch)
-            prompt_job = enqueue_prompt_job(filtered_batch)
             print(
                 f"[gsi] #{payload_sequence} stored raw payload and emitted "
-                f"{len(filtered_batch['events'])} filtered event(s)"
-                f"{f' -> prompt job #{prompt_job['job_id']}' if prompt_job else ''}",
+                f"{len(filtered_batch['events'])} filtered event(s) -> prompt queued",
                 flush=True,
             )
         else:
             print(f"[gsi] #{payload_sequence} stored raw payload with no important events", flush=True)
 
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b"OK")
+        try:
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"OK")
+        except OSError:
+            return
+
+        if filtered_batch["events"]:
+            run_prompt_runtime_async(copy.deepcopy(filtered_batch))
 
     def log_message(self, format, *args):
         return
@@ -937,7 +1038,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     reset_session_files()
-    reset_prompt_queue_state()
+    reset_prompt_runtime_state()
     PIPELINE_STATE.latest_snapshot = None
     PIPELINE_STATE.previous_snapshot = None
     PIPELINE_STATE.payload_count = 0
@@ -952,13 +1053,12 @@ def main():
     print(f"Raw GSI latest:     {RAW_GSI_LATEST_PATH}", flush=True)
     print(f"Filtered history:   {FILTERED_EVENTS_PATH}", flush=True)
     print(f"Filtered latest:    {FILTERED_EVENTS_LATEST_PATH}", flush=True)
-    print(f"Prompt queue:       {PROMPT_QUEUE_HISTORY_PATH}", flush=True)
-    print(f"Prompt latest:      {PROMPT_QUEUE_LATEST_PATH}", flush=True)
-    print(f"Prompt queue state: {PROMPT_QUEUE_STATE_PATH}", flush=True)
+    print(f"Prompt runtime:     {PROMPT_RUNTIME_HISTORY_PATH}", flush=True)
+    print(f"Prompt latest:      {PROMPT_RUNTIME_LATEST_PATH}", flush=True)
     print(f"Pipeline log:       {PIPELINE_LOG}", flush=True)
     print(
         "This v2 listener keeps pretty-printed history files and overwrite-on-update "
-        "latest files for raw GSI, filtered events, and stub prompt queue jobs.",
+        "latest files for raw GSI, filtered events, and immediate prompt runtime results.",
         flush=True,
     )
 

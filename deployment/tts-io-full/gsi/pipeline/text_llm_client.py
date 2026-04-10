@@ -118,15 +118,15 @@ def extract_json_object(raw_text):
         raise RuntimeError(f"text model returned invalid JSON: {error}") from error
 
 
-def request_structured_commentary(config, prompt_text):
+def request_chat_completion(config, system_prompt, user_prompt, *, temperature=None, max_tokens=None):
     request_body = {
         "model": config.model_name,
         "messages": [
-            {"role": "system", "content": build_system_prompt(config.system_prompt_base)},
-            {"role": "user", "content": prompt_text},
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
         ],
-        "temperature": config.temperature,
-        "max_tokens": config.max_tokens,
+        "temperature": config.temperature if temperature is None else temperature,
+        "max_tokens": config.max_tokens if max_tokens is None else max_tokens,
         "stream": False,
     }
 
@@ -147,49 +147,42 @@ def request_structured_commentary(config, prompt_text):
         raise RuntimeError(f"text model request failed: {error}") from error
 
     raw_text = extract_message_content(response_json)
-    parsed = extract_json_object(raw_text)
 
     return {
         "request": request_body,
         "response": response_json,
+        "raw_text": raw_text,
+    }
+
+
+def request_structured_commentary(config, prompt_text):
+    result = request_chat_completion(
+        config,
+        build_system_prompt(config.system_prompt_base),
+        prompt_text,
+    )
+    raw_text = result["raw_text"]
+    parsed = extract_json_object(raw_text)
+
+    return {
+        "request": result["request"],
+        "response": result["response"],
         "raw_text": raw_text,
         "parsed": parsed,
     }
 
 
 def request_plain_commentary(config, prompt_text):
-    request_body = {
-        "model": config.model_name,
-        "messages": [
-            {"role": "system", "content": build_plain_text_system_prompt(config.system_prompt_base)},
-            {"role": "user", "content": prompt_text},
-        ],
-        "temperature": config.temperature,
-        "max_tokens": config.max_tokens,
-        "stream": False,
-    }
-
-    request = urllib.request.Request(
-        f"{config.model_api_base}/v1/chat/completions",
-        data=json.dumps(request_body).encode("utf-8"),
-        headers={"Content-Type": "application/json"},
-        method="POST",
+    result = request_chat_completion(
+        config,
+        build_plain_text_system_prompt(config.system_prompt_base),
+        prompt_text,
     )
-
-    try:
-        with urllib.request.urlopen(request, timeout=config.timeout_seconds) as response:
-            response_json = json.loads(response.read().decode("utf-8"))
-    except urllib.error.HTTPError as error:
-        body = error.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"text model HTTP {error.code}: {body}") from error
-    except urllib.error.URLError as error:
-        raise RuntimeError(f"text model request failed: {error}") from error
-
-    raw_text = extract_message_content(response_json)
+    raw_text = result["raw_text"]
 
     return {
-        "request": request_body,
-        "response": response_json,
+        "request": result["request"],
+        "response": result["response"],
         "raw_text": raw_text.strip(),
         "parsed": None,
     }

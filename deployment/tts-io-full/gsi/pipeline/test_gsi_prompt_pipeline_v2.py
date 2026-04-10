@@ -85,26 +85,24 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual([event["event_type"] for event in filtered["events"]], ["kill", "team_counter"])
 
         kill_event = filtered["events"][0]
-        self.assertEqual(kill_event["association"]["status"], "paired")
-        self.assertEqual(kill_event["association"]["method"], "single_kill_delta_and_health_drop")
-        self.assertEqual(kill_event["players"]["killer"]["name"], "Alice")
-        self.assertEqual(kill_event["players"]["victim"]["name"], "Bob")
-        self.assertNotIn("position", kill_event["players"]["killer"])
-        self.assertNotIn("position", kill_event["players"]["victim"])
+        self.assertEqual(kill_event["killer"]["name"], "Alice")
+        self.assertEqual(kill_event["victim"]["name"], "Bob")
+        self.assertNotIn("association", kill_event)
+        self.assertNotIn("entity_id", kill_event["killer"])
         self.assertEqual(
-            kill_event["players"]["killer"],
+            kill_event["killer"],
             {
-                "armor": 100,
-                "entity_id": "10",
-                "health": 100,
-                "match_kills": 9,
                 "name": "Alice",
-                "round_kills": 1,
                 "team": "CT",
             },
         )
-        self.assertEqual(kill_event["killer_round_kills_after"], 1)
-        self.assertEqual(kill_event["killer_match_kills_after"], 9)
+        self.assertEqual(
+            kill_event["victim"],
+            {
+                "name": "Bob",
+                "team": "T",
+            },
+        )
         self.assertNotIn("transition_context", filtered)
         self.assertNotIn("snapshot_summary", filtered)
 
@@ -157,7 +155,7 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual(filtered["events"][0]["winner"], "CT")
         self.assertEqual(filtered["events"][0]["winner_score"], 6)
         self.assertEqual(
-            filtered["important_delta_paths"],
+            filtered["trigger_paths"],
             ["map.team_ct.score", "round.win_team"],
         )
 
@@ -214,10 +212,10 @@ class FilterImportantEventsTests(unittest.TestCase):
 
         self.assertEqual([event["event_type"] for event in filtered["events"]], ["grenade_thrown"])
         grenade_event = filtered["events"][0]
-        self.assertEqual(grenade_event["association"]["status"], "owner_resolved")
-        self.assertEqual(grenade_event["grenade"]["owner_player"]["name"], "Alice")
-        self.assertEqual(grenade_event["grenade"]["type"], "frag")
-        self.assertEqual(filtered["important_delta_paths"], ["grenades.*.owner", "grenades.*.position", "grenades.*.type"])
+        self.assertEqual(grenade_event["owner_player"]["name"], "Alice")
+        self.assertEqual(grenade_event["grenade_type"], "frag")
+        self.assertNotIn("grenade", grenade_event)
+        self.assertEqual(filtered["trigger_paths"], ["grenades.*.owner", "grenades.*.position", "grenades.*.type"])
 
     def test_ambiguous_multi_actor_kills_become_cluster_instead_of_guessed_pairs(self):
         previous = make_snapshot(
@@ -243,8 +241,7 @@ class FilterImportantEventsTests(unittest.TestCase):
 
         self.assertEqual([event["event_type"] for event in filtered["events"]], ["kill_cluster", "team_counter"])
         cluster = filtered["events"][0]
-        self.assertEqual(cluster["association"]["status"], "ambiguous_multi_actor")
-        self.assertEqual(cluster["total_kill_count"], 2)
+        self.assertEqual(cluster["kill_count"], 2)
         self.assertEqual(sorted(k["name"] for k in cluster["killers"]), ["Alice", "Carol"])
         self.assertEqual(sorted(v["name"] for v in cluster["victims"]), ["Bob", "Dave"])
 
@@ -276,10 +273,8 @@ class FilterImportantEventsTests(unittest.TestCase):
 
         self.assertEqual([event["event_type"] for event in filtered["events"]], ["kill"])
         kill_event = filtered["events"][0]
-        self.assertEqual(kill_event["association"]["status"], "killer_only")
-        self.assertEqual(kill_event["players"]["killer"]["name"], "GrowthHormones")
-        self.assertEqual(kill_event["killer_round_kills_after"], 1)
-        self.assertEqual(kill_event["killer_match_kills_after"], 2)
+        self.assertEqual(kill_event["killer"]["name"], "GrowthHormones")
+        self.assertEqual(kill_event["kill_count"], 1)
 
     def test_player_identity_swap_does_not_create_fake_local_kill(self):
         previous = make_snapshot(
@@ -375,7 +370,7 @@ class FilterImportantEventsTests(unittest.TestCase):
 
         self.assertEqual([event["event_type"] for event in filtered["events"]], ["bomb_event"])
         self.assertEqual(filtered["events"][0]["state_after"], "planted")
-        self.assertEqual(filtered["important_delta_paths"], ["round.bomb"])
+        self.assertEqual(filtered["trigger_paths"], ["round.bomb"])
 
     def test_round_result_keeps_previous_winner_if_current_payload_drops_it(self):
         previous = make_snapshot(
@@ -407,7 +402,7 @@ class FilterImportantEventsTests(unittest.TestCase):
             payload={"previously": {"round": {"win_team": "T"}}},
         )
 
-        self.assertEqual(filtered["events"], [{"event_index": 1, "event_type": "round_result", "round_phase_after": "freezetime", "winner": "T", "winner_score": 1}])
+        self.assertEqual(filtered["events"], [{"event_type": "round_result", "round_phase_after": "freezetime", "winner": "T", "winner_score": 1}])
 
     def test_round_result_prunes_unrelated_bomb_path_noise(self):
         previous = make_snapshot(
@@ -442,7 +437,7 @@ class FilterImportantEventsTests(unittest.TestCase):
         )
 
         self.assertEqual([event["event_type"] for event in filtered["events"]], ["round_result"])
-        self.assertNotIn("round.bomb", filtered["important_delta_paths"])
+        self.assertNotIn("round.bomb", filtered["trigger_paths"])
 
 
 if __name__ == "__main__":

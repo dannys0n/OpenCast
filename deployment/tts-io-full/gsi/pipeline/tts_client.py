@@ -1,6 +1,9 @@
 import json
 import os
 import subprocess
+import tempfile
+import threading
+import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -94,6 +97,19 @@ def build_tts_instruct(tts_prompt):
     return f"{caster_text} {emotion_text}"
 
 
+def build_tts_payload(config, tts_prompt):
+    speed = float(tts_prompt.get("speed") or 1.0)
+    return {
+        "model": config.model,
+        "voice": normalize_voice_name(tts_prompt.get("voice_name") or config.voice_name),
+        "input": tts_prompt["commentary"],
+        "instruct": build_tts_instruct(tts_prompt),
+        "speed": speed,
+        "stream": True,
+        "response_format": "pcm",
+    }
+
+
 def play_pcm_stream(response, sample_rate, speed=1.0):
     command = [
         "play",
@@ -136,17 +152,170 @@ def play_pcm_stream(response, sample_rate, speed=1.0):
             raise RuntimeError(f"SoX play exited with status {return_code}")
 
 
+def open_play_process(sample_rate, speed=1.0):
+    command = [
+        "play",
+        "-q",
+        "-t",
+        "raw",
+        "-b",
+        "16",
+        "-e",
+        "signed-integer",
+        "-c",
+        "1",
+        "-r",
+        str(sample_rate),
+        "-",
+    ]
+    if abs(float(speed) - 1.0) > 0.01:
+        command.extend(["tempo", f"{float(speed):.3f}"])
+
+    return subprocess.Popen(
+        command,
+        stdin=subprocess.PIPE,
+    )
+
+
+def fetch_tts_audio_to_file(config, tts_prompt, buffer_path, result):
+    payload = build_tts_payload(config, tts_prompt)
+    request = urllib.request.Request(
+        f"{config.api_base}/v1/audio/speech",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(request, timeout=config.timeout_seconds) as response:
+            with buffer_path.open("wb") as handle:
+                while True:
+                    chunk = response.read(16384)
+                    if not chunk:
+                        break
+                    handle.write(chunk)
+                    handle.flush()
+        result["ok"] = True
+    except urllib.error.HTTPError as error:
+        body = error.read().decode("utf-8", errors="replace")
+        result["ok"] = False
+        result["error"] = f"TTS HTTP {error.code}: {body}"
+    except urllib.error.URLError as error:
+        result["ok"] = False
+        result["error"] = f"TTS request failed: {error}"
+    except Exception as error:
+        result["ok"] = False
+        result["error"] = str(error)
+    finally:
+        result["done"] = True
+
+
+def stream_buffer_file_to_stdin(player_stdin, buffer_path, result):
+    offset = 0
+
+    while True:
+        size = buffer_path.stat().st_size if buffer_path.exists() else 0
+        if size > offset:
+            with buffer_path.open("rb") as handle:
+                handle.seek(offset)
+                while True:
+                    chunk = handle.read(min(16384, size - offset))
+                    if not chunk:
+                        break
+                    player_stdin.write(chunk)
+                    player_stdin.flush()
+                    offset += len(chunk)
+            continue
+
+        if result.get("done"):
+            if not result.get("ok"):
+                raise RuntimeError(result.get("error") or f"TTS request failed for {buffer_path.name}")
+            break
+
+        time.sleep(0.01)
+
+
+def stream_tts_sequence_playback(config, tts_prompts):
+    if not tts_prompts:
+        return {"line_count": 0}
+
+    speeds = {float(prompt.get("speed") or 1.0) for prompt in tts_prompts}
+    if len(speeds) != 1:
+        raise RuntimeError("all TTS prompts in a sequence must use the same speed")
+    speed = next(iter(speeds))
+
+    workers = []
+    player = None
+    temp_dir_obj = tempfile.TemporaryDirectory(prefix="gsi_tts_sequence_")
+
+    try:
+        temp_dir = Path(temp_dir_obj.name)
+        for index, tts_prompt in enumerate(tts_prompts):
+            buffer_path = temp_dir / f"request_{index}.pcm"
+            buffer_path.touch()
+            result = {
+                "done": False,
+                "ok": False,
+                "line_index": index,
+                "commentary": tts_prompt.get("commentary"),
+            }
+            thread = threading.Thread(
+                target=fetch_tts_audio_to_file,
+                args=(config, tts_prompt, buffer_path, result),
+                daemon=True,
+            )
+            thread.start()
+            workers.append(
+                {
+                    "thread": thread,
+                    "buffer_path": buffer_path,
+                    "result": result,
+                }
+            )
+
+        player = open_play_process(config.sample_rate, speed=speed)
+        if player.stdin is None:
+            raise RuntimeError("failed to open stdin for SoX play")
+
+        for worker in workers:
+            stream_buffer_file_to_stdin(player.stdin, worker["buffer_path"], worker["result"])
+
+        player.stdin.close()
+        player.stdin = None
+
+        return_code = player.wait()
+        if return_code != 0:
+            raise RuntimeError(f"SoX play exited with status {return_code}")
+
+        for worker in workers:
+            worker["thread"].join()
+            if not worker["result"].get("ok"):
+                raise RuntimeError(worker["result"].get("error") or "TTS sequence request failed")
+
+        return {
+            "line_count": len(tts_prompts),
+            "speed": speed,
+        }
+    finally:
+        for worker in workers:
+            worker["thread"].join()
+
+        if player is not None:
+            if player.stdin is not None:
+                try:
+                    player.stdin.close()
+                except Exception:
+                    pass
+            if player.poll() is None:
+                player.kill()
+                player.wait()
+
+        temp_dir_obj.cleanup()
+
+
 def stream_tts_playback(config, tts_prompt):
     speed = float(tts_prompt.get("speed") or 1.0)
-    payload = {
-        "model": config.model,
-        "voice": normalize_voice_name(tts_prompt.get("voice_name") or config.voice_name),
-        "input": tts_prompt["commentary"],
-        "instruct": build_tts_instruct(tts_prompt),
-        "speed": speed,
-        "stream": True,
-        "response_format": "pcm",
-    }
+    payload = build_tts_payload(config, tts_prompt)
 
     request = urllib.request.Request(
         f"{config.api_base}/v1/audio/speech",
