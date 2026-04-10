@@ -71,7 +71,9 @@ TEAM_NAMES = ("CT", "T")
 ROUND_END_PHASES = {"over", "freezetime", "gameover", "intermission"}
 IMPORTANT_DELTA_EXACT_PATHS = {
     "round.phase",
+    "round.bomb",
     "round.win_team",
+    "bomb.state",
     "map.team_ct.score",
     "map.team_t.score",
 }
@@ -369,6 +371,24 @@ def collect_important_delta_paths(payload):
     return sorted(set(important_paths))
 
 
+def prune_important_delta_paths(important_paths, events):
+    event_types = {event.get("event_type") for event in events}
+    pruned = []
+
+    for path in important_paths:
+        if path in {"round.bomb", "bomb.state"} and "bomb_event" not in event_types:
+            continue
+        if path.endswith(("match_stats.kills", "state.round_kills")) and not ({"kill", "kill_cluster"} & event_types):
+            continue
+        if path in {"round.phase", "round.win_team", "map.team_ct.score", "map.team_t.score"} and "round_result" not in event_types:
+            continue
+        if path.startswith(("grenades.*.", "allgrenades.*.")) and "grenade_thrown" not in event_types:
+            continue
+        pruned.append(path)
+
+    return pruned
+
+
 def normalize_grenade_state(grenade_id, grenade_dict, block_name, player_directory):
     grenade_dict = as_dict(grenade_dict)
     if not grenade_dict:
@@ -501,6 +521,43 @@ def collect_kill_increments(previous_snapshot, current_snapshot):
     return increments
 
 
+def collect_local_player_kill_increment(previous_snapshot, current_snapshot):
+    previous_player = normalize_player(None, previous_snapshot.get("player"))
+    current_player = normalize_player(None, current_snapshot.get("player"))
+    if not previous_player or not current_player:
+        return None
+
+    previous_round_kills = get_round_kills(previous_player)
+    current_round_kills = get_round_kills(current_player)
+    previous_match_kills = get_match_kills(previous_player)
+    current_match_kills = get_match_kills(current_player)
+
+    round_delta = (
+        current_round_kills - previous_round_kills
+        if isinstance(previous_round_kills, int) and isinstance(current_round_kills, int)
+        else 0
+    )
+    match_delta = (
+        current_match_kills - previous_match_kills
+        if isinstance(previous_match_kills, int) and isinstance(current_match_kills, int)
+        else 0
+    )
+    kill_count_delta = max(round_delta, match_delta)
+
+    if kill_count_delta <= 0:
+        return None
+
+    return {
+        "killer_after": current_player,
+        "killer_before": previous_player,
+        "kill_count_delta": kill_count_delta,
+        "round_kills_before": previous_round_kills,
+        "round_kills_after": current_round_kills,
+        "match_kills_before": previous_match_kills,
+        "match_kills_after": current_match_kills,
+    }
+
+
 def build_kill_cluster_event(increments, deaths):
     killers = [increment["killer_after"] for increment in increments]
     victims = [death["victim_after"] for death in deaths]
@@ -520,9 +577,24 @@ def build_kill_cluster_event(increments, deaths):
     )
 
 
+def increment_matches_player(increment, player_dict):
+    increment_player = increment.get("killer_after") or {}
+    player_dict = player_dict or {}
+    increment_entity = increment_player.get("entity_id")
+    player_entity = player_dict.get("entity_id")
+    if increment_entity and player_entity:
+        return increment_entity == player_entity
+    increment_name = increment_player.get("name")
+    player_name = player_dict.get("name")
+    return bool(increment_name and player_name and increment_name == player_name)
+
+
 def build_kill_events(previous_snapshot, current_snapshot):
     deaths = collect_player_deaths(previous_snapshot, current_snapshot)
     increments = collect_kill_increments(previous_snapshot, current_snapshot)
+    local_increment = collect_local_player_kill_increment(previous_snapshot, current_snapshot)
+    if local_increment and not any(increment_matches_player(increment, local_increment["killer_after"]) for increment in increments):
+        increments.append(local_increment)
 
     events = []
 
@@ -578,6 +650,26 @@ def build_kill_events(previous_snapshot, current_snapshot):
             )
             return events
 
+        if total_kill_count > 0 and not deaths:
+            events.append(
+                strip_empty(
+                    {
+                        "event_type": "kill",
+                        "association": {
+                            "status": "killer_only",
+                            "method": "kill_delta_without_visible_victim",
+                        },
+                        "players": {
+                            "killer": killer,
+                        },
+                        "kill_count": total_kill_count,
+                        "killer_round_kills_after": increment["round_kills_after"],
+                        "killer_match_kills_after": increment["match_kills_after"],
+                    }
+                )
+            )
+            return events
+
         if total_kill_count > 0 or deaths:
             events.append(build_kill_cluster_event(increments, deaths))
             return events
@@ -623,6 +715,34 @@ def build_kill_events(previous_snapshot, current_snapshot):
         )
 
     return events
+
+
+def build_bomb_events(previous_snapshot, current_snapshot):
+    previous_round = as_dict(previous_snapshot.get("round"))
+    current_round = as_dict(current_snapshot.get("round"))
+    previous_bomb = as_dict(previous_snapshot.get("bomb"))
+    current_bomb = as_dict(current_snapshot.get("bomb"))
+
+    previous_round_bomb = previous_round.get("bomb")
+    current_round_bomb = current_round.get("bomb")
+    previous_bomb_state = previous_bomb.get("state")
+    current_bomb_state = current_bomb.get("state")
+
+    state_after = current_round_bomb or current_bomb_state
+    if state_after not in {"planted", "defused", "exploded"}:
+        return []
+
+    if previous_round_bomb == current_round_bomb and previous_bomb_state == current_bomb_state:
+        return []
+
+    return [
+        strip_empty(
+            {
+                "event_type": "bomb_event",
+                "state_after": state_after,
+            }
+        )
+    ]
 
 
 def build_round_result_events(previous_snapshot, current_snapshot):
@@ -695,6 +815,7 @@ def filter_important_events(previous_snapshot, current_snapshot, payload_sequenc
     payload = payload or {}
     events = []
     events.extend(build_kill_events(previous_snapshot, current_snapshot))
+    events.extend(build_bomb_events(previous_snapshot, current_snapshot))
     events.extend(build_grenade_thrown_events(previous_snapshot, current_snapshot))
     round_result_events = build_round_result_events(previous_snapshot, current_snapshot)
     events.extend(round_result_events)
@@ -708,7 +829,7 @@ def filter_important_events(previous_snapshot, current_snapshot, payload_sequenc
     return {
         "payload_sequence": payload_sequence,
         "created_at": created_at,
-        "important_delta_paths": collect_important_delta_paths(payload),
+        "important_delta_paths": prune_important_delta_paths(collect_important_delta_paths(payload), events),
         "events": events,
     }
 

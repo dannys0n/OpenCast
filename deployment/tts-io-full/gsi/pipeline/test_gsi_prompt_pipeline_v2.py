@@ -247,6 +247,65 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual(sorted(k["name"] for k in cluster["killers"]), ["Alice", "Carol"])
         self.assertEqual(sorted(v["name"] for v in cluster["victims"]), ["Bob", "Dave"])
 
+    def test_local_player_only_session_emits_kill_without_allplayers(self):
+        previous = make_snapshot(
+            round_number=13,
+            player=make_player("GrowthHormones", "T", 100, round_kills=0, match_kills=1),
+            allplayers={},
+        )
+        current = make_snapshot(
+            round_number=13,
+            player=make_player("GrowthHormones", "T", 100, round_kills=1, match_kills=2),
+            allplayers={},
+        )
+
+        filtered = MODULE.filter_important_events(
+            previous,
+            current,
+            payload_sequence=7,
+            payload={
+                "previously": {
+                    "player": {
+                        "match_stats": {"kills": 1},
+                        "state": {"round_kills": 0},
+                    }
+                }
+            },
+        )
+
+        self.assertEqual([event["event_type"] for event in filtered["events"]], ["kill"])
+        kill_event = filtered["events"][0]
+        self.assertEqual(kill_event["association"]["status"], "killer_only")
+        self.assertEqual(kill_event["players"]["killer"]["name"], "GrowthHormones")
+        self.assertEqual(kill_event["killer_round_kills_after"], 1)
+        self.assertEqual(kill_event["killer_match_kills_after"], 2)
+
+    def test_bomb_planted_event_is_emitted_for_local_player_session(self):
+        previous = make_snapshot(
+            round_number=13,
+            player=make_player("GrowthHormones", "T", 100, round_kills=0, match_kills=1),
+            allplayers={},
+        )
+        previous["round"]["phase"] = "live"
+        current = make_snapshot(
+            round_number=13,
+            player=make_player("GrowthHormones", "T", 100, round_kills=0, match_kills=1),
+            allplayers={},
+        )
+        current["round"]["phase"] = "live"
+        current["round"]["bomb"] = "planted"
+
+        filtered = MODULE.filter_important_events(
+            previous,
+            current,
+            payload_sequence=8,
+            payload={"added": {"round": {"bomb": True}}},
+        )
+
+        self.assertEqual([event["event_type"] for event in filtered["events"]], ["bomb_event"])
+        self.assertEqual(filtered["events"][0]["state_after"], "planted")
+        self.assertEqual(filtered["important_delta_paths"], ["round.bomb"])
+
     def test_round_result_keeps_previous_winner_if_current_payload_drops_it(self):
         previous = make_snapshot(
             round_phase="over",
@@ -278,6 +337,41 @@ class FilterImportantEventsTests(unittest.TestCase):
         )
 
         self.assertEqual(filtered["events"], [{"event_index": 1, "event_type": "round_result", "round_phase_after": "freezetime", "winner": "T", "winner_score": 1}])
+
+    def test_round_result_prunes_unrelated_bomb_path_noise(self):
+        previous = make_snapshot(
+            round_phase="live",
+            win_team=None,
+            ct_score=0,
+            t_score=1,
+            round_number=13,
+            allplayers={},
+        )
+        previous["round"]["bomb"] = "planted"
+        current = make_snapshot(
+            round_phase="freezetime",
+            win_team="T",
+            ct_score=0,
+            t_score=2,
+            round_number=14,
+            allplayers={},
+        )
+
+        filtered = MODULE.filter_important_events(
+            previous,
+            current,
+            payload_sequence=9,
+            payload={
+                "added": {"round": {"win_team": True}},
+                "previously": {
+                    "round": {"bomb": "planted", "phase": "live"},
+                    "map": {"team_t": {"score": 1}},
+                },
+            },
+        )
+
+        self.assertEqual([event["event_type"] for event in filtered["events"]], ["round_result"])
+        self.assertNotIn("round.bomb", filtered["important_delta_paths"])
 
 
 if __name__ == "__main__":
