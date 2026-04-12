@@ -59,6 +59,12 @@ Run the fresh v2 script:
 python3 /home/danny/Desktop/OpenCast/deployment/tts-io-full/gsi/pipeline/gsi_prompt_pipeline_v2.py
 ```
 
+Run the raw/filtered-only v3 script:
+
+```bash
+python3 /home/danny/Desktop/OpenCast/deployment/tts-io-full/gsi/pipeline/gsi_prompt_pipeline_v3.py
+```
+
 Plain-text LLM variant:
 
 ```bash
@@ -79,6 +85,14 @@ V2 output files:
 - `pipeline/.state/v2/prompt_runtime_pretty.jsonl`
 - `pipeline/.state/v2/prompt_runtime_latest.json`
 - `pipeline/.state/v2/pipeline_v2.log`
+
+V3 output files:
+
+- `pipeline/.state/v3/gsi_received_pretty.jsonl`
+- `pipeline/.state/v3/gsi_received_latest.json`
+- `pipeline/.state/v3/gsi_filtered_pretty.jsonl`
+- `pipeline/.state/v3/gsi_filtered_latest.json`
+- `pipeline/.state/v3/pipeline_v3.log`
 
 What gets stored:
 
