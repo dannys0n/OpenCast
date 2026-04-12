@@ -612,6 +612,7 @@ def finalize_snapshot_event(event):
                 "winner": event.get("winner"),
                 "winner_score": event.get("winner_score"),
                 "round_phase_after": event.get("round_phase_after"),
+                "alive_counts_after": event.get("alive_counts_after"),
             }
         )
 
@@ -1104,6 +1105,9 @@ def build_round_result_events(previous_snapshot, current_snapshot):
             score_increment_team = team_name
             break
 
+    if current_phase == "freezetime":
+        return []
+
     if not phase_entered_round_end and not winner_changed and score_increment_team is None:
         return []
 
@@ -1114,6 +1118,10 @@ def build_round_result_events(previous_snapshot, current_snapshot):
     elif winner == "T":
         winner_score = current_score["t"]
 
+    alive_counts_after = None
+    if current_phase == "over":
+        alive_counts_after = compute_alive_counts(current_snapshot)
+
     return [
         strip_empty(
             {
@@ -1121,12 +1129,17 @@ def build_round_result_events(previous_snapshot, current_snapshot):
                 "winner": winner,
                 "round_phase_after": current_phase,
                 "winner_score": winner_score,
+                "alive_counts_after": alive_counts_after,
             }
         )
     ]
 
 
 def build_team_counter_events(previous_snapshot, current_snapshot):
+    current_round = as_dict(current_snapshot.get("round"))
+    if current_round.get("phase") == "freezetime":
+        return []
+
     previous_alive = compute_alive_counts(previous_snapshot)
     current_alive = compute_alive_counts(current_snapshot)
     if previous_alive == current_alive:
@@ -1146,10 +1159,6 @@ def build_team_counter_events(previous_snapshot, current_snapshot):
 
 
 def prune_bomb_explosion_victim_events(events):
-    event_types = {as_dict(event).get("event_type") for event in events}
-    if "round_result" not in event_types:
-        return events
-
     exploded = any(
         as_dict(event).get("event_type") == "bomb_event"
         and as_dict(event).get("state_after") == "exploded"

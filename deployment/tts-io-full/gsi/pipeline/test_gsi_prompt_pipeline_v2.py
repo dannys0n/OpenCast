@@ -156,6 +156,7 @@ class FilterImportantEventsTests(unittest.TestCase):
         )
         self.assertEqual(filtered["events"][0]["winner"], "CT")
         self.assertEqual(filtered["events"][0]["winner_score"], 6)
+        self.assertEqual(filtered["events"][0]["alive_counts_after"], {"CT": 1, "T": 0})
         self.assertNotIn("trigger_paths", filtered)
 
     def test_detects_live_grenade_entity_but_not_equipped_grenade(self):
@@ -458,7 +459,7 @@ class FilterImportantEventsTests(unittest.TestCase):
             },
         )
 
-        self.assertEqual([event["event_type"] for event in filtered["events"]], ["round_result"])
+        self.assertEqual(filtered["events"], [])
 
     def test_observer_switch_from_dead_victim_does_not_emit_duplicate_kill(self):
         previous = make_snapshot(
@@ -585,7 +586,7 @@ class FilterImportantEventsTests(unittest.TestCase):
 
         self.assertEqual(
             [event["event_type"] for event in filtered["events"]],
-            ["player_death", "round_result"],
+            ["player_death"],
         )
         self.assertNotIn("trigger_paths", filtered)
 
@@ -619,7 +620,7 @@ class FilterImportantEventsTests(unittest.TestCase):
             payload={"previously": {"round": {"win_team": "T"}}},
         )
 
-        self.assertEqual(filtered["events"], [{"event_type": "round_result", "round_phase_after": "freezetime", "winner": "T", "winner_score": 1}])
+        self.assertEqual(filtered["events"], [])
 
     def test_round_result_prunes_unrelated_bomb_path_noise(self):
         previous = make_snapshot(
@@ -653,7 +654,7 @@ class FilterImportantEventsTests(unittest.TestCase):
             },
         )
 
-        self.assertEqual([event["event_type"] for event in filtered["events"]], ["round_result"])
+        self.assertEqual(filtered["events"], [])
         self.assertNotIn("trigger_paths", filtered)
 
     def test_bomb_explosion_round_end_filters_out_victim_death_events(self):
@@ -697,10 +698,9 @@ class FilterImportantEventsTests(unittest.TestCase):
 
         self.assertEqual(
             [event["event_type"] for event in filtered["events"]],
-            ["bomb_event", "round_result"],
+            ["bomb_event"],
         )
         self.assertEqual(filtered["events"][0]["state_after"], "exploded")
-        self.assertEqual(filtered["events"][1]["winner"], "T")
 
 
 if __name__ == "__main__":
