@@ -9,7 +9,7 @@ MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 
 
-def make_player(name, team, health, round_kills=0, match_kills=0):
+def make_player(name, team, health, round_kills=0, match_kills=0, match_deaths=0, match_assists=0):
     return {
         "name": name,
         "steamid": f"steam-{name}",
@@ -22,8 +22,8 @@ def make_player(name, team, health, round_kills=0, match_kills=0):
         },
         "match_stats": {
             "kills": match_kills,
-            "deaths": 0,
-            "assists": 0,
+            "deaths": match_deaths,
+            "assists": match_assists,
             "score": 0,
         },
     }
@@ -68,15 +68,15 @@ class FilterImportantEventsTests(unittest.TestCase):
         previous = make_snapshot(
             round_number=9,
             allplayers={
-                "10": make_player("Alice", "CT", 100, round_kills=0, match_kills=8),
-                "20": make_player("Bob", "T", 100, round_kills=0, match_kills=5),
+                "10": make_player("Alice", "CT", 100, round_kills=0, match_kills=8, match_deaths=2, match_assists=1),
+                "20": make_player("Bob", "T", 100, round_kills=0, match_kills=5, match_deaths=6, match_assists=0),
             },
         )
         current = make_snapshot(
             round_number=9,
             allplayers={
-                "10": make_player("Alice", "CT", 100, round_kills=1, match_kills=9),
-                "20": make_player("Bob", "T", 0, round_kills=0, match_kills=5),
+                "10": make_player("Alice", "CT", 100, round_kills=1, match_kills=9, match_deaths=2, match_assists=1),
+                "20": make_player("Bob", "T", 0, round_kills=0, match_kills=5, match_deaths=7, match_assists=0),
             },
         )
 
@@ -92,7 +92,9 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual(
             kill_event["killer"],
             {
+                "kda": {"assists": 1, "deaths": 2, "kills": 9},
                 "name": "Alice",
+                "round_kills": 1,
                 "team": "CT",
             },
         )
@@ -154,10 +156,7 @@ class FilterImportantEventsTests(unittest.TestCase):
         )
         self.assertEqual(filtered["events"][0]["winner"], "CT")
         self.assertEqual(filtered["events"][0]["winner_score"], 6)
-        self.assertEqual(
-            filtered["trigger_paths"],
-            ["map.team_ct.score", "round.win_team"],
-        )
+        self.assertNotIn("trigger_paths", filtered)
 
     def test_detects_live_grenade_entity_but_not_equipped_grenade(self):
         player_with_equipped_grenade = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
@@ -215,7 +214,104 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual(grenade_event["owner_player"]["name"], "Alice")
         self.assertEqual(grenade_event["grenade_type"], "frag")
         self.assertNotIn("grenade", grenade_event)
-        self.assertEqual(filtered["trigger_paths"], ["grenades.*.owner", "grenades.*.position", "grenades.*.type"])
+        self.assertNotIn("trigger_paths", filtered)
+
+    def test_detects_local_player_grenade_throw_from_inventory_drop(self):
+        previous_player = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
+        previous_player["weapons"] = {
+            "weapon_2": {
+                "name": "weapon_hegrenade",
+                "type": "Grenade",
+                "state": "active",
+                "ammo_reserve": 1,
+            },
+            "weapon_3": {
+                "name": "weapon_m4a1",
+                "type": "Rifle",
+                "state": "holstered",
+            },
+        }
+        current_player = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
+        current_player["weapons"] = {
+            "weapon_3": {
+                "name": "weapon_m4a1",
+                "type": "Rifle",
+                "state": "active",
+            },
+        }
+
+        filtered = MODULE.filter_important_events(
+            make_snapshot(round_number=9, player=previous_player, allplayers={}),
+            make_snapshot(round_number=9, player=current_player, allplayers={}),
+            payload_sequence=5,
+            payload={
+                "previously": {
+                    "player": {
+                        "weapons": {
+                            "weapon_2": {
+                                "name": "weapon_hegrenade",
+                                "type": "Grenade",
+                                "state": "active",
+                            }
+                        }
+                    }
+                }
+            },
+        )
+
+        self.assertEqual([event["event_type"] for event in filtered["events"]], ["grenade_thrown"])
+        grenade_event = filtered["events"][0]
+        self.assertEqual(grenade_event["owner_player"]["name"], "Alice")
+        self.assertEqual(grenade_event["grenade_type"], "frag")
+        self.assertNotIn("trigger_paths", filtered)
+
+    def test_does_not_treat_local_grenade_equip_change_as_throw(self):
+        previous_player = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
+        previous_player["weapons"] = {
+            "weapon_2": {
+                "name": "weapon_hegrenade",
+                "type": "Grenade",
+                "state": "holstered",
+                "ammo_reserve": 1,
+            },
+            "weapon_3": {
+                "name": "weapon_m4a1",
+                "type": "Rifle",
+                "state": "active",
+            },
+        }
+        current_player = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
+        current_player["weapons"] = {
+            "weapon_2": {
+                "name": "weapon_hegrenade",
+                "type": "Grenade",
+                "state": "active",
+                "ammo_reserve": 1,
+            },
+            "weapon_3": {
+                "name": "weapon_m4a1",
+                "type": "Rifle",
+                "state": "holstered",
+            },
+        }
+
+        filtered = MODULE.filter_important_events(
+            make_snapshot(round_number=9, player=previous_player, allplayers={}),
+            make_snapshot(round_number=9, player=current_player, allplayers={}),
+            payload_sequence=6,
+            payload={
+                "previously": {
+                    "player": {
+                        "weapons": {
+                            "weapon_2": {"state": "holstered"},
+                            "weapon_3": {"state": "active"},
+                        }
+                    }
+                }
+            },
+        )
+
+        self.assertEqual(filtered["events"], [])
 
     def test_ambiguous_multi_actor_kills_become_cluster_instead_of_guessed_pairs(self):
         previous = make_snapshot(
@@ -245,7 +341,7 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual(sorted(k["name"] for k in cluster["killers"]), ["Alice", "Carol"])
         self.assertEqual(sorted(v["name"] for v in cluster["victims"]), ["Bob", "Dave"])
 
-    def test_local_player_only_session_emits_kill_without_allplayers(self):
+    def test_local_player_only_session_emits_scored_kill_without_allplayers(self):
         previous = make_snapshot(
             round_number=13,
             player=make_player("GrowthHormones", "T", 100, round_kills=0, match_kills=1),
@@ -271,10 +367,59 @@ class FilterImportantEventsTests(unittest.TestCase):
             },
         )
 
-        self.assertEqual([event["event_type"] for event in filtered["events"]], ["kill"])
+        self.assertEqual([event["event_type"] for event in filtered["events"]], ["player_scored_kill"])
         kill_event = filtered["events"][0]
-        self.assertEqual(kill_event["killer"]["name"], "GrowthHormones")
+        self.assertEqual(
+            kill_event["player"],
+            {
+                "kda": {"assists": 0, "deaths": 0, "kills": 2},
+                "name": "GrowthHormones",
+                "round_kills": 1,
+                "team": "T",
+            },
+        )
         self.assertEqual(kill_event["kill_count"], 1)
+
+    def test_local_player_death_is_emitted_without_allplayers(self):
+        previous = make_snapshot(
+            round_number=13,
+            player=make_player("GrowthHormones", "CT", 25, round_kills=0, match_kills=1),
+            allplayers={},
+        )
+        current = make_snapshot(
+            round_number=13,
+            player=make_player("GrowthHormones", "CT", 0, round_kills=0, match_kills=1),
+            allplayers={},
+        )
+        current["player"]["match_stats"]["deaths"] = 3
+        previous["player"]["match_stats"]["deaths"] = 2
+
+        filtered = MODULE.filter_important_events(
+            previous,
+            current,
+            payload_sequence=8,
+            payload={
+                "previously": {
+                    "player": {
+                        "match_stats": {"deaths": 2},
+                        "state": {"health": 25},
+                    }
+                }
+            },
+        )
+
+        self.assertEqual([event["event_type"] for event in filtered["events"]], ["player_death"])
+        death_event = filtered["events"][0]
+        self.assertEqual(
+            death_event["player"],
+            {
+                "kda": {"assists": 0, "deaths": 3, "kills": 1},
+                "name": "GrowthHormones",
+                "round_kills": 0,
+                "team": "CT",
+            },
+        )
+        self.assertNotIn("trigger_paths", filtered)
 
     def test_player_identity_swap_does_not_create_fake_local_kill(self):
         previous = make_snapshot(
@@ -370,7 +515,79 @@ class FilterImportantEventsTests(unittest.TestCase):
 
         self.assertEqual([event["event_type"] for event in filtered["events"]], ["bomb_event"])
         self.assertEqual(filtered["events"][0]["state_after"], "planted")
-        self.assertEqual(filtered["trigger_paths"], ["round.bomb"])
+        self.assertNotIn("trigger_paths", filtered)
+
+    def test_round_result_prunes_grenade_inventory_trigger_noise(self):
+        previous = make_snapshot(
+            round_phase="live",
+            win_team=None,
+            ct_score=4,
+            t_score=7,
+            round_number=11,
+            player=make_player("GrowthHormones", "CT", 2, round_kills=0, match_kills=7),
+            allplayers={},
+        )
+        previous["player"]["match_stats"]["deaths"] = 6
+        previous["player"]["weapons"] = {
+            "weapon_1": {
+                "name": "weapon_famas",
+                "type": "Rifle",
+                "state": "active",
+            },
+            "weapon_2": {
+                "name": "weapon_hegrenade",
+                "type": "Grenade",
+                "state": "holstered",
+                "ammo_reserve": 1,
+            },
+        }
+        current = make_snapshot(
+            round_phase="freezetime",
+            win_team="T",
+            ct_score=4,
+            t_score=8,
+            round_number=12,
+            player=make_player("GrowthHormones", "CT", 0, round_kills=0, match_kills=7),
+            allplayers={},
+        )
+        current["player"]["match_stats"]["deaths"] = 7
+        current["player"]["weapons"] = {
+            "weapon_1": {
+                "name": "weapon_famas",
+                "type": "Rifle",
+                "state": "active",
+            },
+        }
+
+        filtered = MODULE.filter_important_events(
+            previous,
+            current,
+            payload_sequence=12,
+            payload={
+                "added": {"round": {"win_team": True}},
+                "previously": {
+                    "map": {"team_t": {"score": 7}},
+                    "player": {
+                        "match_stats": {"deaths": 6},
+                        "weapons": {
+                            "weapon_2": {
+                                "name": "weapon_hegrenade",
+                                "type": "Grenade",
+                                "state": "holstered",
+                                "ammo_reserve": 1,
+                            }
+                        },
+                    },
+                    "round": {"phase": "live"},
+                },
+            },
+        )
+
+        self.assertEqual(
+            [event["event_type"] for event in filtered["events"]],
+            ["player_death", "round_result"],
+        )
+        self.assertNotIn("trigger_paths", filtered)
 
     def test_round_result_keeps_previous_winner_if_current_payload_drops_it(self):
         previous = make_snapshot(
@@ -437,7 +654,53 @@ class FilterImportantEventsTests(unittest.TestCase):
         )
 
         self.assertEqual([event["event_type"] for event in filtered["events"]], ["round_result"])
-        self.assertNotIn("round.bomb", filtered["trigger_paths"])
+        self.assertNotIn("trigger_paths", filtered)
+
+    def test_bomb_explosion_round_end_filters_out_victim_death_events(self):
+        previous = make_snapshot(
+            round_phase="live",
+            win_team=None,
+            ct_score=4,
+            t_score=7,
+            round_number=11,
+            player=make_player("GrowthHormones", "CT", 18, round_kills=0, match_kills=7, match_deaths=6),
+            allplayers={},
+        )
+        previous["round"]["bomb"] = "planted"
+        current = make_snapshot(
+            round_phase="freezetime",
+            win_team="T",
+            ct_score=4,
+            t_score=8,
+            round_number=12,
+            player=make_player("GrowthHormones", "CT", 0, round_kills=0, match_kills=7, match_deaths=7),
+            allplayers={},
+        )
+        current["round"]["bomb"] = "exploded"
+
+        filtered = MODULE.filter_important_events(
+            previous,
+            current,
+            payload_sequence=14,
+            payload={
+                "added": {"round": {"win_team": True}},
+                "previously": {
+                    "map": {"team_t": {"score": 7}},
+                    "player": {
+                        "match_stats": {"deaths": 6},
+                        "state": {"health": 18},
+                    },
+                    "round": {"bomb": "planted", "phase": "live"},
+                },
+            },
+        )
+
+        self.assertEqual(
+            [event["event_type"] for event in filtered["events"]],
+            ["bomb_event", "round_result"],
+        )
+        self.assertEqual(filtered["events"][0]["state_after"], "exploded")
+        self.assertEqual(filtered["events"][1]["winner"], "T")
 
 
 if __name__ == "__main__":

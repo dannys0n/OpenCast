@@ -120,8 +120,6 @@ class PromptQueueV2Tests(unittest.TestCase):
 
         filtered_batch = {
             "created_at": "2026-04-10T00:00:00",
-            "payload_sequence": 12,
-            "trigger_paths": ["allplayers.*.match_stats.kills"],
             "events": [
                 {
                     "event_type": "kill",
@@ -131,7 +129,7 @@ class PromptQueueV2Tests(unittest.TestCase):
             ],
         }
 
-        record = MODULE.process_filtered_batch(filtered_batch, repo_root=Path("/tmp/opencast"))
+        record = MODULE.process_filtered_batch(filtered_batch, repo_root=Path("/tmp/opencast"), payload_sequence=12)
 
         self.assertEqual(record["status"], "completed")
         self.assertEqual(record["payload_sequence"], 12)
@@ -139,8 +137,6 @@ class PromptQueueV2Tests(unittest.TestCase):
             record["prompt_schema"]["gameplay_snapshot"],
             {
                 "created_at": record["prompt_schema"]["gameplay_snapshot"]["created_at"],
-                "payload_sequence": 12,
-                "trigger_paths": ["allplayers.*.match_stats.kills"],
                 "events": [
                     {
                         "event_type": "kill",
@@ -162,7 +158,8 @@ class PromptQueueV2Tests(unittest.TestCase):
         self.assertIn("No JSON.", record["prompt_schema"]["instruction"])
         self.assertIn("Never mention entity ids", record["prompt_schema"]["instruction"])
         self.assertIn("Gameplay snapshot:", captured["user_prompt"])
-        self.assertIn('"payload_sequence": 12', captured["user_prompt"])
+        self.assertNotIn('"payload_sequence":', captured["user_prompt"])
+        self.assertNotIn('"trigger_paths":', captured["user_prompt"])
         self.assertNotIn('"entity_id"', captured["user_prompt"])
         self.assertNotIn('"association"', captured["user_prompt"])
         self.assertNotIn('"players"', captured["user_prompt"])
@@ -213,21 +210,21 @@ class PromptQueueV2Tests(unittest.TestCase):
             )()
 
         def fake_request_chat_completion(config, system_prompt, user_prompt):
-            payload_sequence = 0
-            for line in user_prompt.splitlines():
-                if '"payload_sequence":' in line:
-                    payload_sequence = int(line.split(":", 1)[1].strip().rstrip(","))
-                    break
+            marker = None
+            if '"event_type": "round_result"' in user_prompt:
+                marker = "first"
+            elif '"event_type": "kill"' in user_prompt and '"name": "Uri"' in user_prompt:
+                marker = "second"
 
-            captured["llm_started"].append(payload_sequence)
-            if payload_sequence == 10:
+            captured["llm_started"].append(marker)
+            if marker == "first":
                 first_prompt_released.wait(timeout=2.0)
             return {
                 "request": {
                     "model": config.model_name,
                 },
                 "response": {},
-                "raw_text": f"Call for {payload_sequence}.",
+                "raw_text": f"Call for {marker}.",
             }
 
         def fake_stream_tts_sequence_playback(config, tts_prompts):
@@ -249,12 +246,15 @@ class PromptQueueV2Tests(unittest.TestCase):
         results = {}
 
         def run_batch(batch_key, filtered_batch):
-            results[batch_key] = MODULE.process_filtered_batch(filtered_batch, repo_root=Path("/tmp/opencast"))
+            payload_sequence = 10 if batch_key == "first" else 11
+            results[batch_key] = MODULE.process_filtered_batch(
+                filtered_batch,
+                repo_root=Path("/tmp/opencast"),
+                payload_sequence=payload_sequence,
+            )
 
         first_batch = {
             "created_at": "2026-04-10T00:00:00",
-            "payload_sequence": 10,
-            "trigger_paths": ["round.phase"],
             "events": [
                 {
                     "event_type": "round_result",
@@ -264,8 +264,6 @@ class PromptQueueV2Tests(unittest.TestCase):
         }
         second_batch = {
             "created_at": "2026-04-10T00:00:01",
-            "payload_sequence": 11,
-            "trigger_paths": ["allplayers.*.match_stats.kills"],
             "events": [
                 {
                     "event_type": "kill",
@@ -287,10 +285,10 @@ class PromptQueueV2Tests(unittest.TestCase):
         first_thread.join()
         second_thread.join()
 
-        self.assertEqual(captured["llm_started"], [10, 11])
+        self.assertEqual(captured["llm_started"], ["first", "second"])
         self.assertEqual(
             captured["tts_commentary_order"],
-            ["Call for 10.", "Call for 11."],
+            ["Call for first.", "Call for second."],
         )
         self.assertEqual(results["first"]["tts"]["submission_id"], 1)
         self.assertEqual(results["second"]["tts"]["submission_id"], 2)

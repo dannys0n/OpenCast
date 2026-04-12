@@ -88,6 +88,13 @@ IMPORTANT_DELTA_EXACT_PATHS = {
 IMPORTANT_DELTA_SUFFIXES = (
     "state.round_kills",
     "match_stats.kills",
+    "match_stats.deaths",
+)
+GRENADE_INVENTORY_DELTA_SUFFIXES = (
+    "player.weapons.weapon_*.name",
+    "player.weapons.weapon_*.state",
+    "player.weapons.weapon_*.type",
+    "player.weapons.weapon_*.ammo_reserve",
 )
 GRENADE_DELTA_ALLOWED_SUFFIXES = (
     ".owner",
@@ -145,11 +152,10 @@ def append_log(text):
         handle.flush()
 
 
-def run_prompt_runtime_async(filtered_batch):
+def run_prompt_runtime_async(filtered_batch, payload_sequence=None):
     def worker():
-        prompt_result = process_filtered_batch(filtered_batch, REPO_ROOT)
+        prompt_result = process_filtered_batch(filtered_batch, REPO_ROOT, payload_sequence=payload_sequence)
         prompt_status = prompt_result.get("status") if isinstance(prompt_result, dict) else None
-        payload_sequence = filtered_batch.get("payload_sequence")
         if prompt_status:
             print(f"[gsi] #{payload_sequence} prompt {prompt_status}", flush=True)
 
@@ -188,7 +194,16 @@ def split_path(path):
 
 def normalize_path(path):
     parts = split_path(path)
-    return ".".join("*" if part.isdigit() else part for part in parts)
+    normalized_parts = []
+    for part in parts:
+        if part.isdigit():
+            normalized_parts.append("*")
+            continue
+        if part.startswith("weapon_") and part[len("weapon_"):].isdigit():
+            normalized_parts.append("weapon_*")
+            continue
+        normalized_parts.append(part)
+    return ".".join(normalized_parts)
 
 
 def extract_changed_paths(node, prefix=""):
@@ -315,19 +330,29 @@ def normalize_player(entity_id, player_dict):
         "armor": state.get("armor"),
         "round_kills": state.get("round_kills"),
         "match_kills": match_stats.get("kills"),
+        "match_deaths": match_stats.get("deaths"),
+        "match_assists": match_stats.get("assists"),
     }
 
     return strip_empty(normalized)
 
 
-def simplify_player_for_snapshot(player_dict):
+def simplify_player_for_snapshot(player_dict, include_combat_stats=False):
     player_dict = as_dict(player_dict)
-    return strip_empty(
-        {
-            "name": player_dict.get("name"),
-            "team": player_dict.get("team"),
-        }
-    )
+    simplified = {
+        "name": player_dict.get("name"),
+        "team": player_dict.get("team"),
+    }
+    if include_combat_stats:
+        simplified["round_kills"] = player_dict.get("round_kills")
+        simplified["kda"] = strip_empty(
+            {
+                "kills": player_dict.get("match_kills"),
+                "deaths": player_dict.get("match_deaths"),
+                "assists": player_dict.get("match_assists"),
+            }
+        )
+    return strip_empty(simplified)
 
 
 def players_match(left_player, right_player):
@@ -394,6 +419,10 @@ def get_match_kills(player_dict):
     return player_dict.get("match_kills")
 
 
+def get_match_deaths(player_dict):
+    return player_dict.get("match_deaths")
+
+
 def collect_important_delta_paths(payload):
     added_paths = sorted(
         set(normalize_path(path) for path in extract_changed_paths(payload.get("added")) if path)
@@ -408,6 +437,9 @@ def collect_important_delta_paths(payload):
             important_paths.append(path)
             continue
         if path.endswith(IMPORTANT_DELTA_SUFFIXES):
+            important_paths.append(path)
+            continue
+        if path.endswith(GRENADE_INVENTORY_DELTA_SUFFIXES):
             important_paths.append(path)
             continue
         if path.startswith(("grenades.*.", "allgrenades.*.")) and path in added_paths:
@@ -426,9 +458,13 @@ def prune_important_delta_paths(important_paths, events):
             continue
         if path.endswith(("match_stats.kills", "state.round_kills")) and not ({"kill", "kill_cluster"} & event_types):
             continue
+        if path.endswith("match_stats.deaths") and "player_death" not in event_types:
+            continue
         if path in {"round.phase", "round.win_team", "map.team_ct.score", "map.team_t.score"} and "round_result" not in event_types:
             continue
         if path.startswith(("grenades.*.", "allgrenades.*.")) and "grenade_thrown" not in event_types:
+            continue
+        if path.startswith("player.weapons.weapon_*.") and "grenade_thrown" not in event_types:
             continue
         pruned.append(path)
 
@@ -446,7 +482,7 @@ def normalize_grenade_state(grenade_id, grenade_dict, block_name, player_directo
     normalized = {
         "grenade_id": str(grenade_id),
         "source_block": block_name,
-        "type": grenade_dict.get("type") or grenade_dict.get("weapon"),
+        "type": normalize_grenade_type(grenade_dict.get("type") or grenade_dict.get("weapon")),
         "owner_entity_id": str(owner_entity_id) if owner_entity_id not in (None, "") else None,
         "owner_player": owner_player,
         "position": grenade_dict.get("position"),
@@ -457,6 +493,56 @@ def normalize_grenade_state(grenade_id, grenade_dict, block_name, player_directo
     }
 
     return strip_empty(normalized)
+
+
+def normalize_grenade_type(value):
+    if not value:
+        return None
+
+    value = str(value).strip().lower()
+    mapping = {
+        "frag": "frag",
+        "hegrenade": "frag",
+        "weapon_hegrenade": "frag",
+        "flashbang": "flashbang",
+        "weapon_flashbang": "flashbang",
+        "smoke": "smoke",
+        "smokegrenade": "smoke",
+        "weapon_smokegrenade": "smoke",
+        "molotov": "molotov",
+        "weapon_molotov": "molotov",
+        "incgrenade": "incendiary",
+        "weapon_incgrenade": "incendiary",
+        "decoy": "decoy",
+        "weapon_decoy": "decoy",
+    }
+    return mapping.get(value, value.removeprefix("weapon_"))
+
+
+def grenade_inventory_counts(player_dict):
+    player_dict = as_dict(player_dict)
+    weapons = as_dict(player_dict.get("weapons"))
+    counts = {}
+
+    for weapon in weapons.values():
+        weapon = as_dict(weapon)
+        grenade_type = normalize_grenade_type(weapon.get("name") or weapon.get("type"))
+        if weapon.get("type") != "Grenade" and grenade_type not in {
+            "frag",
+            "flashbang",
+            "smoke",
+            "molotov",
+            "incendiary",
+            "decoy",
+        }:
+            continue
+
+        count = weapon.get("ammo_reserve")
+        if not isinstance(count, int) or count < 1:
+            count = 1
+        counts[grenade_type] = counts.get(grenade_type, 0) + count
+
+    return counts
 
 
 def simplify_grenade_for_snapshot(grenade_state):
@@ -475,12 +561,33 @@ def finalize_snapshot_event(event):
 
     if event_type == "kill":
         players = as_dict(event.get("players"))
+        killer = simplify_player_for_snapshot(players.get("killer"), include_combat_stats=True)
+        victim = simplify_player_for_snapshot(players.get("victim"))
+        victims = [simplify_player_for_snapshot(victim_entry) for victim_entry in event.get("victims", [])]
+
+        if killer and not victim and not victims:
+            return strip_empty(
+                {
+                    "event_type": "player_scored_kill",
+                    "player": killer,
+                    "kill_count": event.get("kill_count"),
+                }
+            )
+
+        if victim and not killer and not victims:
+            return strip_empty(
+                {
+                    "event_type": "player_death",
+                    "player": victim,
+                }
+            )
+
         return strip_empty(
             {
                 "event_type": "kill",
-                "killer": simplify_player_for_snapshot(players.get("killer")),
-                "victim": simplify_player_for_snapshot(players.get("victim")),
-                "victims": [simplify_player_for_snapshot(victim) for victim in event.get("victims", [])],
+                "killer": killer,
+                "victim": victim,
+                "victims": victims,
                 "kill_count": event.get("kill_count"),
             }
         )
@@ -490,7 +597,10 @@ def finalize_snapshot_event(event):
             {
                 "event_type": "kill_cluster",
                 "kill_count": event.get("total_kill_count"),
-                "killers": [simplify_player_for_snapshot(player) for player in event.get("killers", [])],
+                "killers": [
+                    simplify_player_for_snapshot(player, include_combat_stats=True)
+                    for player in event.get("killers", [])
+                ],
                 "victims": [simplify_player_for_snapshot(player) for player in event.get("victims", [])],
             }
         )
@@ -518,6 +628,14 @@ def finalize_snapshot_event(event):
             {
                 "event_type": "bomb_event",
                 "state_after": event.get("state_after"),
+            }
+        )
+
+    if event_type == "player_death":
+        return strip_empty(
+            {
+                "event_type": "player_death",
+                "player": simplify_player_for_snapshot(event.get("player"), include_combat_stats=True),
             }
         )
 
@@ -563,6 +681,57 @@ def build_grenade_thrown_events(previous_snapshot, current_snapshot):
                     "grenade": grenade_state,
                 }
             )
+
+    previous_local_player_raw = previous_snapshot.get("player")
+    current_local_player_raw = current_snapshot.get("player")
+    previous_round = as_dict(previous_snapshot.get("round"))
+    current_round = as_dict(current_snapshot.get("round"))
+    round_transitioned_to_end = (
+        previous_round.get("phase") != current_round.get("phase")
+        and current_round.get("phase") in ROUND_END_PHASES
+    )
+
+    if players_match(previous_local_player_raw, current_local_player_raw) and not round_transitioned_to_end:
+        previous_local_player = normalize_player(None, previous_local_player_raw)
+        current_local_player = normalize_player(None, current_local_player_raw)
+        previous_counts = grenade_inventory_counts(previous_local_player_raw)
+        current_counts = grenade_inventory_counts(current_local_player_raw)
+        local_death = collect_local_player_death(previous_snapshot, current_snapshot)
+
+        if previous_local_player and current_local_player and not local_death:
+            for grenade_type in sorted(set(previous_counts) | set(current_counts)):
+                previous_count = previous_counts.get(grenade_type, 0)
+                current_count = current_counts.get(grenade_type, 0)
+                thrown_count = previous_count - current_count
+                if thrown_count <= 0:
+                    continue
+
+                duplicate_entity_event = any(
+                    event.get("event_type") == "grenade_thrown"
+                    and as_dict(event.get("grenade")).get("type") == grenade_type
+                    and as_dict(as_dict(event.get("grenade")).get("owner_player")).get("name")
+                    == current_local_player.get("name")
+                    for event in events
+                )
+                if duplicate_entity_event:
+                    continue
+
+                events.append(
+                    strip_empty(
+                        {
+                            "event_type": "grenade_thrown",
+                            "association": {
+                                "status": "owner_resolved",
+                                "method": "local_grenade_inventory_decreased",
+                            },
+                            "grenade": {
+                                "type": grenade_type,
+                                "owner_player": current_local_player,
+                            },
+                            "throw_count": thrown_count,
+                        }
+                    )
+                )
 
     return events
 
@@ -679,6 +848,43 @@ def collect_local_player_kill_increment(previous_snapshot, current_snapshot):
         "round_kills_after": current_round_kills,
         "match_kills_before": previous_match_kills,
         "match_kills_after": current_match_kills,
+    }
+
+
+def collect_local_player_death(previous_snapshot, current_snapshot):
+    previous_player_raw = previous_snapshot.get("player")
+    current_player_raw = current_snapshot.get("player")
+    if not players_match(previous_player_raw, current_player_raw):
+        return None
+
+    previous_player = normalize_player(None, previous_player_raw)
+    current_player = normalize_player(None, current_player_raw)
+    if not previous_player or not current_player:
+        return None
+
+    previous_match_deaths = get_match_deaths(previous_player)
+    current_match_deaths = get_match_deaths(current_player)
+    deaths_delta = (
+        current_match_deaths - previous_match_deaths
+        if isinstance(previous_match_deaths, int) and isinstance(current_match_deaths, int)
+        else 0
+    )
+
+    previous_health = get_player_health(previous_player)
+    current_health = get_player_health(current_player)
+    died_from_health = (
+        isinstance(previous_health, (int, float))
+        and isinstance(current_health, (int, float))
+        and previous_health > 0
+        and current_health <= 0
+    )
+
+    if deaths_delta <= 0 and not died_from_health:
+        return None
+
+    return {
+        "event_type": "player_death",
+        "player": current_player,
     }
 
 
@@ -841,6 +1047,17 @@ def build_kill_events(previous_snapshot, current_snapshot):
     return events
 
 
+def build_local_player_death_events(previous_snapshot, current_snapshot):
+    if as_dict(current_snapshot.get("allplayers")):
+        return []
+
+    local_death = collect_local_player_death(previous_snapshot, current_snapshot)
+    if not local_death:
+        return []
+
+    return [strip_empty(local_death)]
+
+
 def build_bomb_events(previous_snapshot, current_snapshot):
     previous_round = as_dict(previous_snapshot.get("round"))
     current_round = as_dict(current_snapshot.get("round"))
@@ -928,23 +1145,43 @@ def build_team_counter_events(previous_snapshot, current_snapshot):
     ]
 
 
+def prune_bomb_explosion_victim_events(events):
+    event_types = {as_dict(event).get("event_type") for event in events}
+    if "round_result" not in event_types:
+        return events
+
+    exploded = any(
+        as_dict(event).get("event_type") == "bomb_event"
+        and as_dict(event).get("state_after") == "exploded"
+        for event in events
+    )
+    if not exploded:
+        return events
+
+    return [
+        event
+        for event in events
+        if as_dict(event).get("event_type") not in {"kill", "kill_cluster", "player_death"}
+    ]
+
+
 def filter_important_events(previous_snapshot, current_snapshot, payload_sequence, payload=None):
     if not previous_snapshot or not current_snapshot:
         return {
-            "payload_sequence": payload_sequence,
-            "important_delta_paths": [],
             "events": [],
         }
 
     payload = payload or {}
     events = []
     events.extend(build_kill_events(previous_snapshot, current_snapshot))
+    events.extend(build_local_player_death_events(previous_snapshot, current_snapshot))
     events.extend(build_bomb_events(previous_snapshot, current_snapshot))
     events.extend(build_grenade_thrown_events(previous_snapshot, current_snapshot))
     round_result_events = build_round_result_events(previous_snapshot, current_snapshot)
     events.extend(round_result_events)
     if not round_result_events:
         events.extend(build_team_counter_events(previous_snapshot, current_snapshot))
+    events = prune_bomb_explosion_victim_events(events)
 
     created_at = now_stamp()
     for index, event in enumerate(events, start=1):
@@ -953,9 +1190,7 @@ def filter_important_events(previous_snapshot, current_snapshot, payload_sequenc
     finalized_events = [finalize_snapshot_event(event) for event in events]
 
     return {
-        "payload_sequence": payload_sequence,
         "created_at": created_at,
-        "trigger_paths": prune_important_delta_paths(collect_important_delta_paths(payload), events),
         "events": finalized_events,
     }
 
@@ -1030,7 +1265,7 @@ class Handler(BaseHTTPRequestHandler):
             return
 
         if filtered_batch["events"]:
-            run_prompt_runtime_async(copy.deepcopy(filtered_batch))
+            run_prompt_runtime_async(copy.deepcopy(filtered_batch), payload_sequence=payload_sequence)
 
     def log_message(self, format, *args):
         return

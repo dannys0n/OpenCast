@@ -136,6 +136,11 @@ def build_instruction():
         "Return only one short sentence as plain text. "
         "Ideally use fewer than 5 words and never exceed 8 words. "
         "Prioritize the main important event and its trigger over secondary gameplay snapshot details. "
+        "Use the snapshot event semantics exactly as written. "
+        "player_scored_kill means the named player got a kill. "
+        "player_death means the named player died. "
+        "kill means killer killed victim. "
+        "Never reverse killer and victim. "
         "Use player names only when they are clearly given. "
         "Never mention entity ids, observer slots, raw runtime identifiers, or JSON field names. "
         "Use fast, speakable phrasing. "
@@ -258,7 +263,7 @@ def enqueue_tts_playback_and_wait(submission_id, tts_config, tts_prompt):
     return entry["result"]
 
 
-def process_filtered_batch(filtered_batch, repo_root):
+def process_filtered_batch(filtered_batch, repo_root, payload_sequence=None):
     if not filtered_batch.get("events"):
         return None
 
@@ -270,7 +275,7 @@ def process_filtered_batch(filtered_batch, repo_root):
 
     record = {
         "created_at": now_stamp(),
-        "payload_sequence": filtered_batch.get("payload_sequence"),
+        "payload_sequence": payload_sequence,
         "status": "started",
         "prompt_schema": {
             "instruction": instruction,
