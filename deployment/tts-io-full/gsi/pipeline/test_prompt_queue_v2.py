@@ -23,6 +23,7 @@ class PromptQueueV2Tests(unittest.TestCase):
         self.original_state_dir = MODULE.STATE_DIR
         self.original_runtime_history_path = MODULE.PROMPT_RUNTIME_HISTORY_PATH
         self.original_runtime_latest_path = MODULE.PROMPT_RUNTIME_LATEST_PATH
+        self.original_prompt_config_path = MODULE.PROMPT_CONFIG_PATH
         self.original_legacy_history_path = MODULE.LEGACY_PROMPT_QUEUE_HISTORY_PATH
         self.original_legacy_latest_path = MODULE.LEGACY_PROMPT_QUEUE_LATEST_PATH
         self.original_legacy_state_path = MODULE.LEGACY_PROMPT_QUEUE_STATE_PATH
@@ -38,14 +39,40 @@ class PromptQueueV2Tests(unittest.TestCase):
         MODULE.STATE_DIR = self.state_dir
         MODULE.PROMPT_RUNTIME_HISTORY_PATH = self.state_dir / "prompt_runtime_pretty.jsonl"
         MODULE.PROMPT_RUNTIME_LATEST_PATH = self.state_dir / "prompt_runtime_latest.json"
+        MODULE.PROMPT_CONFIG_PATH = self.state_dir / "prompt_config_v2.json"
         MODULE.LEGACY_PROMPT_QUEUE_HISTORY_PATH = self.state_dir / "prompt_queue_pretty.jsonl"
         MODULE.LEGACY_PROMPT_QUEUE_LATEST_PATH = self.state_dir / "prompt_queue_latest.json"
         MODULE.LEGACY_PROMPT_QUEUE_STATE_PATH = self.state_dir / "prompt_queue_state.json"
+        MODULE.PROMPT_CONFIG_PATH.write_text(
+            json.dumps(
+                {
+                    "instruction": (
+                        "You are a Counter-Strike 2 caster. "
+                        "No thinking. No explanations. "
+                        "Return only one short sentence as plain text. "
+                        "Ideally use fewer than 5 words and never exceed 8 words. "
+                        "Prioritize the main important event and its trigger over secondary gameplay snapshot details. "
+                        "Use the snapshot event semantics exactly as written. "
+                        "player_scored_kill means the named player got a kill. "
+                        "player_death means the named player died. "
+                        "kill means killer killed victim. "
+                        "Never reverse killer and victim. "
+                        "Use player names only when they are clearly given. "
+                        "Never mention entity ids, observer slots, raw runtime identifiers, or JSON field names. "
+                        "Use fast, speakable phrasing. "
+                        "No JSON. No markdown. No labels. No code fences."
+                    ),
+                    "gameplay_snapshot_label": "Gameplay snapshot",
+                }
+            ),
+            encoding="utf-8",
+        )
 
     def tearDown(self):
         MODULE.STATE_DIR = self.original_state_dir
         MODULE.PROMPT_RUNTIME_HISTORY_PATH = self.original_runtime_history_path
         MODULE.PROMPT_RUNTIME_LATEST_PATH = self.original_runtime_latest_path
+        MODULE.PROMPT_CONFIG_PATH = self.original_prompt_config_path
         MODULE.LEGACY_PROMPT_QUEUE_HISTORY_PATH = self.original_legacy_history_path
         MODULE.LEGACY_PROMPT_QUEUE_LATEST_PATH = self.original_legacy_latest_path
         MODULE.LEGACY_PROMPT_QUEUE_STATE_PATH = self.original_legacy_state_path
@@ -61,6 +88,30 @@ class PromptQueueV2Tests(unittest.TestCase):
 
     def test_process_filtered_batch_builds_instruction_snapshot_and_immediate_playback(self):
         captured = {}
+        MODULE.PROMPT_CONFIG_PATH.write_text(
+            json.dumps(
+                {
+                    "instruction": (
+                        "You are a Counter-Strike 2 caster. "
+                        "No thinking. No explanations. "
+                        "Return only one short sentence as plain text. "
+                        "Ideally use fewer than 5 words and never exceed 8 words. "
+                        "Prioritize the main important event and its trigger over secondary gameplay snapshot details. "
+                        "Use the snapshot event semantics exactly as written. "
+                        "player_scored_kill means the named player got a kill. "
+                        "player_death means the named player died. "
+                        "kill means killer killed victim. "
+                        "Never reverse killer and victim. "
+                        "Use player names only when they are clearly given. "
+                        "Never mention entity ids, observer slots, raw runtime identifiers, or JSON field names. "
+                        "Use fast, speakable phrasing. "
+                        "No JSON. No markdown. No labels. No code fences."
+                    ),
+                    "gameplay_snapshot_label": "Gameplay snapshot",
+                }
+            ),
+            encoding="utf-8",
+        )
 
         def fake_build_text_llm_config(repo_root):
             captured["repo_root"] = str(repo_root)
@@ -117,6 +168,8 @@ class PromptQueueV2Tests(unittest.TestCase):
         MODULE.stream_tts_sequence_playback = fake_stream_tts_sequence_playback
 
         MODULE.reset_prompt_runtime_state()
+        if MODULE.PROMPT_CONFIG_PATH.exists():
+            MODULE.PROMPT_CONFIG_PATH.unlink()
 
         filtered_batch = {
             "created_at": "2026-04-10T00:00:00",
@@ -153,10 +206,6 @@ class PromptQueueV2Tests(unittest.TestCase):
         self.assertEqual(record["tts"]["line_count"], 1)
         self.assertEqual(record["tts"]["commentary_text"], "Big opener.")
         self.assertEqual(record["tts"]["submission_id"], 1)
-        self.assertIn("No thinking.", record["prompt_schema"]["instruction"])
-        self.assertIn("Return only one short sentence as plain text.", record["prompt_schema"]["instruction"])
-        self.assertIn("No JSON.", record["prompt_schema"]["instruction"])
-        self.assertIn("Never mention entity ids", record["prompt_schema"]["instruction"])
         self.assertIn("Gameplay snapshot:", captured["user_prompt"])
         self.assertNotIn('"payload_sequence":', captured["user_prompt"])
         self.assertNotIn('"trigger_paths":', captured["user_prompt"])
@@ -294,6 +343,80 @@ class PromptQueueV2Tests(unittest.TestCase):
         self.assertEqual(results["second"]["tts"]["submission_id"], 2)
         self.assertEqual(results["first"]["status"], "completed")
         self.assertEqual(results["second"]["status"], "completed")
+
+    def test_missing_prompt_config_omits_system_prompt(self):
+        captured = {}
+        if MODULE.PROMPT_CONFIG_PATH.exists():
+            MODULE.PROMPT_CONFIG_PATH.unlink()
+
+        def fake_build_text_llm_config(repo_root):
+            return type(
+                "FakeTextConfig",
+                (),
+                {
+                    "model_name": "fake-model",
+                    "temperature": 0.4,
+                    "max_tokens": 160,
+                    "timeout_seconds": 45.0,
+                },
+            )()
+
+        def fake_build_tts_config(repo_root):
+            return type(
+                "FakeTtsConfig",
+                (),
+                {
+                    "voice_name": "clone:test_voice",
+                    "sample_rate": 24000,
+                    "timeout_seconds": 120.0,
+                    "api_base": "http://127.0.0.1:8880",
+                    "model": "tts-1",
+                },
+            )()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            captured["system_prompt"] = system_prompt
+            captured["user_prompt"] = user_prompt
+            return {
+                "request": {
+                    "model": config.model_name,
+                    "messages": [
+                        {"role": "user", "content": user_prompt},
+                    ],
+                },
+                "response": {},
+                "raw_text": "Fast call.",
+            }
+
+        def fake_stream_tts_sequence_playback(config, tts_prompts):
+            return {
+                "line_count": len(tts_prompts),
+                "speed": tts_prompts[0]["speed"],
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.build_tts_config = fake_build_tts_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+        MODULE.stream_tts_sequence_playback = fake_stream_tts_sequence_playback
+
+        MODULE.reset_prompt_runtime_state()
+
+        filtered_batch = {
+            "created_at": "2026-04-10T00:00:00",
+            "events": [
+                {
+                    "event_type": "bomb_event",
+                    "state_after": "planted",
+                }
+            ],
+        }
+
+        record = MODULE.process_filtered_batch(filtered_batch, repo_root=Path("/tmp/opencast"), payload_sequence=13)
+
+        self.assertEqual(record["status"], "completed")
+        self.assertNotIn("instruction", record["prompt_schema"])
+        self.assertEqual(captured["system_prompt"], "")
+        self.assertIn("Gameplay snapshot:", captured["user_prompt"])
 
 
 if __name__ == "__main__":

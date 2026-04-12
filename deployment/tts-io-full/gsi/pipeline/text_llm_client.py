@@ -144,12 +144,14 @@ def extract_json_object(raw_text):
 
 
 def request_chat_completion(config, system_prompt, user_prompt, *, temperature=None, max_tokens=None):
+    messages = []
+    if isinstance(system_prompt, str) and system_prompt.strip():
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": append_no_think_prompt(user_prompt)})
+
     request_body = {
         "model": normalized_model_name(config.model_name),
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": append_no_think_prompt(user_prompt)},
-        ],
+        "messages": messages,
         "temperature": config.temperature if temperature is None else temperature,
         "max_tokens": config.max_tokens if max_tokens is None else max_tokens,
         "stream": False,

@@ -39,6 +39,7 @@ def load_local_env():
 ENV_FILE_VALUES = load_local_env()
 SCRIPT_DIR = Path(__file__).resolve().parent
 STATE_DIR = SCRIPT_DIR / ".state" / "v2"
+PROMPT_CONFIG_PATH = SCRIPT_DIR / "prompt_config_v2.json"
 PROMPT_RUNTIME_HISTORY_PATH = STATE_DIR / "prompt_runtime_pretty.jsonl"
 PROMPT_RUNTIME_LATEST_PATH = STATE_DIR / "prompt_runtime_latest.json"
 LEGACY_PROMPT_QUEUE_HISTORY_PATH = STATE_DIR / "prompt_queue_pretty.jsonl"
@@ -80,7 +81,6 @@ def env_float(name, default):
 PROMPT_TTS_CASTER = env_text("PROMPT_TTS_CASTER", "play_by_play")
 PROMPT_TTS_EMOTION = env_text("PROMPT_TTS_EMOTION", "excited")
 PROMPT_TTS_SPEED = env_float("PROMPT_TTS_SPEED", 1.12)
-PROMPT_INSTRUCTION_OVERRIDE = env_text("PROMPT_INSTRUCTION", "").strip()
 
 
 def now_stamp():
@@ -126,28 +126,30 @@ def reset_prompt_runtime_state():
         TTS_NEXT_PLAYBACK_ID = 1
 
 
-def build_instruction():
-    if PROMPT_INSTRUCTION_OVERRIDE:
-        return PROMPT_INSTRUCTION_OVERRIDE
+def load_prompt_config():
+    if not PROMPT_CONFIG_PATH.exists():
+        return {}
 
-    return (
-        "You are a Counter-Strike 2 caster. "
-        "No thinking. No explanations. "
-        "Return only one short sentence as plain text. "
-        "Ideally use fewer than 5 words and never exceed 8 words. "
-        "Prioritize the main important event and its trigger over secondary gameplay snapshot details. "
-        "Use the snapshot event semantics exactly as written. "
-        "player_scored_kill means the named player got a kill. "
-        "player_death means the named player died. "
-        "kill means killer killed victim. "
-        "Never reverse killer and victim. "
-        "Use player names only when they are clearly given. "
-        "Never mention entity ids, observer slots, raw runtime identifiers, or JSON field names. "
-        "Use fast, speakable phrasing. "
-        "No JSON. No markdown. No labels. No code fences."
-    )
+    try:
+        config = json.loads(PROMPT_CONFIG_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        return {}
+
+    if not isinstance(config, dict):
+        return {}
+
+    return config
+
+
+def build_instruction():
+    instruction = str(load_prompt_config().get("instruction", "")).strip()
+    return instruction
+
+
 def build_gameplay_snapshot_prompt(filtered_batch):
-    return "Gameplay snapshot:\n" + json.dumps(filtered_batch, indent=2, sort_keys=True), filtered_batch
+    config = load_prompt_config()
+    label = str(config.get("gameplay_snapshot_label", "Gameplay snapshot")).strip() or "Gameplay snapshot"
+    return f"{label}:\n" + json.dumps(filtered_batch, indent=2, sort_keys=True), filtered_batch
 
 
 def extract_commentary_text(raw_text):
