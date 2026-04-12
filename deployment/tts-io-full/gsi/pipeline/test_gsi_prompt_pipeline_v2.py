@@ -785,6 +785,39 @@ class FilterImportantEventsTests(unittest.TestCase):
         )
         self.assertEqual(filtered["events"][0]["state_after"], "exploded")
 
+    def test_emits_game_over_event_when_map_phase_enters_gameover(self):
+        previous = make_snapshot(
+            round_phase="freezetime",
+            win_team="T",
+            ct_score=3,
+            t_score=8,
+            round_number=11,
+            allplayers={},
+        )
+        previous["map"]["phase"] = "live"
+        current = make_snapshot(
+            round_phase="freezetime",
+            win_team="T",
+            ct_score=3,
+            t_score=8,
+            round_number=11,
+            allplayers={},
+        )
+        current["map"]["phase"] = "gameover"
+
+        filtered = MODULE.filter_important_events(previous, current, payload_sequence=98)
+
+        self.assertEqual([event["event_type"] for event in filtered["events"]], ["game_over"])
+        self.assertEqual(
+            filtered["events"][0],
+            {
+                "event_type": "game_over",
+                "final_score": {"CT": 3, "T": 8},
+                "map_phase_after": "gameover",
+                "winner": "T",
+            },
+        )
+
     def test_standalone_team_counter_event_is_filtered_out(self):
         previous = make_snapshot(
             round_number=4,

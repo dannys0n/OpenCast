@@ -710,6 +710,16 @@ def finalize_snapshot_event(event):
             }
         )
 
+    if event_type == "game_over":
+        return strip_empty(
+            {
+                "event_type": "game_over",
+                "winner": event.get("winner"),
+                "final_score": event.get("final_score"),
+                "map_phase_after": event.get("map_phase_after"),
+            }
+        )
+
     if event_type == "team_counter":
         return strip_empty(
             {
@@ -1303,6 +1313,35 @@ def build_round_result_events(previous_snapshot, current_snapshot):
     ]
 
 
+def build_game_over_events(previous_snapshot, current_snapshot):
+    previous_map = as_dict(previous_snapshot.get("map"))
+    current_map = as_dict(current_snapshot.get("map"))
+    previous_round = as_dict(previous_snapshot.get("round"))
+    current_round = as_dict(current_snapshot.get("round"))
+    previous_map_phase = previous_map.get("phase")
+    current_map_phase = current_map.get("phase")
+
+    if current_map_phase != "gameover" or previous_map_phase == "gameover":
+        return []
+
+    current_score = compute_score(current_snapshot)
+    winner = normalize_team(current_round.get("win_team")) or normalize_team(previous_round.get("win_team"))
+
+    return [
+        strip_empty(
+            {
+                "event_type": "game_over",
+                "winner": winner,
+                "final_score": {
+                    "CT": current_score["ct"],
+                    "T": current_score["t"],
+                },
+                "map_phase_after": current_map_phase,
+            }
+        )
+    ]
+
+
 def build_team_counter_events(previous_snapshot, current_snapshot):
     current_round = as_dict(current_snapshot.get("round"))
     if current_round.get("phase") == "freezetime":
@@ -1368,6 +1407,7 @@ def filter_important_events(previous_snapshot, current_snapshot, payload_sequenc
     events.extend(build_bomb_events(previous_snapshot, current_snapshot))
     events.extend(build_grenade_thrown_events(previous_snapshot, current_snapshot))
     events.extend(build_grenade_detonated_events(previous_snapshot, current_snapshot))
+    events.extend(build_game_over_events(previous_snapshot, current_snapshot))
     round_result_events = build_round_result_events(previous_snapshot, current_snapshot)
     events.extend(round_result_events)
     if not round_result_events:
