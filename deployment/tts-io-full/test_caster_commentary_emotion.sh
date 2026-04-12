@@ -18,7 +18,7 @@ CONFIG_FILE="$PROJECT_DIR/config.opencast.local.yaml"
 VOICE_LIBRARY_DIR="$PROJECT_DIR/voice_library"
 HOST="127.0.0.1"
 PORT="8880"
-SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_caster_commentary.log"
+SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_caster_commentary_emotion.log"
 TMP_ROOT="/tmp"
 
 MODEL_API_BASE="${MODEL_API_BASE:-http://127.0.0.1:12434}"
@@ -27,13 +27,14 @@ MODEL_NAME="${MODEL_NAME%/no_think}"
 MODEL_TEMPERATURE="0.7"
 MODEL_MAX_TOKENS="220"
 MODEL_TIMEOUT="45"
-LINE_COUNT="4"
+LINE_COUNT="3"
 
 VOICE_NAME="clone:scrawny_e0"
 SAMPLE_RATE="24000"
 TTS_SPEED="1.12"
-TTS_INSTRUCT="Deliver it as rapid play-by-play commentary. Speak with energetic excitement and forward momentum."
+BASE_TTS_INSTRUCT="Deliver it as rapid play-by-play commentary."
 SCENARIO_TEXT="On Mirage in a packed arena, the star rifler cracks open A with two instant headshots, the lurker catches the rotate through connector, and the last defender is denied on the smoke defuse as the crowd erupts."
+EMOTION_LEVELS=(0 1 2)
 
 if [[ ! -d "$PROJECT_DIR" ]]; then
   echo "Missing project dir: $PROJECT_DIR" >&2
@@ -273,7 +274,7 @@ if ! curl -fsS "http://$HOST:$PORT/v1/voices" >/dev/null 2>&1; then
   exit 1
 fi
 
-TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_caster_commentary.XXXXXX")"
+TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_caster_commentary_emotion.XXXXXX")"
 AGGREGATE_FIFO="$TEMP_DIR/sequence.pcm"
 mkfifo "$AGGREGATE_FIFO"
 
@@ -281,23 +282,48 @@ declare -a BUFFER_FILES=()
 declare -a DONE_FILES=()
 declare -a STATUS_FILES=()
 
+voice_name_for_emotion_level() {
+  local base_voice_name="$1"
+  local emotion_level="$2"
+
+  if [[ "$base_voice_name" =~ ^clone:(.+)_e[0-9]+$ ]]; then
+    printf 'clone:%s_e%s\n' "${BASH_REMATCH[1]}" "$emotion_level"
+    return
+  fi
+
+  if [[ "$base_voice_name" =~ ^clone:(.+)$ ]]; then
+    printf 'clone:%s_e%s\n' "${BASH_REMATCH[1]}" "$emotion_level"
+    return
+  fi
+
+  printf '%s\n' "$base_voice_name"
+}
+
 build_tts_request_json() {
   local voice_name="$1"
   local text="$2"
+  local emotion_level="$3"
 
   VOICE_NAME="$voice_name" \
   TEXT="$text" \
-  TTS_INSTRUCT="$TTS_INSTRUCT" \
   TTS_SPEED="$TTS_SPEED" \
+  EMOTION_LEVEL="$emotion_level" \
+  BASE_TTS_INSTRUCT="$BASE_TTS_INSTRUCT" \
   "$VENV_PYTHON" - <<'PY'
 import json
 import os
+
+emotion_level = int(os.environ["EMOTION_LEVEL"])
+instruct = (
+    f"{os.environ['BASE_TTS_INSTRUCT']} "
+    f"Use emotion level {emotion_level} on a 0 to 2 scale."
+)
 
 print(json.dumps({
     "model": "tts-1",
     "voice": os.environ["VOICE_NAME"],
     "input": os.environ["TEXT"],
-    "instruct": os.environ["TTS_INSTRUCT"],
+    "instruct": instruct,
     "speed": float(os.environ["TTS_SPEED"]),
     "stream": True,
     "response_format": "pcm",
@@ -309,18 +335,19 @@ dispatch_request() {
   local index="$1"
   local voice_name="$2"
   local text="$3"
+  local emotion_level="$4"
   local buffer_file="$TEMP_DIR/request_${index}.pcm"
   local done_file="$TEMP_DIR/request_${index}.done"
   local status_file="$TEMP_DIR/request_${index}.status"
   local request_json
 
-  request_json="$(build_tts_request_json "$voice_name" "$text")"
+  request_json="$(build_tts_request_json "$voice_name" "$text" "$emotion_level")"
   : >"$buffer_file"
   BUFFER_FILES+=("$buffer_file")
   DONE_FILES+=("$done_file")
   STATUS_FILES+=("$status_file")
 
-  echo "Dispatching line $((index + 1)) for queued playback"
+  echo "Dispatching line $((index + 1)) with emotion=${emotion_level} for queued playback"
   (
     status=0
     if curl -fsS \
@@ -379,14 +406,16 @@ PLAY_PID="$!"
 exec 3>"$AGGREGATE_FIFO"
 
 for i in "${!TEXTS[@]}"; do
-  dispatch_request "$i" "$VOICE_NAME" "${TEXTS[$i]}"
+  emotion_level="${EMOTION_LEVELS[$i]}"
+  emotion_voice_name="$(voice_name_for_emotion_level "$VOICE_NAME" "$emotion_level")"
+  dispatch_request "$i" "$emotion_voice_name" "${TEXTS[$i]}" "$emotion_level"
 done
 
 echo
 echo "All commentary requests dispatched. Streaming them in order through one playback session..."
 
 for i in "${!BUFFER_FILES[@]}"; do
-  printf 'Queueing %s: %s\n' "$((i + 1))" "${TEXTS[$i]}"
+  printf 'Queueing %s (emotion=%s): %s\n' "$((i + 1))" "${EMOTION_LEVELS[$i]}" "${TEXTS[$i]}"
   stream_buffer_into_fd "${BUFFER_FILES[$i]}" "${DONE_FILES[$i]}" "${STATUS_FILES[$i]}"
 done
 

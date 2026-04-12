@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -44,6 +45,26 @@ class TextLLMConfig:
     voice_name: str
     timeout_seconds: float
 
+NO_THINK_SUFFIX = "/no_think"
+
+
+def normalized_model_name(model_name):
+    normalized = (model_name or "").strip()
+    if not normalized:
+        return "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M"
+    if normalized.endswith(NO_THINK_SUFFIX):
+        return normalized[: -len(NO_THINK_SUFFIX)]
+    return normalized
+
+
+def append_no_think_prompt(prompt_text):
+    text = (prompt_text or "").rstrip()
+    if text.endswith(NO_THINK_SUFFIX):
+        return text
+    if not text:
+        return NO_THINK_SUFFIX
+    return f"{text}\n{NO_THINK_SUFFIX}"
+
 
 def build_config(repo_root):
     repo_root = Path(repo_root).resolve()
@@ -51,10 +72,12 @@ def build_config(repo_root):
 
     return TextLLMConfig(
         model_api_base=first_value("MODEL_API_BASE", "http://127.0.0.1:12434", text_llm_env),
-        model_name=first_value(
-            "MODEL_NAME",
-            "hf.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF:Q4_K_M",
-            text_llm_env,
+        model_name=normalized_model_name(
+            first_value(
+                "MODEL_NAME",
+                "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+                text_llm_env,
+            )
         ),
         system_prompt_base=first_value(
             "SYSTEM_PROMPT",
@@ -97,7 +120,9 @@ def extract_message_content(response_json):
     content = message.get("content")
     if not isinstance(content, str) or not content.strip():
         raise RuntimeError("text model returned empty content")
-    return content.strip()
+    content = content.strip()
+    content = re.sub(r"<think>.*?</think>\s*", "", content, flags=re.DOTALL).strip()
+    return content
 
 
 def extract_json_object(raw_text):
@@ -120,10 +145,10 @@ def extract_json_object(raw_text):
 
 def request_chat_completion(config, system_prompt, user_prompt, *, temperature=None, max_tokens=None):
     request_body = {
-        "model": config.model_name,
+        "model": normalized_model_name(config.model_name),
         "messages": [
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
+            {"role": "user", "content": append_no_think_prompt(user_prompt)},
         ],
         "temperature": config.temperature if temperature is None else temperature,
         "max_tokens": config.max_tokens if max_tokens is None else max_tokens,

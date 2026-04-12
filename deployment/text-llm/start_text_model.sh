@@ -4,7 +4,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ENV_FILE="$SCRIPT_DIR/.env"
-MODEL_NAME_DEFAULT="hf.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF:Q4_K_M"
+MODEL_NAME_DEFAULT="hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M"
 
 if [ -f "$ENV_FILE" ]; then
   set -a
