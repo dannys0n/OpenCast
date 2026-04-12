@@ -632,6 +632,7 @@ def simplify_grenade_for_snapshot(grenade_state):
     return strip_empty(
         {
             "grenade_type": grenade_state.get("type"),
+            "detonation_callout": grenade_state.get("detonation_callout"),
             "owner_player": simplify_player_for_snapshot(
                 grenade_state.get("owner_player"),
                 include_map_callout=True,
@@ -741,7 +742,57 @@ def finalize_snapshot_event(event):
             }
         )
 
+    if event_type == "grenade_detonated":
+        return strip_empty(
+            {
+                "event_type": "grenade_detonated",
+                **simplify_grenade_for_snapshot(event.get("grenade")),
+            }
+        )
+
     return strip_empty({"event_type": event_type})
+
+
+def build_grenade_detonated_events(previous_snapshot, current_snapshot):
+    previous_player_directory = build_player_directory(previous_snapshot)
+    map_name = as_dict(current_snapshot.get("map")).get("name") or as_dict(previous_snapshot.get("map")).get("name")
+    events = []
+
+    for block_name in ("grenades", "allgrenades"):
+        previous_block = as_dict(previous_snapshot.get(block_name))
+        current_block = as_dict(current_snapshot.get(block_name))
+
+        for grenade_id, previous_grenade in previous_block.items():
+            if grenade_id in current_block:
+                continue
+
+            grenade_state = normalize_grenade_state(
+                grenade_id,
+                previous_grenade,
+                block_name,
+                previous_player_directory,
+            )
+            if not grenade_state or not grenade_state.get("type"):
+                continue
+
+            grenade_state = {
+                **grenade_state,
+                "detonation_callout": resolve_map_callout(map_name, grenade_state.get("position")),
+            }
+            events.append(
+                strip_empty(
+                    {
+                        "event_type": "grenade_detonated",
+                        "association": {
+                            "status": "owner_resolved" if grenade_state.get("owner_player") else "owner_unresolved",
+                            "method": "live_grenade_entity_disappeared",
+                        },
+                        "grenade": grenade_state,
+                    }
+                )
+            )
+
+    return events
 
 
 def build_grenade_thrown_events(previous_snapshot, current_snapshot):
@@ -1316,6 +1367,7 @@ def filter_important_events(previous_snapshot, current_snapshot, payload_sequenc
     events.extend(build_local_player_death_events(previous_snapshot, current_snapshot))
     events.extend(build_bomb_events(previous_snapshot, current_snapshot))
     events.extend(build_grenade_thrown_events(previous_snapshot, current_snapshot))
+    events.extend(build_grenade_detonated_events(previous_snapshot, current_snapshot))
     round_result_events = build_round_result_events(previous_snapshot, current_snapshot)
     events.extend(round_result_events)
     if not round_result_events:

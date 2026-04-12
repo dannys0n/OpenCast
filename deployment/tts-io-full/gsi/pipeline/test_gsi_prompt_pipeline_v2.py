@@ -362,6 +362,41 @@ class FilterImportantEventsTests(unittest.TestCase):
 
         self.assertEqual(filtered["events"], [])
 
+    def test_detects_grenade_detonation_from_last_seen_position_when_entity_disappears(self):
+        spectator = make_player("Alice", "CT", 100, round_kills=0, match_kills=8, position="270, 2360, -90")
+        previous = make_snapshot(
+            round_number=9,
+            player=spectator,
+            allplayers={
+                "494": make_player("Niles", "T", 100, round_kills=0, match_kills=3, position="-500, 1540, -114"),
+            },
+            grenades={
+                "241": {
+                    "owner": "494",
+                    "type": "frag",
+                    "position": "-497.7, 1539.2, -113.8",
+                    "lifetime": "6.624",
+                    "velocity": "0.000, 0.000, 0.000",
+                }
+            },
+        )
+        current = make_snapshot(
+            round_number=9,
+            player=spectator,
+            allplayers={
+                "494": make_player("Niles", "T", 100, round_kills=0, match_kills=3, position="-500, 1540, -114"),
+            },
+            grenades={},
+        )
+
+        filtered = MODULE.filter_important_events(previous, current, payload_sequence=7)
+
+        self.assertEqual([event["event_type"] for event in filtered["events"]], ["grenade_detonated"])
+        grenade_event = filtered["events"][0]
+        self.assertEqual(grenade_event["grenade_type"], "frag")
+        self.assertEqual(grenade_event["detonation_callout"], "Doors")
+        self.assertEqual(grenade_event["owner_player"]["name"], "Niles")
+
     def test_ambiguous_multi_actor_kills_become_cluster_instead_of_guessed_pairs(self):
         previous = make_snapshot(
             round_number=9,
