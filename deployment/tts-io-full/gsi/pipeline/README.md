@@ -92,7 +92,19 @@ V3 output files:
 - `pipeline/.state/v3/gsi_received_latest.json`
 - `pipeline/.state/v3/gsi_filtered_pretty.jsonl`
 - `pipeline/.state/v3/gsi_filtered_latest.json`
+- `pipeline/.state/v3/training_wrapper_pretty.jsonl`
+- `pipeline/.state/v3/training_wrapper_latest.json`
 - `pipeline/.state/v3/pipeline_v3.log`
+
+V3 training wrapper:
+
+- stores a single top-level `input` object matching the intended text-model prompt shape
+- includes `match_context`
+- includes `previous_events` from only the single last important filtered event context
+- includes `current_events` as the full current filtered event batch
+- includes optional `overrides` for `caster` and `prompt_style`
+- trims `previous_events` down to a slimmer context shape for prompt examples
+- is intended as a training/prompt-design helper without sending raw GSI to the model
 
 What gets stored:
 

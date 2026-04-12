@@ -15,7 +15,9 @@ from gsi_prompt_pipeline_v2 import (
     KILL_EXISTING_LISTENER,
     PORT,
     as_dict,
+    compute_score,
     filter_important_events,
+    normalize_team,
 )
 
 
@@ -25,16 +27,18 @@ RAW_GSI_PATH = STATE_DIR / "gsi_received_pretty.jsonl"
 RAW_GSI_LATEST_PATH = STATE_DIR / "gsi_received_latest.json"
 FILTERED_EVENTS_PATH = STATE_DIR / "gsi_filtered_pretty.jsonl"
 FILTERED_EVENTS_LATEST_PATH = STATE_DIR / "gsi_filtered_latest.json"
+TRAINING_WRAPPER_PATH = STATE_DIR / "training_wrapper_pretty.jsonl"
+TRAINING_WRAPPER_LATEST_PATH = STATE_DIR / "training_wrapper_latest.json"
 PIPELINE_LOG = STATE_DIR / "pipeline_v3.log"
 
 STATE_LOCK = threading.Lock()
-
 
 @dataclass
 class PipelineState:
     latest_snapshot: dict | None = None
     previous_snapshot: dict | None = None
     payload_count: int = 0
+    previous_event_summary: list | None = None
 
 
 PIPELINE_STATE = PipelineState()
@@ -51,6 +55,8 @@ def ensure_state_dir():
         RAW_GSI_LATEST_PATH,
         FILTERED_EVENTS_PATH,
         FILTERED_EVENTS_LATEST_PATH,
+        TRAINING_WRAPPER_PATH,
+        TRAINING_WRAPPER_LATEST_PATH,
         PIPELINE_LOG,
     ]:
         path.touch(exist_ok=True)
@@ -83,9 +89,162 @@ def reset_session_files():
         RAW_GSI_LATEST_PATH,
         FILTERED_EVENTS_PATH,
         FILTERED_EVENTS_LATEST_PATH,
+        TRAINING_WRAPPER_PATH,
+        TRAINING_WRAPPER_LATEST_PATH,
         PIPELINE_LOG,
     ]:
         path.write_text("", encoding="utf-8")
+
+
+def build_match_context(snapshot):
+    snapshot = as_dict(snapshot)
+    map_data = as_dict(snapshot.get("map"))
+    round_data = as_dict(snapshot.get("round"))
+    score = compute_score(snapshot)
+
+    return {
+        "map_name": map_data.get("name"),
+        "map_phase": map_data.get("phase"),
+        "round_phase": round_data.get("phase"),
+        "round_number": map_data.get("round"),
+        "score": {
+            "CT": score["ct"],
+            "T": score["t"],
+        },
+        "win_team": normalize_team(round_data.get("win_team")),
+    }
+
+
+def simplify_filtered_batch_for_training(filtered_batch):
+    filtered_batch = as_dict(filtered_batch)
+    return copy.deepcopy(filtered_batch.get("events", []))
+
+
+def build_overrides():
+    return {
+        "caster": None,
+        "prompt_style": None,
+    }
+
+
+def simplify_player_for_previous_event(player):
+    player = as_dict(player)
+    return {
+        key: value
+        for key, value in {
+            "name": player.get("name"),
+            "team": player.get("team"),
+            "map_callout": player.get("map_callout"),
+        }.items()
+        if value not in (None, "", [], {})
+    }
+
+
+def event_priority(event):
+    event_type = as_dict(event).get("event_type")
+    priorities = {
+        "kill": 100,
+        "kill_cluster": 95,
+        "player_scored_kill": 90,
+        "player_death": 85,
+        "grenade_detonated": 80,
+        "grenade_thrown": 70,
+        "bomb_event": 60,
+        "round_result": 50,
+        "game_over": 40,
+        "team_counter": 10,
+    }
+    return priorities.get(event_type, 0)
+
+
+def simplify_event_for_previous_context(event):
+    event = as_dict(event)
+    event_type = event.get("event_type")
+
+    if event_type == "kill":
+        simplified = {
+            "event_type": "kill",
+            "killer": simplify_player_for_previous_event(event.get("killer")),
+            "victim": {
+                key: value
+                for key, value in {
+                    "name": as_dict(event.get("victim")).get("name"),
+                    "team": as_dict(event.get("victim")).get("team"),
+                }.items()
+                if value not in (None, "", [], {})
+            },
+        }
+        return {key: value for key, value in simplified.items() if value not in (None, "", [], {})}
+
+    if event_type in {"player_scored_kill", "player_death"}:
+        return {
+            "event_type": event_type,
+            "player": simplify_player_for_previous_event(event.get("player")),
+        }
+
+    if event_type == "grenade_thrown":
+        return {
+            "event_type": "grenade_thrown",
+            "grenade_type": event.get("grenade_type"),
+            "owner_player": simplify_player_for_previous_event(event.get("owner_player")),
+        }
+
+    if event_type == "grenade_detonated":
+        return {
+            "event_type": "grenade_detonated",
+            "grenade_type": event.get("grenade_type"),
+            "detonation_callout": event.get("detonation_callout"),
+            "owner_player": simplify_player_for_previous_event(event.get("owner_player")),
+        }
+
+    if event_type == "bomb_event":
+        return {
+            "event_type": "bomb_event",
+            "state_after": event.get("state_after"),
+        }
+
+    if event_type == "round_result":
+        return {
+            "event_type": "round_result",
+            "winner": event.get("winner"),
+            "winner_score": event.get("winner_score"),
+        }
+
+    if event_type == "game_over":
+        return {
+            "event_type": "game_over",
+            "winner": event.get("winner"),
+            "final_score": event.get("final_score"),
+        }
+
+    return {"event_type": event_type} if event_type else {}
+
+
+def build_previous_events_summary(events):
+    events = [as_dict(event) for event in events if as_dict(event).get("event_type") != "team_counter"]
+    if not events:
+        return []
+
+    primary_event = max(events, key=event_priority)
+    simplified = simplify_event_for_previous_context(primary_event)
+    return [simplified] if simplified else []
+
+
+def build_training_wrapper(filtered_batch, current_snapshot, payload_sequence, previous_events):
+    current_events = simplify_filtered_batch_for_training(filtered_batch)
+    return {
+        "input": {
+            "match_context": build_match_context(current_snapshot),
+            "previous_events": copy.deepcopy(previous_events),
+            "current_events": current_events,
+            "overrides": build_overrides(),
+        }
+    }
+
+
+def build_recent_event_summary(training_wrapper):
+    wrapper = as_dict(training_wrapper)
+    return build_previous_events_summary(as_dict(wrapper.get("input")).get("current_events", []))
 
 
 def find_listening_pids(port):
@@ -207,11 +366,27 @@ class Handler(BaseHTTPRequestHandler):
         )
 
         if filtered_batch["events"]:
+            with STATE_LOCK:
+                previous_events = copy.deepcopy(PIPELINE_STATE.previous_event_summary or [])
+
+            training_wrapper = build_training_wrapper(
+                filtered_batch,
+                current_snapshot,
+                payload_sequence,
+                previous_events,
+            )
+
             append_pretty_json_record(FILTERED_EVENTS_PATH, filtered_batch)
             write_pretty_json_file(FILTERED_EVENTS_LATEST_PATH, filtered_batch)
+            append_pretty_json_record(TRAINING_WRAPPER_PATH, training_wrapper)
+            write_pretty_json_file(TRAINING_WRAPPER_LATEST_PATH, training_wrapper)
+
+            with STATE_LOCK:
+                PIPELINE_STATE.previous_event_summary = build_recent_event_summary(training_wrapper)
+
             print(
                 f"[gsi-v3] #{payload_sequence} stored raw payload and emitted "
-                f"{len(filtered_batch['events'])} filtered event(s)",
+                f"{len(filtered_batch['events'])} filtered event(s) + training wrapper",
                 flush=True,
             )
         else:
@@ -233,6 +408,7 @@ def main():
     PIPELINE_STATE.latest_snapshot = None
     PIPELINE_STATE.previous_snapshot = None
     PIPELINE_STATE.payload_count = 0
+    PIPELINE_STATE.previous_event_summary = []
     append_log(f"[{now_stamp()}] pipeline v3 session started\n")
 
     if KILL_EXISTING_LISTENER:
@@ -244,11 +420,13 @@ def main():
     print(f"Raw GSI latest:     {RAW_GSI_LATEST_PATH}", flush=True)
     print(f"Filtered history:   {FILTERED_EVENTS_PATH}", flush=True)
     print(f"Filtered latest:    {FILTERED_EVENTS_LATEST_PATH}", flush=True)
+    print(f"Training history:   {TRAINING_WRAPPER_PATH}", flush=True)
+    print(f"Training latest:    {TRAINING_WRAPPER_LATEST_PATH}", flush=True)
     print(f"Pipeline log:       {PIPELINE_LOG}", flush=True)
     print(
-        "This v3 listener stores pretty-printed raw and filtered JSON only, "
-        "with no prompt or TTS handoff. It is meant for dataset capture and "
-        "synthetic training-data workflow support.",
+        "This v3 listener stores pretty-printed raw JSON, filtered JSON, and a "
+        "training-facing wrapper with match context and recent-event context, "
+        "with no prompt or TTS handoff.",
         flush=True,
     )
 
