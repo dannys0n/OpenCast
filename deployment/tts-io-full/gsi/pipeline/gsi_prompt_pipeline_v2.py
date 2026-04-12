@@ -1,11 +1,14 @@
 import copy
+import math
 import json
 import os
+import re
 import signal
 import subprocess
 import threading
 from dataclasses import dataclass
 from datetime import datetime
+from functools import lru_cache
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -42,11 +45,15 @@ ENV_FILE_VALUES = load_local_env()
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parents[3]
 STATE_DIR = SCRIPT_DIR / ".state" / "v2"
+MAP_CALLOUTS_DIR = SCRIPT_DIR / "map_callouts"
 RAW_GSI_PATH = STATE_DIR / "gsi_received_pretty.jsonl"
 RAW_GSI_LATEST_PATH = STATE_DIR / "gsi_received_latest.json"
 FILTERED_EVENTS_PATH = STATE_DIR / "gsi_filtered_pretty.jsonl"
 FILTERED_EVENTS_LATEST_PATH = STATE_DIR / "gsi_filtered_latest.json"
 PIPELINE_LOG = STATE_DIR / "pipeline_v2.log"
+MAP_CALLOUT_LINE_RE = re.compile(
+    r'^\s*"(?P<name>[^"]+)"\s*,?\s*(?P<x>-?\d+(?:\.\d+)?)\s*,\s*(?P<y>-?\d+(?:\.\d+)?)\s*,\s*(?P<z>-?\d+(?:\.\d+)?)\s*$'
+)
 
 
 def env_text(name, default=""):
@@ -314,7 +321,78 @@ def compute_score(snapshot):
     }
 
 
-def normalize_player(entity_id, player_dict):
+def parse_position_vector(position_value):
+    if isinstance(position_value, str):
+        parts = [part.strip() for part in position_value.split(",")]
+    elif isinstance(position_value, (list, tuple)):
+        parts = list(position_value)
+    else:
+        return None
+
+    if len(parts) < 3:
+        return None
+
+    try:
+        return (float(parts[0]), float(parts[1]), float(parts[2]))
+    except (TypeError, ValueError):
+        return None
+
+
+@lru_cache(maxsize=None)
+def load_map_callouts(map_name):
+    if not map_name:
+        return ()
+
+    map_path = MAP_CALLOUTS_DIR / f"{map_name}.txt"
+    if not map_path.exists():
+        return ()
+
+    callouts = []
+    for raw_line in map_path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+
+        match = MAP_CALLOUT_LINE_RE.match(line)
+        if not match:
+            continue
+
+        callouts.append(
+            {
+                "name": match.group("name"),
+                "position": (
+                    float(match.group("x")),
+                    float(match.group("y")),
+                    float(match.group("z")),
+                ),
+            }
+        )
+
+    return tuple(callouts)
+
+
+def resolve_map_callout(map_name, position_value):
+    position = parse_position_vector(position_value)
+    if not position:
+        return None
+
+    callouts = load_map_callouts(map_name)
+    if not callouts:
+        return None
+
+    closest_callout = None
+    closest_distance = None
+    for callout in callouts:
+        callout_position = callout["position"]
+        distance = math.dist(position, callout_position)
+        if closest_distance is None or distance < closest_distance:
+            closest_callout = callout["name"]
+            closest_distance = distance
+
+    return closest_callout
+
+
+def normalize_player(entity_id, player_dict, map_name=None):
     player_dict = as_dict(player_dict)
     if not player_dict:
         return None
@@ -332,17 +410,20 @@ def normalize_player(entity_id, player_dict):
         "match_kills": match_stats.get("kills"),
         "match_deaths": match_stats.get("deaths"),
         "match_assists": match_stats.get("assists"),
+        "map_callout": resolve_map_callout(map_name, player_dict.get("position")),
     }
 
     return strip_empty(normalized)
 
 
-def simplify_player_for_snapshot(player_dict, include_combat_stats=False):
+def simplify_player_for_snapshot(player_dict, include_combat_stats=False, include_map_callout=False):
     player_dict = as_dict(player_dict)
     simplified = {
         "name": player_dict.get("name"),
         "team": player_dict.get("team"),
     }
+    if include_map_callout:
+        simplified["map_callout"] = player_dict.get("map_callout")
     if include_combat_stats:
         simplified["round_kills"] = player_dict.get("round_kills")
         simplified["kda"] = strip_empty(
@@ -384,9 +465,10 @@ def strip_empty(value):
 def build_player_directory(snapshot):
     by_entity_id = {}
     by_name = {}
+    map_name = as_dict(snapshot.get("map")).get("name")
 
     for entity_id, player in as_dict(snapshot.get("allplayers")).items():
-        normalized = normalize_player(entity_id, player)
+        normalized = normalize_player(entity_id, player, map_name=map_name)
         if not normalized:
             continue
         entity_key = str(entity_id)
@@ -395,7 +477,7 @@ def build_player_directory(snapshot):
         if name and name not in by_name:
             by_name[name] = normalized
 
-    local_player = normalize_player(None, snapshot.get("player"))
+    local_player = normalize_player(None, snapshot.get("player"), map_name=map_name)
     if local_player:
         name = local_player.get("name")
         if name and name not in by_name:
@@ -550,7 +632,10 @@ def simplify_grenade_for_snapshot(grenade_state):
     return strip_empty(
         {
             "grenade_type": grenade_state.get("type"),
-            "owner_player": simplify_player_for_snapshot(grenade_state.get("owner_player")),
+            "owner_player": simplify_player_for_snapshot(
+                grenade_state.get("owner_player"),
+                include_map_callout=True,
+            ),
         }
     )
 
@@ -561,7 +646,11 @@ def finalize_snapshot_event(event):
 
     if event_type == "kill":
         players = as_dict(event.get("players"))
-        killer = simplify_player_for_snapshot(players.get("killer"), include_combat_stats=True)
+        killer = simplify_player_for_snapshot(
+            players.get("killer"),
+            include_combat_stats=True,
+            include_map_callout=True,
+        )
         victim = simplify_player_for_snapshot(players.get("victim"))
         victims = [simplify_player_for_snapshot(victim_entry) for victim_entry in event.get("victims", [])]
 
@@ -598,7 +687,11 @@ def finalize_snapshot_event(event):
                 "event_type": "kill_cluster",
                 "kill_count": event.get("total_kill_count"),
                 "killers": [
-                    simplify_player_for_snapshot(player, include_combat_stats=True)
+                    simplify_player_for_snapshot(
+                        player,
+                        include_combat_stats=True,
+                        include_map_callout=True,
+                    )
                     for player in event.get("killers", [])
                 ],
                 "victims": [simplify_player_for_snapshot(player) for player in event.get("victims", [])],
@@ -693,8 +786,16 @@ def build_grenade_thrown_events(previous_snapshot, current_snapshot):
     )
 
     if players_match(previous_local_player_raw, current_local_player_raw) and not round_transitioned_to_end:
-        previous_local_player = normalize_player(None, previous_local_player_raw)
-        current_local_player = normalize_player(None, current_local_player_raw)
+        previous_local_player = normalize_player(
+            None,
+            previous_local_player_raw,
+            map_name=as_dict(previous_snapshot.get("map")).get("name"),
+        )
+        current_local_player = normalize_player(
+            None,
+            current_local_player_raw,
+            map_name=as_dict(current_snapshot.get("map")).get("name"),
+        )
         previous_counts = grenade_inventory_counts(previous_local_player_raw)
         current_counts = grenade_inventory_counts(current_local_player_raw)
         local_death = collect_local_player_death(previous_snapshot, current_snapshot)
@@ -816,8 +917,16 @@ def collect_local_player_kill_increment(previous_snapshot, current_snapshot):
     if not players_match(previous_player_raw, current_player_raw):
         return None
 
-    previous_player = normalize_player(None, previous_player_raw)
-    current_player = normalize_player(None, current_player_raw)
+    previous_player = normalize_player(
+        None,
+        previous_player_raw,
+        map_name=as_dict(previous_snapshot.get("map")).get("name"),
+    )
+    current_player = normalize_player(
+        None,
+        current_player_raw,
+        map_name=as_dict(current_snapshot.get("map")).get("name"),
+    )
     if not previous_player or not current_player:
         return None
 
@@ -858,8 +967,16 @@ def collect_local_player_death(previous_snapshot, current_snapshot):
     if not players_match(previous_player_raw, current_player_raw):
         return None
 
-    previous_player = normalize_player(None, previous_player_raw)
-    current_player = normalize_player(None, current_player_raw)
+    previous_player = normalize_player(
+        None,
+        previous_player_raw,
+        map_name=as_dict(previous_snapshot.get("map")).get("name"),
+    )
+    current_player = normalize_player(
+        None,
+        current_player_raw,
+        map_name=as_dict(current_snapshot.get("map")).get("name"),
+    )
     if not previous_player or not current_player:
         return None
 
@@ -1174,6 +1291,19 @@ def prune_bomb_explosion_victim_events(events):
     ]
 
 
+def prune_standalone_team_counter_events(events):
+    if not events:
+        return events
+
+    non_team_counter_events = [
+        event for event in events if as_dict(event).get("event_type") != "team_counter"
+    ]
+    if non_team_counter_events:
+        return events
+
+    return []
+
+
 def filter_important_events(previous_snapshot, current_snapshot, payload_sequence, payload=None):
     if not previous_snapshot or not current_snapshot:
         return {
@@ -1191,6 +1321,7 @@ def filter_important_events(previous_snapshot, current_snapshot, payload_sequenc
     if not round_result_events:
         events.extend(build_team_counter_events(previous_snapshot, current_snapshot))
     events = prune_bomb_explosion_victim_events(events)
+    events = prune_standalone_team_counter_events(events)
 
     created_at = now_stamp()
     for index, event in enumerate(events, start=1):

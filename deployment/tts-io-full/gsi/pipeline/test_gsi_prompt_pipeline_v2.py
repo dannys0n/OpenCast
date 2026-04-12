@@ -9,8 +9,8 @@ MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 
 
-def make_player(name, team, health, round_kills=0, match_kills=0, match_deaths=0, match_assists=0):
-    return {
+def make_player(name, team, health, round_kills=0, match_kills=0, match_deaths=0, match_assists=0, position=None):
+    player = {
         "name": name,
         "steamid": f"steam-{name}",
         "team": team,
@@ -27,6 +27,9 @@ def make_player(name, team, health, round_kills=0, match_kills=0, match_deaths=0
             "score": 0,
         },
     }
+    if position is not None:
+        player["position"] = position
+    return player
 
 
 def make_snapshot(
@@ -68,14 +71,32 @@ class FilterImportantEventsTests(unittest.TestCase):
         previous = make_snapshot(
             round_number=9,
             allplayers={
-                "10": make_player("Alice", "CT", 100, round_kills=0, match_kills=8, match_deaths=2, match_assists=1),
+                "10": make_player(
+                    "Alice",
+                    "CT",
+                    100,
+                    round_kills=0,
+                    match_kills=8,
+                    match_deaths=2,
+                    match_assists=1,
+                    position="-720, -830, 140",
+                ),
                 "20": make_player("Bob", "T", 100, round_kills=0, match_kills=5, match_deaths=6, match_assists=0),
             },
         )
         current = make_snapshot(
             round_number=9,
             allplayers={
-                "10": make_player("Alice", "CT", 100, round_kills=1, match_kills=9, match_deaths=2, match_assists=1),
+                "10": make_player(
+                    "Alice",
+                    "CT",
+                    100,
+                    round_kills=1,
+                    match_kills=9,
+                    match_deaths=2,
+                    match_assists=1,
+                    position="-720, -830, 140",
+                ),
                 "20": make_player("Bob", "T", 0, round_kills=0, match_kills=5, match_deaths=7, match_assists=0),
             },
         )
@@ -94,6 +115,7 @@ class FilterImportantEventsTests(unittest.TestCase):
             {
                 "kda": {"assists": 1, "deaths": 2, "kills": 9},
                 "name": "Alice",
+                "map_callout": "T Spawn",
                 "round_kills": 1,
                 "team": "CT",
             },
@@ -160,7 +182,14 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertNotIn("trigger_paths", filtered)
 
     def test_detects_live_grenade_entity_but_not_equipped_grenade(self):
-        player_with_equipped_grenade = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
+        player_with_equipped_grenade = make_player(
+            "Alice",
+            "CT",
+            100,
+            round_kills=0,
+            match_kills=8,
+            position="670, 507, 42",
+        )
         player_with_equipped_grenade["weapons"] = {
             "weapon_2": {
                 "name": "weapon_hegrenade",
@@ -213,12 +242,20 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual([event["event_type"] for event in filtered["events"]], ["grenade_thrown"])
         grenade_event = filtered["events"][0]
         self.assertEqual(grenade_event["owner_player"]["name"], "Alice")
+        self.assertEqual(grenade_event["owner_player"]["map_callout"], "Long Doors")
         self.assertEqual(grenade_event["grenade_type"], "frag")
         self.assertNotIn("grenade", grenade_event)
         self.assertNotIn("trigger_paths", filtered)
 
     def test_detects_local_player_grenade_throw_from_inventory_drop(self):
-        previous_player = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
+        previous_player = make_player(
+            "Alice",
+            "CT",
+            100,
+            round_kills=0,
+            match_kills=8,
+            position="670, 507, 42",
+        )
         previous_player["weapons"] = {
             "weapon_2": {
                 "name": "weapon_hegrenade",
@@ -232,7 +269,14 @@ class FilterImportantEventsTests(unittest.TestCase):
                 "state": "holstered",
             },
         }
-        current_player = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
+        current_player = make_player(
+            "Alice",
+            "CT",
+            100,
+            round_kills=0,
+            match_kills=8,
+            position="670, 507, 42",
+        )
         current_player["weapons"] = {
             "weapon_3": {
                 "name": "weapon_m4a1",
@@ -265,6 +309,10 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual(grenade_event["owner_player"]["name"], "Alice")
         self.assertEqual(grenade_event["grenade_type"], "frag")
         self.assertNotIn("trigger_paths", filtered)
+
+    def test_resolves_nearest_dust2_callouts_from_text_file(self):
+        self.assertEqual(MODULE.resolve_map_callout("de_dust2", "-720, -830, 140"), "T Spawn")
+        self.assertEqual(MODULE.resolve_map_callout("de_dust2", "-1545, 1939, 53"), "B Car")
 
     def test_does_not_treat_local_grenade_equip_change_as_throw(self):
         previous_player = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
@@ -701,6 +749,31 @@ class FilterImportantEventsTests(unittest.TestCase):
             ["bomb_event"],
         )
         self.assertEqual(filtered["events"][0]["state_after"], "exploded")
+
+    def test_standalone_team_counter_event_is_filtered_out(self):
+        previous = make_snapshot(
+            round_number=4,
+            allplayers={
+                "10": make_player("Alice", "CT", 100),
+                "20": make_player("Bob", "T", 100),
+                "21": make_player("Dave", "T", 100),
+                "22": make_player("Eli", "T", 100),
+                "23": make_player("Finn", "T", 100),
+            },
+        )
+        current = make_snapshot(
+            round_number=4,
+            allplayers={
+                "10": make_player("Alice", "CT", 100),
+                "20": make_player("Bob", "T", 100),
+                "21": make_player("Dave", "T", 100),
+                "22": make_player("Eli", "T", 100),
+            },
+        )
+
+        filtered = MODULE.filter_important_events(previous, current, payload_sequence=99)
+
+        self.assertEqual(filtered["events"], [])
 
 
 if __name__ == "__main__":
