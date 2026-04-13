@@ -2,7 +2,7 @@
   "name": "announcer_e0",
   "profile_id": "announcer_e0",
   "ref_audio_filename": "reference.wav",
-  "ref_text": "Please note the incandescent particle field across the exit. This Aperature Science Material Emancipation Grill will vaporize any unauthorized equipment that passes through.",
+  "ref_text": "Please note the incandescent particle field across the exit. This Aperature Science Material Emancipation Grill will vaporize any unauthorized equipment that passes through. You have just passed through an Aperature Science Material Emancipation Grill, which vaporizes most Aperature Science equipment that touches it.",
   "x_vector_only_mode": false,
   "language": "English"
 }
