@@ -2,15 +2,15 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PARENT_DIR="$SCRIPT_DIR"
-PROJECT_DIR="$PARENT_DIR/Qwen3-TTS-Openai-Fastapi"
-VENV_PYTHON="$PARENT_DIR/.venv/bin/python"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_DIR="$ROOT_DIR/Qwen3-TTS-Openai-Fastapi"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 CONFIG_FILE="${TTS_CONFIG:-$PROJECT_DIR/config.opencast.local.yaml}"
 VOICE_LIBRARY_DIR="${VOICE_LIBRARY_DIR:-$PROJECT_DIR/voice_library}"
 HOST="${HOST:-127.0.0.1}"
 PORT="${PORT:-8880}"
-VOICE_NAME="${VOICE_NAME:-clone:scrawny_e2}"
-TEXT="${TEXT:-This is a live imported voice playback test.}"
+VOICE_NAME="${VOICE_NAME:-clone:announcer_e0}"
+TEXT="${TEXT:-This is a live announcer voice playback test.}"
 SERVER_LOG="${SERVER_LOG:-/tmp/qwen3_tts_openai_fastapi_test.log}"
 
 if [[ ! -d "$PROJECT_DIR" ]]; then

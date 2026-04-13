@@ -4,6 +4,7 @@ import os
 import signal
 import subprocess
 import threading
+import time
 from dataclasses import dataclass
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -17,7 +18,14 @@ from gsi_prompt_pipeline_v2 import (
     as_dict,
     compute_score,
     filter_important_events,
+    normalize_player,
     normalize_team,
+)
+from prompt_queue_v3 import (
+    load_prompt_config as load_prompt_runtime_config,
+    process_event_wrapper,
+    process_interval_wrapper,
+    reset_prompt_runtime_state,
 )
 
 
@@ -39,6 +47,8 @@ class PipelineState:
     previous_snapshot: dict | None = None
     payload_count: int = 0
     previous_event_summary: list | None = None
+    last_event_prompt_at: float = 0.0
+    last_interval_prompt_at: float = 0.0
 
 
 PIPELINE_STATE = PipelineState()
@@ -112,7 +122,44 @@ def build_match_context(snapshot):
             "T": score["t"],
         },
         "win_team": normalize_team(round_data.get("win_team")),
+        "alive_players": build_alive_players(snapshot),
     }
+
+
+def build_alive_players(snapshot):
+    snapshot = as_dict(snapshot)
+    map_name = as_dict(snapshot.get("map")).get("name")
+    alive_players = []
+
+    allplayers = as_dict(snapshot.get("allplayers"))
+    if allplayers:
+        for entity_id, player in allplayers.items():
+            normalized = normalize_player(entity_id, player, map_name=map_name)
+            if not normalized:
+                continue
+            if int(normalized.get("health") or 0) <= 0:
+                continue
+            alive_players.append(
+                {
+                    "name": normalized.get("name"),
+                    "team": normalized.get("team"),
+                    "map_callout": normalized.get("map_callout"),
+                }
+            )
+    else:
+        local_player = normalize_player(None, snapshot.get("player"), map_name=map_name)
+        if local_player and int(local_player.get("health") or 0) > 0:
+            alive_players.append(
+                {
+                    "name": local_player.get("name"),
+                    "team": local_player.get("team"),
+                    "map_callout": local_player.get("map_callout"),
+                }
+            )
+
+    alive_players = [player for player in alive_players if player.get("name")]
+    alive_players.sort(key=lambda player: (str(player.get("team") or ""), str(player.get("name") or "")))
+    return alive_players
 
 
 def simplify_filtered_batch_for_training(filtered_batch):
@@ -245,6 +292,72 @@ def build_training_wrapper(filtered_batch, current_snapshot, payload_sequence, p
 def build_recent_event_summary(training_wrapper):
     wrapper = as_dict(training_wrapper)
     return build_previous_events_summary(as_dict(wrapper.get("input")).get("current_events", []))
+
+
+def build_idle_wrapper(current_snapshot, previous_events):
+    return {
+        "input": {
+            "match_context": build_match_context(current_snapshot),
+            "previous_events": copy.deepcopy(previous_events),
+            "current_events": [],
+            "overrides": build_overrides(),
+        }
+    }
+
+
+def repo_root():
+    return SCRIPT_DIR.parents[3]
+
+
+def start_background_prompt_thread(target, *args, **kwargs):
+    thread = threading.Thread(target=target, args=args, kwargs=kwargs, daemon=True)
+    thread.start()
+    return thread
+
+
+def interval_seconds():
+    config = load_prompt_runtime_config()
+    value = config.get("interval_seconds", 10)
+    try:
+        return max(1, int(value))
+    except (TypeError, ValueError):
+        return 10
+
+
+def interval_prompt_loop():
+    while True:
+        time.sleep(1.0)
+        with STATE_LOCK:
+            current_snapshot = copy.deepcopy(PIPELINE_STATE.latest_snapshot)
+            previous_events = copy.deepcopy(PIPELINE_STATE.previous_event_summary or [])
+            payload_sequence = PIPELINE_STATE.payload_count
+            last_event_prompt_at = PIPELINE_STATE.last_event_prompt_at
+            last_interval_prompt_at = PIPELINE_STATE.last_interval_prompt_at
+
+        if not current_snapshot:
+            continue
+
+        match_context = build_match_context(current_snapshot)
+        if match_context.get("map_phase") != "live":
+            continue
+        if match_context.get("round_phase") != "live":
+            continue
+
+        now_ts = time.time()
+        if now_ts - last_event_prompt_at < interval_seconds():
+            continue
+        if now_ts - last_interval_prompt_at < interval_seconds():
+            continue
+
+        idle_wrapper = build_idle_wrapper(current_snapshot, previous_events)
+        start_background_prompt_thread(
+            process_interval_wrapper,
+            idle_wrapper,
+            repo_root(),
+            payload_sequence=payload_sequence,
+        )
+        with STATE_LOCK:
+            PIPELINE_STATE.last_interval_prompt_at = time.time()
 
 
 def find_listening_pids(port):
@@ -383,14 +496,17 @@ class Handler(BaseHTTPRequestHandler):
 
             with STATE_LOCK:
                 PIPELINE_STATE.previous_event_summary = build_recent_event_summary(training_wrapper)
+                PIPELINE_STATE.last_event_prompt_at = time.time()
 
             print(
                 f"[gsi-v3] #{payload_sequence} stored raw payload and emitted "
                 f"{len(filtered_batch['events'])} filtered event(s) + training wrapper",
                 flush=True,
             )
+            prompt_wrapper = copy.deepcopy(training_wrapper)
         else:
             print(f"[gsi-v3] #{payload_sequence} stored raw payload with no important events", flush=True)
+            prompt_wrapper = None
 
         try:
             self.send_response(200)
@@ -399,16 +515,28 @@ class Handler(BaseHTTPRequestHandler):
         except OSError:
             return
 
+        if prompt_wrapper is not None:
+            start_background_prompt_thread(
+                process_event_wrapper,
+                prompt_wrapper,
+                repo_root(),
+                payload_sequence=payload_sequence,
+                snapshot=current_snapshot,
+            )
+
     def log_message(self, format, *args):
         return
 
 
 def main():
     reset_session_files()
+    reset_prompt_runtime_state()
     PIPELINE_STATE.latest_snapshot = None
     PIPELINE_STATE.previous_snapshot = None
     PIPELINE_STATE.payload_count = 0
     PIPELINE_STATE.previous_event_summary = []
+    PIPELINE_STATE.last_event_prompt_at = 0.0
+    PIPELINE_STATE.last_interval_prompt_at = 0.0
     append_log(f"[{now_stamp()}] pipeline v3 session started\n")
 
     if KILL_EXISTING_LISTENER:
@@ -425,11 +553,12 @@ def main():
     print(f"Pipeline log:       {PIPELINE_LOG}", flush=True)
     print(
         "This v3 listener stores pretty-printed raw JSON, filtered JSON, and a "
-        "training-facing wrapper with match context and recent-event context, "
-        "with no prompt or TTS handoff.",
+        "training-facing wrapper, and now also runs prompt + TTS experiments "
+        "for event and idle intervals.",
         flush=True,
     )
 
+    start_background_prompt_thread(interval_prompt_loop)
     ReusableThreadingHTTPServer((HOST, PORT), Handler).serve_forever()
 
 

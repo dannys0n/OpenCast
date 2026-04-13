@@ -2,31 +2,34 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$SCRIPT_DIR/Qwen3-TTS-Openai-Fastapi"
-VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_DIR="$ROOT_DIR/Qwen3-TTS-Openai-Fastapi"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 
 # Edit this one value to switch the voice emotion profile used by the script.
 # Expected values: 0, 1, 2
-EMOTION_LEVEL="${EMOTION_LEVEL:-1}"
+EMOTION_LEVEL="${EMOTION_LEVEL:-0}"
 
-QUEUE_ITEMS=(
-  "event|Smoke blooms mid."
-  "event|Instant trade back."
-  "event|B split is on."
-  "event|Site cracked open."
+# Keep these simple and editable.
+PROMPT_1="Clean opening frag."
+PROMPT_2="That cracks the site."
+PROMPT_3_SENTENCES=(
+  "They can flood in now."
+  "The defense looks rattled."
+  "This round is swinging fast."
 )
 
 CONFIG_FILE="$PROJECT_DIR/config.opencast.local.yaml"
 VOICE_LIBRARY_DIR="$PROJECT_DIR/voice_library"
 HOST="127.0.0.1"
 PORT="8880"
-SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_pipeline_v4_rapid_fire.log"
+SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_pipeline_v4_two_inflight.log"
 TMP_ROOT="/tmp"
 
 VOICE_NAME="clone:scrawny_e${EMOTION_LEVEL}"
 SAMPLE_RATE="24000"
 TTS_SPEED="1.08"
-TTS_INSTRUCT="Deliver it as rapid play-by-play commentary. Keep it punchy and urgent."
+TTS_INSTRUCT="Deliver it as smooth connected caster commentary with natural sentence-to-sentence flow."
 
 if [[ ! "$EMOTION_LEVEL" =~ ^[0-2]$ ]]; then
   echo "EMOTION_LEVEL must be 0, 1, or 2" >&2
@@ -73,11 +76,16 @@ PLAY_PID=""
 TEMP_DIR=""
 CURL_PIDS=()
 
-declare -a BUFFER_FILES=()
-declare -a DONE_FILES=()
-declare -a STATUS_FILES=()
-declare -a QUEUE_TAGS=()
-declare -a QUEUE_TEXTS=()
+PROMPT_3=""
+BUFFER_1=""
+BUFFER_2=""
+BUFFER_3=""
+DONE_1=""
+DONE_2=""
+DONE_3=""
+STATUS_1=""
+STATUS_2=""
+STATUS_3=""
 
 cleanup() {
   local pid
@@ -106,47 +114,14 @@ cleanup() {
 
 trap cleanup EXIT
 
-for item in "${QUEUE_ITEMS[@]}"; do
-  QUEUE_TAGS+=("${item%%|*}")
-  QUEUE_TEXTS+=("${item#*|}")
-done
+join_prompt_3() {
+  "$VENV_PYTHON" - <<'PY'
+import os
 
-echo "Queued rapid-fire sentences with voice $VOICE_NAME:"
-for i in "${!QUEUE_TEXTS[@]}"; do
-  printf '  %s. [%s] %s\n' "$((i + 1))" "${QUEUE_TAGS[$i]}" "${QUEUE_TEXTS[$i]}"
-done
-
-echo
-echo "Starting optimized FastAPI TTS server..."
-(
-  cd "$PROJECT_DIR"
-  export PYTHONPATH="$PROJECT_DIR:${PYTHONPATH:-}"
-  export TTS_BACKEND="optimized"
-  export TTS_CONFIG="$CONFIG_FILE"
-  export VOICE_LIBRARY_DIR="$VOICE_LIBRARY_DIR"
-  export HOST="$HOST"
-  export PORT="$PORT"
-  exec "$VENV_PYTHON" -m api.main
-) >"$SERVER_LOG" 2>&1 &
-SERVER_PID="$!"
-
-echo "Waiting for server on http://$HOST:$PORT ..."
-for _ in $(seq 1 120); do
-  if curl -fsS "http://$HOST:$PORT/v1/voices" >/dev/null 2>&1; then
-    break
-  fi
-  sleep 1
-done
-
-if ! curl -fsS "http://$HOST:$PORT/v1/voices" >/dev/null 2>&1; then
-  echo "Server failed to become ready. Recent log:" >&2
-  tail -n 120 "$SERVER_LOG" >&2 || true
-  exit 1
-fi
-
-TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_pipeline_v4_rapid_fire.XXXXXX")"
-AGGREGATE_FIFO="$TEMP_DIR/sequence.pcm"
-mkfifo "$AGGREGATE_FIFO"
+parts = [value for value in os.environ["PROMPT_3_LINES"].split("\n") if value.strip()]
+print(" ".join(parts))
+PY
+}
 
 build_tts_request_json() {
   local text="$1"
@@ -172,21 +147,19 @@ PY
 }
 
 dispatch_request() {
-  local index="$1"
+  local label="$1"
   local text="$2"
-  local tag="$3"
-  local buffer_file="$TEMP_DIR/request_${index}.pcm"
-  local done_file="$TEMP_DIR/request_${index}.done"
-  local status_file="$TEMP_DIR/request_${index}.status"
+  local buffer_file="$3"
+  local done_file="$4"
+  local status_file="$5"
   local request_json
 
   request_json="$(build_tts_request_json "$text")"
   : >"$buffer_file"
-  BUFFER_FILES+=("$buffer_file")
-  DONE_FILES+=("$done_file")
-  STATUS_FILES+=("$status_file")
 
-  echo "Dispatching line $((index + 1)) [$tag] voice=$VOICE_NAME"
+  echo "Dispatching $label with voice=$VOICE_NAME"
+  echo "  $text"
+
   (
     status=0
     if curl -fsS \
@@ -203,6 +176,35 @@ dispatch_request() {
     exit "$status"
   ) &
   CURL_PIDS+=("$!")
+}
+
+wait_for_generation_start() {
+  local buffer_file="$1"
+  local done_file="$2"
+  local status_file="$3"
+  local size=0
+  local status=0
+
+  while :; do
+    size="$(stat -c '%s' "$buffer_file" 2>/dev/null || printf '0')"
+    if (( size > 0 )); then
+      return 0
+    fi
+
+    if [[ -f "$done_file" ]]; then
+      if [[ -f "$status_file" ]]; then
+        status="$(<"$status_file")"
+      fi
+      if [[ "$status" != "0" ]]; then
+        echo "Request failed before producing audio: $buffer_file" >&2
+        return 1
+      fi
+      echo "Request finished without observable streamed bytes: $buffer_file" >&2
+      return 0
+    fi
+
+    sleep 0.01
+  done
 }
 
 stream_buffer_into_fd() {
@@ -238,23 +240,76 @@ stream_buffer_into_fd() {
   done
 }
 
-echo "Starting seamless playback pipeline..."
+echo "Two-in-flight continuity test with voice $VOICE_NAME"
+echo "  1. $PROMPT_1"
+echo "  2. $PROMPT_2"
+printf '  3. %s\n' "${PROMPT_3_SENTENCES[*]}"
+echo
+
+echo "Starting optimized FastAPI TTS server..."
+(
+  cd "$PROJECT_DIR"
+  export PYTHONPATH="$PROJECT_DIR:${PYTHONPATH:-}"
+  export TTS_BACKEND="optimized"
+  export TTS_CONFIG="$CONFIG_FILE"
+  export VOICE_LIBRARY_DIR="$VOICE_LIBRARY_DIR"
+  export HOST="$HOST"
+  export PORT="$PORT"
+  exec "$VENV_PYTHON" -m api.main
+) >"$SERVER_LOG" 2>&1 &
+SERVER_PID="$!"
+
+echo "Waiting for server on http://$HOST:$PORT ..."
+for _ in $(seq 1 120); do
+  if curl -fsS "http://$HOST:$PORT/v1/voices" >/dev/null 2>&1; then
+    break
+  fi
+  sleep 1
+done
+
+if ! curl -fsS "http://$HOST:$PORT/v1/voices" >/dev/null 2>&1; then
+  echo "Server failed to become ready. Recent log:" >&2
+  tail -n 120 "$SERVER_LOG" >&2 || true
+  exit 1
+fi
+
+PROMPT_3_LINES="$(printf '%s\n' "${PROMPT_3_SENTENCES[@]}")"
+export PROMPT_3_LINES
+PROMPT_3="$(join_prompt_3)"
+
+TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_pipeline_v4_two_inflight.XXXXXX")"
+AGGREGATE_FIFO="$TEMP_DIR/sequence.pcm"
+mkfifo "$AGGREGATE_FIFO"
+
+BUFFER_1="$TEMP_DIR/request_1.pcm"
+BUFFER_2="$TEMP_DIR/request_2.pcm"
+BUFFER_3="$TEMP_DIR/request_3.pcm"
+DONE_1="$TEMP_DIR/request_1.done"
+DONE_2="$TEMP_DIR/request_2.done"
+DONE_3="$TEMP_DIR/request_3.done"
+STATUS_1="$TEMP_DIR/request_1.status"
+STATUS_2="$TEMP_DIR/request_2.status"
+STATUS_3="$TEMP_DIR/request_3.status"
+
+echo "Starting stitched playback..."
 play -q -t raw -b 16 -e signed-integer -c 1 -r "$SAMPLE_RATE" "$AGGREGATE_FIFO" &
 PLAY_PID="$!"
 
 exec 3>"$AGGREGATE_FIFO"
 
-for i in "${!QUEUE_TEXTS[@]}"; do
-  dispatch_request "$i" "${QUEUE_TEXTS[$i]}" "${QUEUE_TAGS[$i]}"
-done
+dispatch_request "prompt 1" "$PROMPT_1" "$BUFFER_1" "$DONE_1" "$STATUS_1"
+dispatch_request "prompt 2" "$PROMPT_2" "$BUFFER_2" "$DONE_2" "$STATUS_2"
 
 echo
-echo "All queued TTS requests dispatched. Streaming them in order through one playback session..."
+echo "Waiting for prompt 2 to begin generating audio before dispatching prompt 3..."
+wait_for_generation_start "$BUFFER_2" "$DONE_2" "$STATUS_2"
+dispatch_request "prompt 3" "$PROMPT_3" "$BUFFER_3" "$DONE_3" "$STATUS_3"
 
-for i in "${!BUFFER_FILES[@]}"; do
-  printf 'Queueing %s [%s]: %s\n' "$((i + 1))" "${QUEUE_TAGS[$i]}" "${QUEUE_TEXTS[$i]}"
-  stream_buffer_into_fd "${BUFFER_FILES[$i]}" "${DONE_FILES[$i]}" "${STATUS_FILES[$i]}"
-done
+echo
+echo "Streaming prompt 1, then prompt 2, then prompt 3 through one playback session..."
+stream_buffer_into_fd "$BUFFER_1" "$DONE_1" "$STATUS_1"
+stream_buffer_into_fd "$BUFFER_2" "$DONE_2" "$STATUS_2"
+stream_buffer_into_fd "$BUFFER_3" "$DONE_3" "$STATUS_3"
 
 exec 3>&-
 
@@ -265,4 +320,4 @@ done
 wait "$PLAY_PID"
 
 echo
-echo "Rapid-fire playback finished."
+echo "Two-in-flight continuity test finished."

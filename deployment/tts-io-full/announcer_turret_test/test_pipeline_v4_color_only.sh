@@ -2,35 +2,33 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$SCRIPT_DIR/Qwen3-TTS-Openai-Fastapi"
-VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_DIR="$ROOT_DIR/Qwen3-TTS-Openai-Fastapi"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 
-# Edit this one value to switch the voice emotion profile used by the script.
-# Expected values: 0, 1, 2
-EMOTION_LEVEL="${EMOTION_LEVEL:-1}"
+VOICE_NAME="${VOICE_NAME:-clone:turret_e0}"
+
+#QUEUE_ITEMS=(
+#  "color|He's chatting while lurking. This is classic pugs energy. You can feel the swagger."
+#)
 
 QUEUE_ITEMS=(
-  "event|Bomb planted A."
-  "followup|He sold that fake perfectly."
+  "color|He's chatting while lurking."
+  "color|This is classic pugs energy."
+  "color|You can feel the swagger."
 )
 
 CONFIG_FILE="$PROJECT_DIR/config.opencast.local.yaml"
 VOICE_LIBRARY_DIR="$PROJECT_DIR/voice_library"
 HOST="127.0.0.1"
 PORT="8880"
-SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_pipeline_v4_full_followup.log"
+SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_pipeline_v4_color_only.log"
 TMP_ROOT="/tmp"
 
-VOICE_NAME="clone:scrawny_e${EMOTION_LEVEL}"
+VOICE_NAME="${VOICE_NAME:-clone:turret_e0}"
 SAMPLE_RATE="24000"
 TTS_SPEED="1.08"
-INSTRUCT_EVENT="Deliver it as rapid play-by-play commentary. Keep it punchy and urgent."
-INSTRUCT_FOLLOWUP="Deliver it as smooth follow-up color commentary. Connect naturally from the last call."
-
-if [[ ! "$EMOTION_LEVEL" =~ ^[0-2]$ ]]; then
-  echo "EMOTION_LEVEL must be 0, 1, or 2" >&2
-  exit 1
-fi
+TTS_INSTRUCT="Deliver it as casual color commentary with light personality and easy rhythm."
 
 if [[ ! -d "$PROJECT_DIR" ]]; then
   echo "Missing project dir: $PROJECT_DIR" >&2
@@ -110,7 +108,7 @@ for item in "${QUEUE_ITEMS[@]}"; do
   QUEUE_TEXTS+=("${item#*|}")
 done
 
-echo "Queued event-followup sentences with voice $VOICE_NAME:"
+echo "Queued color-only sentences with voice $VOICE_NAME:"
 for i in "${!QUEUE_TEXTS[@]}"; do
   printf '  %s. [%s] %s\n' "$((i + 1))" "${QUEUE_TAGS[$i]}" "${QUEUE_TEXTS[$i]}"
 done
@@ -143,35 +141,26 @@ if ! curl -fsS "http://$HOST:$PORT/v1/voices" >/dev/null 2>&1; then
   exit 1
 fi
 
-TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_pipeline_v4_full_followup.XXXXXX")"
+TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_pipeline_v4_color_only.XXXXXX")"
 AGGREGATE_FIFO="$TEMP_DIR/sequence.pcm"
 mkfifo "$AGGREGATE_FIFO"
 
 build_tts_request_json() {
   local text="$1"
-  local tag="$2"
 
   VOICE_NAME="$VOICE_NAME" \
   TEXT="$text" \
-  TAG="$tag" \
   TTS_SPEED="$TTS_SPEED" \
-  INSTRUCT_EVENT="$INSTRUCT_EVENT" \
-  INSTRUCT_FOLLOWUP="$INSTRUCT_FOLLOWUP" \
+  TTS_INSTRUCT="$TTS_INSTRUCT" \
   "$VENV_PYTHON" - <<'PY'
 import json
 import os
-
-tag = os.environ["TAG"]
-instruct_map = {
-    "event": os.environ["INSTRUCT_EVENT"],
-    "followup": os.environ["INSTRUCT_FOLLOWUP"],
-}
 
 print(json.dumps({
     "model": "tts-1",
     "voice": os.environ["VOICE_NAME"],
     "input": os.environ["TEXT"],
-    "instruct": instruct_map[tag],
+    "instruct": os.environ["TTS_INSTRUCT"],
     "speed": float(os.environ["TTS_SPEED"]),
     "stream": True,
     "response_format": "pcm",
@@ -188,7 +177,7 @@ dispatch_request() {
   local status_file="$TEMP_DIR/request_${index}.status"
   local request_json
 
-  request_json="$(build_tts_request_json "$text" "$tag")"
+  request_json="$(build_tts_request_json "$text")"
   : >"$buffer_file"
   BUFFER_FILES+=("$buffer_file")
   DONE_FILES+=("$done_file")
@@ -273,4 +262,4 @@ done
 wait "$PLAY_PID"
 
 echo
-echo "Event-followup playback finished."
+echo "Color-only playback finished."

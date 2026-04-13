@@ -2,9 +2,9 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PARENT_DIR="$SCRIPT_DIR"
-PROJECT_DIR="$PARENT_DIR/Qwen3-TTS-Openai-Fastapi"
-VENV_PYTHON="$PARENT_DIR/.venv/bin/python"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_DIR="$ROOT_DIR/Qwen3-TTS-Openai-Fastapi"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 CONFIG_FILE="${TTS_CONFIG:-$PROJECT_DIR/config.opencast.local.yaml}"
 VOICE_LIBRARY_DIR="${VOICE_LIBRARY_DIR:-$PROJECT_DIR/voice_library}"
 HOST="${HOST:-127.0.0.1}"
@@ -108,9 +108,8 @@ PY
     | play -q -t raw -b 16 -e signed-integer -c 1 -r 24000 -
 }
 
-play_voice "clone:scrawny_e2" "This is scrawny e two."
-play_voice "clone:scrawny_e1" "This is scrawny e one."
-play_voice "clone:scrawny_e0" "This is scrawny e zero."
+play_voice "clone:announcer_e0" "This is the announcer voice."
+play_voice "clone:turret_e0" "This is the turret voice."
 
 echo
 echo "Sequence playback finished."

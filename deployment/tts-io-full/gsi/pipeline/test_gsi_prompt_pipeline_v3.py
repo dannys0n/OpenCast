@@ -35,6 +35,20 @@ class GsiPromptPipelineV3Tests(unittest.TestCase):
                 "phase": "live",
                 "win_team": None,
             },
+            "allplayers": {
+                "2": {
+                    "name": "Walt",
+                    "team": "CT",
+                    "position": "-104, 386, 44",
+                    "state": {"health": 100},
+                },
+                "3": {
+                    "name": "Uri",
+                    "team": "T",
+                    "position": "-1522, 1930, 53",
+                    "state": {"health": 100},
+                },
+            },
         }
         previous_events = [
             {
@@ -61,6 +75,10 @@ class GsiPromptPipelineV3Tests(unittest.TestCase):
                         "round_number": 12,
                         "score": {"CT": 3, "T": 8},
                         "win_team": None,
+                        "alive_players": [
+                            {"name": "Walt", "team": "CT", "map_callout": "Top Mid"},
+                            {"name": "Uri", "team": "T", "map_callout": "B Car"},
+                        ],
                     },
                     "previous_events": previous_events,
                     "current_events": [
@@ -108,6 +126,39 @@ class GsiPromptPipelineV3Tests(unittest.TestCase):
                     "victim": {"name": "Uri", "team": "T"},
                 }
             ],
+        )
+
+    def test_build_match_context_adds_alive_players_from_local_player_when_allplayers_missing(self):
+        snapshot = {
+            "map": {
+                "name": "de_dust2",
+                "phase": "live",
+                "round": 2,
+                "team_ct": {"score": 1},
+                "team_t": {"score": 0},
+            },
+            "round": {"phase": "live", "win_team": None},
+            "player": {
+                "name": "GrowthHormones",
+                "team": "T",
+                "position": "-720, -830, 140",
+                "state": {"health": 100},
+            },
+        }
+
+        self.assertEqual(
+            MODULE.build_match_context(snapshot),
+            {
+                "map_name": "de_dust2",
+                "map_phase": "live",
+                "round_phase": "live",
+                "round_number": 2,
+                "score": {"CT": 1, "T": 0},
+                "win_team": None,
+                "alive_players": [
+                    {"name": "GrowthHormones", "team": "T", "map_callout": "T Spawn"},
+                ],
+            },
         )
 
 

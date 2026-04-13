@@ -2,9 +2,10 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$SCRIPT_DIR/Qwen3-TTS-Openai-Fastapi"
-VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
-TEXT_LLM_ENV_FILE="$SCRIPT_DIR/../text-llm/.env"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_DIR="$ROOT_DIR/Qwen3-TTS-Openai-Fastapi"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
+TEXT_LLM_ENV_FILE="$ROOT_DIR/../text-llm/.env"
 
 if [[ -f "$TEXT_LLM_ENV_FILE" ]]; then
   set -a

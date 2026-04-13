@@ -2,15 +2,36 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PARENT_DIR="$SCRIPT_DIR"
-PROJECT_DIR="$PARENT_DIR/Qwen3-TTS-Openai-Fastapi"
-VENV_PYTHON="$PARENT_DIR/.venv/bin/python"
-CONFIG_FILE="${TTS_CONFIG:-$PROJECT_DIR/config.opencast.local.yaml}"
-VOICE_LIBRARY_DIR="${VOICE_LIBRARY_DIR:-$PROJECT_DIR/voice_library}"
-HOST="${HOST:-127.0.0.1}"
-PORT="${PORT:-8880}"
-SERVER_LOG="${SERVER_LOG:-/tmp/qwen3_tts_openai_fastapi_simultaneous_sequence.log}"
-TMP_ROOT="${TMPDIR:-/tmp}"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_DIR="$ROOT_DIR/Qwen3-TTS-Openai-Fastapi"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
+
+# Edit this one value to switch the voice emotion profile used by the script.
+# Expected values: 0, 1, 2
+EMOTION_LEVEL="${EMOTION_LEVEL:-1}"
+
+QUEUE_ITEMS=(
+  "event|Bomb planted A."
+  "followup|He sold that fake perfectly."
+)
+
+CONFIG_FILE="$PROJECT_DIR/config.opencast.local.yaml"
+VOICE_LIBRARY_DIR="$PROJECT_DIR/voice_library"
+HOST="127.0.0.1"
+PORT="8880"
+SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_pipeline_v4_full_followup.log"
+TMP_ROOT="/tmp"
+
+VOICE_NAME="clone:scrawny_e${EMOTION_LEVEL}"
+SAMPLE_RATE="24000"
+TTS_SPEED="1.08"
+INSTRUCT_EVENT="Deliver it as rapid play-by-play commentary. Keep it punchy and urgent."
+INSTRUCT_FOLLOWUP="Deliver it as smooth follow-up color commentary. Connect naturally from the last call."
+
+if [[ ! "$EMOTION_LEVEL" =~ ^[0-2]$ ]]; then
+  echo "EMOTION_LEVEL must be 0, 1, or 2" >&2
+  exit 1
+fi
 
 if [[ ! -d "$PROJECT_DIR" ]]; then
   echo "Missing project dir: $PROJECT_DIR" >&2
@@ -52,6 +73,12 @@ PLAY_PID=""
 TEMP_DIR=""
 CURL_PIDS=()
 
+declare -a BUFFER_FILES=()
+declare -a DONE_FILES=()
+declare -a STATUS_FILES=()
+declare -a QUEUE_TAGS=()
+declare -a QUEUE_TEXTS=()
+
 cleanup() {
   local pid
 
@@ -79,6 +106,17 @@ cleanup() {
 
 trap cleanup EXIT
 
+for item in "${QUEUE_ITEMS[@]}"; do
+  QUEUE_TAGS+=("${item%%|*}")
+  QUEUE_TEXTS+=("${item#*|}")
+done
+
+echo "Queued event-followup sentences with voice $VOICE_NAME:"
+for i in "${!QUEUE_TEXTS[@]}"; do
+  printf '  %s. [%s] %s\n' "$((i + 1))" "${QUEUE_TAGS[$i]}" "${QUEUE_TEXTS[$i]}"
+done
+
+echo
 echo "Starting optimized FastAPI TTS server..."
 (
   cd "$PROJECT_DIR"
@@ -106,38 +144,36 @@ if ! curl -fsS "http://$HOST:$PORT/v1/voices" >/dev/null 2>&1; then
   exit 1
 fi
 
-TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_simultaneous_sequence.XXXXXX")"
+TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_pipeline_v4_full_followup.XXXXXX")"
 AGGREGATE_FIFO="$TEMP_DIR/sequence.pcm"
 mkfifo "$AGGREGATE_FIFO"
 
-declare -a VOICES=(
-  "clone:scrawny_e2"
-  "clone:scrawny_e1"
-  "clone:scrawny_e0"
-)
+build_tts_request_json() {
+  local text="$1"
+  local tag="$2"
 
-declare -a TEXTS=(
-  "This is scrawny e two."
-  "This is scrawny e one."
-  "This is scrawny e zero."
-)
-
-declare -a BUFFER_FILES=()
-declare -a DONE_FILES=()
-declare -a STATUS_FILES=()
-
-build_request_json() {
-  local voice_name="$1"
-  local text="$2"
-
-  VOICE_NAME="$voice_name" TEXT="$text" "$VENV_PYTHON" - <<'PY'
+  VOICE_NAME="$VOICE_NAME" \
+  TEXT="$text" \
+  TAG="$tag" \
+  TTS_SPEED="$TTS_SPEED" \
+  INSTRUCT_EVENT="$INSTRUCT_EVENT" \
+  INSTRUCT_FOLLOWUP="$INSTRUCT_FOLLOWUP" \
+  "$VENV_PYTHON" - <<'PY'
 import json
 import os
+
+tag = os.environ["TAG"]
+instruct_map = {
+    "event": os.environ["INSTRUCT_EVENT"],
+    "followup": os.environ["INSTRUCT_FOLLOWUP"],
+}
 
 print(json.dumps({
     "model": "tts-1",
     "voice": os.environ["VOICE_NAME"],
     "input": os.environ["TEXT"],
+    "instruct": instruct_map[tag],
+    "speed": float(os.environ["TTS_SPEED"]),
     "stream": True,
     "response_format": "pcm",
 }))
@@ -146,20 +182,20 @@ PY
 
 dispatch_request() {
   local index="$1"
-  local voice_name="$2"
-  local text="$3"
+  local text="$2"
+  local tag="$3"
   local buffer_file="$TEMP_DIR/request_${index}.pcm"
   local done_file="$TEMP_DIR/request_${index}.done"
   local status_file="$TEMP_DIR/request_${index}.status"
   local request_json
 
-  request_json="$(build_request_json "$voice_name" "$text")"
+  request_json="$(build_tts_request_json "$text" "$tag")"
   : >"$buffer_file"
   BUFFER_FILES+=("$buffer_file")
   DONE_FILES+=("$done_file")
   STATUS_FILES+=("$status_file")
 
-  echo "Dispatching ${voice_name} for queued playback"
+  echo "Dispatching line $((index + 1)) [$tag] voice=$VOICE_NAME"
   (
     status=0
     if curl -fsS \
@@ -212,20 +248,20 @@ stream_buffer_into_fd() {
 }
 
 echo "Starting seamless playback pipeline..."
-play -q -t raw -b 16 -e signed-integer -c 1 -r 24000 "$AGGREGATE_FIFO" &
+play -q -t raw -b 16 -e signed-integer -c 1 -r "$SAMPLE_RATE" "$AGGREGATE_FIFO" &
 PLAY_PID="$!"
 
 exec 3>"$AGGREGATE_FIFO"
 
-for i in "${!VOICES[@]}"; do
-  dispatch_request "$i" "${VOICES[$i]}" "${TEXTS[$i]}"
+for i in "${!QUEUE_TEXTS[@]}"; do
+  dispatch_request "$i" "${QUEUE_TEXTS[$i]}" "${QUEUE_TAGS[$i]}"
 done
 
 echo
-echo "All requests dispatched. Streaming them in order through one playback session..."
+echo "All queued TTS requests dispatched. Streaming them in order through one playback session..."
 
 for i in "${!BUFFER_FILES[@]}"; do
-  echo "Queueing ${VOICES[$i]}"
+  printf 'Queueing %s [%s]: %s\n' "$((i + 1))" "${QUEUE_TAGS[$i]}" "${QUEUE_TEXTS[$i]}"
   stream_buffer_into_fd "${BUFFER_FILES[$i]}" "${DONE_FILES[$i]}" "${STATUS_FILES[$i]}"
 done
 
@@ -238,4 +274,4 @@ done
 wait "$PLAY_PID"
 
 echo
-echo "Simultaneous queued playback finished."
+echo "Event-followup playback finished."

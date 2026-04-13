@@ -5,8 +5,9 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ENV_FILE="$SCRIPT_DIR/.env"
-VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+ENV_FILE="$ROOT_DIR/.env"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 
 if [[ -f "$ENV_FILE" ]]; then
   set -a

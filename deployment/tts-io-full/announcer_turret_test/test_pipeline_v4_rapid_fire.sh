@@ -2,39 +2,30 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$SCRIPT_DIR/Qwen3-TTS-Openai-Fastapi"
-VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_DIR="$ROOT_DIR/Qwen3-TTS-Openai-Fastapi"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 
-# Edit this one value to switch the voice emotion profile used by the script.
-# Expected values: 0, 1, 2
-EMOTION_LEVEL="${EMOTION_LEVEL:-0}"
-
-#QUEUE_ITEMS=(
-#  "color|He's chatting while lurking. This is classic pugs energy. You can feel the swagger."
-#)
+VOICE_NAME="${VOICE_NAME:-clone:announcer_e0}"
 
 QUEUE_ITEMS=(
-  "color|He's chatting while lurking."
-  "color|This is classic pugs energy."
-  "color|You can feel the swagger."
+  "event|Smoke blooms mid."
+  "event|Instant trade back."
+  "event|B split is on."
+  "event|Site cracked open."
 )
 
 CONFIG_FILE="$PROJECT_DIR/config.opencast.local.yaml"
 VOICE_LIBRARY_DIR="$PROJECT_DIR/voice_library"
 HOST="127.0.0.1"
 PORT="8880"
-SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_pipeline_v4_color_only.log"
+SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_pipeline_v4_rapid_fire.log"
 TMP_ROOT="/tmp"
 
-VOICE_NAME="clone:scrawny_e${EMOTION_LEVEL}"
+VOICE_NAME="${VOICE_NAME:-clone:announcer_e0}"
 SAMPLE_RATE="24000"
 TTS_SPEED="1.08"
-TTS_INSTRUCT="Deliver it as casual color commentary with light personality and easy rhythm."
-
-if [[ ! "$EMOTION_LEVEL" =~ ^[0-2]$ ]]; then
-  echo "EMOTION_LEVEL must be 0, 1, or 2" >&2
-  exit 1
-fi
+TTS_INSTRUCT="Deliver it as rapid play-by-play commentary. Keep it punchy and urgent."
 
 if [[ ! -d "$PROJECT_DIR" ]]; then
   echo "Missing project dir: $PROJECT_DIR" >&2
@@ -114,7 +105,7 @@ for item in "${QUEUE_ITEMS[@]}"; do
   QUEUE_TEXTS+=("${item#*|}")
 done
 
-echo "Queued color-only sentences with voice $VOICE_NAME:"
+echo "Queued rapid-fire sentences with voice $VOICE_NAME:"
 for i in "${!QUEUE_TEXTS[@]}"; do
   printf '  %s. [%s] %s\n' "$((i + 1))" "${QUEUE_TAGS[$i]}" "${QUEUE_TEXTS[$i]}"
 done
@@ -147,7 +138,7 @@ if ! curl -fsS "http://$HOST:$PORT/v1/voices" >/dev/null 2>&1; then
   exit 1
 fi
 
-TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_pipeline_v4_color_only.XXXXXX")"
+TEMP_DIR="$(mktemp -d "$TMP_ROOT/qwen3_tts_pipeline_v4_rapid_fire.XXXXXX")"
 AGGREGATE_FIFO="$TEMP_DIR/sequence.pcm"
 mkfifo "$AGGREGATE_FIFO"
 
@@ -268,4 +259,4 @@ done
 wait "$PLAY_PID"
 
 echo
-echo "Color-only playback finished."
+echo "Rapid-fire playback finished."

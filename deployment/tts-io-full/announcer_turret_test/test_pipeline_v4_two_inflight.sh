@@ -2,12 +2,11 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$SCRIPT_DIR/Qwen3-TTS-Openai-Fastapi"
-VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_DIR="$ROOT_DIR/Qwen3-TTS-Openai-Fastapi"
+VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 
-# Edit this one value to switch the voice emotion profile used by the script.
-# Expected values: 0, 1, 2
-EMOTION_LEVEL="${EMOTION_LEVEL:-0}"
+VOICE_NAME="${VOICE_NAME:-clone:announcer_e0}"
 
 # Keep these simple and editable.
 PROMPT_1="Clean opening frag."
@@ -25,15 +24,10 @@ PORT="8880"
 SERVER_LOG="/tmp/qwen3_tts_openai_fastapi_pipeline_v4_two_inflight.log"
 TMP_ROOT="/tmp"
 
-VOICE_NAME="clone:scrawny_e${EMOTION_LEVEL}"
+VOICE_NAME="${VOICE_NAME:-clone:announcer_e0}"
 SAMPLE_RATE="24000"
 TTS_SPEED="1.08"
 TTS_INSTRUCT="Deliver it as smooth connected caster commentary with natural sentence-to-sentence flow."
-
-if [[ ! "$EMOTION_LEVEL" =~ ^[0-2]$ ]]; then
-  echo "EMOTION_LEVEL must be 0, 1, or 2" >&2
-  exit 1
-fi
 
 if [[ ! -d "$PROJECT_DIR" ]]; then
   echo "Missing project dir: $PROJECT_DIR" >&2

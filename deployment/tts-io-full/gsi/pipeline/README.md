@@ -94,12 +94,16 @@ V3 output files:
 - `pipeline/.state/v3/gsi_filtered_latest.json`
 - `pipeline/.state/v3/training_wrapper_pretty.jsonl`
 - `pipeline/.state/v3/training_wrapper_latest.json`
+- `pipeline/.state/v3/prompt_runtime_pretty.jsonl`
+- `pipeline/.state/v3/prompt_runtime_latest.json`
+- `pipeline/.state/v3/prompt_queue_state.json`
 - `pipeline/.state/v3/pipeline_v3.log`
 
 V3 training wrapper:
 
 - stores a single top-level `input` object matching the intended text-model prompt shape
 - includes `match_context`
+- includes `match_context.alive_players` so global prompt context can reference current live player positions by callout
 - includes `previous_events` from only the single last important filtered event context
 - includes `current_events` as the full current filtered event batch
 - includes optional `overrides` for `caster` and `prompt_style`
@@ -110,6 +114,6 @@ What gets stored:
 
 - raw GSI payload history and latest snapshot
 - filtered event history and latest prompt-ready batch
-- prompt instruction plus gameplay snapshot sent to the text LLM
-- raw text LLM output plus extracted commentary sentence
-- immediate TTS playback metadata for that filtered batch
+- training-facing wrapper examples matching the intended text-model input shape
+- prompt/runtime records for event prompts and idle interval prompts
+- queue state for current and pending TTS lines

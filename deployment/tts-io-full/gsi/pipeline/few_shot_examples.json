@@ -1,0 +1,592 @@
+[
+  {
+    "input": {
+      "current_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "kda": {
+              "assists": 1,
+              "deaths": 2,
+              "kills": 3
+            },
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "round_kills": 1,
+            "team": "CT"
+          },
+          "victim": {
+            "name": "Ferris",
+            "team": "T"
+          }
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Goose",
+            "name": "Hastings",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Short",
+            "name": "Miguel",
+            "team": "T"
+          },
+          {
+            "map_callout": "Long A",
+            "name": "Uri",
+            "team": "T"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 7,
+        "round_phase": "live",
+        "score": {
+          "CT": 2,
+          "T": 5
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": []
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Yanni drops Ferris.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "kda": {
+              "assists": 1,
+              "deaths": 2,
+              "kills": 4
+            },
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "round_kills": 2,
+            "team": "CT"
+          },
+          "victim": {
+            "name": "Miguel",
+            "team": "T"
+          }
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Ramp",
+            "name": "Hastings",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Long A",
+            "name": "Uri",
+            "team": "T"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 7,
+        "round_phase": "live",
+        "score": {
+          "CT": 2,
+          "T": 5
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          "victim": {
+            "name": "Ferris",
+            "team": "T"
+          }
+        }
+      ]
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Double kill for Yanni.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "detonation_callout": "Top Mid",
+          "event_type": "grenade_detonated",
+          "grenade_type": "smoke",
+          "owner_player": {
+            "map_callout": "Top Mid",
+            "name": "Niles",
+            "team": "T"
+          }
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "Top Mid",
+            "name": "Niles",
+            "team": "T"
+          },
+          {
+            "map_callout": "Lower Tunnels",
+            "name": "Mika",
+            "team": "T"
+          },
+          {
+            "map_callout": "Short",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Window",
+            "name": "Hastings",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 9,
+        "round_phase": "live",
+        "score": {
+          "CT": 4,
+          "T": 4
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": []
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Smoke blooms Top Mid.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "detonation_callout": "Short",
+          "event_type": "grenade_detonated",
+          "grenade_type": "flash",
+          "owner_player": {
+            "map_callout": "Catwalk",
+            "name": "Mika",
+            "team": "T"
+          }
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "Catwalk",
+            "name": "Mika",
+            "team": "T"
+          },
+          {
+            "map_callout": "Top Mid",
+            "name": "Uri",
+            "team": "T"
+          },
+          {
+            "map_callout": "Short",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          {
+            "map_callout": "A Site",
+            "name": "Hastings",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 9,
+        "round_phase": "live",
+        "score": {
+          "CT": 4,
+          "T": 4
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": []
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Flash pops on Short.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "event_type": "bomb_event",
+          "site": "A",
+          "state_after": "planted"
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "A Site",
+            "name": "Miguel",
+            "team": "T"
+          },
+          {
+            "map_callout": "Long A",
+            "name": "Uri",
+            "team": "T"
+          },
+          {
+            "map_callout": "CT Spawn",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Short",
+            "name": "Hastings",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 10,
+        "round_phase": "live",
+        "score": {
+          "CT": 4,
+          "T": 5
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "map_callout": "Catwalk",
+            "name": "Rook",
+            "team": "T"
+          },
+          "victim": {
+            "name": "Vera",
+            "team": "CT"
+          }
+        }
+      ]
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Bomb planted A.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "alive_counts_after": {
+            "CT": 2,
+            "T": 3
+          },
+          "event_type": "team_counter"
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "A Site",
+            "name": "Miguel",
+            "team": "T"
+          },
+          {
+            "map_callout": "Long A",
+            "name": "Uri",
+            "team": "T"
+          },
+          {
+            "map_callout": "Pit",
+            "name": "Niles",
+            "team": "T"
+          },
+          {
+            "map_callout": "CT Spawn",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Short",
+            "name": "Hastings",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 10,
+        "round_phase": "live",
+        "score": {
+          "CT": 4,
+          "T": 5
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_follow_up"
+      },
+      "previous_events": [
+        {
+          "event_type": "bomb_event",
+          "site": "A",
+          "state_after": "planted"
+        }
+      ]
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Plant forces the retake now.",
+      "prompt_style": "play_by_play_follow_up"
+    }
+  },
+  {
+    "input": {
+      "current_events": [],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "B Site",
+            "name": "Larry",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Window",
+            "name": "Hastings",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Upper Tunnels",
+            "name": "Miguel",
+            "team": "T"
+          },
+          {
+            "map_callout": "Mid",
+            "name": "Uri",
+            "team": "T"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 11,
+        "round_phase": "live",
+        "score": {
+          "CT": 6,
+          "T": 5
+        }
+      },
+      "overrides": {
+        "caster": "color",
+        "prompt_style": "idle_color"
+      },
+      "previous_events": [
+        {
+          "event_type": "bomb_event",
+          "site": "B",
+          "state_after": "planted"
+        },
+        {
+          "alive_counts_after": {
+            "CT": 3,
+            "T": 2
+          },
+          "event_type": "team_counter"
+        }
+      ]
+    },
+    "output": {
+      "caster": "color",
+      "commentary": "Three on two with no room left.",
+      "prompt_style": "idle_color"
+    }
+  },
+  {
+    "input": {
+      "current_events": [],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "Top Mid",
+            "name": "Niles",
+            "team": "T"
+          },
+          {
+            "map_callout": "Catwalk",
+            "name": "Mika",
+            "team": "T"
+          },
+          {
+            "map_callout": "Short",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          {
+            "map_callout": "A Site",
+            "name": "Hastings",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 12,
+        "round_phase": "live",
+        "score": {
+          "CT": 6,
+          "T": 5
+        }
+      },
+      "overrides": {
+        "caster": "color",
+        "prompt_style": "idle_color"
+      },
+      "previous_events": [
+        {
+          "detonation_callout": "Xbox",
+          "event_type": "grenade_detonated",
+          "grenade_type": "smoke",
+          "owner_player": {
+            "map_callout": "Top Mid",
+            "name": "Niles",
+            "team": "T"
+          }
+        },
+        {
+          "detonation_callout": "Short",
+          "event_type": "grenade_detonated",
+          "grenade_type": "flash",
+          "owner_player": {
+            "map_callout": "Catwalk",
+            "name": "Mika",
+            "team": "T"
+          }
+        }
+      ]
+    },
+    "output": {
+      "caster": "color",
+      "commentary": "Mid utility is pulling CT eyes upward.",
+      "prompt_style": "idle_color"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "kda": {
+              "assists": 4,
+              "deaths": 7,
+              "kills": 7
+            },
+            "map_callout": "Close",
+            "name": "Yuri",
+            "round_kills": 4,
+            "team": "CT"
+          },
+          "victim": {
+            "name": "Walt",
+            "team": "T"
+          }
+        },
+        {
+          "event_type": "game_over",
+          "final_score": {
+            "CT": 8,
+            "T": 5
+          },
+          "map_phase_after": "gameover",
+          "winner": "CT"
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "Close",
+            "name": "Yuri",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "gameover",
+        "round_number": 13,
+        "round_phase": "freezetime",
+        "score": {
+          "CT": 8,
+          "T": 5
+        },
+        "win_team": "CT"
+      },
+      "overrides": {
+        "caster": null,
+        "prompt_style": null
+      },
+      "previous_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "map_callout": "B Doors",
+            "name": "Yuri",
+            "team": "CT"
+          },
+          "victim": {
+            "name": "Panama",
+            "team": "T"
+          }
+        }
+      ]
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Yuri closes with four.",
+      "prompt_style": "play_by_play_event"
+    }
+  }
+]
