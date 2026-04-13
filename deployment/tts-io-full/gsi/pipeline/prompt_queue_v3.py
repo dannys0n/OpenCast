@@ -202,7 +202,40 @@ def trim_few_shot_example(example):
     )
 
 
-def select_few_shot_examples(*, casters, prompt_styles, limit=4):
+def example_primary_event(example):
+    example_input = as_dict(as_dict(example).get("input"))
+    return as_dict(primary_event(example_input.get("current_events", [])))
+
+
+def few_shot_sort_key(example, target_event_type):
+    example_event = example_primary_event(example)
+    event_type = example_event.get("event_type")
+
+    same_type_rank = 0 if event_type == target_event_type else 1
+
+    if target_event_type == "kill":
+        round_kills = as_dict(example_event.get("killer")).get("round_kills")
+        try:
+            round_kills_rank = int(round_kills)
+        except (TypeError, ValueError):
+            round_kills_rank = 999
+        return (same_type_rank, round_kills_rank, event_type or "")
+
+    if target_event_type == "grenade_detonated":
+        grenade_order = {
+            "smoke": 0,
+            "flashbang": 1,
+            "frag": 2,
+            "molotov": 3,
+            "incendiary": 4,
+            "decoy": 5,
+        }
+        return (same_type_rank, grenade_order.get(example_event.get("grenade_type"), 999), event_type or "")
+
+    return (same_type_rank, event_type or "")
+
+
+def select_few_shot_examples(*, casters, prompt_styles, current_events=None, limit=4):
     selected = []
     for example in load_few_shot_examples():
         output = as_dict(example.get("output"))
@@ -210,10 +243,23 @@ def select_few_shot_examples(*, casters, prompt_styles, limit=4):
             continue
         if output.get("prompt_style") not in prompt_styles:
             continue
-        selected.append(trim_few_shot_example(example))
-        if len(selected) >= limit:
-            break
-    return selected
+        selected.append(example)
+
+    target_event_type = as_dict(primary_event(current_events or [])).get("event_type")
+    if target_event_type:
+        selected.sort(key=lambda example: few_shot_sort_key(example, target_event_type))
+        if target_event_type == "kill":
+            deduped = []
+            seen_round_kills = set()
+            for example in selected:
+                round_kills = as_dict(example_primary_event(example).get("killer")).get("round_kills")
+                if round_kills in seen_round_kills:
+                    continue
+                seen_round_kills.add(round_kills)
+                deduped.append(example)
+            selected = deduped
+
+    return [trim_few_shot_example(example) for example in selected[:limit]]
 
 
 def build_global_context(match_context):
@@ -260,11 +306,12 @@ def build_focused_context(current_events):
     return {}
 
 
-def build_event_system_prompt():
+def build_event_system_prompt(current_events):
     few_shots = select_few_shot_examples(
         casters={"play_by_play", "color"},
         prompt_styles={"play_by_play_event", "play_by_play_follow_up"},
-        limit=4,
+        current_events=current_events,
+        limit=5,
     )
     config = load_prompt_config()
     return (
@@ -306,6 +353,12 @@ def build_interval_system_prompt(conversation_mode):
 
 def build_event_user_prompt(wrapper):
     wrapper_input = as_dict(as_dict(wrapper).get("input"))
+    prompt_input = strip_empty(
+        {
+            "current_events": wrapper_input.get("current_events"),
+            "overrides": wrapper_input.get("overrides"),
+        }
+    )
     return (
         "Generate exactly 2 lines.\n"
         "Line 1: very short event trigger call.\n"
@@ -314,13 +367,18 @@ def build_event_user_prompt(wrapper):
         "Do not add labels or numbering.\n\n"
         "Focused context:\n"
         f"{json.dumps(build_focused_context(wrapper_input.get('current_events', [])), indent=2, sort_keys=True)}\n\n"
-        "Input:\n"
-        f"{json.dumps(wrapper_input, indent=2, sort_keys=True)}"
+        "Event input:\n"
+        f"{json.dumps(prompt_input, indent=2, sort_keys=True)}"
     )
 
 
 def build_interval_user_prompt(wrapper, conversation_mode):
     wrapper_input = as_dict(as_dict(wrapper).get("input"))
+    prompt_input = strip_empty(
+        {
+            "overrides": wrapper_input.get("overrides"),
+        }
+    )
     mode_text = (
         "Generate exactly 3 lines for a short two-caster idle exchange."
         if conversation_mode
@@ -332,8 +390,8 @@ def build_interval_user_prompt(wrapper, conversation_mode):
         "Do not add labels or numbering.\n\n"
         "Global context:\n"
         f"{json.dumps(build_global_context(wrapper_input.get('match_context')), indent=2, sort_keys=True)}\n\n"
-        "Input:\n"
-        f"{json.dumps(wrapper_input, indent=2, sort_keys=True)}"
+        "Prompt input:\n"
+        f"{json.dumps(prompt_input, indent=2, sort_keys=True)}"
     )
 
 
@@ -593,7 +651,8 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
         return None
 
     text_config = build_text_llm_config(repo_root)
-    system_prompt = build_event_system_prompt()
+    current_events = as_dict(as_dict(wrapper).get("input")).get("current_events", [])
+    system_prompt = build_event_system_prompt(current_events)
     user_prompt = build_event_user_prompt(wrapper)
     record = {
         "created_at": now_stamp(),
@@ -605,7 +664,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
 
     try:
         result = request_chat_completion(text_config, system_prompt, user_prompt)
-        lines = extract_commentary_lines(result["raw_text"], expected_max=2)
+        lines = extract_commentary_lines(result["raw_text"], expected_max=4)
         items = []
         if lines:
             items.append(
@@ -619,16 +678,17 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                 )
             )
         if len(lines) > 1:
-            items.append(
-                build_queue_item(
-                    commentary=lines[1],
-                    caster="color",
-                    prompt_style="play_by_play_follow_up",
-                    tag="followup",
-                    payload_sequence=payload_sequence,
-                    source="event",
+            for followup_line in lines[1:]:
+                items.append(
+                    build_queue_item(
+                        commentary=followup_line,
+                        caster="color",
+                        prompt_style="play_by_play_follow_up",
+                        tag="followup",
+                        payload_sequence=payload_sequence,
+                        source="event",
+                    )
                 )
-            )
 
         dropped = enqueue_prompt_items(items, repo_root) if items else []
         record["status"] = "completed"
@@ -665,6 +725,11 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
     return finalized
 
 
+def join_commentary_lines(lines):
+    joined = " ".join(line.strip() for line in lines if str(line).strip())
+    return " ".join(joined.split()).strip()
+
+
 def next_interval_mode():
     global INTERVAL_MODE_INDEX
     with QUEUE_CONDITION:
@@ -692,23 +757,33 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None):
     try:
         result = request_chat_completion(text_config, system_prompt, user_prompt)
         lines = extract_commentary_lines(result["raw_text"], expected_max=3)
-        casters = (
-            ["play_by_play", "color", "play_by_play"]
-            if conversation_mode
-            else ["color", "color", "color"]
-        )
         items = []
-        for index, line in enumerate(lines):
-            items.append(
-                build_queue_item(
-                    commentary=line,
-                    caster=casters[min(index, len(casters) - 1)],
-                    prompt_style="idle_color",
-                    tag="color",
-                    payload_sequence=payload_sequence,
-                    source=interval_mode,
+        if conversation_mode:
+            casters = ["play_by_play", "color", "play_by_play"]
+            for index, line in enumerate(lines):
+                items.append(
+                    build_queue_item(
+                        commentary=line,
+                        caster=casters[min(index, len(casters) - 1)],
+                        prompt_style="idle_color",
+                        tag="color",
+                        payload_sequence=payload_sequence,
+                        source=interval_mode,
+                    )
                 )
-            )
+        else:
+            commentary = join_commentary_lines(lines)
+            if commentary:
+                items.append(
+                    build_queue_item(
+                        commentary=commentary,
+                        caster="color",
+                        prompt_style="idle_color",
+                        tag="color",
+                        payload_sequence=payload_sequence,
+                        source=interval_mode,
+                    )
+                )
 
         dropped = enqueue_prompt_items(items, repo_root) if items else []
         record["status"] = "completed"

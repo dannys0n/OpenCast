@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import sys
 import tempfile
 import threading
@@ -27,6 +28,9 @@ class PromptQueueV3Tests(unittest.TestCase):
         self.original_playback_queue = MODULE.PLAYBACK_QUEUE
         self.original_current_playback = MODULE.CURRENT_PLAYBACK
         self.original_item_sequence = MODULE.ITEM_SEQUENCE
+        self.original_request_chat_completion = MODULE.request_chat_completion
+        self.original_build_text_llm_config = MODULE.build_text_llm_config
+        self.original_interval_mode_index = MODULE.INTERVAL_MODE_INDEX
 
         MODULE.STATE_DIR = self.state_dir
         MODULE.PROMPT_RUNTIME_HISTORY_PATH = self.state_dir / "prompt_runtime_pretty.jsonl"
@@ -46,6 +50,9 @@ class PromptQueueV3Tests(unittest.TestCase):
         MODULE.PLAYBACK_QUEUE = self.original_playback_queue
         MODULE.CURRENT_PLAYBACK = self.original_current_playback
         MODULE.ITEM_SEQUENCE = self.original_item_sequence
+        MODULE.request_chat_completion = self.original_request_chat_completion
+        MODULE.build_text_llm_config = self.original_build_text_llm_config
+        MODULE.INTERVAL_MODE_INDEX = self.original_interval_mode_index
         self.temp_dir.cleanup()
 
     def test_extract_commentary_lines_prefers_clean_lines(self):
@@ -122,6 +129,128 @@ class PromptQueueV3Tests(unittest.TestCase):
                 ("event", "Double kill for Yanni."),
                 ("followup", "CT take control."),
             ],
+        )
+
+    def test_process_event_wrapper_queues_first_line_as_event_and_rest_as_followups(self):
+        captured = {}
+
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            captured["system_prompt"] = system_prompt
+            captured["user_prompt"] = user_prompt
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "Niko doubles up.\nThat opens A.\nRotation is late.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+
+        wrapper = {
+            "input": {
+                "match_context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Niko", "team": "T", "map_callout": "A Ramp"}],
+                },
+                "previous_events": [{"event_type": "bomb_event", "state_after": "planted"}],
+                "current_events": [
+                    {
+                        "event_type": "kill",
+                        "killer": {"name": "Niko", "team": "T", "map_callout": "A Ramp", "round_kills": 2},
+                        "victim": {"name": "Broky", "team": "CT"},
+                    }
+                ],
+                "overrides": {"caster": None, "prompt_style": None},
+            }
+        }
+
+        record = MODULE.process_event_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=12, snapshot={})
+
+        self.assertEqual(record["status"], "completed")
+        self.assertEqual([item["tag"] for item in record["queued_items"]], ["event", "followup", "followup"])
+        self.assertEqual(record["queued_items"][0]["commentary"], "Niko doubles up.")
+        self.assertEqual(record["queued_items"][1]["caster"], "color")
+        self.assertIn("Focused context:", captured["user_prompt"])
+        self.assertIn("Event input:", captured["user_prompt"])
+        self.assertNotIn('"match_context"', captured["user_prompt"])
+        self.assertNotIn('"previous_events"', captured["user_prompt"])
+
+    def test_process_interval_wrapper_idle_color_keeps_three_lines_in_single_tts_item(self):
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "Mid is quiet.\nCT are spread thin.\nThis could turn fast.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+        MODULE.INTERVAL_MODE_INDEX = 0
+
+        wrapper = {
+            "input": {
+                "match_context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Niko", "team": "T", "map_callout": "A Ramp"}],
+                },
+                "previous_events": [],
+                "current_events": [],
+                "overrides": {"caster": None, "prompt_style": None},
+            }
+        }
+
+        record = MODULE.process_interval_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=14)
+
+        self.assertEqual(record["status"], "completed")
+        self.assertEqual(record["mode"], "idle_color")
+        self.assertEqual(len(record["queued_items"]), 1)
+        self.assertEqual(record["queued_items"][0]["caster"], "color")
+        self.assertEqual(
+            record["queued_items"][0]["commentary"],
+            "Mid is quiet. CT are spread thin. This could turn fast.",
+        )
+
+    def test_process_interval_wrapper_conversation_splits_lines_by_caster(self):
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "They are slowing down.\nThat smoke changed the pace.\nB might still be live.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+        MODULE.INTERVAL_MODE_INDEX = 1
+
+        wrapper = {
+            "input": {
+                "match_context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Niko", "team": "T", "map_callout": "A Ramp"}],
+                },
+                "previous_events": [],
+                "current_events": [],
+                "overrides": {"caster": None, "prompt_style": None},
+            }
+        }
+
+        record = MODULE.process_interval_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=15)
+
+        self.assertEqual(record["status"], "completed")
+        self.assertEqual(record["mode"], "idle_conversation")
+        self.assertEqual([item["caster"] for item in record["queued_items"]], ["play_by_play", "color", "play_by_play"])
+        self.assertEqual(
+            [item["commentary"] for item in record["queued_items"]],
+            ["They are slowing down.", "That smoke changed the pace.", "B might still be live."],
         )
 
 

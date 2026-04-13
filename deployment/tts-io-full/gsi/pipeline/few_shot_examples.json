@@ -74,15 +74,15 @@
             "kda": {
               "assists": 1,
               "deaths": 2,
-              "kills": 4
+              "kills": 5
             },
             "map_callout": "A Site",
             "name": "Yanni",
-            "round_kills": 2,
+            "round_kills": 3,
             "team": "CT"
           },
           "victim": {
-            "name": "Miguel",
+            "name": "Uri",
             "team": "T"
           }
         }
@@ -98,11 +98,6 @@
             "map_callout": "Ramp",
             "name": "Hastings",
             "team": "CT"
-          },
-          {
-            "map_callout": "Long A",
-            "name": "Uri",
-            "team": "T"
           }
         ],
         "map_name": "de_dust2",
@@ -135,7 +130,135 @@
     },
     "output": {
       "caster": "play_by_play",
-      "commentary": "Double kill for Yanni.",
+      "commentary": "Triple for Yanni.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "kda": {
+              "assists": 1,
+              "deaths": 2,
+              "kills": 6
+            },
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "round_kills": 4,
+            "team": "CT"
+          },
+          "victim": {
+            "name": "Niles",
+            "team": "T"
+          }
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 7,
+        "round_phase": "live",
+        "score": {
+          "CT": 2,
+          "T": 5
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          "victim": {
+            "name": "Uri",
+            "team": "T"
+          }
+        }
+      ]
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Quad for Yanni.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "kda": {
+              "assists": 1,
+              "deaths": 2,
+              "kills": 7
+            },
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "round_kills": 5,
+            "team": "CT"
+          },
+          "victim": {
+            "name": "Mika",
+            "team": "T"
+          }
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 7,
+        "round_phase": "live",
+        "score": {
+          "CT": 2,
+          "T": 5
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": [
+        {
+          "event_type": "kill",
+          "killer": {
+            "map_callout": "A Site",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          "victim": {
+            "name": "Niles",
+            "team": "T"
+          }
+        }
+      ]
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Ace for Yanni.",
       "prompt_style": "play_by_play_event"
     }
   },
@@ -203,7 +326,7 @@
         {
           "detonation_callout": "Short",
           "event_type": "grenade_detonated",
-          "grenade_type": "flash",
+          "grenade_type": "flashbang",
           "owner_player": {
             "map_callout": "Catwalk",
             "name": "Mika",
@@ -252,6 +375,165 @@
     "output": {
       "caster": "play_by_play",
       "commentary": "Flash pops on Short.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "detonation_callout": "B Doors",
+          "event_type": "grenade_detonated",
+          "grenade_type": "frag",
+          "owner_player": {
+            "map_callout": "Upper Tunnels",
+            "name": "Miguel",
+            "team": "T"
+          }
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "Upper Tunnels",
+            "name": "Miguel",
+            "team": "T"
+          },
+          {
+            "map_callout": "B Doors",
+            "name": "Larry",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Window",
+            "name": "Hastings",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 9,
+        "round_phase": "live",
+        "score": {
+          "CT": 4,
+          "T": 4
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": []
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Frag lands B Doors.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "detonation_callout": "Default",
+          "event_type": "grenade_detonated",
+          "grenade_type": "molotov",
+          "owner_player": {
+            "map_callout": "Long A",
+            "name": "Uri",
+            "team": "T"
+          }
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "Long A",
+            "name": "Uri",
+            "team": "T"
+          },
+          {
+            "map_callout": "Default",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          {
+            "map_callout": "Goose",
+            "name": "Hastings",
+            "team": "CT"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 9,
+        "round_phase": "live",
+        "score": {
+          "CT": 4,
+          "T": 4
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": []
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Molotov burns Default.",
+      "prompt_style": "play_by_play_event"
+    }
+  },
+  {
+    "input": {
+      "current_events": [
+        {
+          "detonation_callout": "A Ramp",
+          "event_type": "grenade_detonated",
+          "grenade_type": "incendiary",
+          "owner_player": {
+            "map_callout": "CT Spawn",
+            "name": "Yanni",
+            "team": "CT"
+          }
+        }
+      ],
+      "match_context": {
+        "alive_players": [
+          {
+            "map_callout": "CT Spawn",
+            "name": "Yanni",
+            "team": "CT"
+          },
+          {
+            "map_callout": "A Ramp",
+            "name": "Uri",
+            "team": "T"
+          },
+          {
+            "map_callout": "Long A",
+            "name": "Niles",
+            "team": "T"
+          }
+        ],
+        "map_name": "de_dust2",
+        "map_phase": "live",
+        "round_number": 9,
+        "round_phase": "live",
+        "score": {
+          "CT": 4,
+          "T": 4
+        }
+      },
+      "overrides": {
+        "caster": "play_by_play",
+        "prompt_style": "play_by_play_event"
+      },
+      "previous_events": []
+    },
+    "output": {
+      "caster": "play_by_play",
+      "commentary": "Incendiary on A Ramp.",
       "prompt_style": "play_by_play_event"
     }
   },
@@ -500,7 +782,7 @@
         {
           "detonation_callout": "Short",
           "event_type": "grenade_detonated",
-          "grenade_type": "flash",
+          "grenade_type": "flashbang",
           "owner_player": {
             "map_callout": "Catwalk",
             "name": "Mika",
