@@ -76,7 +76,7 @@ class PromptQueueV3Tests(unittest.TestCase):
         snapshot = {"allplayers": {"2": {"name": "Uri"}}}
         self.assertTrue(MODULE.should_ignore_event_prompt(wrapper, snapshot))
 
-    def test_enqueue_event_interrupts_current_non_event_and_drops_queued_non_events(self):
+    def test_prepare_queue_for_event_trigger_interrupts_current_non_event_and_drops_queued_non_events(self):
         current_non_event = {
             "id": 10,
             "tag": "color",
@@ -102,34 +102,12 @@ class PromptQueueV3Tests(unittest.TestCase):
         MODULE.CURRENT_PLAYBACK = current_non_event
         MODULE.PLAYBACK_QUEUE.append(queued_non_event)
 
-        event_item = MODULE.build_queue_item(
-            commentary="Double kill for Yanni.",
-            caster="play_by_play",
-            prompt_style="play_by_play_event",
-            tag="event",
-            payload_sequence=6,
-            source="event",
-        )
-        followup_item = MODULE.build_queue_item(
-            commentary="CT take control.",
-            caster="color",
-            prompt_style="play_by_play_follow_up",
-            tag="followup",
-            payload_sequence=6,
-            source="event",
-        )
-
-        dropped = MODULE.enqueue_prompt_items([event_item, followup_item], Path("/tmp/opencast"))
+        dropped, interrupted_current = MODULE.prepare_queue_for_event_trigger()
 
         self.assertTrue(current_non_event["interrupt_event"].is_set())
+        self.assertEqual(interrupted_current["id"], 10)
         self.assertEqual([item["id"] for item in dropped], [11])
-        self.assertEqual(
-            [(item["tag"], item["commentary"]) for item in MODULE.PLAYBACK_QUEUE],
-            [
-                ("event", "Double kill for Yanni."),
-                ("followup", "CT take control."),
-            ],
-        )
+        self.assertEqual(list(MODULE.PLAYBACK_QUEUE), [])
 
     def test_process_event_wrapper_queues_first_line_as_event_and_rest_as_followups(self):
         captured = {}
@@ -148,6 +126,31 @@ class PromptQueueV3Tests(unittest.TestCase):
 
         MODULE.build_text_llm_config = fake_build_text_llm_config
         MODULE.request_chat_completion = fake_request_chat_completion
+
+        current_non_event = {
+            "id": 10,
+            "tag": "color",
+            "caster": "color",
+            "prompt_style": "idle_color",
+            "commentary": "Quiet for now.",
+            "payload_sequence": 11,
+            "source": "idle_color",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_non_event = {
+            "id": 11,
+            "tag": "color",
+            "caster": "color",
+            "prompt_style": "idle_color",
+            "commentary": "Still waiting.",
+            "payload_sequence": 11,
+            "source": "idle_color",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.CURRENT_PLAYBACK = current_non_event
+        MODULE.PLAYBACK_QUEUE.append(queued_non_event)
 
         wrapper = {
             "input": {
@@ -173,6 +176,9 @@ class PromptQueueV3Tests(unittest.TestCase):
         self.assertEqual([item["tag"] for item in record["queued_items"]], ["event", "followup", "followup"])
         self.assertEqual(record["queued_items"][0]["commentary"], "Niko doubles up.")
         self.assertEqual(record["queued_items"][1]["caster"], "color")
+        self.assertEqual(record["dropped_items"][0]["commentary"], "Still waiting.")
+        self.assertEqual(record["interrupted_current"]["commentary"], "Quiet for now.")
+        self.assertTrue(current_non_event["interrupt_event"].is_set())
         self.assertIn("Focused context:", captured["user_prompt"])
         self.assertIn("Event input:", captured["user_prompt"])
         self.assertNotIn('"match_context"', captured["user_prompt"])

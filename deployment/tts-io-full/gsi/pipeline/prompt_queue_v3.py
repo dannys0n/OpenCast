@@ -481,12 +481,41 @@ def play_tts_prompt_interruptibly(tts_config, tts_prompt, interrupt_event):
     thread = None
     temp_dir_obj = tempfile.TemporaryDirectory(prefix="gsi_tts_v3_")
     result = {"done": False, "ok": False}
+    interrupted = False
+
+    def close_player_immediately():
+        nonlocal player
+        if player is None:
+            return
+        if player.stdin is not None:
+            try:
+                player.stdin.close()
+            except Exception:
+                pass
+            player.stdin = None
+        if player.poll() is None:
+            try:
+                player.kill()
+            except Exception:
+                pass
+            try:
+                player.wait(timeout=0.5)
+            except Exception:
+                pass
+
+    def finish_fetch_and_cleanup(fetch_thread, temp_dir):
+        try:
+            if fetch_thread is not None:
+                fetch_thread.join()
+        finally:
+            temp_dir.cleanup()
+
     try:
         buffer_path = Path(temp_dir_obj.name) / "audio.pcm"
         buffer_path.touch()
         thread = threading.Thread(
             target=fetch_tts_audio_to_file,
-            args=(tts_config, tts_prompt, buffer_path, result),
+            args=(tts_config, tts_prompt, buffer_path, result, interrupt_event),
             daemon=True,
         )
         thread.start()
@@ -498,6 +527,7 @@ def play_tts_prompt_interruptibly(tts_config, tts_prompt, interrupt_event):
         offset = 0
         while True:
             if interrupt_event.is_set():
+                interrupted = True
                 return {"interrupted": True}
 
             size = buffer_path.stat().st_size if buffer_path.exists() else 0
@@ -506,6 +536,7 @@ def play_tts_prompt_interruptibly(tts_config, tts_prompt, interrupt_event):
                     handle.seek(offset)
                     while True:
                         if interrupt_event.is_set():
+                            interrupted = True
                             return {"interrupted": True}
                         chunk = handle.read(min(16384, size - offset))
                         if not chunk:
@@ -529,18 +560,17 @@ def play_tts_prompt_interruptibly(tts_config, tts_prompt, interrupt_event):
             raise RuntimeError(f"SoX play exited with status {return_code}")
         return {"interrupted": False}
     finally:
-        if thread is not None:
-            thread.join()
-        if player is not None:
-            if player.stdin is not None:
-                try:
-                    player.stdin.close()
-                except Exception:
-                    pass
-            if player.poll() is None:
-                player.kill()
-                player.wait()
-        temp_dir_obj.cleanup()
+        close_player_immediately()
+        if interrupted:
+            cleanup_thread = threading.Thread(
+                target=finish_fetch_and_cleanup,
+                args=(thread, temp_dir_obj),
+                daemon=True,
+                name="gsi-v3-tts-cleanup",
+            )
+            cleanup_thread.start()
+        else:
+            finish_fetch_and_cleanup(thread, temp_dir_obj)
 
 
 def ensure_queue_worker(repo_root):
@@ -589,29 +619,40 @@ def ensure_queue_worker(repo_root):
 
 def enqueue_prompt_items(items, repo_root):
     ensure_queue_worker(repo_root)
-    dropped_items = []
     with QUEUE_CONDITION:
-        event_incoming = any(item["tag"] == "event" for item in items)
-        if event_incoming:
-            kept = deque()
-            for existing in PLAYBACK_QUEUE:
-                if existing["tag"] == "event":
-                    kept.append(existing)
-                else:
-                    dropped_items.append(existing)
-            PLAYBACK_QUEUE.clear()
-            PLAYBACK_QUEUE.extend(kept)
-
-            if CURRENT_PLAYBACK is not None and CURRENT_PLAYBACK["tag"] != "event":
-                CURRENT_PLAYBACK["interrupt_event"].set()
-
         for item in items:
             PLAYBACK_QUEUE.append(item)
 
         write_queue_state_locked()
         QUEUE_CONDITION.notify_all()
 
-    return dropped_items
+    return []
+
+
+def prepare_queue_for_event_trigger():
+    dropped_items = []
+    interrupted_current = None
+    with QUEUE_CONDITION:
+        kept = deque()
+        for existing in PLAYBACK_QUEUE:
+            if existing["tag"] == "event":
+                kept.append(existing)
+            else:
+                dropped_items.append(existing)
+        PLAYBACK_QUEUE.clear()
+        PLAYBACK_QUEUE.extend(kept)
+
+        if CURRENT_PLAYBACK is not None and CURRENT_PLAYBACK["tag"] != "event":
+            CURRENT_PLAYBACK["interrupt_event"].set()
+            interrupted_current = {
+                "id": CURRENT_PLAYBACK["id"],
+                "tag": CURRENT_PLAYBACK["tag"],
+                "commentary": CURRENT_PLAYBACK["commentary"],
+            }
+
+        write_queue_state_locked()
+
+    return dropped_items, interrupted_current
 
 
 def build_queue_item(*, commentary, caster, prompt_style, tag, payload_sequence, source):
@@ -665,6 +706,10 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
     try:
         result = request_chat_completion(text_config, system_prompt, user_prompt)
         lines = extract_commentary_lines(result["raw_text"], expected_max=4)
+        dropped = []
+        interrupted_current = None
+        if lines:
+            dropped, interrupted_current = prepare_queue_for_event_trigger()
         items = []
         if lines:
             items.append(
@@ -690,7 +735,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                     )
                 )
 
-        dropped = enqueue_prompt_items(items, repo_root) if items else []
+        enqueue_prompt_items(items, repo_root) if items else None
         record["status"] = "completed"
         record["llm"] = {
             "request": result["request"],
@@ -715,6 +760,8 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
             }
             for item in dropped
         ]
+        if interrupted_current is not None:
+            record["interrupted_current"] = interrupted_current
     except Exception as error:
         record["status"] = "failed"
         record["error"] = str(error)

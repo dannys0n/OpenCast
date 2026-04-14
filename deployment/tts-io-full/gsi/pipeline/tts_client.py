@@ -177,7 +177,7 @@ def open_play_process(sample_rate, speed=1.0):
     )
 
 
-def fetch_tts_audio_to_file(config, tts_prompt, buffer_path, result):
+def fetch_tts_audio_to_file(config, tts_prompt, buffer_path, result, cancel_event=None):
     payload = build_tts_payload(config, tts_prompt)
     request = urllib.request.Request(
         f"{config.api_base}/v1/audio/speech",
@@ -190,12 +190,19 @@ def fetch_tts_audio_to_file(config, tts_prompt, buffer_path, result):
         with urllib.request.urlopen(request, timeout=config.timeout_seconds) as response:
             with buffer_path.open("wb") as handle:
                 while True:
+                    if cancel_event is not None and cancel_event.is_set():
+                        result["ok"] = False
+                        result["cancelled"] = True
+                        break
                     chunk = response.read(16384)
                     if not chunk:
                         break
                     handle.write(chunk)
                     handle.flush()
-        result["ok"] = True
+        if result.get("cancelled"):
+            result["ok"] = False
+        else:
+            result["ok"] = True
     except urllib.error.HTTPError as error:
         body = error.read().decode("utf-8", errors="replace")
         result["ok"] = False
