@@ -1,5 +1,6 @@
 import json
 import os
+import queue
 import subprocess
 import tempfile
 import threading
@@ -217,6 +218,79 @@ def fetch_tts_audio_to_file(config, tts_prompt, buffer_path, result, cancel_even
         result["done"] = True
 
 
+def fetch_tts_audio_to_queue(config, tts_prompt, chunk_queue, result, cancel_event=None, bytes_per_frame=2):
+    payload = build_tts_payload(config, tts_prompt)
+    request = urllib.request.Request(
+        f"{config.api_base}/v1/audio/speech",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+
+    carry = b""
+    try:
+        with urllib.request.urlopen(request, timeout=config.timeout_seconds) as response:
+            while True:
+                if cancel_event is not None and cancel_event.is_set():
+                    result["ok"] = False
+                    result["cancelled"] = True
+                    break
+
+                chunk = response.read(16384)
+                if not chunk:
+                    break
+
+                data = carry + chunk
+                remainder = len(data) % bytes_per_frame
+                if remainder:
+                    carry = data[-remainder:]
+                    data = data[:-remainder]
+                else:
+                    carry = b""
+
+                if not data:
+                    continue
+
+                while True:
+                    if cancel_event is not None and cancel_event.is_set():
+                        result["ok"] = False
+                        result["cancelled"] = True
+                        break
+                    try:
+                        chunk_queue.put(data, timeout=0.1)
+                        result["bytes_written"] = int(result.get("bytes_written") or 0) + len(data)
+                        break
+                    except queue.Full:
+                        continue
+
+                if result.get("cancelled"):
+                    break
+
+        if carry:
+            result["truncated_bytes"] = len(carry)
+
+        if result.get("cancelled"):
+            result["ok"] = False
+        else:
+            result["ok"] = True
+    except urllib.error.HTTPError as error:
+        body = error.read().decode("utf-8", errors="replace")
+        result["ok"] = False
+        result["error"] = f"TTS HTTP {error.code}: {body}"
+    except urllib.error.URLError as error:
+        result["ok"] = False
+        result["error"] = f"TTS request failed: {error}"
+    except Exception as error:
+        result["ok"] = False
+        result["error"] = str(error)
+    finally:
+        result["done"] = True
+        try:
+            chunk_queue.put_nowait(None)
+        except queue.Full:
+            pass
+
+
 def stream_buffer_file_to_stdin(player_stdin, buffer_path, result):
     offset = 0
 
@@ -339,3 +413,120 @@ def stream_tts_playback(config, tts_prompt):
         raise RuntimeError(f"TTS HTTP {error.code}: {body}") from error
     except urllib.error.URLError as error:
         raise RuntimeError(f"TTS request failed: {error}") from error
+
+
+def stream_tts_playback_interruptibly(
+    config,
+    tts_prompt,
+    interrupt_event,
+    *,
+    startup_timeout_seconds=8.0,
+    stall_timeout_seconds=5.0,
+    max_playback_seconds=None,
+):
+    bytes_per_frame = 2
+    chunk_queue = queue.Queue(maxsize=32)
+    result = {"done": False, "ok": False}
+    player = None
+    thread = None
+    interrupted = False
+    started_at = time.monotonic()
+    last_progress_at = started_at
+    playback_seconds = 0.0
+
+    if max_playback_seconds is None:
+        commentary = str(tts_prompt.get("commentary") or "")
+        max_playback_seconds = max(8.0, min(30.0, 4.0 + (len(commentary) * 0.09)))
+
+    def close_player_immediately():
+        nonlocal player
+        if player is None:
+            return
+        if player.stdin is not None:
+            try:
+                player.stdin.close()
+            except Exception:
+                pass
+            player.stdin = None
+        if player.poll() is None:
+            try:
+                player.kill()
+            except Exception:
+                pass
+            try:
+                player.wait(timeout=0.5)
+            except Exception:
+                pass
+
+    try:
+        thread = threading.Thread(
+            target=fetch_tts_audio_to_queue,
+            args=(config, tts_prompt, chunk_queue, result, interrupt_event, bytes_per_frame),
+            daemon=True,
+        )
+        thread.start()
+
+        player = open_play_process(config.sample_rate, speed=float(tts_prompt.get("speed") or 1.0))
+        if player.stdin is None:
+            raise RuntimeError("failed to open stdin for SoX play")
+
+        while True:
+            if interrupt_event.is_set():
+                interrupted = True
+                return {"interrupted": True}
+
+            try:
+                chunk = chunk_queue.get(timeout=0.05)
+            except queue.Empty:
+                now = time.monotonic()
+                if playback_seconds == 0.0 and now - started_at > startup_timeout_seconds:
+                    interrupt_event.set()
+                    raise RuntimeError("TTS stream timed out before any audio arrived")
+                if playback_seconds > 0.0 and now - last_progress_at > stall_timeout_seconds:
+                    interrupt_event.set()
+                    raise RuntimeError("TTS stream stalled during playback")
+                continue
+
+            if chunk is None:
+                if result.get("done"):
+                    if not result.get("ok"):
+                        if result.get("cancelled"):
+                            interrupted = True
+                            return {"interrupted": True}
+                        raise RuntimeError(result.get("error") or "TTS request failed")
+                    break
+                continue
+
+            if len(chunk) % bytes_per_frame != 0:
+                interrupt_event.set()
+                raise RuntimeError("TTS stream returned misaligned PCM data")
+
+            player.stdin.write(chunk)
+            player.stdin.flush()
+            last_progress_at = time.monotonic()
+            playback_seconds += len(chunk) / (config.sample_rate * bytes_per_frame)
+
+            if playback_seconds > max_playback_seconds:
+                interrupt_event.set()
+                raise RuntimeError(f"TTS playback exceeded safety limit of {max_playback_seconds:.1f}s")
+
+        player.stdin.close()
+        player.stdin = None
+        return_code = player.wait()
+        if return_code != 0:
+            raise RuntimeError(f"SoX play exited with status {return_code}")
+        return {"interrupted": False}
+    finally:
+        close_player_immediately()
+        if interrupt_event.is_set():
+            interrupted = True
+        if interrupted:
+            cleanup_thread = threading.Thread(
+                target=thread.join,
+                daemon=True,
+                name="gsi-v3-tts-cleanup",
+            ) if thread is not None else None
+            if cleanup_thread is not None:
+                cleanup_thread.start()
+        elif thread is not None:
+            thread.join()

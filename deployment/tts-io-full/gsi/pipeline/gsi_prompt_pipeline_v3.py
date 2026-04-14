@@ -26,6 +26,7 @@ from prompt_queue_v3 import (
     process_event_wrapper,
     process_interval_wrapper,
     reset_prompt_runtime_state,
+    slim_log,
 )
 
 
@@ -407,7 +408,7 @@ def reclaim_port(port):
     if not pids:
         return
 
-    print(f"Port {port} is busy; reclaiming it from PID(s): {', '.join(map(str, pids))}", flush=True)
+    slim_log("port reclaim", commentary=f"Port {port} busy; reclaiming PID(s): {', '.join(map(str, pids))}", include_commentary=True)
 
     for pid in pids:
         try:
@@ -498,10 +499,10 @@ class Handler(BaseHTTPRequestHandler):
                 PIPELINE_STATE.previous_event_summary = build_recent_event_summary(training_wrapper)
                 PIPELINE_STATE.last_event_prompt_at = time.time()
 
-            print(
-                f"[gsi-v3] #{payload_sequence} stored raw payload and emitted "
-                f"{len(filtered_batch['events'])} filtered event(s) + training wrapper",
-                flush=True,
+            slim_log(
+                "filtered",
+                commentary=f"payload #{payload_sequence} -> {len(filtered_batch['events'])} filtered event(s) + training wrapper",
+                include_commentary=True,
             )
             prompt_wrapper = copy.deepcopy(training_wrapper)
         else:
@@ -541,20 +542,22 @@ def main():
     if KILL_EXISTING_LISTENER:
         reclaim_port(PORT)
 
-    print(f"Listening on http://{HOST}:{PORT}", flush=True)
-    print(f"Auth required: {'yes' if EXPECTED_TOKEN else 'no'}", flush=True)
-    print(f"Raw GSI history:    {RAW_GSI_PATH}", flush=True)
-    print(f"Raw GSI latest:     {RAW_GSI_LATEST_PATH}", flush=True)
-    print(f"Filtered history:   {FILTERED_EVENTS_PATH}", flush=True)
-    print(f"Filtered latest:    {FILTERED_EVENTS_LATEST_PATH}", flush=True)
-    print(f"Training history:   {TRAINING_WRAPPER_PATH}", flush=True)
-    print(f"Training latest:    {TRAINING_WRAPPER_LATEST_PATH}", flush=True)
-    print(f"Pipeline log:       {PIPELINE_LOG}", flush=True)
-    print(
-        "This v3 listener stores pretty-printed raw JSON, filtered JSON, and a "
-        "training-facing wrapper, and now also runs prompt + TTS experiments "
-        "for event and idle intervals.",
-        flush=True,
+    slim_log("startup", commentary=f"Listening on http://{HOST}:{PORT}", include_commentary=True)
+    slim_log("startup", commentary=f"Auth required: {'yes' if EXPECTED_TOKEN else 'no'}", include_commentary=True)
+    slim_log("startup", commentary=f"Raw GSI history: {RAW_GSI_PATH}", include_commentary=True)
+    slim_log("startup", commentary=f"Raw GSI latest: {RAW_GSI_LATEST_PATH}", include_commentary=True)
+    slim_log("startup", commentary=f"Filtered history: {FILTERED_EVENTS_PATH}", include_commentary=True)
+    slim_log("startup", commentary=f"Filtered latest: {FILTERED_EVENTS_LATEST_PATH}", include_commentary=True)
+    slim_log("startup", commentary=f"Training history: {TRAINING_WRAPPER_PATH}", include_commentary=True)
+    slim_log("startup", commentary=f"Training latest: {TRAINING_WRAPPER_LATEST_PATH}", include_commentary=True)
+    slim_log("startup", commentary=f"Pipeline log: {PIPELINE_LOG}", include_commentary=True)
+    slim_log(
+        "startup",
+        commentary=(
+            "This listener stores pretty-printed raw JSON, filtered JSON, and a training-facing wrapper, "
+            "and also runs prompt + TTS experiments for event and idle intervals."
+        ),
+        include_commentary=True,
     )
 
     start_background_prompt_thread(interval_prompt_loop)

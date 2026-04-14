@@ -17,6 +17,7 @@ from tts_client import (
     build_config as build_tts_config,
     fetch_tts_audio_to_file,
     open_play_process,
+    stream_tts_playback_interruptibly as stream_tts_playback_interruptibly_direct,
 )
 
 
@@ -58,6 +59,9 @@ QUEUE_WORKER_THREAD = None
 INTERVAL_MODE_INDEX = 0
 ITEM_SEQUENCE = 0
 LAST_LOG_MONOTONIC = None
+LOG_OUTPUT_LOCK = threading.Lock()
+OPEN_TTS_LOG_ITEM_ID = None
+OPEN_TTS_LOG_STARTED_AT = None
 ANSI_RESET = "\033[0m"
 ANSI_DIM = "\033[2m"
 ANSI_CYAN = "\033[36m"
@@ -66,6 +70,8 @@ ANSI_YELLOW = "\033[33m"
 ANSI_RED = "\033[31m"
 ANSI_BLUE = "\033[34m"
 ANSI_MAGENTA = "\033[35m"
+ANSI_BRIGHT_CYAN = "\033[96m"
+ANSI_BRIGHT_YELLOW = "\033[93m"
 
 
 def env_text(name, default=""):
@@ -93,8 +99,10 @@ def now_stamp():
 
 
 def reset_log_clock():
-    global LAST_LOG_MONOTONIC
+    global LAST_LOG_MONOTONIC, OPEN_TTS_LOG_ITEM_ID, OPEN_TTS_LOG_STARTED_AT
     LAST_LOG_MONOTONIC = None
+    OPEN_TTS_LOG_ITEM_ID = None
+    OPEN_TTS_LOG_STARTED_AT = None
 
 
 def slim_commentary(text, limit=140):
@@ -122,6 +130,7 @@ def action_color(action):
         "tts start": ANSI_GREEN,
         "tts interrupted": ANSI_YELLOW,
         "tts failed": ANSI_RED,
+        "queue trim": ANSI_YELLOW,
     }.get(action, "")
 
 
@@ -135,19 +144,50 @@ def tag_color(tag):
 
 def caster_color(caster):
     return {
-        "play_by_play": ANSI_BLUE,
-        "color": ANSI_MAGENTA,
+        "play_by_play": ANSI_BRIGHT_CYAN,
+        "color": ANSI_BRIGHT_YELLOW,
     }.get(caster, "")
 
 
-def slim_log(action, *, tag=None, caster=None, commentary=None):
+def caster_label(caster):
+    return {
+        "play_by_play": "caster1",
+        "color": "caster2",
+    }.get(caster, caster)
+
+
+def format_trimmed_items(items, limit=220):
+    rendered = []
+    for item in items:
+        tag = item.get("tag")
+        text = slim_commentary(item.get("commentary") or "", limit=90)
+        if tag:
+            rendered.append(f"[{tag}] {text}")
+        else:
+            rendered.append(text)
+    compact = " | ".join(part for part in rendered if part)
+    if len(compact) <= limit:
+        return compact
+    return f"{compact[: limit - 3].rstrip()}..."
+
+
+def slim_log(action, *, tag=None, caster=None, commentary=None, include_commentary=False):
+    with LOG_OUTPUT_LOCK:
+        _close_open_tts_log_line_locked()
+        print(_build_slim_log_text(action, tag=tag, caster=caster, commentary=commentary, include_commentary=include_commentary), flush=True)
+
+
+def _build_slim_log_text(action, *, tag=None, caster=None, commentary=None, include_commentary=False, delta_override=None):
     global LAST_LOG_MONOTONIC
     now = time.monotonic()
-    if LAST_LOG_MONOTONIC is None:
-        delta = 0.0
+    if delta_override is None:
+        if LAST_LOG_MONOTONIC is None:
+            delta = 0.0
+        else:
+            delta = now - LAST_LOG_MONOTONIC
+        LAST_LOG_MONOTONIC = now
     else:
-        delta = now - LAST_LOG_MONOTONIC
-    LAST_LOG_MONOTONIC = now
+        delta = delta_override
     prefix = f"[+{delta:0.3f}s] {action}"
     prefix = f"{colorize(prefix, ANSI_DIM)}"
     action_text = colorize(action, action_color(action))
@@ -155,14 +195,46 @@ def slim_log(action, *, tag=None, caster=None, commentary=None):
     if tag:
         parts.append(colorize(f"[{tag}]", tag_color(tag)))
     if caster:
-        parts.append(colorize(f"[{caster}]", caster_color(caster)))
-    if commentary:
-        parts.append(slim_commentary(commentary))
+        parts.append(colorize(f"[{caster_label(caster)}]", caster_color(caster)))
+    if include_commentary and commentary:
+        parts.append(f"\"{slim_commentary(commentary)}\"")
     suffix = " ".join(parts)
     if suffix:
-        print(f"{prefix.replace(action, action_text, 1)} -> {suffix}", flush=True)
-    else:
-        print(prefix.replace(action, action_text, 1), flush=True)
+        return f"{prefix.replace(action, action_text, 1)} -> {suffix}"
+    return prefix.replace(action, action_text, 1)
+
+
+def _close_open_tts_log_line_locked():
+    global OPEN_TTS_LOG_ITEM_ID, OPEN_TTS_LOG_STARTED_AT
+    if OPEN_TTS_LOG_ITEM_ID is not None:
+        print("", flush=True)
+        OPEN_TTS_LOG_ITEM_ID = None
+        OPEN_TTS_LOG_STARTED_AT = None
+
+
+def slim_log_tts_start(item_id, *, tag=None, caster=None, commentary=None):
+    global OPEN_TTS_LOG_ITEM_ID, OPEN_TTS_LOG_STARTED_AT
+    with LOG_OUTPUT_LOCK:
+        _close_open_tts_log_line_locked()
+        print(_build_slim_log_text("tts start", tag=tag, caster=caster, commentary=commentary), end="", flush=True)
+        OPEN_TTS_LOG_ITEM_ID = item_id
+        OPEN_TTS_LOG_STARTED_AT = time.monotonic()
+
+
+def slim_log_tts_finish(item_id, action, *, commentary=None, include_commentary=False):
+    global OPEN_TTS_LOG_ITEM_ID, OPEN_TTS_LOG_STARTED_AT
+    with LOG_OUTPUT_LOCK:
+        suffix = _build_slim_log_text(
+            action,
+            commentary=commentary,
+            include_commentary=include_commentary,
+        )
+        if OPEN_TTS_LOG_ITEM_ID == item_id:
+            print(f" {suffix}", flush=True)
+            OPEN_TTS_LOG_ITEM_ID = None
+            OPEN_TTS_LOG_STARTED_AT = None
+            return
+        print(suffix, flush=True)
 
 
 def ensure_state_dir():
@@ -575,121 +647,7 @@ def write_queue_state_locked():
 
 
 def play_tts_prompt_interruptibly(tts_config, tts_prompt, interrupt_event):
-    player = None
-    thread = None
-    temp_dir_obj = tempfile.TemporaryDirectory(prefix="gsi_tts_v3_")
-    result = {"done": False, "ok": False}
-    interrupted = False
-    bytes_per_frame = 2
-    stream_started_at = time.monotonic()
-    last_progress_at = stream_started_at
-    startup_timeout_seconds = 8.0
-    stall_timeout_seconds = 5.0
-
-    def close_player_immediately():
-        nonlocal player
-        if player is None:
-            return
-        if player.stdin is not None:
-            try:
-                player.stdin.close()
-            except Exception:
-                pass
-            player.stdin = None
-        if player.poll() is None:
-            try:
-                player.kill()
-            except Exception:
-                pass
-            try:
-                player.wait(timeout=0.5)
-            except Exception:
-                pass
-
-    def finish_fetch_and_cleanup(fetch_thread, temp_dir):
-        try:
-            if fetch_thread is not None:
-                fetch_thread.join()
-        finally:
-            temp_dir.cleanup()
-
-    try:
-        buffer_path = Path(temp_dir_obj.name) / "audio.pcm"
-        buffer_path.touch()
-        thread = threading.Thread(
-            target=fetch_tts_audio_to_file,
-            args=(tts_config, tts_prompt, buffer_path, result, interrupt_event),
-            daemon=True,
-        )
-        thread.start()
-
-        player = open_play_process(tts_config.sample_rate, speed=float(tts_prompt.get("speed") or 1.0))
-        if player.stdin is None:
-            raise RuntimeError("failed to open stdin for SoX play")
-
-        offset = 0
-        while True:
-            if interrupt_event.is_set():
-                interrupted = True
-                return {"interrupted": True}
-
-            size = buffer_path.stat().st_size if buffer_path.exists() else 0
-            available = max(0, size - offset)
-            readable = available - (available % bytes_per_frame)
-            if readable > 0:
-                target_offset = offset + readable
-                with buffer_path.open("rb") as handle:
-                    handle.seek(offset)
-                    while offset < target_offset:
-                        if interrupt_event.is_set():
-                            interrupted = True
-                            return {"interrupted": True}
-                        chunk = handle.read(min(16384, target_offset - offset))
-                        if not chunk:
-                            break
-                        player.stdin.write(chunk)
-                        player.stdin.flush()
-                        offset += len(chunk)
-                        last_progress_at = time.monotonic()
-                continue
-
-            if result.get("done"):
-                if not result.get("ok"):
-                    raise RuntimeError(result.get("error") or "TTS request failed")
-                if available:
-                    result["truncated_bytes"] = available
-                break
-
-            now = time.monotonic()
-            if offset == 0 and now - stream_started_at > startup_timeout_seconds:
-                interrupted = True
-                interrupt_event.set()
-                raise RuntimeError("TTS stream timed out before any audio arrived")
-            if offset > 0 and now - last_progress_at > stall_timeout_seconds:
-                interrupted = True
-                interrupt_event.set()
-                raise RuntimeError("TTS stream stalled during playback")
-
-            time.sleep(0.01)
-
-        player.stdin.close()
-        player.stdin = None
-        return_code = player.wait()
-        if return_code != 0:
-            raise RuntimeError(f"SoX play exited with status {return_code}")
-        return {"interrupted": False}
-    finally:
-        close_player_immediately()
-        if interrupted:
-            cleanup_thread = threading.Thread(
-                target=finish_fetch_and_cleanup,
-                args=(thread, temp_dir_obj),
-                daemon=True,
-                name="gsi-v3-tts-cleanup",
-            )
-            cleanup_thread.start()
-        else:
-            finish_fetch_and_cleanup(thread, temp_dir_obj)
+    return stream_tts_playback_interruptibly_direct(tts_config, tts_prompt, interrupt_event)
 
 
 def ensure_queue_worker(repo_root):
@@ -711,11 +669,10 @@ def ensure_queue_worker(repo_root):
                     write_queue_state_locked()
 
                 try:
-                    slim_log(
-                        "tts start",
+                    slim_log_tts_start(
+                        CURRENT_PLAYBACK["id"],
                         tag=CURRENT_PLAYBACK["tag"],
                         caster=CURRENT_PLAYBACK["caster"],
-                        commentary=CURRENT_PLAYBACK["commentary"],
                     )
                     playback = play_tts_prompt_interruptibly(
                         tts_config,
@@ -730,21 +687,18 @@ def ensure_queue_worker(repo_root):
                 except Exception as error:
                     CURRENT_PLAYBACK["playback_error"] = str(error)
                     CURRENT_PLAYBACK["playback_result"] = {"failed": True}
-                    slim_log(
+                    slim_log_tts_finish(
+                        CURRENT_PLAYBACK["id"],
                         "tts failed",
-                        tag=CURRENT_PLAYBACK["tag"],
-                        caster=CURRENT_PLAYBACK["caster"],
-                        commentary=CURRENT_PLAYBACK["commentary"],
+                        commentary=str(error),
+                        include_commentary=True,
                     )
                 else:
                     CURRENT_PLAYBACK["playback_result"] = playback
                     if playback.get("interrupted"):
-                        slim_log(
-                            "tts interrupted",
-                            tag=CURRENT_PLAYBACK["tag"],
-                            caster=CURRENT_PLAYBACK["caster"],
-                            commentary=CURRENT_PLAYBACK["commentary"],
-                        )
+                        slim_log_tts_finish(CURRENT_PLAYBACK["id"], "tts interrupted")
+                    else:
+                        slim_log_tts_finish(CURRENT_PLAYBACK["id"], "tts end")
                 finally:
                     CURRENT_PLAYBACK["done_event"].set()
                     with QUEUE_CONDITION:
@@ -849,6 +803,12 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
         interrupted_current = None
         if lines:
             dropped, interrupted_current = prepare_queue_for_event_trigger()
+            if dropped:
+                slim_log(
+                    "queue trim",
+                    commentary=format_trimmed_items(dropped),
+                    include_commentary=True,
+                )
         items = []
         if lines:
             items.append(
@@ -881,6 +841,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                 tag=item["tag"],
                 caster=item["caster"],
                 commentary=item["commentary"],
+                include_commentary=True,
             )
         record["status"] = "completed"
         record["llm"] = {
@@ -985,6 +946,7 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None):
                 tag=item["tag"],
                 caster=item["caster"],
                 commentary=item["commentary"],
+                include_commentary=True,
             )
         record["status"] = "completed"
         record["llm"] = {
