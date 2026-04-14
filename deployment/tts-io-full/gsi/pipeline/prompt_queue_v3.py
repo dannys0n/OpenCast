@@ -56,6 +56,7 @@ CURRENT_PLAYBACK = None
 QUEUE_WORKER_THREAD = None
 INTERVAL_MODE_INDEX = 0
 ITEM_SEQUENCE = 0
+LOG_START_MONOTONIC = time.monotonic()
 
 
 def env_text(name, default=""):
@@ -80,6 +81,35 @@ COLOR_SPEED = env_float("V3_COLOR_SPEED", 1.0)
 
 def now_stamp():
     return datetime.now().isoformat(timespec="seconds")
+
+
+def reset_log_clock():
+    global LOG_START_MONOTONIC
+    LOG_START_MONOTONIC = time.monotonic()
+
+
+def slim_commentary(text, limit=140):
+    compact = " ".join(str(text or "").split())
+    if len(compact) <= limit:
+        return compact
+    return f"{compact[: limit - 3].rstrip()}..."
+
+
+def slim_log(action, *, tag=None, caster=None, commentary=None):
+    delta = time.monotonic() - LOG_START_MONOTONIC
+    prefix = f"[v3 +{delta:0.3f}s] {action}"
+    parts = []
+    if tag:
+        parts.append(f"[{tag}]")
+    if caster:
+        parts.append(f"[{caster}]")
+    if commentary:
+        parts.append(slim_commentary(commentary))
+    suffix = " ".join(parts)
+    if suffix:
+        print(f"{prefix} -> {suffix}", flush=True)
+    else:
+        print(prefix, flush=True)
 
 
 def ensure_state_dir():
@@ -164,6 +194,7 @@ def reset_prompt_runtime_state():
         PROMPT_QUEUE_STATE_PATH,
     ]:
         path.write_text("", encoding="utf-8")
+    reset_log_clock()
     with QUEUE_CONDITION:
         PLAYBACK_QUEUE = deque()
         CURRENT_PLAYBACK = None
@@ -592,6 +623,12 @@ def ensure_queue_worker(repo_root):
                     write_queue_state_locked()
 
                 try:
+                    slim_log(
+                        "tts start",
+                        tag=CURRENT_PLAYBACK["tag"],
+                        caster=CURRENT_PLAYBACK["caster"],
+                        commentary=CURRENT_PLAYBACK["commentary"],
+                    )
                     playback = play_tts_prompt_interruptibly(
                         tts_config,
                         build_tts_prompt(
@@ -605,8 +642,21 @@ def ensure_queue_worker(repo_root):
                 except Exception as error:
                     CURRENT_PLAYBACK["playback_error"] = str(error)
                     CURRENT_PLAYBACK["playback_result"] = {"failed": True}
+                    slim_log(
+                        "tts failed",
+                        tag=CURRENT_PLAYBACK["tag"],
+                        caster=CURRENT_PLAYBACK["caster"],
+                        commentary=CURRENT_PLAYBACK["commentary"],
+                    )
                 else:
                     CURRENT_PLAYBACK["playback_result"] = playback
+                    if playback.get("interrupted"):
+                        slim_log(
+                            "tts interrupted",
+                            tag=CURRENT_PLAYBACK["tag"],
+                            caster=CURRENT_PLAYBACK["caster"],
+                            commentary=CURRENT_PLAYBACK["commentary"],
+                        )
                 finally:
                     CURRENT_PLAYBACK["done_event"].set()
                     with QUEUE_CONDITION:
@@ -736,6 +786,13 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                 )
 
         enqueue_prompt_items(items, repo_root) if items else None
+        for item in items:
+            slim_log(
+                "prompt",
+                tag=item["tag"],
+                caster=item["caster"],
+                commentary=item["commentary"],
+            )
         record["status"] = "completed"
         record["llm"] = {
             "request": result["request"],
@@ -833,6 +890,13 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None):
                 )
 
         dropped = enqueue_prompt_items(items, repo_root) if items else []
+        for item in items:
+            slim_log(
+                "prompt",
+                tag=item["tag"],
+                caster=item["caster"],
+                commentary=item["commentary"],
+            )
         record["status"] = "completed"
         record["llm"] = {
             "request": result["request"],

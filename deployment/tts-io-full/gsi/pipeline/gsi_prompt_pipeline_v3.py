@@ -505,7 +505,6 @@ class Handler(BaseHTTPRequestHandler):
             )
             prompt_wrapper = copy.deepcopy(training_wrapper)
         else:
-            print(f"[gsi-v3] #{payload_sequence} stored raw payload with no important events", flush=True)
             prompt_wrapper = None
 
         try:

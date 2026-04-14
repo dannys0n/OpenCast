@@ -1486,8 +1486,6 @@ class Handler(BaseHTTPRequestHandler):
                 f"{len(filtered_batch['events'])} filtered event(s) -> prompt queued",
                 flush=True,
             )
-        else:
-            print(f"[gsi] #{payload_sequence} stored raw payload with no important events", flush=True)
 
         try:
             self.send_response(200)
