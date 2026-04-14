@@ -336,18 +336,26 @@ def next_item_sequence():
 
 
 def trim_few_shot_example(example):
+    example_input = as_dict(example.get("input"))
+    context = as_dict(example_input.get("context"))
+    if not context:
+        legacy_match_context = as_dict(example_input.get("match_context"))
+        context = {
+            "score": legacy_match_context.get("score"),
+            "alive_players": legacy_match_context.get("alive_players"),
+        }
+    request = as_dict(example_input.get("request"))
+    if not request:
+        request = {"mode": "unknown"}
+
     example = as_dict(example)
     return strip_empty(
         {
             "input": {
-                "match_context": {
-                    "map_name": as_dict(example.get("input")).get("match_context", {}).get("map_name"),
-                    "score": as_dict(example.get("input")).get("match_context", {}).get("score"),
-                    "alive_players": as_dict(example.get("input")).get("match_context", {}).get("alive_players"),
-                },
-                "previous_events": as_dict(example.get("input")).get("previous_events"),
-                "current_events": as_dict(example.get("input")).get("current_events"),
-                "overrides": as_dict(example.get("input")).get("overrides"),
+                "context": context,
+                "previous_events": example_input.get("previous_events"),
+                "current_events": example_input.get("current_events"),
+                "request": request,
             },
             "output": {
                 "commentary": as_dict(example.get("output")).get("commentary"),
@@ -418,12 +426,12 @@ def select_few_shot_examples(*, casters, prompt_styles, current_events=None, lim
     return [trim_few_shot_example(example) for example in selected[:limit]]
 
 
-def build_global_context(match_context):
-    match_context = as_dict(match_context)
+def build_global_context(context):
+    context = as_dict(context)
     return strip_empty(
         {
-            "score": match_context.get("score"),
-            "alive_players": match_context.get("alive_players"),
+            "score": context.get("score"),
+            "alive_players": context.get("alive_players"),
         }
     )
 
@@ -512,7 +520,7 @@ def build_event_user_prompt(wrapper):
     prompt_input = strip_empty(
         {
             "current_events": wrapper_input.get("current_events"),
-            "overrides": wrapper_input.get("overrides"),
+            "request": wrapper_input.get("request"),
         }
     )
     return (
@@ -532,7 +540,7 @@ def build_interval_user_prompt(wrapper, conversation_mode):
     wrapper_input = as_dict(as_dict(wrapper).get("input"))
     prompt_input = strip_empty(
         {
-            "overrides": wrapper_input.get("overrides"),
+            "request": wrapper_input.get("request"),
         }
     )
     mode_text = (
@@ -545,7 +553,7 @@ def build_interval_user_prompt(wrapper, conversation_mode):
         "Use the Global context below.\n"
         "Do not add labels or numbering.\n\n"
         "Global context:\n"
-        f"{json.dumps(build_global_context(wrapper_input.get('match_context')), indent=2, sort_keys=True)}\n\n"
+        f"{json.dumps(build_global_context(wrapper_input.get('context')), indent=2, sort_keys=True)}\n\n"
         "Prompt input:\n"
         f"{json.dumps(prompt_input, indent=2, sort_keys=True)}"
     )
@@ -894,9 +902,10 @@ def next_interval_mode():
         return mode
 
 
-def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None):
+def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, interval_mode=None):
     text_config = build_text_llm_config(repo_root)
-    interval_mode = next_interval_mode()
+    if interval_mode is None:
+        interval_mode = as_dict(as_dict(wrapper).get("input")).get("request", {}).get("mode") or next_interval_mode()
     conversation_mode = interval_mode == "idle_conversation"
     system_prompt = build_interval_system_prompt(conversation_mode)
     user_prompt = build_interval_user_prompt(wrapper, conversation_mode)

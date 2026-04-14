@@ -23,6 +23,7 @@ from gsi_prompt_pipeline_v2 import (
 )
 from prompt_queue_v3 import (
     load_prompt_config as load_prompt_runtime_config,
+    next_interval_mode,
     process_event_wrapper,
     process_interval_wrapper,
     reset_prompt_runtime_state,
@@ -127,6 +128,14 @@ def build_match_context(snapshot):
     }
 
 
+def build_training_context(snapshot):
+    match_context = build_match_context(snapshot)
+    return {
+        "score": copy.deepcopy(match_context.get("score")),
+        "alive_players": copy.deepcopy(match_context.get("alive_players")),
+    }
+
+
 def build_alive_players(snapshot):
     snapshot = as_dict(snapshot)
     map_name = as_dict(snapshot.get("map")).get("name")
@@ -168,10 +177,33 @@ def simplify_filtered_batch_for_training(filtered_batch):
     return copy.deepcopy(filtered_batch.get("events", []))
 
 
-def build_overrides():
+def build_request(mode):
+    if mode == "event_bundle":
+        return {
+            "mode": "event_bundle",
+            "lines": [
+                {"caster": "play_by_play", "style": "play_by_play_event"},
+                {"caster": "color", "style": "play_by_play_follow_up"},
+            ],
+        }
+
+    if mode == "idle_conversation":
+        return {
+            "mode": "idle_conversation",
+            "lines": [
+                {"caster": "play_by_play", "style": "idle_color"},
+                {"caster": "color", "style": "idle_color"},
+                {"caster": "play_by_play", "style": "idle_color"},
+            ],
+        }
+
     return {
-        "caster": None,
-        "prompt_style": None,
+        "mode": "idle_color",
+        "lines": [
+            {"caster": "color", "style": "idle_color"},
+            {"caster": "color", "style": "idle_color"},
+            {"caster": "color", "style": "idle_color"},
+        ],
     }
 
 
@@ -282,10 +314,10 @@ def build_training_wrapper(filtered_batch, current_snapshot, payload_sequence, p
     current_events = simplify_filtered_batch_for_training(filtered_batch)
     return {
         "input": {
-            "match_context": build_match_context(current_snapshot),
+            "context": build_training_context(current_snapshot),
             "previous_events": copy.deepcopy(previous_events),
             "current_events": current_events,
-            "overrides": build_overrides(),
+            "request": build_request("event_bundle"),
         }
     }
 
@@ -295,13 +327,13 @@ def build_recent_event_summary(training_wrapper):
     return build_previous_events_summary(as_dict(wrapper.get("input")).get("current_events", []))
 
 
-def build_idle_wrapper(current_snapshot, previous_events):
+def build_idle_wrapper(current_snapshot, previous_events, mode):
     return {
         "input": {
-            "match_context": build_match_context(current_snapshot),
+            "context": build_training_context(current_snapshot),
             "previous_events": copy.deepcopy(previous_events),
             "current_events": [],
-            "overrides": build_overrides(),
+            "request": build_request(mode),
         }
     }
 
@@ -350,12 +382,16 @@ def interval_prompt_loop():
         if now_ts - last_interval_prompt_at < interval_seconds():
             continue
 
-        idle_wrapper = build_idle_wrapper(current_snapshot, previous_events)
+        interval_mode = next_interval_mode()
+        idle_wrapper = build_idle_wrapper(current_snapshot, previous_events, interval_mode)
+        append_pretty_json_record(TRAINING_WRAPPER_PATH, idle_wrapper)
+        write_pretty_json_file(TRAINING_WRAPPER_LATEST_PATH, idle_wrapper)
         start_background_prompt_thread(
             process_interval_wrapper,
             idle_wrapper,
             repo_root(),
             payload_sequence=payload_sequence,
+            interval_mode=interval_mode,
         )
         with STATE_LOCK:
             PIPELINE_STATE.last_interval_prompt_at = time.time()

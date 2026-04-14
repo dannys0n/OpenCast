@@ -102,11 +102,12 @@ V3 output files:
 V3 training wrapper:
 
 - stores a single top-level `input` object matching the intended text-model prompt shape
-- includes `match_context`
-- includes `match_context.alive_players` so global prompt context can reference current live player positions by callout
+- includes a compact `context`
+- includes `context.score`
+- includes `context.alive_players` so prompt examples can reference current live player positions by callout
 - includes `previous_events` from only the single last important filtered event context
 - includes `current_events` as the full current filtered event batch
-- includes optional `overrides` for `caster` and `prompt_style`
+- includes a compact `request` block describing the intended response bundle
 - trims `previous_events` down to a slimmer context shape for prompt examples
 - is intended as a training/prompt-design helper without sending raw GSI to the model
 

@@ -12,7 +12,7 @@ SPEC.loader.exec_module(MODULE)
 
 
 class GsiPromptPipelineV3Tests(unittest.TestCase):
-    def test_build_training_wrapper_adds_match_context_and_event_context(self):
+    def test_build_training_wrapper_adds_compact_context_and_request(self):
         filtered_batch = {
             "created_at": "2026-04-12T07:30:00",
             "events": [
@@ -68,13 +68,8 @@ class GsiPromptPipelineV3Tests(unittest.TestCase):
             wrapper,
             {
                 "input": {
-                    "match_context": {
-                        "map_name": "de_dust2",
-                        "map_phase": "live",
-                        "round_phase": "live",
-                        "round_number": 12,
+                    "context": {
                         "score": {"CT": 3, "T": 8},
-                        "win_team": None,
                         "alive_players": [
                             {"name": "Walt", "team": "CT", "map_callout": "Top Mid"},
                             {"name": "Uri", "team": "T", "map_callout": "B Car"},
@@ -88,9 +83,12 @@ class GsiPromptPipelineV3Tests(unittest.TestCase):
                             "victim": {"name": "Uri", "team": "T"},
                         }
                     ],
-                    "overrides": {
-                        "caster": None,
-                        "prompt_style": None,
+                    "request": {
+                        "mode": "event_bundle",
+                        "lines": [
+                            {"caster": "play_by_play", "style": "play_by_play_event"},
+                            {"caster": "color", "style": "play_by_play_follow_up"},
+                        ],
                     },
                 }
             },
@@ -158,6 +156,48 @@ class GsiPromptPipelineV3Tests(unittest.TestCase):
                 "alive_players": [
                     {"name": "GrowthHormones", "team": "T", "map_callout": "T Spawn"},
                 ],
+            },
+        )
+
+    def test_build_idle_wrapper_uses_compact_context_and_mode_specific_request(self):
+        snapshot = {
+            "map": {
+                "name": "de_dust2",
+                "phase": "live",
+                "round": 2,
+                "team_ct": {"score": 1},
+                "team_t": {"score": 0},
+            },
+            "round": {"phase": "live", "win_team": None},
+            "player": {
+                "name": "GrowthHormones",
+                "team": "T",
+                "position": "-720, -830, 140",
+                "state": {"health": 100},
+            },
+        }
+
+        self.assertEqual(
+            MODULE.build_idle_wrapper(snapshot, [], "idle_conversation"),
+            {
+                "input": {
+                    "context": {
+                        "score": {"CT": 1, "T": 0},
+                        "alive_players": [
+                            {"name": "GrowthHormones", "team": "T", "map_callout": "T Spawn"},
+                        ],
+                    },
+                    "previous_events": [],
+                    "current_events": [],
+                    "request": {
+                        "mode": "idle_conversation",
+                        "lines": [
+                            {"caster": "play_by_play", "style": "idle_color"},
+                            {"caster": "color", "style": "idle_color"},
+                            {"caster": "play_by_play", "style": "idle_color"},
+                        ],
+                    },
+                }
             },
         )
 
