@@ -580,6 +580,11 @@ def play_tts_prompt_interruptibly(tts_config, tts_prompt, interrupt_event):
     temp_dir_obj = tempfile.TemporaryDirectory(prefix="gsi_tts_v3_")
     result = {"done": False, "ok": False}
     interrupted = False
+    bytes_per_frame = 2
+    stream_started_at = time.monotonic()
+    last_progress_at = stream_started_at
+    startup_timeout_seconds = 8.0
+    stall_timeout_seconds = 5.0
 
     def close_player_immediately():
         nonlocal player
@@ -629,25 +634,41 @@ def play_tts_prompt_interruptibly(tts_config, tts_prompt, interrupt_event):
                 return {"interrupted": True}
 
             size = buffer_path.stat().st_size if buffer_path.exists() else 0
-            if size > offset:
+            available = max(0, size - offset)
+            readable = available - (available % bytes_per_frame)
+            if readable > 0:
+                target_offset = offset + readable
                 with buffer_path.open("rb") as handle:
                     handle.seek(offset)
-                    while True:
+                    while offset < target_offset:
                         if interrupt_event.is_set():
                             interrupted = True
                             return {"interrupted": True}
-                        chunk = handle.read(min(16384, size - offset))
+                        chunk = handle.read(min(16384, target_offset - offset))
                         if not chunk:
                             break
                         player.stdin.write(chunk)
                         player.stdin.flush()
                         offset += len(chunk)
+                        last_progress_at = time.monotonic()
                 continue
 
             if result.get("done"):
                 if not result.get("ok"):
                     raise RuntimeError(result.get("error") or "TTS request failed")
+                if available:
+                    result["truncated_bytes"] = available
                 break
+
+            now = time.monotonic()
+            if offset == 0 and now - stream_started_at > startup_timeout_seconds:
+                interrupted = True
+                interrupt_event.set()
+                raise RuntimeError("TTS stream timed out before any audio arrived")
+            if offset > 0 and now - last_progress_at > stall_timeout_seconds:
+                interrupted = True
+                interrupt_event.set()
+                raise RuntimeError("TTS stream stalled during playback")
 
             time.sleep(0.01)
 
