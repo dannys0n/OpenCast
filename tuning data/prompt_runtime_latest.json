@@ -1,0 +1,148 @@
+{
+  "created_at": "2026-04-14T03:29:45",
+  "dropped_items": [
+    {
+      "commentary": "CT just secured the kill, and the T team is in chaos. The blue team is on a roll. Telsen is doing something unexpected.",
+      "id": 55,
+      "tag": "color"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "The game is in blue.",
+    "id": 54,
+    "tag": "followup"
+  },
+  "llm": {
+    "lines": [
+      "Blue kill!",
+      "Larry down."
+    ],
+    "raw_text": "Blue kill! Larry down.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 7,\n      \"deaths\": 9,\n      \"kills\": 4\n    },\n    \"map_callout\": \"Blue\",\n    \"name\": \"Dayo\",\n    \"round_kills\": 1,\n    \"team\": \"CT\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 7,\n          \"deaths\": 9,\n          \"kills\": 4\n        },\n        \"map_callout\": \"Blue\",\n        \"name\": \"Dayo\",\n        \"round_kills\": 1,\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"Larry\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"event_type\": \"game_over\",\n      \"final_score\": {\n        \"CT\": 8,\n        \"T\": 5\n      },\n      \"map_phase_after\": \"gameover\",\n      \"winner\": \"CT\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 511,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 8,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 7,
+            "deaths": 9,
+            "kills": 4
+          },
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Larry",
+          "team": "T"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 5
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Mayer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Blue kill!",
+      "id": 56,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Larry down.",
+      "id": 57,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}

@@ -1,0 +1,69 @@
+{
+  "payload": {
+    "auth": {
+      "token": "replace_this_with_a_secret"
+    },
+    "map": {
+      "mode": "casual",
+      "name": "de_dust2",
+      "num_matches_to_win_series": 0,
+      "phase": "warmup",
+      "round": 0,
+      "team_ct": {
+        "consecutive_round_losses": 0,
+        "matches_won_this_series": 0,
+        "score": 0,
+        "timeouts_remaining": 1
+      },
+      "team_t": {
+        "consecutive_round_losses": 0,
+        "matches_won_this_series": 0,
+        "score": 0,
+        "timeouts_remaining": 1
+      }
+    },
+    "previously": {
+      "allplayers": true,
+      "bomb": true,
+      "grenades": true,
+      "map": {
+        "phase": "gameover",
+        "round": 13,
+        "round_wins": {
+          "1": "ct_win_elimination",
+          "10": "ct_win_elimination",
+          "11": "ct_win_elimination",
+          "12": "t_win_bomb",
+          "13": "ct_win_elimination",
+          "2": "t_win_bomb",
+          "3": "ct_win_elimination",
+          "4": "t_win_elimination",
+          "5": "t_win_bomb",
+          "6": "ct_win_defuse",
+          "7": "t_win_elimination",
+          "8": "ct_win_defuse",
+          "9": "ct_win_defuse"
+        },
+        "team_ct": {
+          "score": 8
+        },
+        "team_t": {
+          "consecutive_round_losses": 3,
+          "score": 5
+        }
+      },
+      "phase_countdowns": true,
+      "player": true,
+      "round": true
+    },
+    "provider": {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "steamid": "76561198237377678",
+      "timestamp": 1776162610,
+      "version": 14141
+    }
+  },
+  "payload_sequence": 599,
+  "received_at": "2026-04-14T03:30:10"
+}

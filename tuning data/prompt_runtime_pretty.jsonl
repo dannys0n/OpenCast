@@ -1,0 +1,3566 @@
+{
+  "created_at": "2026-04-14T03:27:05",
+  "llm": {
+    "lines": [
+      "In the vibrant chaos of Double Stack, Dayo's precision shines through the noise. Ferris and Harvey's teamwork is a masterclass in coordination. The CT team's dominance in the map is a testament to their skill and strategy."
+    ],
+    "raw_text": "In the vibrant chaos of Double Stack, Dayo's precision shines through the noise. Ferris and Harvey's teamwork is a masterclass in coordination. The CT team's dominance in the map is a testament to their skill and strategy.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate 3 understated color lines that avoid repeating the same point. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 short idle color lines.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"Double Stack\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Goose\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Goose\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Mayer\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Close\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Upper Tunnels\",\n      \"name\": \"Greymouth\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"Mid\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"Mid\",\n      \"name\": \"Miguel\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 4\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_color\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_color",
+  "payload_sequence": 3,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Double Stack",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "color",
+      "commentary": "In the vibrant chaos of Double Stack, Dayo's precision shines through the noise. Ferris and Harvey's teamwork is a masterclass in coordination. The CT team's dominance in the map is a testament to their skill and strategy.",
+      "id": 1,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:27:09",
+  "interrupted_current": {
+    "commentary": "In the vibrant chaos of Double Stack, Dayo's precision shines through the noise. Ferris and Harvey's teamwork is a masterclass in coordination. The CT team's dominance in the map is a testament to their skill and strategy.",
+    "id": 1,
+    "tag": "color"
+  },
+  "llm": {
+    "lines": [
+      "Suicide",
+      "Smoke detonated",
+      "The doors are smoke-choked."
+    ],
+    "raw_text": "Suicide  \nSmoke detonated  \nThe doors are smoke-choked.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"map_callout\": \"Doors\",\n    \"name\": \"Larry\",\n    \"team\": \"T\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"detonation_callout\": \"Suicide\",\n      \"event_type\": \"grenade_detonated\",\n      \"grenade_type\": \"smoke\",\n      \"owner_player\": {\n        \"map_callout\": \"Doors\",\n        \"name\": \"Larry\",\n        \"team\": \"T\"\n      }\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 15,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "B Car",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Close",
+          "name": "Walt",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Suicide",
+      "id": 2,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Smoke detonated",
+      "id": 3,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "The doors are smoke-choked.",
+      "id": 4,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:27:08",
+  "dropped_items": [
+    {
+      "commentary": "Smoke detonated",
+      "id": 3,
+      "tag": "followup"
+    },
+    {
+      "commentary": "The doors are smoke-choked.",
+      "id": 4,
+      "tag": "followup"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "In the vibrant chaos of Double Stack, Dayo's precision shines through the noise. Ferris and Harvey's teamwork is a masterclass in coordination. The CT team's dominance in the map is a testament to their skill and strategy.",
+    "id": 1,
+    "tag": "color"
+  },
+  "llm": {
+    "lines": [
+      "Walt kills Greymouth",
+      "Walt's kill is a double",
+      "The game is close."
+    ],
+    "raw_text": "Walt kills Greymouth  \nWalt's kill is a double  \nThe game is close.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 3,\n      \"deaths\": 7,\n      \"kills\": 9\n    },\n    \"map_callout\": \"Close\",\n    \"name\": \"Walt\",\n    \"round_kills\": 2,\n    \"team\": \"CT\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 3,\n          \"deaths\": 7,\n          \"kills\": 9\n        },\n        \"map_callout\": \"Close\",\n        \"name\": \"Walt\",\n        \"round_kills\": 2,\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"Greymouth\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"alive_counts_after\": {\n        \"T\": 2\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 14,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "B Car",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 3,
+            "deaths": 7,
+            "kills": 9
+          },
+          "map_callout": "Close",
+          "name": "Walt",
+          "round_kills": 2,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 2
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Walt kills Greymouth",
+      "id": 5,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Walt's kill is a double",
+      "id": 6,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "The game is close.",
+      "id": 7,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:27:19",
+  "llm": {
+    "lines": [
+      "The CT team is on a roll, with Dayo and Ferris leading the way in the Outside Tunnels.",
+      "Mayer\u2019s precision at T Spawn is a solid presence.",
+      "Walt\u2019s agility outside the tunnels is a joy to watch."
+    ],
+    "raw_text": "The CT team is on a roll, with Dayo and Ferris leading the way in the Outside Tunnels.  \nMayer\u2019s precision at T Spawn is a solid presence.  \nWalt\u2019s agility outside the tunnels is a joy to watch.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate a tiny 3-line conversation between play_by_play and color casters. The lines should sound like a short back-and-forth, but return commentary lines only with no speaker labels. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 lines for a short two-caster idle exchange.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"Outside Tunnels\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Plat\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Plat\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Mayer\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Outside Tunnels\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Outside Tunnels\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Window\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"Scaffolding\",\n      \"name\": \"Miguel\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 4\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_conversation\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_conversation",
+  "payload_sequence": 46,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Window",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Scaffolding",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "The CT team is on a roll, with Dayo and Ferris leading the way in the Outside Tunnels.",
+      "id": 8,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    },
+    {
+      "caster": "color",
+      "commentary": "Mayer\u2019s precision at T Spawn is a solid presence.",
+      "id": 9,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    },
+    {
+      "caster": "play_by_play",
+      "commentary": "Walt\u2019s agility outside the tunnels is a joy to watch.",
+      "id": 10,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:27:29",
+  "llm": {
+    "lines": [
+      "The CT team is showing strong dominance on the map, with a 7-4 score.",
+      "Harvey and Walt are keeping the CT side fresh with their steady play.",
+      "Mayer is navigating the Catwalk with a steady hand, even in chaos."
+    ],
+    "raw_text": "The CT team is showing strong dominance on the map, with a 7-4 score.  \nHarvey and Walt are keeping the CT side fresh with their steady play.  \nMayer is navigating the Catwalk with a steady hand, even in chaos.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate 3 understated color lines that avoid repeating the same point. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 short idle color lines.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"T Plat\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"CT Spawn\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Plat\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Catwalk\",\n      \"name\": \"Mayer\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Upper Tunnels\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"T Plat\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Back Site\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"B Car\",\n      \"name\": \"Miguel\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 4\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_color\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_color",
+  "payload_sequence": 78,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "T Plat",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "B Car",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "color",
+      "commentary": "The CT team is showing strong dominance on the map, with a 7-4 score. Harvey and Walt are keeping the CT side fresh with their steady play. Mayer is navigating the Catwalk with a steady hand, even in chaos.",
+      "id": 11,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:27:32",
+  "interrupted_current": {
+    "commentary": "The CT team is showing strong dominance on the map, with a 7-4 score. Harvey and Walt are keeping the CT side fresh with their steady play. Mayer is navigating the Catwalk with a steady hand, even in chaos.",
+    "id": 11,
+    "tag": "color"
+  },
+  "llm": {
+    "lines": [
+      "planted bomb",
+      "detonated bomb",
+      "the bomb was planted and detonated"
+    ],
+    "raw_text": "planted bomb\ndetonated bomb\nthe bomb was planted and detonated",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"bomb_event\",\n      \"state_after\": \"planted\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 89,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "T Ramp",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Fence",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "planted bomb",
+      "id": 12,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "detonated bomb",
+      "id": 13,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "the bomb was planted and detonated",
+      "id": 14,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:27:39",
+  "interrupted_current": {
+    "commentary": "the bomb was planted and detonated",
+    "id": 14,
+    "tag": "followup"
+  },
+  "llm": {
+    "lines": [
+      "Telsen killed Miguel",
+      "Telsen's kill was a close call"
+    ],
+    "raw_text": "Telsen killed Miguel  \nTelsen's kill was a close call",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 2,\n      \"deaths\": 5,\n      \"kills\": 10\n    },\n    \"map_callout\": \"Close\",\n    \"name\": \"Telsen\",\n    \"round_kills\": 1,\n    \"team\": \"CT\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 2,\n          \"deaths\": 5,\n          \"kills\": 10\n        },\n        \"map_callout\": \"Close\",\n        \"name\": \"Telsen\",\n        \"round_kills\": 1,\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"Miguel\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"alive_counts_after\": {\n        \"T\": 1\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 110,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 5,
+            "kills": 10
+          },
+          "map_callout": "Close",
+          "name": "Telsen",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 1
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Telsen killed Miguel",
+      "id": 15,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Telsen's kill was a close call",
+      "id": 16,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:27:50",
+  "llm": {
+    "lines": [
+      "play_by_play: The CT team is on a roll, with Dayo, Ferris, Harvey, Mayer, and Telsen all in the zone.",
+      "color: The T team is caught off guard, with Larry still in the back site.",
+      "play_by_play: The CT lead is solid, but the T team is getting a little more aggressive."
+    ],
+    "raw_text": "play_by_play: The CT team is on a roll, with Dayo, Ferris, Harvey, Mayer, and Telsen all in the zone.  \ncolor: The T team is caught off guard, with Larry still in the back site.  \nplay_by_play: The CT lead is solid, but the T team is getting a little more aggressive.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate a tiny 3-line conversation between play_by_play and color casters. The lines should sound like a short back-and-forth, but return commentary lines only with no speaker labels. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 lines for a short two-caster idle exchange.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"Close\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Plat\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Plat\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Short\",\n      \"name\": \"Mayer\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Double Stack\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Upper Tunnels\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Back Site\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 4\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_conversation\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_conversation",
+  "payload_sequence": 144,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Close",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Double Stack",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Close",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "play_by_play: The CT team is on a roll, with Dayo, Ferris, Harvey, Mayer, and Telsen all in the zone.",
+      "id": 17,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    },
+    {
+      "caster": "color",
+      "commentary": "color: The T team is caught off guard, with Larry still in the back site.",
+      "id": 18,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    },
+    {
+      "caster": "play_by_play",
+      "commentary": "play_by_play: The CT lead is solid, but the T team is getting a little more aggressive.",
+      "id": 19,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:27:51",
+  "dropped_items": [
+    {
+      "commentary": "color: The T team is caught off guard, with Larry still in the back site.",
+      "id": 18,
+      "tag": "color"
+    },
+    {
+      "commentary": "play_by_play: The CT lead is solid, but the T team is getting a little more aggressive.",
+      "id": 19,
+      "tag": "color"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "play_by_play: The CT team is on a roll, with Dayo, Ferris, Harvey, Mayer, and Telsen all in the zone.",
+    "id": 17,
+    "tag": "color"
+  },
+  "llm": {
+    "lines": [
+      "bomb_event",
+      "detonation_callout"
+    ],
+    "raw_text": "bomb_event\ndetonation_callout",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"bomb_event\",\n      \"state_after\": \"planted\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 149,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Big Box",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Close",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "bomb_event",
+      "id": 20,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "detonation_callout",
+      "id": 21,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:27:53",
+  "dropped_items": [
+    {
+      "commentary": "detonation_callout",
+      "id": 21,
+      "tag": "followup"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "play_by_play: The CT team is on a roll, with Dayo, Ferris, Harvey, Mayer, and Telsen all in the zone.",
+    "id": 17,
+    "tag": "color"
+  },
+  "llm": {
+    "lines": [
+      "Kill Larry for Telsen with Back Site.",
+      "Detonation_callout."
+    ],
+    "raw_text": "Kill Larry for Telsen with Back Site. Detonation_callout.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 4,\n      \"deaths\": 10,\n      \"kills\": 4\n    },\n    \"map_callout\": \"Back Site\",\n    \"name\": \"Larry\",\n    \"round_kills\": 1,\n    \"team\": \"T\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 4,\n          \"deaths\": 10,\n          \"kills\": 4\n        },\n        \"map_callout\": \"Back Site\",\n        \"name\": \"Larry\",\n        \"round_kills\": 1,\n        \"team\": \"T\"\n      },\n      \"victim\": {\n        \"name\": \"Telsen\",\n        \"team\": \"CT\"\n      }\n    },\n    {\n      \"event_type\": \"bomb_event\",\n      \"state_after\": \"planted\"\n    },\n    {\n      \"alive_counts_after\": {\n        \"CT\": 5\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 155,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Big Box",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 4,
+            "deaths": 10,
+            "kills": 4
+          },
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "round_kills": 1,
+          "team": "T"
+        },
+        "victim": {
+          "name": "Telsen",
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      },
+      {
+        "alive_counts_after": {
+          "CT": 5
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Kill Larry for Telsen with Back Site.",
+      "id": 22,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Detonation_callout.",
+      "id": 23,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:28:02",
+  "llm": {
+    "lines": [
+      "Kill - Larry kills Dayo",
+      "Detonation_callout - Grenade explodes",
+      "Back Site fact: The map Back Site is known for its steep terrain and is often considered one of the most challenging maps in the game."
+    ],
+    "raw_text": "Kill - Larry kills Dayo  \nDetonation_callout - Grenade explodes  \nBack Site fact: The map Back Site is known for its steep terrain and is often considered one of the most challenging maps in the game.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 4,\n      \"deaths\": 10,\n      \"kills\": 5\n    },\n    \"map_callout\": \"Back Site\",\n    \"name\": \"Larry\",\n    \"round_kills\": 2,\n    \"team\": \"T\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 4,\n          \"deaths\": 10,\n          \"kills\": 5\n        },\n        \"map_callout\": \"Back Site\",\n        \"name\": \"Larry\",\n        \"round_kills\": 2,\n        \"team\": \"T\"\n      },\n      \"victim\": {\n        \"name\": \"Dayo\",\n        \"team\": \"CT\"\n      }\n    },\n    {\n      \"alive_counts_after\": {\n        \"CT\": 4\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 183,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Big Box",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 4,
+            "deaths": 10,
+            "kills": 5
+          },
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "round_kills": 2,
+          "team": "T"
+        },
+        "victim": {
+          "name": "Dayo",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 4
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Telsen",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Kill - Larry kills Dayo",
+      "id": 24,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Detonation_callout - Grenade explodes",
+      "id": 25,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "Back Site fact: The map Back Site is known for its steep terrain and is often considered one of the most challenging maps in the game.",
+      "id": 26,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:28:06",
+  "dropped_items": [
+    {
+      "commentary": "Back Site fact: The map Back Site is known for its steep terrain and is often considered one of the most challenging maps in the game.",
+      "id": 26,
+      "tag": "followup"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "Detonation_callout - Grenade explodes",
+    "id": 25,
+    "tag": "followup"
+  },
+  "llm": {
+    "lines": [
+      "Walt kills Larry",
+      "Grenade detonation callout"
+    ],
+    "raw_text": "Walt kills Larry  \nGrenade detonation callout",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 3,\n      \"deaths\": 7,\n      \"kills\": 10\n    },\n    \"map_callout\": \"Double Stack\",\n    \"name\": \"Walt\",\n    \"round_kills\": 3,\n    \"team\": \"CT\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 3,\n          \"deaths\": 7,\n          \"kills\": 10\n        },\n        \"map_callout\": \"Double Stack\",\n        \"name\": \"Walt\",\n        \"round_kills\": 3,\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"Larry\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"alive_counts_after\": {\n        \"T\": 0\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 196,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Boost",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Double Stack",
+          "name": "Walt",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 3,
+            "deaths": 7,
+            "kills": 10
+          },
+          "map_callout": "Double Stack",
+          "name": "Walt",
+          "round_kills": 3,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Larry",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 0
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Dayo",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Walt kills Larry",
+      "id": 27,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Grenade detonation callout",
+      "id": 28,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:28:13",
+  "llm": {
+    "lines": [
+      "bomb_event",
+      "detonation_callout",
+      "The bomb exploded in the enemy's camp, leaving a trail of destruction."
+    ],
+    "raw_text": "bomb_event\ndetonation_callout\nThe bomb exploded in the enemy's camp, leaving a trail of destruction.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"bomb_event\",\n      \"state_after\": \"exploded\"\n    },\n    {\n      \"alive_counts_after\": {\n        \"CT\": 4,\n        \"T\": 0\n      },\n      \"event_type\": \"round_result\",\n      \"round_phase_after\": \"over\",\n      \"winner\": \"T\",\n      \"winner_score\": 5\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 221,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      },
+      {
+        "alive_counts_after": {
+          "CT": 4,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 5
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Double Stack",
+          "name": "Walt",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "bomb_event",
+      "id": 29,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "detonation_callout",
+      "id": 30,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "The bomb exploded in the enemy's camp, leaving a trail of destruction.",
+      "id": 31,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:28:29",
+  "llm": {
+    "lines": [
+      "The CT team is on a roll, with Dayo, Ferris, Harvey, Mayer, Telsen, and Walt all in the lead. The T team is catching up, with Greymouth, Larry, Miguel, and Opie close behind. The game is a tight battle, with both sides showing strong skill and strategy."
+    ],
+    "raw_text": "The CT team is on a roll, with Dayo, Ferris, Harvey, Mayer, Telsen, and Walt all in the lead. The T team is catching up, with Greymouth, Larry, Miguel, and Opie close behind. The game is a tight battle, with both sides showing strong skill and strategy.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate 3 understated color lines that avoid repeating the same point. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 short idle color lines.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"CT Spawn\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"CT Spawn\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"CT Spawn\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"CT Spawn\",\n      \"name\": \"Mayer\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"CT Spawn\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"CT Spawn\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Greymouth\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Miguel\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Opie\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 5\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_color\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_color",
+  "payload_sequence": 271,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "CT Spawn",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Opie",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "color",
+      "commentary": "The CT team is on a roll, with Dayo, Ferris, Harvey, Mayer, Telsen, and Walt all in the lead. The T team is catching up, with Greymouth, Larry, Miguel, and Opie close behind. The game is a tight battle, with both sides showing strong skill and strategy.",
+      "id": 32,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:28:39",
+  "llm": {
+    "lines": [
+      "CT has a solid lead, but T is showing some sharp moves. Mayer's got a good shot, but he needs to be more consistent. The game's heating up\u2014someone's got to keep it in check."
+    ],
+    "raw_text": "CT has a solid lead, but T is showing some sharp moves. Mayer's got a good shot, but he needs to be more consistent. The game's heating up\u2014someone's got to keep it in check.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate a tiny 3-line conversation between play_by_play and color casters. The lines should sound like a short back-and-forth, but return commentary lines only with no speaker labels. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 lines for a short two-caster idle exchange.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"Cross\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Long\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Window\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Doors\",\n      \"name\": \"Mayer\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Long\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Car\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Top Mid\",\n      \"name\": \"Greymouth\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"Long Doors\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Miguel\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"Top Mid\",\n      \"name\": \"Opie\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 5\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_conversation\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_conversation",
+  "payload_sequence": 301,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Window",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Opie",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "CT has a solid lead, but T is showing some sharp moves. Mayer's got a good shot, but he needs to be more consistent. The game's heating up\u2014someone's got to keep it in check.",
+      "id": 33,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:28:49",
+  "llm": {
+    "lines": [
+      "The player on Cross is doing great, keeping the team in check. The one on Long is showing off with their skills. The one on Scaffolding is making the team look good with their precision."
+    ],
+    "raw_text": "The player on Cross is doing great, keeping the team in check. The one on Long is showing off with their skills. The one on Scaffolding is making the team look good with their precision.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate 3 understated color lines that avoid repeating the same point. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 short idle color lines.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"Cross\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Long\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Scaffolding\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Mid\",\n      \"name\": \"Mayer\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Long\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Car\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Doors\",\n      \"name\": \"Greymouth\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"Side Pit\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Miguel\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"Doors\",\n      \"name\": \"Opie\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 5\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_color\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_color",
+  "payload_sequence": 333,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Scaffolding",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "Side Pit",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Opie",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "color",
+      "commentary": "The player on Cross is doing great, keeping the team in check. The one on Long is showing off with their skills. The one on Scaffolding is making the team look good with their precision.",
+      "id": 34,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:28:53",
+  "dropped_items": [
+    {
+      "commentary": "The player on Cross is doing great, keeping the team in check. The one on Long is showing off with their skills. The one on Scaffolding is making the team look good with their precision.",
+      "id": 34,
+      "tag": "color"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "CT has a solid lead, but T is showing some sharp moves. Mayer's got a good shot, but he needs to be more consistent. The game's heating up\u2014someone's got to keep it in check.",
+    "id": 33,
+    "tag": "color"
+  },
+  "llm": {
+    "lines": [
+      "Kill!",
+      "Mayer takes down Opie on Catwalk.",
+      "Double kill for the CT squad!"
+    ],
+    "raw_text": "Kill! Mayer takes down Opie on Catwalk.  \nDouble kill for the CT squad!",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 2,\n      \"deaths\": 4,\n      \"kills\": 12\n    },\n    \"map_callout\": \"Catwalk\",\n    \"name\": \"Mayer\",\n    \"round_kills\": 1,\n    \"team\": \"CT\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 2,\n          \"deaths\": 4,\n          \"kills\": 12\n        },\n        \"map_callout\": \"Catwalk\",\n        \"name\": \"Mayer\",\n        \"round_kills\": 1,\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"Opie\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"alive_counts_after\": {\n        \"T\": 3\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 347,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Scaffolding",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "Side Pit",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 12
+          },
+          "map_callout": "Catwalk",
+          "name": "Mayer",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Opie",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 3
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Kill!",
+      "id": 35,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Mayer takes down Opie on Catwalk.",
+      "id": 36,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "Double kill for the CT squad!",
+      "id": 37,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:28:56",
+  "dropped_items": [
+    {
+      "commentary": "Double kill for the CT squad!",
+      "id": 37,
+      "tag": "followup"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "Mayer takes down Opie on Catwalk.",
+    "id": 36,
+    "tag": "followup"
+  },
+  "llm": {
+    "lines": [
+      "Kill!",
+      "Mayer (CT) kills Greymouth (T) with a double.",
+      "Detonation_callout!",
+      "Mayer (CT) kills Greymouth (T) with a double."
+    ],
+    "raw_text": "Kill! Mayer (CT) kills Greymouth (T) with a double.  \nDetonation_callout! Mayer (CT) kills Greymouth (T) with a double.  \nRight Side Mid, Mayer (CT) kills Greymouth (T) with a double.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 2,\n      \"deaths\": 4,\n      \"kills\": 13\n    },\n    \"map_callout\": \"Right Side Mid\",\n    \"name\": \"Mayer\",\n    \"round_kills\": 2,\n    \"team\": \"CT\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 2,\n          \"deaths\": 4,\n          \"kills\": 13\n        },\n        \"map_callout\": \"Right Side Mid\",\n        \"name\": \"Mayer\",\n        \"round_kills\": 2,\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"Greymouth\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"alive_counts_after\": {\n        \"T\": 2\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 354,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Side Pit",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 13
+          },
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "round_kills": 2,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 2
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Catwalk",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Opie",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Kill!",
+      "id": 38,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Mayer (CT) kills Greymouth (T) with a double.",
+      "id": 39,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "Detonation_callout!",
+      "id": 40,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "Mayer (CT) kills Greymouth (T) with a double.",
+      "id": 41,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:29:06",
+  "llm": {
+    "lines": [
+      "CT's got a solid lineup, but the T team's got some sharp players too. The score's close, but the CTs are keeping it tight. Looks like the CTs are in control here."
+    ],
+    "raw_text": "CT's got a solid lineup, but the T team's got some sharp players too. The score's close, but the CTs are keeping it tight. Looks like the CTs are in control here.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate a tiny 3-line conversation between play_by_play and color casters. The lines should sound like a short back-and-forth, but return commentary lines only with no speaker labels. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 lines for a short two-caster idle exchange.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"Long\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Long\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Catwalk\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Right Side Mid\",\n      \"name\": \"Mayer\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Car\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Car\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Blue\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Miguel\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 5\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_conversation\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_conversation",
+  "payload_sequence": 385,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "CT's got a solid lineup, but the T team's got some sharp players too. The score's close, but the CTs are keeping it tight. Looks like the CTs are in control here.",
+      "id": 42,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:29:12",
+  "interrupted_current": {
+    "commentary": "CT's got a solid lineup, but the T team's got some sharp players too. The score's close, but the CTs are keeping it tight. Looks like the CTs are in control here.",
+    "id": 42,
+    "tag": "color"
+  },
+  "llm": {
+    "lines": [
+      "Suicide grenade thrown",
+      "Inferno detonated"
+    ],
+    "raw_text": "Suicide grenade thrown\nInferno detonated",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"map_callout\": \"Suicide\",\n    \"name\": \"Miguel\",\n    \"team\": \"T\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"grenade_thrown\",\n      \"grenade_type\": \"inferno\",\n      \"owner_player\": {\n        \"map_callout\": \"Suicide\",\n        \"name\": \"Miguel\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"detonation_callout\": \"Suicide\",\n      \"event_type\": \"grenade_detonated\",\n      \"grenade_type\": \"firebomb\",\n      \"owner_player\": {\n        \"map_callout\": \"Suicide\",\n        \"name\": \"Miguel\",\n        \"team\": \"T\"\n      }\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 406,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      },
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Suicide grenade thrown",
+      "id": 43,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Inferno detonated",
+      "id": 44,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:29:13",
+  "dropped_items": [
+    {
+      "commentary": "Inferno detonated",
+      "id": 44,
+      "tag": "followup"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "CT's got a solid lineup, but the T team's got some sharp players too. The score's close, but the CTs are keeping it tight. Looks like the CTs are in control here.",
+    "id": 42,
+    "tag": "color"
+  },
+  "llm": {
+    "lines": [
+      "Suicide",
+      "Mayer takes down Miguel",
+      "The game is moving fast."
+    ],
+    "raw_text": "Suicide  \nMayer takes down Miguel  \nThe game is moving fast.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 2,\n      \"deaths\": 4,\n      \"kills\": 14\n    },\n    \"map_callout\": \"Suicide\",\n    \"name\": \"Mayer\",\n    \"round_kills\": 3,\n    \"team\": \"CT\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 2,\n          \"deaths\": 4,\n          \"kills\": 14\n        },\n        \"map_callout\": \"Suicide\",\n        \"name\": \"Mayer\",\n        \"round_kills\": 3,\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"Miguel\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"alive_counts_after\": {\n        \"T\": 1\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 407,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 14
+          },
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "round_kills": 3,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 1
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Suicide",
+      "id": 45,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Mayer takes down Miguel",
+      "id": 46,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "The game is moving fast.",
+      "id": 47,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:29:20",
+  "dropped_items": [
+    {
+      "commentary": "Mayer takes down Miguel",
+      "id": 46,
+      "tag": "followup"
+    },
+    {
+      "commentary": "The game is moving fast.",
+      "id": 47,
+      "tag": "followup"
+    }
+  ],
+  "llm": {
+    "lines": [
+      "inferno detonation_callout",
+      "blazing explosion"
+    ],
+    "raw_text": "inferno detonation_callout  \nblazing explosion",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {}\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"grenade_detonated\",\n      \"grenade_type\": \"inferno\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 429,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "T Spawn",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "inferno detonation_callout",
+      "id": 48,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "blazing explosion",
+      "id": 49,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:29:30",
+  "llm": {
+    "lines": [
+      "The CT team is in control, but the game is still a wild ride.",
+      "Harvey\u2019s got the edge, but Mayer\u2019s got the flair.",
+      "Walt\u2019s got the focus, but Ferris\u2019s got the flair."
+    ],
+    "raw_text": "The CT team is in control, but the game is still a wild ride.  \nHarvey\u2019s got the edge, but Mayer\u2019s got the flair.  \nWalt\u2019s got the focus, but Ferris\u2019s got the flair.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate 3 understated color lines that avoid repeating the same point. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 short idle color lines.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"Outside Long\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Long\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Outside Long\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Long Doors\",\n      \"name\": \"Mayer\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Goose\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Ramp\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Long Doors\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 5\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_color\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_color",
+  "payload_sequence": 462,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Outside Long",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "color",
+      "commentary": "The CT team is in control, but the game is still a wild ride. Harvey\u2019s got the edge, but Mayer\u2019s got the flair. Walt\u2019s got the focus, but Ferris\u2019s got the flair.",
+      "id": 50,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:29:33",
+  "interrupted_current": {
+    "commentary": "The CT team is in control, but the game is still a wild ride. Harvey\u2019s got the edge, but Mayer\u2019s got the flair. Walt\u2019s got the focus, but Ferris\u2019s got the flair.",
+    "id": 50,
+    "tag": "color"
+  },
+  "llm": {
+    "lines": [
+      "Kill!",
+      "Larry kills Mayer.",
+      "Blue detonation_callout.",
+      "The game is in blue."
+    ],
+    "raw_text": "Kill! Larry kills Mayer.  \nBlue detonation_callout.  \nThe game is in blue.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 4,\n      \"deaths\": 11,\n      \"kills\": 6\n    },\n    \"map_callout\": \"Blue\",\n    \"name\": \"Larry\",\n    \"round_kills\": 1,\n    \"team\": \"T\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 4,\n          \"deaths\": 11,\n          \"kills\": 6\n        },\n        \"map_callout\": \"Blue\",\n        \"name\": \"Larry\",\n        \"round_kills\": 1,\n        \"team\": \"T\"\n      },\n      \"victim\": {\n        \"name\": \"Mayer\",\n        \"team\": \"CT\"\n      }\n    },\n    {\n      \"alive_counts_after\": {\n        \"CT\": 5\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 472,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 4,
+            "deaths": 11,
+            "kills": 6
+          },
+          "map_callout": "Blue",
+          "name": "Larry",
+          "round_kills": 1,
+          "team": "T"
+        },
+        "victim": {
+          "name": "Mayer",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 5
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Kill!",
+      "id": 51,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Larry kills Mayer.",
+      "id": 52,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "Blue detonation_callout.",
+      "id": 53,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "color",
+      "commentary": "The game is in blue.",
+      "id": 54,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:29:44",
+  "llm": {
+    "lines": [
+      "CT just secured the kill, and the T team is in chaos. The blue team is on a roll. Telsen is doing something unexpected."
+    ],
+    "raw_text": "CT just secured the kill, and the T team is in chaos. The blue team is on a roll. Telsen is doing something unexpected.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown. This is Counter-Strike 2. Be concise, creative, and avoid repeating the same context. Generate a tiny 3-line conversation between play_by_play and color casters. The lines should sound like a short back-and-forth, but return commentary lines only with no speaker labels. Each line should be a single short sentence. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 3 lines for a short two-caster idle exchange.\nUse the Global context below.\nDo not add labels or numbering.\n\nGlobal context:\n{\n  \"alive_players\": [\n    {\n      \"map_callout\": \"Blue\",\n      \"name\": \"Dayo\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"CT Spawn\",\n      \"name\": \"Ferris\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"T Spawn\",\n      \"name\": \"Harvey\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Goose\",\n      \"name\": \"Telsen\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Ramp\",\n      \"name\": \"Walt\",\n      \"team\": \"CT\"\n    },\n    {\n      \"map_callout\": \"Blue\",\n      \"name\": \"Larry\",\n      \"team\": \"T\"\n    }\n  ],\n  \"score\": {\n    \"CT\": 7,\n    \"T\": 5\n  }\n}\n\nPrompt input:\n{\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"idle_color\"\n      },\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"idle_color\"\n      }\n    ],\n    \"mode\": \"idle_conversation\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "idle_conversation",
+  "payload_sequence": 508,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Mayer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "CT just secured the kill, and the T team is in chaos. The blue team is on a roll. Telsen is doing something unexpected.",
+      "id": 55,
+      "prompt_style": "idle_color",
+      "tag": "color"
+    }
+  ],
+  "status": "completed"
+}
+
+{
+  "created_at": "2026-04-14T03:29:45",
+  "dropped_items": [
+    {
+      "commentary": "CT just secured the kill, and the T team is in chaos. The blue team is on a roll. Telsen is doing something unexpected.",
+      "id": 55,
+      "tag": "color"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "The game is in blue.",
+    "id": 54,
+    "tag": "followup"
+  },
+  "llm": {
+    "lines": [
+      "Blue kill!",
+      "Larry down."
+    ],
+    "raw_text": "Blue kill! Larry down.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should stay short and speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short event trigger call.\nLine 2: short follow-up color line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 7,\n      \"deaths\": 9,\n      \"kills\": 4\n    },\n    \"map_callout\": \"Blue\",\n    \"name\": \"Dayo\",\n    \"round_kills\": 1,\n    \"team\": \"CT\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 7,\n          \"deaths\": 9,\n          \"kills\": 4\n        },\n        \"map_callout\": \"Blue\",\n        \"name\": \"Dayo\",\n        \"round_kills\": 1,\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"Larry\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"event_type\": \"game_over\",\n      \"final_score\": {\n        \"CT\": 8,\n        \"T\": 5\n      },\n      \"map_phase_after\": \"gameover\",\n      \"winner\": \"CT\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"play_by_play\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"color\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 511,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 8,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 7,
+            "deaths": 9,
+            "kills": 4
+          },
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Larry",
+          "team": "T"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 5
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Mayer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "play_by_play",
+      "commentary": "Blue kill!",
+      "id": 56,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "color",
+      "commentary": "Larry down.",
+      "id": 57,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}
+

@@ -1,0 +1,93 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 8,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 7,
+            "deaths": 9,
+            "kills": 4
+          },
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Larry",
+          "team": "T"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 5
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Mayer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}

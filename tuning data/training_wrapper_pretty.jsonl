@@ -1,0 +1,2368 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Double Stack",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "B Car",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 3,
+            "deaths": 7,
+            "kills": 9
+          },
+          "map_callout": "Close",
+          "name": "Walt",
+          "round_kills": 2,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 2
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "B Car",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Close",
+          "name": "Walt",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Window",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Scaffolding",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "T Plat",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "B Car",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "T Ramp",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Fence",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 5,
+            "kills": 10
+          },
+          "map_callout": "Close",
+          "name": "Telsen",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 1
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Close",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Double Stack",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Close",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Big Box",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Close",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Big Box",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 4,
+            "deaths": 10,
+            "kills": 4
+          },
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "round_kills": 1,
+          "team": "T"
+        },
+        "victim": {
+          "name": "Telsen",
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      },
+      {
+        "alive_counts_after": {
+          "CT": 5
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Big Box",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 4,
+            "deaths": 10,
+            "kills": 5
+          },
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "round_kills": 2,
+          "team": "T"
+        },
+        "victim": {
+          "name": "Dayo",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 4
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Telsen",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Boost",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Double Stack",
+          "name": "Walt",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 3,
+            "deaths": 7,
+            "kills": 10
+          },
+          "map_callout": "Double Stack",
+          "name": "Walt",
+          "round_kills": 3,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Larry",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 0
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Back Site",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Dayo",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Plat",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Walt",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      },
+      {
+        "alive_counts_after": {
+          "CT": 4,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 5
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Double Stack",
+          "name": "Walt",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "CT Spawn",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Opie",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Window",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Opie",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Scaffolding",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "Side Pit",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Opie",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Scaffolding",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Greymouth",
+          "team": "T"
+        },
+        {
+          "map_callout": "Side Pit",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 12
+          },
+          "map_callout": "Catwalk",
+          "name": "Mayer",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Opie",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 3
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Side Pit",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 13
+          },
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "round_kills": 2,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 2
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Catwalk",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Opie",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      },
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 14
+          },
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "round_kills": 3,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 1
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "T Spawn",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Suicide",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Outside Long",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno",
+        "owner_player": {}
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 4,
+            "deaths": 11,
+            "kills": 6
+          },
+          "map_callout": "Blue",
+          "name": "Larry",
+          "round_kills": 1,
+          "team": "T"
+        },
+        "victim": {
+          "name": "Mayer",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 5
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno",
+        "owner_player": {}
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        }
+      ],
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Mayer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        },
+        {
+          "caster": "color",
+          "style": "idle_color"
+        },
+        {
+          "caster": "play_by_play",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Walt",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 8,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 7,
+            "deaths": 9,
+            "kills": 4
+          },
+          "map_callout": "Blue",
+          "name": "Dayo",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Larry",
+          "team": "T"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 5
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Mayer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "play_by_play",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "color",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
+
