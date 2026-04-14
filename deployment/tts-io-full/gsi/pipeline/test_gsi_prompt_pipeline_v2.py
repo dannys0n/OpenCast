@@ -314,6 +314,20 @@ class FilterImportantEventsTests(unittest.TestCase):
         self.assertEqual(MODULE.resolve_map_callout("de_dust2", "-720, -830, 140"), "T Spawn")
         self.assertEqual(MODULE.resolve_map_callout("de_dust2", "-1545, 1939, 53"), "B Car")
 
+    def test_supports_multiple_points_with_same_callout_name(self):
+        original_load_map_callouts = MODULE.load_map_callouts
+        try:
+            MODULE.load_map_callouts = lambda map_name: (
+                {"name": "Long", "position": (100.0, 100.0, 0.0)},
+                {"name": "Long", "position": (1000.0, 1000.0, 0.0)},
+                {"name": "Short", "position": (500.0, 500.0, 0.0)},
+            )
+
+            self.assertEqual(MODULE.resolve_map_callout("de_dust2", "102, 99, 0"), "Long")
+            self.assertEqual(MODULE.resolve_map_callout("de_dust2", "998, 1004, 0"), "Long")
+        finally:
+            MODULE.load_map_callouts = original_load_map_callouts
+
     def test_does_not_treat_local_grenade_equip_change_as_throw(self):
         previous_player = make_player("Alice", "CT", 100, round_kills=0, match_kills=8)
         previous_player["weapons"] = {
