@@ -184,6 +184,45 @@ class PromptQueueV3Tests(unittest.TestCase):
         self.assertNotIn('"match_context"', captured["user_prompt"])
         self.assertNotIn('"previous_events"', captured["user_prompt"])
 
+    def test_process_event_wrapper_splits_single_line_multi_sentence_event_output(self):
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "Yanni kills Tony. Triple for Yanni.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+
+        wrapper = {
+            "input": {
+                "match_context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Yanni", "team": "CT", "map_callout": "Short"}],
+                },
+                "previous_events": [],
+                "current_events": [
+                    {
+                        "event_type": "kill",
+                        "killer": {"name": "Yanni", "team": "CT", "map_callout": "Short", "round_kills": 3},
+                        "victim": {"name": "Tony", "team": "T"},
+                    }
+                ],
+                "overrides": {"caster": None, "prompt_style": None},
+            }
+        }
+
+        record = MODULE.process_event_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=16, snapshot={})
+
+        self.assertEqual(record["status"], "completed")
+        self.assertEqual([item["tag"] for item in record["queued_items"]], ["event", "followup"])
+        self.assertEqual(record["queued_items"][0]["commentary"], "Yanni kills Tony.")
+        self.assertEqual(record["queued_items"][1]["commentary"], "Triple for Yanni.")
+
     def test_process_interval_wrapper_idle_color_keeps_three_lines_in_single_tts_item(self):
         def fake_build_text_llm_config(repo_root):
             return type("FakeTextConfig", (), {})()

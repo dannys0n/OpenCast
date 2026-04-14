@@ -2,6 +2,7 @@ import copy
 import json
 import os
 import re
+import sys
 import tempfile
 import threading
 import time
@@ -56,7 +57,15 @@ CURRENT_PLAYBACK = None
 QUEUE_WORKER_THREAD = None
 INTERVAL_MODE_INDEX = 0
 ITEM_SEQUENCE = 0
-LOG_START_MONOTONIC = time.monotonic()
+LAST_LOG_MONOTONIC = None
+ANSI_RESET = "\033[0m"
+ANSI_DIM = "\033[2m"
+ANSI_CYAN = "\033[36m"
+ANSI_GREEN = "\033[32m"
+ANSI_YELLOW = "\033[33m"
+ANSI_RED = "\033[31m"
+ANSI_BLUE = "\033[34m"
+ANSI_MAGENTA = "\033[35m"
 
 
 def env_text(name, default=""):
@@ -84,8 +93,8 @@ def now_stamp():
 
 
 def reset_log_clock():
-    global LOG_START_MONOTONIC
-    LOG_START_MONOTONIC = time.monotonic()
+    global LAST_LOG_MONOTONIC
+    LAST_LOG_MONOTONIC = None
 
 
 def slim_commentary(text, limit=140):
@@ -95,21 +104,65 @@ def slim_commentary(text, limit=140):
     return f"{compact[: limit - 3].rstrip()}..."
 
 
+def should_use_color():
+    if os.environ.get("NO_COLOR"):
+        return False
+    return bool(sys.stdout.isatty())
+
+
+def colorize(text, ansi_code):
+    if not should_use_color() or not text:
+        return text
+    return f"{ansi_code}{text}{ANSI_RESET}"
+
+
+def action_color(action):
+    return {
+        "prompt": ANSI_CYAN,
+        "tts start": ANSI_GREEN,
+        "tts interrupted": ANSI_YELLOW,
+        "tts failed": ANSI_RED,
+    }.get(action, "")
+
+
+def tag_color(tag):
+    return {
+        "event": ANSI_RED,
+        "followup": ANSI_BLUE,
+        "color": ANSI_MAGENTA,
+    }.get(tag, "")
+
+
+def caster_color(caster):
+    return {
+        "play_by_play": ANSI_BLUE,
+        "color": ANSI_MAGENTA,
+    }.get(caster, "")
+
+
 def slim_log(action, *, tag=None, caster=None, commentary=None):
-    delta = time.monotonic() - LOG_START_MONOTONIC
-    prefix = f"[v3 +{delta:0.3f}s] {action}"
+    global LAST_LOG_MONOTONIC
+    now = time.monotonic()
+    if LAST_LOG_MONOTONIC is None:
+        delta = 0.0
+    else:
+        delta = now - LAST_LOG_MONOTONIC
+    LAST_LOG_MONOTONIC = now
+    prefix = f"[+{delta:0.3f}s] {action}"
+    prefix = f"{colorize(prefix, ANSI_DIM)}"
+    action_text = colorize(action, action_color(action))
     parts = []
     if tag:
-        parts.append(f"[{tag}]")
+        parts.append(colorize(f"[{tag}]", tag_color(tag)))
     if caster:
-        parts.append(f"[{caster}]")
+        parts.append(colorize(f"[{caster}]", caster_color(caster)))
     if commentary:
         parts.append(slim_commentary(commentary))
     suffix = " ".join(parts)
     if suffix:
-        print(f"{prefix} -> {suffix}", flush=True)
+        print(f"{prefix.replace(action, action_text, 1)} -> {suffix}", flush=True)
     else:
-        print(prefix, flush=True)
+        print(prefix.replace(action, action_text, 1), flush=True)
 
 
 def ensure_state_dir():
@@ -455,6 +508,20 @@ def extract_commentary_lines(raw_text, expected_max):
     return cleaned
 
 
+def split_compound_event_lines(lines, expected_max):
+    split_lines = []
+    for line in lines:
+        sentences = re.split(r"(?<=[.!?])\s+", str(line).strip())
+        for sentence in sentences:
+            candidate = sentence.strip()
+            if not candidate:
+                continue
+            split_lines.append(candidate)
+            if len(split_lines) >= expected_max:
+                return split_lines
+    return split_lines
+
+
 def build_tts_prompt(commentary_text, caster, prompt_style, tts_config):
     voice_name = tts_config.voice_name
     speed = PLAY_BY_PLAY_SPEED if caster == "play_by_play" else COLOR_SPEED
@@ -756,6 +823,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
     try:
         result = request_chat_completion(text_config, system_prompt, user_prompt)
         lines = extract_commentary_lines(result["raw_text"], expected_max=4)
+        lines = split_compound_event_lines(lines, expected_max=4)
         dropped = []
         interrupted_current = None
         if lines:
