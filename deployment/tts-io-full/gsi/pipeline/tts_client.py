@@ -90,7 +90,7 @@ def build_tts_instruct(tts_prompt):
     else:
         emotion_text = "Speak with a calm measured tone."
 
-    if caster == "play_by_play":
+    if caster in {"play_by_play", "caster0"}:
         caster_text = "Deliver it as rapid play-by-play commentary."
     else:
         caster_text = "Deliver it as reflective color commentary."

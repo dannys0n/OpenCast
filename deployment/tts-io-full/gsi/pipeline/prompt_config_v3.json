@@ -1,5 +1,5 @@
 {
   "interval_seconds": 10,
-  "event_instruction": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the event trigger call. Line 2 is a short follow-up color line. Give a related random fun fact based on context. No labels. No JSON. No markdown.",
+  "event_instruction": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the caster0 event trigger call. Line 2 is a short caster1 follow-up line. Give a related random fun fact based on context. No labels. No JSON. No markdown.",
   "interval_instruction": "You are generating Counter-Strike 2 idle caster lines for live TTS. Return plain text only. Return exactly 3 short lines. Give a quirky comment complimenting or berating a player, or a random fun fact about Counter-Strike 2. No labels. No JSON. No markdown."
 }

@@ -72,6 +72,14 @@ ANSI_BLUE = "\033[34m"
 ANSI_MAGENTA = "\033[35m"
 ANSI_BRIGHT_CYAN = "\033[96m"
 ANSI_BRIGHT_YELLOW = "\033[93m"
+CASTER0 = "caster0"
+CASTER1 = "caster1"
+LEGACY_CASTER_MAP = {
+    "play_by_play": CASTER0,
+    "color": CASTER1,
+    CASTER0: CASTER0,
+    CASTER1: CASTER1,
+}
 
 
 def env_text(name, default=""):
@@ -138,22 +146,25 @@ def tag_color(tag):
     return {
         "event": ANSI_RED,
         "followup": ANSI_BLUE,
-        "color": ANSI_MAGENTA,
+        "idle": ANSI_MAGENTA,
     }.get(tag, "")
+
+
+def normalize_caster_id(caster):
+    value = str(caster or "").strip().lower()
+    return LEGACY_CASTER_MAP.get(value, value)
 
 
 def caster_color(caster):
     return {
-        "play_by_play": ANSI_BRIGHT_CYAN,
-        "color": ANSI_BRIGHT_YELLOW,
-    }.get(caster, "")
+        CASTER0: ANSI_BRIGHT_CYAN,
+        CASTER1: ANSI_BRIGHT_YELLOW,
+    }.get(normalize_caster_id(caster), "")
 
 
 def caster_label(caster):
-    return {
-        "play_by_play": "caster1",
-        "color": "caster2",
-    }.get(caster, caster)
+    normalized = normalize_caster_id(caster)
+    return normalized or str(caster or "")
 
 
 def format_trimmed_items(items, limit=220):
@@ -278,8 +289,8 @@ def load_prompt_config():
                 "You are generating Counter-Strike 2 caster lines for live TTS. "
                 "Return plain text only. "
                 "For event prompts, return exactly 2 lines. "
-                "Line 1 is the event trigger call. "
-                "Line 2 is a short follow-up color line. "
+                f"Line 1 is the {CASTER0} event trigger call. "
+                f"Line 2 is a short {CASTER1} follow-up line. "
                 "No labels. No JSON. No markdown."
             ),
             "interval_instruction": (
@@ -360,7 +371,7 @@ def trim_few_shot_example(example):
             "output": {
                 "commentary": as_dict(example.get("output")).get("commentary"),
                 "prompt_style": as_dict(example.get("output")).get("prompt_style"),
-                "caster": as_dict(example.get("output")).get("caster"),
+                "caster": normalize_caster_id(as_dict(example.get("output")).get("caster")),
             },
         }
     )
@@ -400,10 +411,11 @@ def few_shot_sort_key(example, target_event_type):
 
 
 def select_few_shot_examples(*, casters, prompt_styles, current_events=None, limit=4):
+    normalized_casters = {normalize_caster_id(caster) for caster in casters}
     selected = []
     for example in load_few_shot_examples():
         output = as_dict(example.get("output"))
-        if output.get("caster") not in casters:
+        if normalize_caster_id(output.get("caster")) not in normalized_casters:
             continue
         if output.get("prompt_style") not in prompt_styles:
             continue
@@ -472,7 +484,7 @@ def build_focused_context(current_events):
 
 def build_event_system_prompt(current_events):
     few_shots = select_few_shot_examples(
-        casters={"play_by_play", "color"},
+        casters={CASTER0, CASTER1},
         prompt_styles={"play_by_play_event", "play_by_play_follow_up"},
         current_events=current_events,
         limit=5,
@@ -481,8 +493,8 @@ def build_event_system_prompt(current_events):
     return (
         f"{config.get('event_instruction', '').strip()} "
         "This is Counter-Strike 2. "
-        "Line 1 should be extremely short, ideally 2 to 5 words and never exceed 8 words. "
-        "Line 2 should stay short and speakable. "
+        f"Line 1 should fit {CASTER0}'s rapid event-call style and be extremely short, ideally 2 to 5 words and never exceed 8 words. "
+        f"Line 2 should fit {CASTER1}'s short follow-up style and stay speakable. "
         "If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. "
         "If the event is grenade_detonated, almost always mention detonation_callout. "
         "Few-shot JSON examples:\n"
@@ -492,17 +504,17 @@ def build_event_system_prompt(current_events):
 
 def build_interval_system_prompt(conversation_mode):
     few_shots = select_few_shot_examples(
-        casters={"color", "play_by_play"},
+        casters={CASTER1, CASTER0},
         prompt_styles={"idle_color"},
         limit=4,
     )
     config = load_prompt_config()
     extra = (
-        "Generate a tiny 3-line conversation between play_by_play and color casters. "
+        f"Generate a tiny 3-line conversation between {CASTER0} and {CASTER1}. "
         "The lines should sound like a short back-and-forth, but return commentary lines only with no speaker labels."
         if conversation_mode
         else
-        "Generate 3 understated color lines that avoid repeating the same point."
+        f"Generate 3 understated {CASTER1} lines that avoid repeating the same point."
     )
     return (
         f"{config.get('interval_instruction', '').strip()} "
@@ -525,8 +537,8 @@ def build_event_user_prompt(wrapper):
     )
     return (
         "Generate exactly 2 lines.\n"
-        "Line 1: very short event trigger call.\n"
-        "Line 2: short follow-up color line.\n"
+        f"Line 1: very short {CASTER0} event trigger call.\n"
+        f"Line 2: short {CASTER1} follow-up line.\n"
         "Use Focused context only for line 1.\n"
         "Do not add labels or numbering.\n\n"
         "Focused context:\n"
@@ -544,9 +556,9 @@ def build_interval_user_prompt(wrapper, conversation_mode):
         }
     )
     mode_text = (
-        "Generate exactly 3 lines for a short two-caster idle exchange."
+        f"Generate exactly 3 lines for a short {CASTER0}/{CASTER1} idle exchange."
         if conversation_mode
-        else "Generate exactly 3 short idle color lines."
+        else f"Generate exactly 3 short idle {CASTER1} lines."
     )
     return (
         f"{mode_text}\n"
@@ -603,11 +615,12 @@ def split_compound_event_lines(lines, expected_max):
 
 
 def build_tts_prompt(commentary_text, caster, prompt_style, tts_config):
+    caster = normalize_caster_id(caster)
     voice_name = tts_config.voice_name
-    speed = PLAY_BY_PLAY_SPEED if caster == "play_by_play" else COLOR_SPEED
-    if caster == "play_by_play" and PLAY_BY_PLAY_VOICE_NAME:
+    speed = PLAY_BY_PLAY_SPEED if caster == CASTER0 else COLOR_SPEED
+    if caster == CASTER0 and PLAY_BY_PLAY_VOICE_NAME:
         voice_name = PLAY_BY_PLAY_VOICE_NAME
-    if caster == "color" and COLOR_VOICE_NAME:
+    if caster == CASTER1 and COLOR_VOICE_NAME:
         voice_name = COLOR_VOICE_NAME
 
     return {
@@ -760,7 +773,7 @@ def build_queue_item(*, commentary, caster, prompt_style, tag, payload_sequence,
         "id": next_item_sequence(),
         "created_at": now_stamp(),
         "commentary": commentary,
-        "caster": caster,
+        "caster": normalize_caster_id(caster),
         "prompt_style": prompt_style,
         "tag": tag,
         "payload_sequence": payload_sequence,
@@ -822,7 +835,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
             items.append(
                 build_queue_item(
                     commentary=lines[0],
-                    caster="play_by_play",
+                    caster=CASTER0,
                     prompt_style="play_by_play_event",
                     tag="event",
                     payload_sequence=payload_sequence,
@@ -834,7 +847,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                 items.append(
                     build_queue_item(
                         commentary=followup_line,
-                        caster="color",
+                        caster=CASTER1,
                         prompt_style="play_by_play_follow_up",
                         tag="followup",
                         payload_sequence=payload_sequence,
@@ -922,14 +935,14 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
         lines = extract_commentary_lines(result["raw_text"], expected_max=3)
         items = []
         if conversation_mode:
-            casters = ["play_by_play", "color", "play_by_play"]
+            casters = [CASTER0, CASTER1, CASTER0]
             for index, line in enumerate(lines):
                 items.append(
                     build_queue_item(
                         commentary=line,
                         caster=casters[min(index, len(casters) - 1)],
                         prompt_style="idle_color",
-                        tag="color",
+                        tag="idle",
                         payload_sequence=payload_sequence,
                         source=interval_mode,
                     )
@@ -940,9 +953,9 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
                 items.append(
                     build_queue_item(
                         commentary=commentary,
-                        caster="color",
+                        caster=CASTER1,
                         prompt_style="idle_color",
-                        tag="color",
+                        tag="idle",
                         payload_sequence=payload_sequence,
                         source=interval_mode,
                     )

@@ -79,8 +79,8 @@ class PromptQueueV3Tests(unittest.TestCase):
     def test_prepare_queue_for_event_trigger_interrupts_current_non_event_and_drops_queued_non_events(self):
         current_non_event = {
             "id": 10,
-            "tag": "color",
-            "caster": "color",
+            "tag": "idle",
+            "caster": "caster1",
             "prompt_style": "idle_color",
             "commentary": "Quiet for now.",
             "payload_sequence": 5,
@@ -91,7 +91,7 @@ class PromptQueueV3Tests(unittest.TestCase):
         queued_non_event = {
             "id": 11,
             "tag": "followup",
-            "caster": "color",
+            "caster": "caster1",
             "prompt_style": "play_by_play_follow_up",
             "commentary": "Plant forces the retake.",
             "payload_sequence": 5,
@@ -129,8 +129,8 @@ class PromptQueueV3Tests(unittest.TestCase):
 
         current_non_event = {
             "id": 10,
-            "tag": "color",
-            "caster": "color",
+            "tag": "idle",
+            "caster": "caster1",
             "prompt_style": "idle_color",
             "commentary": "Quiet for now.",
             "payload_sequence": 11,
@@ -140,8 +140,8 @@ class PromptQueueV3Tests(unittest.TestCase):
         }
         queued_non_event = {
             "id": 11,
-            "tag": "color",
-            "caster": "color",
+            "tag": "idle",
+            "caster": "caster1",
             "prompt_style": "idle_color",
             "commentary": "Still waiting.",
             "payload_sequence": 11,
@@ -175,7 +175,7 @@ class PromptQueueV3Tests(unittest.TestCase):
         self.assertEqual(record["status"], "completed")
         self.assertEqual([item["tag"] for item in record["queued_items"]], ["event", "followup", "followup"])
         self.assertEqual(record["queued_items"][0]["commentary"], "Niko doubles up.")
-        self.assertEqual(record["queued_items"][1]["caster"], "color")
+        self.assertEqual(record["queued_items"][1]["caster"], "caster1")
         self.assertEqual(record["dropped_items"][0]["commentary"], "Still waiting.")
         self.assertEqual(record["interrupted_current"]["commentary"], "Quiet for now.")
         self.assertTrue(current_non_event["interrupt_event"].is_set())
@@ -255,7 +255,8 @@ class PromptQueueV3Tests(unittest.TestCase):
         self.assertEqual(record["status"], "completed")
         self.assertEqual(record["mode"], "idle_color")
         self.assertEqual(len(record["queued_items"]), 1)
-        self.assertEqual(record["queued_items"][0]["caster"], "color")
+        self.assertEqual(record["queued_items"][0]["caster"], "caster1")
+        self.assertEqual(record["queued_items"][0]["tag"], "idle")
         self.assertEqual(
             record["queued_items"][0]["commentary"],
             "Mid is quiet. CT are spread thin. This could turn fast.",
@@ -292,7 +293,8 @@ class PromptQueueV3Tests(unittest.TestCase):
 
         self.assertEqual(record["status"], "completed")
         self.assertEqual(record["mode"], "idle_conversation")
-        self.assertEqual([item["caster"] for item in record["queued_items"]], ["play_by_play", "color", "play_by_play"])
+        self.assertEqual([item["caster"] for item in record["queued_items"]], ["caster0", "caster1", "caster0"])
+        self.assertEqual([item["tag"] for item in record["queued_items"]], ["idle", "idle", "idle"])
         self.assertEqual(
             [item["commentary"] for item in record["queued_items"]],
             ["They are slowing down.", "That smoke changed the pace.", "B might still be live."],

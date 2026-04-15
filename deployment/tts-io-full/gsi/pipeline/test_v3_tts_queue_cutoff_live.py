@@ -58,7 +58,7 @@ def build_items(payload_sequence, event_text, followup_text):
     items = [
         queue_v3.build_queue_item(
             commentary=event_text,
-            caster="play_by_play",
+            caster="caster0",
             prompt_style="play_by_play_event",
             tag="event",
             payload_sequence=payload_sequence,
@@ -69,7 +69,7 @@ def build_items(payload_sequence, event_text, followup_text):
         items.append(
             queue_v3.build_queue_item(
                 commentary=followup_text,
-                caster="color",
+                caster="caster1",
                 prompt_style="play_by_play_follow_up",
                 tag="followup",
                 payload_sequence=payload_sequence,
@@ -280,15 +280,15 @@ def main():
 
         color_item = queue_v3.build_queue_item(
             commentary=args.color_text,
-            caster="color",
+            caster="caster1",
             prompt_style="idle_color",
-            tag="color",
+            tag="idle",
             payload_sequence=1,
             source="manual_test",
         )
         color_item["queued_at"] = stamp()
         queue_v3.enqueue_prompt_items([color_item], REPO_ROOT)
-        print("Step 1: queued long non-event color line.")
+        print("Step 1: queued long non-event idle line.")
         print(f"  - [{color_item['tag']}] {color_item['commentary']}")
 
         time.sleep(max(args.color_head_start, 0.0))
@@ -357,8 +357,8 @@ def main():
 
         print()
         print("Done. Expected behavior:")
-        print("  1. The first color line starts speaking.")
-        print("  2. Event 1 cuts off that color line.")
+        print("  1. The first idle line starts speaking.")
+        print("  2. Event 1 cuts off that idle line.")
         print("  3. Event 2 does not cut off event 1; it queues behind it.")
     finally:
         queue_v3.play_tts_prompt_interruptibly = original_playback

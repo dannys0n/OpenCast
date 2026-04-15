@@ -86,8 +86,8 @@ class GsiPromptPipelineV3Tests(unittest.TestCase):
                     "request": {
                         "mode": "event_bundle",
                         "lines": [
-                            {"caster": "play_by_play", "style": "play_by_play_event"},
-                            {"caster": "color", "style": "play_by_play_follow_up"},
+                            {"caster": "caster0", "style": "play_by_play_event"},
+                            {"caster": "caster1", "style": "play_by_play_follow_up"},
                         ],
                     },
                 }
@@ -192,9 +192,9 @@ class GsiPromptPipelineV3Tests(unittest.TestCase):
                     "request": {
                         "mode": "idle_conversation",
                         "lines": [
-                            {"caster": "play_by_play", "style": "idle_color"},
-                            {"caster": "color", "style": "idle_color"},
-                            {"caster": "play_by_play", "style": "idle_color"},
+                            {"caster": "caster0", "style": "idle_color"},
+                            {"caster": "caster1", "style": "idle_color"},
+                            {"caster": "caster0", "style": "idle_color"},
                         ],
                     },
                 }
