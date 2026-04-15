@@ -331,7 +331,9 @@ def build_idle_wrapper(current_snapshot, previous_events, mode):
     return {
         "input": {
             "context": build_training_context(current_snapshot),
-            "previous_events": copy.deepcopy(previous_events),
+            # Idle requests should not receive event context.
+            # "previous_events": copy.deepcopy(previous_events),
+            "previous_events": [],
             "current_events": [],
             "request": build_request(mode),
         }

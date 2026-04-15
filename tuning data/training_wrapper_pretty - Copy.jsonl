@@ -311,7 +311,18 @@
       }
     },
     "current_events": [],
-    "previous_events": [],
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
     "request": {
       "lines": [
         {
@@ -383,7 +394,18 @@
       }
     },
     "current_events": [],
-    "previous_events": [],
+    "previous_events": [
+      {
+        "detonation_callout": "Suicide",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "T"
+        }
+      }
+    ],
     "request": {
       "lines": [
         {
@@ -627,7 +649,20 @@
       }
     },
     "current_events": [],
-    "previous_events": [],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Close",
+          "name": "Telsen",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Miguel",
+          "team": "T"
+        }
+      }
+    ],
     "request": {
       "lines": [
         {
@@ -1135,7 +1170,12 @@
       }
     },
     "current_events": [],
-    "previous_events": [],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
     "request": {
       "lines": [
         {
@@ -1217,7 +1257,12 @@
       }
     },
     "current_events": [],
-    "previous_events": [],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
     "request": {
       "lines": [
         {
@@ -1299,7 +1344,12 @@
       }
     },
     "current_events": [],
-    "previous_events": [],
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
     "request": {
       "lines": [
         {
@@ -1580,7 +1630,20 @@
       }
     },
     "current_events": [],
-    "previous_events": [],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Right Side Mid",
+          "name": "Mayer",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Greymouth",
+          "team": "T"
+        }
+      }
+    ],
     "request": {
       "lines": [
         {
@@ -2016,7 +2079,14 @@
       }
     },
     "current_events": [],
-    "previous_events": [],
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno",
+        "owner_player": {}
+      }
+    ],
     "request": {
       "lines": [
         {
@@ -2168,7 +2238,20 @@
       }
     },
     "current_events": [],
-    "previous_events": [],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Blue",
+          "name": "Larry",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Mayer",
+          "team": "CT"
+        }
+      }
+    ],
     "request": {
       "lines": [
         {
