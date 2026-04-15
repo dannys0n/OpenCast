@@ -79,11 +79,11 @@
     "request": {
       "lines": [
         {
-          "caster": "play_by_play",
+          "caster": "caster0",
           "style": "play_by_play_event"
         },
         {
-          "caster": "color",
+          "caster": "caster1",
           "style": "play_by_play_follow_up"
         }
       ],
