@@ -1,0 +1,113 @@
+{
+  "created_at": "2026-04-17T16:16:51",
+  "dropped_items": [
+    {
+      "commentary": "caster1: Yeah, they\u2019re dominating the map.",
+      "id": 593,
+      "tag": "idle"
+    },
+    {
+      "commentary": "caster0: And the T team\u2019s got three left\u2014just a few more to go.",
+      "id": 594,
+      "tag": "idle"
+    }
+  ],
+  "interrupted_current": {
+    "commentary": "caster0: The CT team is on a roll, with five players alive!",
+    "id": 592,
+    "tag": "idle"
+  },
+  "llm": {
+    "lines": [
+      "Top Mid",
+      "Smoke detonated in T Spawn"
+    ],
+    "raw_text": "Top Mid  \nSmoke detonated in T Spawn",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the caster0 event trigger call. Line 2 is a short caster1 follow-up line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should fit caster0's rapid event-call style and be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should fit caster1's short follow-up style and stay speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short caster0 event trigger call.\nLine 2: short caster1 follow-up line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"map_callout\": \"T Spawn\",\n    \"name\": \"choink\",\n    \"team\": \"T\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"detonation_callout\": \"Top Mid\",\n      \"event_type\": \"grenade_detonated\",\n      \"grenade_type\": \"smoke\",\n      \"owner_player\": {\n        \"map_callout\": \"T Spawn\",\n        \"name\": \"choink\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"alive_counts_after\": {\n        \"CT\": 0,\n        \"T\": 0\n      },\n      \"event_type\": \"team_counter\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"caster0\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"caster1\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 2689,
+  "prompt_input": {
+    "context": {
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "detonation_callout": "Top Mid",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "T Spawn",
+          "name": "choink",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "T Spawn",
+          "name": "choink",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "caster0",
+      "commentary": "Top Mid",
+      "id": 595,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster1",
+      "commentary": "Smoke detonated in T Spawn",
+      "id": 596,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}

@@ -1,0 +1,8062 @@
+{
+  "created_at": "2026-04-17T16:01:53",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:01:57",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 0
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:02:05",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 10,
+          "kills": 7
+        },
+        "name": "lakeAve",
+        "round_kills": 2,
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:02:15",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 8,
+        "T": 4
+      },
+      "map_phase_after": "gameover",
+      "winner": "CT"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:03:16",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:03:26",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:04:43",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 0
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:04:56",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:05:34",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4,
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:05:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Default",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:05:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 4
+        },
+        "map_callout": "Window",
+        "name": "Nate",
+        "round_kills": 4,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:05:51",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:05:56",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:05:58",
+  "events": [
+    {
+      "detonation_callout": "B Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:14",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Gooper",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:18",
+  "events": [
+    {
+      "detonation_callout": "Pit Plat",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Gooper",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:18",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:19",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:20",
+  "events": [
+    {
+      "detonation_callout": "Side Pit",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:21",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Long",
+        "name": "CrazyCooter",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gooper",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Chislev Daniel",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:23",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:26",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Side Pit",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:33",
+  "events": [
+    {
+      "detonation_callout": "Outside Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Catwalk",
+        "name": "Heartless",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Nate",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:41",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:42",
+  "events": [
+    {
+      "detonation_callout": "Outside Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:43",
+  "events": [
+    {
+      "detonation_callout": "CT Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:45",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "CT Spawn",
+        "name": "Carbsbussy",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Sharp",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:48",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:49",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "Default",
+        "name": "Long",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:06:57",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:20",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:25",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "CT Spawn",
+        "name": "Carbsbussy",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Beer",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 3
+        },
+        "map_callout": "CT Mid",
+        "name": "Chislev Daniel",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 5
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:46",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Side Pit",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Beer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:49",
+  "events": [
+    {
+      "detonation_callout": "Side Pit",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Beer",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Beer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:55",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Beer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:07:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 1
+        },
+        "map_callout": "Pit",
+        "name": "Gooper",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:03",
+  "events": [
+    {
+      "detonation_callout": "Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:04",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:08",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Car",
+        "name": "Gooper",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Sharp",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:10",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:11",
+  "events": [
+    {
+      "detonation_callout": "Right Side Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:12",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Plat",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:12",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:17",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:18",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:19",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:19",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Default",
+        "name": "Long",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Beer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:20",
+  "events": [
+    {
+      "detonation_callout": "CT Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Car",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:20",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Cross",
+        "name": "Broadblinder",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:22",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 3
+        },
+        "map_callout": "Long",
+        "name": "Heartless",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Blue",
+        "name": "Doctor Carry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:25",
+  "events": [
+    {
+      "detonation_callout": "Cross",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 3
+        },
+        "map_callout": "Blue",
+        "name": "Doctor Carry",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gooper",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:27",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 5
+        },
+        "map_callout": "CT Spawn",
+        "name": "Nate",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:32",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 4
+        },
+        "map_callout": "Default",
+        "name": "Chislev Daniel",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:36",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:37",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 6
+        },
+        "map_callout": "Short",
+        "name": "Nate",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:41",
+  "events": [
+    {
+      "detonation_callout": "Cross",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:08:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 7
+        },
+        "map_callout": "Plat",
+        "name": "Nate",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:15",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:17",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:18",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 1
+        },
+        "map_callout": "Lower Tunnels",
+        "name": "Beer",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "cannabis",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:18",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Long",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Beer",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 3,
+          "kills": 3
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Gooper",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Nate",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:21",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:21",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:23",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:25",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "v3asna",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:27",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:28",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:28",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:31",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 4
+        },
+        "map_callout": "Doors",
+        "name": "Long",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:32",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:33",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:37",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:37",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:39",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:40",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 3,
+          "kills": 4
+        },
+        "map_callout": "Doors",
+        "name": "Gooper",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Sharp",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:40",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:41",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 3,
+          "kills": 5
+        },
+        "map_callout": "Doors",
+        "name": "Gooper",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Snarfy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:42",
+  "events": [
+    {
+      "detonation_callout": "Boost",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "kill_count": 2,
+      "victims": [
+        {
+          "name": "Gooper",
+          "team": "T"
+        },
+        {
+          "name": "v3asna",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Boost",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Catwalk",
+        "name": "Broadblinder",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:51",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 5
+        },
+        "map_callout": "CT Spawn",
+        "name": "Chislev Daniel",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "fishtaco",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:56",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:09:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Boost",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:02",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:02",
+  "events": [
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:05",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 5
+        },
+        "map_callout": "Short",
+        "name": "Long",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:06",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 6
+        },
+        "map_callout": "Doors",
+        "name": "Chislev Daniel",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 4
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:12",
+  "events": [
+    {
+      "detonation_callout": "Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:16",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:25",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 3,
+          "kills": 4
+        },
+        "map_callout": "CT Mid",
+        "name": "Broadblinder",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Chislev Daniel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:32",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:34",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Car",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:37",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 4,
+          "kills": 6
+        },
+        "map_callout": "Side Pit",
+        "name": "Gooper",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Sharp",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:40",
+  "events": [
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Boost",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Side Pit",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Side Pit",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Pit",
+        "name": "Gooper",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:50",
+  "events": [
+    {
+      "detonation_callout": "Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:50",
+  "events": [
+    {
+      "detonation_callout": "Right Side Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:54",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Right Side Mid",
+        "name": "Carbsbussy",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "cannabis",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Pit",
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:10:55",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 3,
+          "kills": 5
+        },
+        "map_callout": "CT Mid",
+        "name": "Broadblinder",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:00",
+  "events": [
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:00",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:02",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag"
+    },
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Car",
+        "name": "v3asna",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:03",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:05",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 4,
+          "kills": 7
+        },
+        "map_callout": "Default",
+        "name": "Gooper",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:07",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 4
+        },
+        "map_callout": "Right Side Mid",
+        "name": "Doctor Carry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:10",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:12",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:13",
+  "events": [
+    {
+      "detonation_callout": "Cross",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Gooper",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:16",
+  "events": [
+    {
+      "detonation_callout": "Cross",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Heartless",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 5
+        },
+        "map_callout": "Short",
+        "name": "Doctor Carry",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gooper",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:24",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:27",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Nate",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Default",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:31",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:32",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 6
+        },
+        "map_callout": "Doors",
+        "name": "Long",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:33",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 8
+        },
+        "map_callout": "Short",
+        "name": "Nate",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Plat",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:44",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:45",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 6
+        },
+        "map_callout": "Ramp",
+        "name": "Doctor Carry",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:49",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3,
+        "T": 1
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 3
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:52",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 9
+        },
+        "map_callout": "Short",
+        "name": "Nate",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "v3asna",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Default",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Nate",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:11:59",
+  "events": [
+    {
+      "detonation_callout": "Default",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "choink",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:11",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Gooper",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:12",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "incendiary",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Pit Plat",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Gooper",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:14",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:14",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:15",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:17",
+  "events": [
+    {
+      "detonation_callout": "Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:18",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:18",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Side Pit",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:19",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Side Pit",
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:20",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 3,
+          "kills": 7
+        },
+        "map_callout": "Top Mid",
+        "name": "Long",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "phnx ~",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:20",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:20",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:21",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:21",
+  "events": [
+    {
+      "detonation_callout": "Pit Plat",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:23",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 5,
+          "kills": 8
+        },
+        "map_callout": "Long Doors",
+        "name": "Gooper",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:27",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:28",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Right Side Mid",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:30",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:32",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:33",
+  "events": [
+    {
+      "detonation_callout": "Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "choink",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:34",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:35",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:37",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:38",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:40",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:41",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:43",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 3,
+          "kills": 8
+        },
+        "map_callout": "Doors",
+        "name": "Long",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "fishtaco",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:51",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:53",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Pit",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:53",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 10
+        },
+        "map_callout": "Short",
+        "name": "Nate",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "choink",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:54",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 11
+        },
+        "map_callout": "Short",
+        "name": "Nate",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 1
+        },
+        "map_callout": "Short",
+        "name": "v3asna",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:12:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 12
+        },
+        "map_callout": "Short",
+        "name": "Nate",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "v3asna",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:00",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 4,
+          "kills": 1
+        },
+        "map_callout": "Catwalk",
+        "name": "Gone Sniping",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Sharp",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:02",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 13
+        },
+        "map_callout": "Short",
+        "name": "Nate",
+        "round_kills": 4,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "itzGranady",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:04",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "itzGranady",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:07",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 3,
+          "kills": 4
+        },
+        "map_callout": "Catwalk",
+        "name": "Carbsbussy",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Nate",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:10",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 2
+        },
+        "map_callout": "Blue",
+        "name": "CrazyCooter",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gooper",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:11",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 1
+        },
+        "map_callout": "Doors",
+        "name": "cannabis",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:14",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Long Doors",
+        "name": "itzGranady",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Catwalk",
+        "name": "cannabis",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:25",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 7
+        },
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "itzGranady",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 4
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "choink",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "itzGranady",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Nate",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "incendiary",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:49",
+  "events": [
+    {
+      "detonation_callout": "Pit Plat",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "itzGranady",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Side Pit",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:50",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:50",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 6,
+          "kills": 9
+        },
+        "map_callout": "Top Mid",
+        "name": "Gooper",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:51",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "8.24",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:53",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:53",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "8.24",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:54",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:54",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:56",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 4
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Heartless",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "phnx ~",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "v3asna",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "8.24",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:58",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "itzGranady",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:58",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 8
+        },
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:13:59",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:02",
+  "events": [
+    {
+      "detonation_callout": "Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:03",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:04",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Back Site",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:04",
+  "events": [
+    {
+      "detonation_callout": "CT Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "itzGranady",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:05",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:07",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 1,
+            "kills": 1
+          },
+          "map_callout": "Short",
+          "name": "choink",
+          "round_kills": 1,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 1,
+            "kills": 1
+          },
+          "map_callout": "Boost",
+          "name": "el ko",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      ],
+      "victims": [
+        {
+          "name": "itzGranady",
+          "team": "T"
+        },
+        {
+          "name": "el ko",
+          "team": "CT"
+        }
+      ]
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:08",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Default",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:10",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:10",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "choink",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:12",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "cannabis",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:16",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 14
+        },
+        "map_callout": "Fence",
+        "name": "Nate",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "8.24",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:17",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Plat",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:17",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 15
+        },
+        "map_callout": "Fence",
+        "name": "Nate",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "v3asna",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:22",
+  "events": [
+    {
+      "detonation_callout": "Big Box",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "CT Mid",
+        "name": "cannabis",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 9
+        },
+        "map_callout": "Pit",
+        "name": "Doctor Carry",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gooper",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:23",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:25",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:25",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:27",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:32",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 4,
+          "kills": 9
+        },
+        "map_callout": "Boost",
+        "name": "Long",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "cannabis",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:33",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Pit",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:33",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 10
+        },
+        "map_callout": "Pit",
+        "name": "Doctor Carry",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "choink",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:35",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 16
+        },
+        "map_callout": "B Doors",
+        "name": "Nate",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:42",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:43",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "Doors",
+        "name": "Cygnzxs",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:14:49",
+  "events": [
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:08",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:08",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:08",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:10",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Doors",
+        "name": "Cygnzxs",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "8.24",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:11",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:13",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:15",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:15",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 1
+        },
+        "map_callout": "Doors",
+        "name": "phnx ~",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gooper",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:21",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Top Mid",
+        "name": "Emoot",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "phnx ~",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 5,
+          "kills": 10
+        },
+        "map_callout": "Long Doors",
+        "name": "Long",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Soup",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:27",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:29",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 11
+        },
+        "map_callout": "CT Mid",
+        "name": "Doctor Carry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Gone Sniping",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:32",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:33",
+  "events": [
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:34",
+  "events": [
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:35",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:38",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Long",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:38",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:39",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Sharp",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:40",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "itzGranady",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Broadblinder",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:40",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 3
+        },
+        "map_callout": "Doors",
+        "name": "Cygnzxs",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Carbsbussy",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:41",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:45",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 4
+        },
+        "map_callout": "CT Mid",
+        "name": "cannabis",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Heartless",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:46",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:47",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 4
+        },
+        "map_callout": "Doors",
+        "name": "Cygnzxs",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Emoot",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:51",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "itzGranady",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:53",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "itzGranady",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:54",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Long",
+        "name": "choink",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "el ko",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:56",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 5
+        },
+        "map_callout": "Short",
+        "name": "Cygnzxs",
+        "round_kills": 4,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Long",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:15:59",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Fence",
+        "name": "Nate",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:03",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Car",
+        "name": "choink",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Cygnzxs",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:06",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Lower Tunnels",
+        "name": "itzGranady",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "CrazyCooter",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:17",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 4
+        },
+        "map_callout": "CT Spawn",
+        "name": "choink",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "cannabis",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:20",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 5
+        },
+        "map_callout": "CT Spawn",
+        "name": "choink",
+        "round_kills": 4,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:21",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "Doctor Carry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 4
+        },
+        "map_callout": "Close",
+        "name": "itzGranady",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Nate",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 2
+        },
+        "map_callout": "B Car",
+        "name": "Sharp",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "itzGranady",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:31",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 6
+        },
+        "map_callout": "CT Mid",
+        "name": "choink",
+        "round_kills": 5,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Sharp",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 1
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 3
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "choink",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "choink",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:16:51",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "choink",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:19:29",
+  "events": [
+    {
+      "event_type": "round_result",
+      "round_phase_after": "live",
+      "winner": "CT",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:19:59",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4,
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:00",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 4
+        },
+        "name": "MarmajaM",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ivazovski",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:01",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 13
+        },
+        "name": "andizle",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MarmajaM",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:02",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:04",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 4
+        },
+        "name": "cs23973137",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:08",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "cs23973137",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:10",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "cs23973137",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "cs23973137",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:11",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 7
+        },
+        "name": "Canada",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "cs23973137",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 6
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:16",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:19",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Canada",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:21",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Canada",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:32",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "DIDDY BLUD 67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:34",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "DIDDY BLUD 67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:39",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Ivazovski",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 3
+        },
+        "name": "Ivazovski",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "SPOOKYBOI",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "name": "Uniknocker",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ivazovski",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:51",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:54",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 5,
+          "kills": 14
+        },
+        "name": "andizle",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Uniknocker",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:55",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 1
+        },
+        "name": "\u2620Goose\u2620",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:20:58",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:21:02",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 4,
+          "kills": 5
+        },
+        "name": "MarmajaM",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Canada",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:21:10",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:21:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 4,
+          "kills": 6
+        },
+        "name": "MarmajaM",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "CurseHaus",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:21:14",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 5
+        },
+        "name": "fr17z",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MarmajaM",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:21:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "name": "DIDDY BLUD 67",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "dogs0519",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:21:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 2
+        },
+        "name": "\u2620Goose\u2620",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "DIDDY BLUD 67",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:21:30",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 6
+        },
+        "name": "fr17z",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "\u2620Goose\u2620",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:21:38",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:21:43",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 7
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "SPOOKYBOI",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:05",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "SPOOKYBOI",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Ivazovski",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "DIDDY BLUD 67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "fr17z",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "fr17z",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:08",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "DIDDY BLUD 67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:08",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "fr17z",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:12",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Ivazovski",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:13",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 1
+        },
+        "name": "CurseHaus",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Uniknocker",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:15",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Ivazovski",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:18",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 1
+        },
+        "name": "SPOOKYBOI",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "DIDDY BLUD 67",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 6,
+          "kills": 15
+        },
+        "name": "andizle",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "SPOOKYBOI",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "fr17z",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "fr17z",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 6,
+          "kills": 16
+        },
+        "name": "andizle",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "dogs0519",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 5,
+          "kills": 7
+        },
+        "name": "MarmajaM",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ivazovski",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:43",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Canada",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:45",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "andizle",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:48",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "fr17z",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:50",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Canada",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 5,
+          "kills": 8
+        },
+        "name": "MarmajaM",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Canada",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-17T16:22:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 2
+        },
+        "name": "CurseHaus",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MarmajaM",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 8,
+        "T": 1
+      },
+      "map_phase_after": "gameover",
+      "winner": "CT"
+    }
+  ]
+}
+

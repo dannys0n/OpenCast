@@ -1,0 +1,81 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "CurseHaus",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "andizle",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "fr17z",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 8,
+        "T": 1
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 1,
+            "deaths": 1,
+            "kills": 2
+          },
+          "name": "CurseHaus",
+          "round_kills": 2,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "MarmajaM",
+          "team": "T"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 1
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "name": "MarmajaM",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Canada",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}

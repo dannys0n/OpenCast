@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-04-17T16:16:51",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "choink",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}

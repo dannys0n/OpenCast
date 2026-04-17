@@ -1,0 +1,21 @@
+{
+  "payload": {
+    "auth": {
+      "token": "replace_this_with_a_secret"
+    },
+    "player": {
+      "activity": "menu",
+      "name": "GrowthHormones",
+      "steamid": "76561198237377678"
+    },
+    "provider": {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "steamid": "76561198237377678",
+      "timestamp": 1776467841,
+      "version": 14141
+    }
+  },
+  "payload_sequence": 2690,
+  "received_at": "2026-04-17T16:17:21"
+}

@@ -1,0 +1,136 @@
+{
+  "created_at": "2026-04-17T16:22:59",
+  "dropped_items": [
+    {
+      "commentary": "MarmajaM's round_kills hit the wall!",
+      "id": 709,
+      "tag": "followup"
+    }
+  ],
+  "llm": {
+    "lines": [
+      "CurseHaus killed MarmajaM",
+      "CurseHaus took down MarmajaM with a double kill",
+      "The CT team secured a gameover with a 8-1 victory."
+    ],
+    "raw_text": "CurseHaus killed MarmajaM  \nCurseHaus took down MarmajaM with a double kill  \nThe CT team secured a gameover with a 8-1 victory.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the caster0 event trigger call. Line 2 is a short caster1 follow-up line. Give a related random fun fact based on context. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should fit caster0's rapid event-call style and be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should fit caster1's short follow-up style and stay speakable. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short caster0 event trigger call.\nLine 2: short caster1 follow-up line.\nUse Focused context only for line 1.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 1,\n      \"deaths\": 1,\n      \"kills\": 2\n    },\n    \"name\": \"CurseHaus\",\n    \"round_kills\": 2,\n    \"team\": \"CT\"\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"kda\": {\n          \"assists\": 1,\n          \"deaths\": 1,\n          \"kills\": 2\n        },\n        \"name\": \"CurseHaus\",\n        \"round_kills\": 2,\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"MarmajaM\",\n        \"team\": \"T\"\n      }\n    },\n    {\n      \"event_type\": \"game_over\",\n      \"final_score\": {\n        \"CT\": 8,\n        \"T\": 1\n      },\n      \"map_phase_after\": \"gameover\",\n      \"winner\": \"CT\"\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"caster0\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"caster1\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 3375,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "name": "CurseHaus",
+          "team": "CT"
+        },
+        {
+          "name": "andizle",
+          "team": "CT"
+        },
+        {
+          "name": "fr17z",
+          "team": "CT"
+        }
+      ],
+      "score": {
+        "CT": 8,
+        "T": 1
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 1,
+            "deaths": 1,
+            "kills": 2
+          },
+          "name": "CurseHaus",
+          "round_kills": 2,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "MarmajaM",
+          "team": "T"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 1
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "name": "MarmajaM",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Canada",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "caster0",
+      "commentary": "CurseHaus killed MarmajaM",
+      "id": 710,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster1",
+      "commentary": "CurseHaus took down MarmajaM with a double kill",
+      "id": 711,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    },
+    {
+      "caster": "caster1",
+      "commentary": "The CT team secured a gameover with a 8-1 victory.",
+      "id": 712,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}

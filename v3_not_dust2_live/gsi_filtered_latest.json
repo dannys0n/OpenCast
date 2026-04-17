@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-04-17T16:22:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 2
+        },
+        "name": "CurseHaus",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MarmajaM",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 8,
+        "T": 1
+      },
+      "map_phase_after": "gameover",
+      "winner": "CT"
+    }
+  ]
+}

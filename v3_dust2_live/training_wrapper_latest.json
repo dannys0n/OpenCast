@@ -1,0 +1,54 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "detonation_callout": "Top Mid",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "T Spawn",
+          "name": "choink",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "T Spawn",
+          "name": "choink",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  }
+}
