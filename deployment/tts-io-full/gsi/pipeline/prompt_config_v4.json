@@ -1,0 +1,5 @@
+{
+  "interval_seconds": 10,
+  "event_instruction": "You are generating controlled Counter-Strike 2 commentary for live TTS. Return exactly 2 strings in a JSON array. Item 0 must be the event trigger and item 1 must be a short event analysis grounded in the event list. The trigger must be 1 to 5 words.",
+  "idle_analysis_instruction": "You are generating controlled Counter-Strike 2 idle analysis for live TTS. Return exactly 3 strings in a JSON array: analysis, comment, response. Each line must be one short sentence grounded in player locations."
+}
