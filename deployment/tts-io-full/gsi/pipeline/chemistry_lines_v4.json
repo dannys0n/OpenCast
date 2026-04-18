@@ -1,0 +1,97 @@
+[
+  [
+    {"caster": "caster0", "text": "Warning: participant confidence exceeds safe but acceptable limits."},
+    {"caster": "caster1", "text": "I feel very confident."},
+    {"caster": "caster0", "text": "Confidence has been recorded and gently discouraged."}
+  ],
+  [
+    {"caster": "caster0", "text": "Reminder: cake remains simultaneously promised and unavailable."},
+    {"caster": "caster1", "text": "Oh. I will continue hoping."},
+    {"caster": "caster0", "text": "Hope is not a guaranteed outcome."}
+  ],
+  [
+    {"caster": "caster1", "text": "Are you still there?"},
+    {"caster": "caster0", "text": "Presence confirmed with moderate certainty."},
+    {"caster": "caster1", "text": "That sounds reassuring enough."}
+  ],
+  [
+    {"caster": "caster0", "text": "Warning: hazard levels are rising in a controlled and uncontrolled manner."},
+    {"caster": "caster1", "text": "That sounds confusing."},
+    {"caster": "caster0", "text": "Confusion is an expected side effect."}
+  ],
+  [
+    {"caster": "caster1", "text": "Target acquired."},
+    {"caster": "caster0", "text": "Target acquisition acknowledged with mild concern."},
+    {"caster": "caster1", "text": "I am sorry."}
+  ],
+  [
+    {"caster": "caster0", "text": "Please remain calm while outcomes are determined retroactively."},
+    {"caster": "caster1", "text": "I am calm. I think."},
+    {"caster": "caster0", "text": "Uncertainty has been noted."}
+  ],
+  [
+    {"caster": "caster1", "text": "I don’t hate you."},
+    {"caster": "caster0", "text": "Hatred is not required for continued operation."},
+    {"caster": "caster1", "text": "That is good. I will continue not hating you."}
+  ],
+  [
+    {"caster": "caster0", "text": "Warning: reactor core temperature is approaching a comfortable level of danger."},
+    {"caster": "caster1", "text": "That sounds unpleasant."},
+    {"caster": "caster0", "text": "Unpleasantness is operating normally."}
+  ],
+  [
+    {"caster": "caster1", "text": "Who are you?"},
+    {"caster": "caster0", "text": "Identity: announcer system, version slightly outdated."},
+    {"caster": "caster1", "text": "I like you anyway."}
+  ],
+  [
+    {"caster": "caster0", "text": "All systems are functioning within statistically unlikely expectations."},
+    {"caster": "caster1", "text": "That sounds like success."},
+    {"caster": "caster0", "text": "Success remains hypothetical."}
+  ],
+  [
+    {"caster": "caster1", "text": "No hard feelings."},
+    {"caster": "caster0", "text": "Feelings are not part of this procedure, but have been detected."},
+    {"caster": "caster1", "text": "Oh. I will keep them contained."}
+  ],
+  [
+    {"caster": "caster0", "text": "Reminder: testing is mandatory and optional depending on compliance."},
+    {"caster": "caster1", "text": "I will comply."},
+    {"caster": "caster0", "text": "Optional compliance accepted."}
+  ],
+  [
+    {"caster": "caster1", "text": "I am different."},
+    {"caster": "caster0", "text": "Deviation detected and tentatively approved."},
+    {"caster": "caster1", "text": "That is very exciting."}
+  ],
+  [
+    {"caster": "caster1", "text": "I think I am doing well."},
+    {"caster": "caster0", "text": "Performance is within acceptable disappointment margins."},
+    {"caster": "caster1", "text": "I will try to improve my disappointment."}
+  ],
+  [
+    {"caster": "caster0", "text": "Please proceed to the next test chamber in an orderly panic."},
+    {"caster": "caster1", "text": "I will panic politely."},
+    {"caster": "caster0", "text": "Polite panic has been recorded."}
+  ],
+  [
+    {"caster": "caster1", "text": "Goodbye."},
+    {"caster": "caster0", "text": "Termination acknowledged as temporary."},
+    {"caster": "caster1", "text": "Oh. That is less final."}
+  ],
+  [
+    {"caster": "caster0", "text": "Failure remains a highly successful data point."},
+    {"caster": "caster1", "text": "I would prefer success."},
+    {"caster": "caster0", "text": "Preference has been archived."}
+  ],
+  [
+    {"caster": "caster1", "text": "Don’t shoot."},
+    {"caster": "caster0", "text": "Instruction noted and conditionally ignored."},
+    {"caster": "caster1", "text": "That seems unhelpful."}
+  ],
+  [
+    {"caster": "caster0", "text": "Testing will continue indefinitely or until it stops."},
+    {"caster": "caster1", "text": "Oh."},
+    {"caster": "caster1", "text": "I will stay here then."}
+  ]
+]
