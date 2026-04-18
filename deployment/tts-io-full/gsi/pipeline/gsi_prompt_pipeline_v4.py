@@ -61,6 +61,55 @@ def now_stamp():
     return datetime.now().isoformat(timespec="seconds")
 
 
+def snapshot_map_identity(snapshot):
+    snapshot = as_dict(snapshot)
+    map_data = as_dict(snapshot.get("map"))
+    return {
+        "map_name": map_data.get("name"),
+        "map_round": map_data.get("round"),
+        "map_phase": map_data.get("phase"),
+    }
+
+
+def should_reset_for_new_session(previous_snapshot, current_snapshot):
+    previous_snapshot = as_dict(previous_snapshot)
+    current_snapshot = as_dict(current_snapshot)
+    if not previous_snapshot or not current_snapshot:
+        return False
+
+    previous_identity = snapshot_map_identity(previous_snapshot)
+    current_identity = snapshot_map_identity(current_snapshot)
+
+    previous_name = previous_identity.get("map_name")
+    current_name = current_identity.get("map_name")
+    if previous_name and current_name and previous_name != current_name:
+        return True
+
+    previous_round = previous_identity.get("map_round")
+    current_round = current_identity.get("map_round")
+    try:
+        if previous_round is not None and current_round is not None and int(current_round) < int(previous_round):
+            return True
+    except (TypeError, ValueError):
+        pass
+
+    previous_phase = str(previous_identity.get("map_phase") or "")
+    current_phase = str(current_identity.get("map_phase") or "")
+    if previous_phase in {"gameover", "intermission"} and current_phase in {"warmup", "live"}:
+        return True
+
+    return False
+
+
+def reset_runtime_session_state(*, keep_current_snapshot=False):
+    if not keep_current_snapshot:
+        PIPELINE_STATE.previous_snapshot = None
+        PIPELINE_STATE.latest_snapshot = None
+    PIPELINE_STATE.previous_event_summary = []
+    PIPELINE_STATE.last_event_prompt_at = 0.0
+    PIPELINE_STATE.last_interval_prompt_at = 0.0
+
+
 def ensure_state_dir():
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     for path in [
@@ -324,6 +373,7 @@ def build_training_wrapper(filtered_batch, current_snapshot, payload_sequence, p
         current_events=current_events,
         previous_events=previous_events,
         bomb_state=context.get("bomb_state"),
+        score=context.get("score"),
     )
     return {
         "input": {
@@ -350,6 +400,7 @@ def build_idle_wrapper(current_snapshot, previous_events, mode):
         current_events=[],
         previous_events=[],
         bomb_state=context.get("bomb_state"),
+        score=context.get("score"),
     )
     return {
         "input": {
@@ -401,8 +452,6 @@ def interval_prompt_loop():
             continue
 
         now_ts = time.time()
-        if now_ts - last_event_prompt_at < interval_seconds():
-            continue
         if now_ts - last_interval_prompt_at < interval_seconds():
             continue
 
@@ -524,6 +573,19 @@ class Handler(BaseHTTPRequestHandler):
             previous_snapshot = copy.deepcopy(PIPELINE_STATE.previous_snapshot)
             current_snapshot = copy.deepcopy(PIPELINE_STATE.latest_snapshot)
 
+            if should_reset_for_new_session(previous_snapshot, current_snapshot):
+                PIPELINE_STATE.previous_snapshot = None
+                previous_snapshot = None
+                reset_runtime_session_state(keep_current_snapshot=True)
+                slim_log(
+                    "session reset",
+                    commentary=(
+                        f"Detected new map/session -> {snapshot_map_identity(current_snapshot).get('map_name') or 'unknown map'} "
+                        f"round {snapshot_map_identity(current_snapshot).get('map_round')}"
+                    ),
+                    include_commentary=True,
+                )
+
         raw_record = {
             "received_at": now_stamp(),
             "payload_sequence": payload_sequence,
@@ -591,12 +653,8 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     reset_session_files()
     reset_prompt_runtime_state()
-    PIPELINE_STATE.latest_snapshot = None
-    PIPELINE_STATE.previous_snapshot = None
     PIPELINE_STATE.payload_count = 0
-    PIPELINE_STATE.previous_event_summary = []
-    PIPELINE_STATE.last_event_prompt_at = 0.0
-    PIPELINE_STATE.last_interval_prompt_at = 0.0
+    reset_runtime_session_state()
     append_log(f"[{now_stamp()}] pipeline v3 session started\n")
 
     if KILL_EXISTING_LISTENER:

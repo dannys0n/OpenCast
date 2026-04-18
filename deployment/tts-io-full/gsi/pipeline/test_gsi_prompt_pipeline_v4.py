@@ -86,6 +86,11 @@ class GsiPromptPipelineV4Tests(unittest.TestCase):
                         }
                     ],
                     "derived_tactical_summary": {
+                        "alive_counts": {
+                            "ct": 1,
+                            "t": 1,
+                        },
+                        "analysis_mode": "map_specific",
                         "confidence": "medium",
                         "isolated_player": "none",
                         "key_risk": "b_hit_readable",
@@ -99,7 +104,12 @@ class GsiPromptPipelineV4Tests(unittest.TestCase):
                             "b": "medium",
                             "site": "b_leaning",
                         },
+                        "position_data": "full",
                         "rotation_favor": "neutral",
+                        "score_context": {
+                            "leader": "t",
+                            "margin": "clear",
+                        },
                     },
                     "request": {
                         "mode": "event_bundle",
@@ -211,6 +221,11 @@ class GsiPromptPipelineV4Tests(unittest.TestCase):
                     "previous_events": [],
                     "current_events": [],
                     "derived_tactical_summary": {
+                        "alive_counts": {
+                            "ct": 0,
+                            "t": 1,
+                        },
+                        "analysis_mode": "map_specific",
                         "confidence": "low",
                         "isolated_player": "none",
                         "key_risk": "none",
@@ -224,7 +239,12 @@ class GsiPromptPipelineV4Tests(unittest.TestCase):
                             "b": "low",
                             "site": "unclear",
                         },
+                        "position_data": "full",
                         "rotation_favor": "neutral",
+                        "score_context": {
+                            "leader": "ct",
+                            "margin": "close",
+                        },
                     },
                     "request": {
                         "mode": "idle_conversation",
@@ -282,9 +302,16 @@ class GsiPromptPipelineV4Tests(unittest.TestCase):
         self.assertEqual(
             wrapper["input"]["derived_tactical_summary"],
             {
+                "alive_counts": {"ct": 1, "t": 1},
+                "analysis_mode": "generic",
                 "confidence": "low",
                 "key_risk": "none",
                 "next_move_hint": "unclear",
+                "position_data": "none",
+                "score_context": {
+                    "leader": "t",
+                    "margin": "close",
+                },
             },
         )
 
