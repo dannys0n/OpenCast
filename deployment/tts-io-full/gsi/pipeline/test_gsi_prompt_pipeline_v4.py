@@ -118,7 +118,10 @@ class GsiPromptPipelineV4Tests(unittest.TestCase):
                             {"caster": "caster1", "style": "play_by_play_follow_up"},
                         ],
                     },
-                }
+                },
+                "output": {
+                    "lines": ["", ""],
+                },
             },
         )
 
@@ -254,7 +257,10 @@ class GsiPromptPipelineV4Tests(unittest.TestCase):
                             {"caster": "caster0", "style": "idle_color"},
                         ],
                     },
-                }
+                },
+                "output": {
+                    "lines": ["", "", ""],
+                },
             },
         )
 
@@ -314,6 +320,12 @@ class GsiPromptPipelineV4Tests(unittest.TestCase):
                 },
             },
         )
+        self.assertEqual(wrapper["output"], {"lines": ["", ""]})
+
+    def test_build_blank_output_matches_requested_line_count(self):
+        self.assertEqual(MODULE.build_blank_output("event_bundle"), {"lines": ["", ""]})
+        self.assertEqual(MODULE.build_blank_output("idle_color"), {"lines": ["", "", ""]})
+        self.assertEqual(MODULE.build_blank_output("idle_conversation"), {"lines": ["", "", ""]})
 
 
 if __name__ == "__main__":

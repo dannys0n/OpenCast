@@ -260,6 +260,13 @@ def build_request(mode):
     }
 
 
+def build_blank_output(mode):
+    request = build_request(mode)
+    return {
+        "lines": ["" for _ in request.get("lines", [])]
+    }
+
+
 def simplify_player_for_previous_event(player):
     player = as_dict(player)
     return {
@@ -367,6 +374,7 @@ def build_training_wrapper(filtered_batch, current_snapshot, payload_sequence, p
     current_events = simplify_filtered_batch_for_training(filtered_batch)
     context = build_training_context(current_snapshot)
     map_name = as_dict(as_dict(current_snapshot).get("map")).get("name")
+    request = build_request("event_bundle")
     derived_tactical_summary = build_derived_tactical_summary(
         map_name=map_name,
         alive_players=context.get("alive_players", []),
@@ -381,8 +389,9 @@ def build_training_wrapper(filtered_batch, current_snapshot, payload_sequence, p
             "previous_events": copy.deepcopy(previous_events),
             "current_events": current_events,
             "derived_tactical_summary": derived_tactical_summary,
-            "request": build_request("event_bundle"),
-        }
+            "request": request,
+        },
+        "output": build_blank_output("event_bundle"),
     }
 
 
@@ -394,6 +403,7 @@ def build_recent_event_summary(training_wrapper):
 def build_idle_wrapper(current_snapshot, previous_events, mode):
     context = build_training_context(current_snapshot)
     map_name = as_dict(as_dict(current_snapshot).get("map")).get("name")
+    request = build_request(mode)
     derived_tactical_summary = build_derived_tactical_summary(
         map_name=map_name,
         alive_players=context.get("alive_players", []),
@@ -408,8 +418,9 @@ def build_idle_wrapper(current_snapshot, previous_events, mode):
             "previous_events": [],
             "current_events": [],
             "derived_tactical_summary": derived_tactical_summary,
-            "request": build_request(mode),
-        }
+            "request": request,
+        },
+        "output": build_blank_output(mode),
     }
 
 
