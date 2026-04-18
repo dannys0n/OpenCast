@@ -238,6 +238,56 @@ class GsiPromptPipelineV4Tests(unittest.TestCase):
             },
         )
 
+    def test_build_training_wrapper_uses_generic_fallback_summary_for_unsupported_map(self):
+        filtered_batch = {
+            "created_at": "2026-04-12T07:30:00",
+            "events": [],
+        }
+        current_snapshot = {
+            "map": {
+                "name": "de_mirage",
+                "phase": "live",
+                "round": 6,
+                "team_ct": {"score": 2},
+                "team_t": {"score": 3},
+            },
+            "round": {
+                "phase": "live",
+                "win_team": None,
+                "bomb": "carried",
+            },
+            "allplayers": {
+                "2": {
+                    "name": "Walt",
+                    "team": "CT",
+                    "position": "-104, 386, 44",
+                    "state": {"health": 100},
+                },
+                "3": {
+                    "name": "Uri",
+                    "team": "T",
+                    "position": "-1522, 1930, 53",
+                    "state": {"health": 100},
+                },
+            },
+        }
+
+        wrapper = MODULE.build_training_wrapper(
+            filtered_batch,
+            current_snapshot,
+            payload_sequence=7,
+            previous_events=[],
+        )
+
+        self.assertEqual(
+            wrapper["input"]["derived_tactical_summary"],
+            {
+                "confidence": "low",
+                "key_risk": "none",
+                "next_move_hint": "unclear",
+            },
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
