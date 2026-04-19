@@ -1,0 +1,9245 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 2,
+            "kills": 1
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones is out.",
+      "That evens the count. The next duel matters."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 3,
+            "kills": 1
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones goes down.",
+      "That evens the count. The next duel matters."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "incendiary",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Molotov out.",
+      "That burns a lane. The next move has to wait."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 3,
+            "kills": 2
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "incendiary",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones lands a kill.",
+      "CT are up a body. They do not need to rush."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The feed is still very thin.",
+      "The score is level at zero.",
+      "The next clean duel should shape the pace."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The score remains tied, which is administratively untidy.",
+      "I can still tell the round feels tense.",
+      "Uncertainty has been downgraded to standard procedure."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Flash out.",
+      "That can blind the first contact. Timing matters now."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is not much information here.",
+      "We are still dead even at nil nil.",
+      "One sharp opening could define the round."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 1
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 1,
+            "kills": 0
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 1
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones goes down.",
+      "Numbers stay close. The trade is the next story."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T have a lead, but not a comfortable one.",
+      "I can still tell the round feels tense.",
+      "Uncertainty has been downgraded to standard procedure."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "This feed leaves a lot unsaid.",
+      "T are only a round ahead.",
+      "The next duel may matter more than this feed can show."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 1
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 2,
+            "kills": 0
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones drops.",
+      "Numbers stay close. The trade is the next story."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The score favors T, though only modestly.",
+      "I do not love how uncertain this feels.",
+      "Your discomfort has been noted and retained."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Slick Rick",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 2
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "T win the round.",
+      "T seal it. That keeps the pressure on."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 1,
+            "kills": 2
+          },
+          "name": "Slick Rick",
+          "round_kills": 1
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "round_result",
+        "winner": "T",
+        "winner_score": 2
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Slick Rick drops.",
+      "Numbers stay close. The trade is the next story."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The read is still thin from this feed.",
+      "T are up two rounds.",
+      "The next opening still matters a lot."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T hold a two round edge. It is noticeable.",
+      "That still feels very close to me.",
+      "Your caution is correctly installed."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "Slick Rick"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Frag out.",
+      "That chips the next fight. The peek gets tighter."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "Telemetry is limited here.",
+      "T hold a two round edge.",
+      "One clean swing can still reset the pace."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The board favors T by two.",
+      "I do not find that relaxing.",
+      "Relaxation has not been requested."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 2,
+            "kills": 1
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones gets one.",
+      "CT have the numbers. They can slow this down."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is not much clean vision from this feed.",
+      "T lead by two on the board.",
+      "CT need the next duel to steady things."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 2,
+            "kills": 2
+          },
+          "name": "GrowthHormones",
+          "round_kills": 2,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones doubles up.",
+      "CT are up a body. They do not need to rush."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 3,
+            "kills": 2
+          },
+          "name": "GrowthHormones",
+          "round_kills": 2,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones drops.",
+      "That evens the count. The trade stays important."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T are ahead by two. The margin remains portable.",
+      "It still sounds fragile.",
+      "Fragility is an acceptable condition."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The read is still thin from this feed.",
+      "T are building a modest cushion.",
+      "There is not much room for a loose fight now."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The score leans T by two rounds.",
+      "That is just enough to make me uneasy.",
+      "Unease remains within tolerance."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Bomb planted.",
+      "The post-plant is live. Time starts favoring T."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is not much clean vision from here.",
+      "The score is starting to lean T.",
+      "A single mistake could still swing the pace."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Be_Wanna_Be",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 0,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T hold a lead of survivable size.",
+      "I do not love how uncertain this feels.",
+      "Your discomfort has been noted and retained."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 3,
+            "kills": 2
+          },
+          "name": "Be_Wanna_Be",
+          "round_kills": 2,
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 3
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Be_Wanna_Be goes down.",
+      "Numbers stay close. The trade is the next story."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The feed is still thin.",
+      "T have moved ahead by three.",
+      "CT need the next clean fight."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T have advanced to a three round lead.",
+      "That feels a little less temporary.",
+      "Temporary outcomes are often misleading."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is limited information here.",
+      "The board now favors T by three.",
+      "The next duel matters even more for CT."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The board now favors T by three.",
+      "I would prefer a smaller number.",
+      "Preference has been archived."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 4,
+            "kills": 2
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "Be_Wanna_Be",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones is out.",
+      "That evens the count. The trade stays important."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "jorganblueballs",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "This feed leaves a lot unsaid.",
+      "T have the cleaner position on the board.",
+      "The next duel may matter more than this feed can show."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "jorganblueballs",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T currently possess the more comfortable number.",
+      "That is not very relaxing.",
+      "Tension has been accepted as normal operating conditions."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Bomb planted.",
+      "The clock becomes the pressure. Any retake gets thinner now."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 0,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "This feed leaves a lot unsaid.",
+      "T look slightly better on the board.",
+      "One clean mistake could still swing it."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 4
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "T win the round.",
+      "T close the round. They keep the pace."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T hold a four round lead.",
+      "That does not sound very kind.",
+      "Kindness is not a tracked metric."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "Vision is still poor from this feed.",
+      "T are up four rounds.",
+      "CT cannot afford another loose fight."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The scoreboard favors T by four.",
+      "I still think the next round feels important.",
+      "That suspicion is reasonable."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The telemetry is limited here.",
+      "T hold a four round cushion.",
+      "CT need a clean opener."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T are ahead by four rounds.",
+      "That makes me slightly uncomfortable.",
+      "Discomfort has been accepted."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 1
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "round_result",
+        "winner": "T",
+        "winner_score": 4
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "CT win the round.",
+      "CT close the round. They keep control."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The read remains narrow from this feed.",
+      "T lead by three rounds.",
+      "CT need the next swing."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T maintain a three round edge.",
+      "It still feels tense to me.",
+      "Tension remains operational."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "round_result",
+        "winner": "CT",
+        "winner_score": 1
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Frag out.",
+      "Bombs away."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is not much clean vision here.",
+      "T are still up three on the board.",
+      "One sharp duel could calm the half."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "incendiary",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Molotov out.",
+      "Hot and Ready."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The board is favoring T by three.",
+      "I was hoping for a friendlier number.",
+      "Friendliness is unavailable."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "incendiary",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Smoke out.",
+      "I hate smokes. They sting my eyes."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 3
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 2
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones finds one.",
+      "CT have the numbers. They can slow this down."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The feed is still thin.",
+      "T lead by two rounds.",
+      "The next duel can tighten this quickly."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T lead by two. The loss is still workable.",
+      "That sounds close enough to worry about.",
+      "Concern is permitted."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is limited information here.",
+      "T hold a narrow two round edge.",
+      "CT still have room to answer."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 4
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones lands a kill.",
+      "CT have the numbers. They can slow this down."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The scoreboard favors T by two.",
+      "I can still hear room for a response.",
+      "A response is statistically possible."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 5
+          },
+          "name": "GrowthHormones",
+          "round_kills": 2,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones doubles up.",
+      "CT have the numbers. They can slow this down."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "Telemetry is light from this side.",
+      "T are ahead by two.",
+      "A clean opener could shift the rhythm back."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 5,
+            "kills": 5
+          },
+          "name": "GrowthHormones",
+          "round_kills": 2,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones is out.",
+      "The numbers level out. The next duel is the key piece."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "Target approaching. Please convert anxiety into bullets.",
+      "Hello. Are you still there?",
+      "Excellent. Creepy, but excellent."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is not much clean vision from here.",
+      "The score is starting to lean T.",
+      "One clean swing could still change the rhythm."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 3,
+            "kills": 4
+          },
+          "name": "What_is_Outside",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 5
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "What_is_Outside drops.",
+      "Numbers stay close. Who will drop next."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T now lead by three rounds.",
+      "That is beginning to sound serious.",
+      "Seriousness has been confirmed."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "What_is_Outside",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Frag out.",
+      "That can soften first contact. The follow-up fight matters."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The picture is still incomplete.",
+      "T are leaning ahead on the board.",
+      "One loose peek could still change the pace."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 5,
+            "kills": 6
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones finds one.",
+      "CT are up a body. They do not need to rush."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The board leans T by three.",
+      "I would like that number reduced.",
+      "Your request has been noted."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 6,
+            "kills": 6
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones is out.",
+      "That resets the count. Spacing matters on the next peek."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Sal",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "This feed leaves a lot unsaid.",
+      "T have the cleaner position on the board.",
+      "A single mistake could still swing the pace. Variant 2."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 6
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "T win the round.",
+      "T convert the round. CT never get the recovery window."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "This is a reminder that all testing outcomes are valuable.",
+      "Even the bad ones.",
+      "Especially the bad ones."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The view is still restricted here.",
+      "T have built a four round lead.",
+      "CT need the next clean round."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "round_result",
+        "winner": "T",
+        "winner_score": 6
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Frag out.",
+      "CT have the extra body. They can slow it down."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "Testing must continue despite minor structural concerns.",
+      "Define minor.",
+      "Still standing."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The feed is giving us very little.",
+      "T are up by four on the board.",
+      "CT cannot drift through the next fight."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Bomb planted.",
+      "The post-plant is live. T can settle into the hold."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The board is becoming impolite toward CT.",
+      "I can still hear the pressure in it.",
+      "Relaxation is not required for success."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 6,
+            "kills": 7
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones gets one.",
+      "CT are up a body. They do not need to rush."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is not much clean vision from here.",
+      "The scoreboard is firmly favoring T.",
+      "The next duel may matter more than this feed can show. Variant 2."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 7,
+            "kills": 7
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 7
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones is out.",
+      "Numbers stay close. The trade is the next story."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T are ahead by five rounds.",
+      "That sounds extremely unfriendly.",
+      "Hostility remains implied."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The telemetry is still very limited.",
+      "The board has tilted hard toward T.",
+      "The next opening still feels important."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Frag out.",
+      "CT are up a man. They do not need to force the issue."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 7,
+            "kills": 8
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones lands a kill.",
+      "CT have the extra body. They can hold the next line."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The board now favors T by five.",
+      "I would prefer less of that.",
+      "Preference noted."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 8,
+            "kills": 8
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones goes down.",
+      "That evens the count. The trade stays important."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "This feed leaves a lot unsaid.",
+      "T are carrying the clearer margin now.",
+      "A single mistake could still swing the pace."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T currently possess the more comfortable number.",
+      "That makes me a little nervous.",
+      "Concern is permitted in moderation. Variant 3."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "FORFUN",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "FORFUN",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Frag out.",
+      "T have the extra body. They can set the next layer."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 5,
+            "kills": 13
+          },
+          "name": "FORFUN",
+          "round_kills": 3,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "FORFUN",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "FORFUN drops.",
+      "That evens the count. The next duel matters."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The telemetry is still very limited.",
+      "The board has tilted hard toward T.",
+      "A single mistake could still swing the pace."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "What_is_Outside",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 3
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "FORFUN",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "CT win the round.",
+      "CT seal it. That steadies the half."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T currently possess the more comfortable number.",
+      "I can still tell the round feels tense.",
+      "Uncertainty has been downgraded to standard procedure."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The read is still thin from this feed.",
+      "T have real breathing room now.",
+      "The next duel may matter more than this feed can show."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "round_result",
+        "winner": "CT",
+        "winner_score": 3
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Frag out.",
+      "Numbers favor CT. The trade still matters."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 9,
+            "kills": 8
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones is out.",
+      "Numbers are even. The next duel carries weight."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T have accumulated an irritatingly clear margin.",
+      "That is not very relaxing.",
+      "Tension has been accepted as normal operating conditions."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "✶ℕeur☢$h☢t✶",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The read is still thin from this feed.",
+      "T have real breathing room now.",
+      "A single mistake could still swing the pace."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "✶ℕeur☢$h☢t✶",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The board is becoming impolite toward CT.",
+      "That makes me a little nervous.",
+      "Concern is permitted in moderation."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "juliamina47",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 9,
+            "kills": 3
+          },
+          "name": "juliamina47",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 4
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "juliamina47 finds one.",
+      "CT are up a body. They do not need to rush."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The read is still thin from this feed.",
+      "T are ahead by three.",
+      "CT need the next opening."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T still lead by three.",
+      "That keeps the pressure humming.",
+      "Pressure remains enabled."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "juliamina47",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Frag out.",
+      "The feed is thin here. The next clean contact will matter."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 3,
+            "deaths": 9,
+            "kills": 9
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones gets one.",
+      "CT have the extra body. They can hold the next line."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is limited vision here.",
+      "T keep a three round cushion.",
+      "The next duel is important for CT."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The scoreboard favors T by three rounds.",
+      "I do not find that comforting.",
+      "Comfort is not a requirement."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Bomb planted.",
+      "Clock becomes the pressure now. CT need a clean path in."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The telemetry is still very limited.",
+      "The scoreboard is shading toward T.",
+      "There is not much room for a loose fight now. Variant 2."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 4,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Smoke out.",
+      "That breaks the timing. Vision changes first."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "defused",
+      "score": {
+        "CT": 5,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "defused"
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 5
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Bomb defused.",
+      "That ends the retake. CT get out clean."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T lead by two. This is still recoverable.",
+      "That sounds a little better.",
+      "Improvement has been detected."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The feed is still thin.",
+      "T lead by two rounds.",
+      "The next exchange could make this tight again."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "defused"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Frag out.",
+      "There is not much detail from this feed. The next duel matters most."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Smoke out.",
+      "That changes the angle. Vision shifts first."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The board favors T by two rounds.",
+      "I can still imagine this getting tight.",
+      "That scenario remains available."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "There is not much information here.",
+      "T hold a slim two round edge.",
+      "CT still have a live path back."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "T hold a narrow two round edge.",
+      "That feels dangerous but manageable.",
+      "Manageable danger is still danger."
+    ]
+  }
+}
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 8
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 3,
+            "deaths": 10,
+            "kills": 9
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 5,
+          "T": 8
+        },
+        "map_phase_after": "gameover",
+        "winner": "T"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "GrowthHormones drops.",
+      "The numbers level out. The next duel is the key piece."
+    ]
+  }
+}
