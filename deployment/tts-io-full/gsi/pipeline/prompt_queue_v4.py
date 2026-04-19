@@ -294,12 +294,14 @@ def load_prompt_config():
                 "For event prompts, return exactly 2 lines. "
                 f"Line 1 is the {CASTER0} event trigger call. "
                 f"Line 2 is a short {CASTER1} follow-up line. "
+                "Keep every sentence short and speakable. "
                 "No labels. No JSON. No markdown."
             ),
             "interval_instruction": (
                 "You are generating Counter-Strike 2 idle caster lines for live TTS. "
                 "Return plain text only. "
                 "Return exactly 3 short lines. "
+                "Keep every sentence short and speakable. "
                 "No labels. No JSON. No markdown."
             ),
             "event_system_prompt_template": (
@@ -307,6 +309,7 @@ def load_prompt_config():
                 "This is Counter-Strike 2. "
                 "Line 1 should fit {caster0}'s rapid event-call style and be extremely short, ideally 2 to 5 words and never exceed 8 words. "
                 "Line 2 should fit {caster1}'s short follow-up style and stay speakable. "
+                "All sentences must stay short. Prefer a single short sentence per line. "
                 "Treat tactical_facts as structured tactical metadata, not as wording to repeat. "
                 "If analysis_mode is generic or position_data is none, rely on alive_counts, score_context, bomb_state, and recent events instead of lane-control claims. "
                 "Use previous_events and current_events for recency, and use Tactical context for persistent state. "
@@ -329,7 +332,7 @@ def load_prompt_config():
                 "Pick one or two signals that matter most instead of trying to explain everything. "
                 "Do not quote enum labels verbatim; translate them into natural commentary. "
                 "Vary phrasing rather than leaning on fixed wording. "
-                "Prefer one concrete observation per line. If confidence is low, stay tentative. "
+                "Prefer one concrete observation per line. Keep every sentence short. If confidence is low, stay tentative. "
                 "Generate 3 understated {caster1} lines that avoid repeating the same point. "
                 "Each line should be a single short sentence. "
                 "Few-shot JSON examples:\n{few_shots_json}"
@@ -337,16 +340,16 @@ def load_prompt_config():
             "interval_system_prompt_conversation_template": (
                 "{interval_instruction} "
                 "This is Counter-Strike 2. "
+                "Lean heavily into a Portal 2 style contrast: {caster0} should feel like a dry, clinical male announcer, and {caster1} should feel like an eager, slightly awkward turret personality. "
                 "Be concise, grounded, and avoid repeating the same context. "
                 "Treat tactical_facts as structured tactical metadata, not as ready-made commentary. "
                 "If analysis_mode is generic or position_data is none, rely on alive_counts, score_context, bomb_state, and recent events instead of lane-control claims. "
                 "Use Tactical context to sound live rather than generic. "
-                "Pick one or two signals that matter most instead of trying to explain everything. "
                 "Do not quote enum labels verbatim; translate them into natural commentary. "
-                "Vary phrasing rather than leaning on fixed wording. "
-                "Prefer one concrete observation per line. If confidence is low, stay tentative. "
-                "Generate a tiny 3-line conversation between {caster0} and {caster1}. "
-                "The lines should sound like a short back-and-forth, but return commentary lines only with no speaker labels. "
+                "Keep every sentence short. "
+                "Generate exactly 3 lines as a tiny conversation with this structure: line 1 is an idle comment, line 2 is a comment responding to the idle comment, line 3 is a response to that comment. "
+                "The chemistry should come from the contrast between the voices, not from long jokes or rambling. "
+                "Return commentary lines only with no speaker labels. "
                 "Each line should be a single short sentence. "
                 "Few-shot JSON examples:\n{few_shots_json}"
             ),
@@ -701,7 +704,7 @@ def extract_commentary_lines(raw_text, expected_max):
     return cleaned
 
 
-def split_compound_event_lines(lines, expected_max):
+def split_compound_event_lines(lines, expected_max=None):
     split_lines = []
     for line in lines:
         sentences = re.split(r"(?<=[.!?])\s+", str(line).strip())
@@ -710,7 +713,7 @@ def split_compound_event_lines(lines, expected_max):
             if not candidate:
                 continue
             split_lines.append(candidate)
-            if len(split_lines) >= expected_max:
+            if expected_max is not None and len(split_lines) >= expected_max:
                 return split_lines
     return split_lines
 
@@ -1033,14 +1036,6 @@ def prepare_queue_for_event_trigger(current_events=None, *, compact_combat_backl
         PLAYBACK_QUEUE.clear()
         PLAYBACK_QUEUE.extend(kept)
 
-        if CURRENT_PLAYBACK is not None and CURRENT_PLAYBACK["tag"] != "event":
-            CURRENT_PLAYBACK["interrupt_event"].set()
-            interrupted_current = {
-                "id": CURRENT_PLAYBACK["id"],
-                "tag": CURRENT_PLAYBACK["tag"],
-                "commentary": CURRENT_PLAYBACK["commentary"],
-            }
-
         write_queue_state_locked()
 
     return dropped_items, interrupted_current, aggregated_kill_counts, sorted(aggregated_event_types)
@@ -1282,17 +1277,19 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
                 if not commentary:
                     continue
                 caster = normalize_caster_id(as_dict(line_entry).get("caster") or CASTER1)
-                lines.append(commentary)
-                items.append(
-                    build_queue_item(
-                        commentary=commentary,
-                        caster=caster,
-                        prompt_style="idle_color",
-                        tag="idle",
-                        payload_sequence=payload_sequence,
-                        source=interval_mode,
+                sentence_lines = split_compound_event_lines([commentary])
+                lines.extend(sentence_lines)
+                for sentence in sentence_lines:
+                    items.append(
+                        build_queue_item(
+                            commentary=sentence,
+                            caster=caster,
+                            prompt_style="idle_color",
+                            tag="idle",
+                            payload_sequence=payload_sequence,
+                            source=interval_mode,
+                        )
                     )
-                )
             record["chemistry_set"] = selected_set
         else:
             text_config = build_text_llm_config(repo_root)
@@ -1300,11 +1297,11 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
             user_prompt = build_interval_user_prompt(wrapper, conversation_mode)
             result = request_chat_completion(text_config, system_prompt, user_prompt)
             lines = extract_commentary_lines(result["raw_text"], expected_max=3)
-            commentary = join_commentary_lines(lines)
-            if commentary:
+            sentence_lines = split_compound_event_lines(lines)
+            for sentence in sentence_lines:
                 items.append(
                     build_queue_item(
-                        commentary=commentary,
+                        commentary=sentence,
                         caster=CASTER1,
                         prompt_style="idle_color",
                         tag="idle",

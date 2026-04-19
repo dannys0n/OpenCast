@@ -162,8 +162,8 @@ class PromptQueueV4Tests(unittest.TestCase):
 
         dropped, interrupted_current, kill_counts, event_types = MODULE.prepare_queue_for_event_trigger()
 
-        self.assertTrue(current_non_event["interrupt_event"].is_set())
-        self.assertEqual(interrupted_current["id"], 10)
+        self.assertFalse(current_non_event["interrupt_event"].is_set())
+        self.assertIsNone(interrupted_current)
         self.assertEqual([item["id"] for item in dropped], [11])
         self.assertEqual(kill_counts, {"ct": 0, "t": 0})
         self.assertEqual(event_types, [])
@@ -327,8 +327,8 @@ class PromptQueueV4Tests(unittest.TestCase):
         self.assertEqual(record["queued_items"][0]["commentary"], "Niko doubles up.")
         self.assertEqual(record["queued_items"][1]["caster"], "caster1")
         self.assertEqual(record["dropped_items"][0]["commentary"], "Still waiting.")
-        self.assertEqual(record["interrupted_current"]["commentary"], "Quiet for now.")
-        self.assertTrue(current_non_event["interrupt_event"].is_set())
+        self.assertNotIn("interrupted_current", record)
+        self.assertFalse(current_non_event["interrupt_event"].is_set())
         self.assertIn("Focused context:", captured["user_prompt"])
         self.assertIn("Tactical facts:", captured["user_prompt"])
         self.assertIn("Event input:", captured["user_prompt"])
@@ -629,7 +629,7 @@ class PromptQueueV4Tests(unittest.TestCase):
         self.assertEqual(record["llm"]["lines"], ["Fresh frag.", "That opens space."])
         self.assertEqual([item["commentary"] for item in record["queued_items"]], ["Fresh frag.", "That opens space."])
 
-    def test_process_interval_wrapper_idle_color_keeps_three_lines_in_single_tts_item(self):
+    def test_process_interval_wrapper_idle_color_queues_each_sentence_separately(self):
         captured = {}
 
         def fake_build_text_llm_config(repo_root):
@@ -668,12 +668,12 @@ class PromptQueueV4Tests(unittest.TestCase):
 
         self.assertEqual(record["status"], "completed")
         self.assertEqual(record["mode"], "idle_color")
-        self.assertEqual(len(record["queued_items"]), 1)
-        self.assertEqual(record["queued_items"][0]["caster"], "caster1")
-        self.assertEqual(record["queued_items"][0]["tag"], "idle")
+        self.assertEqual(len(record["queued_items"]), 3)
+        self.assertEqual([item["caster"] for item in record["queued_items"]], ["caster1", "caster1", "caster1"])
+        self.assertEqual([item["tag"] for item in record["queued_items"]], ["idle", "idle", "idle"])
         self.assertEqual(
-            record["queued_items"][0]["commentary"],
-            "Mid is quiet. CT are spread thin. This could turn fast.",
+            [item["commentary"] for item in record["queued_items"]],
+            ["Mid is quiet.", "CT are spread thin.", "This could turn fast."],
         )
         self.assertIn("Live context:", captured["user_prompt"])
         self.assertNotIn('"previous_events"', captured["user_prompt"])
