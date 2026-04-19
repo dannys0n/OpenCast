@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-04-18T19:18:14",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 9
+        },
+        "name": "Azul",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Niles",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 8,
+        "T": 2
+      },
+      "map_phase_after": "gameover",
+      "winner": "CT"
+    }
+  ]
+}

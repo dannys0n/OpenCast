@@ -1,0 +1,93 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Boost",
+          "name": "Vox",
+          "team": "T"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Wesley",
+          "team": "T"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "exploded",
+      "score": {
+        "CT": 2,
+        "T": 8
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 3
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "medium",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Boost",
+          "name": "Wesley",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Efe",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

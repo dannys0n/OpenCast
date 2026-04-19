@@ -1,0 +1,110 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Clarence",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Dayo",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Efe",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Larry",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Panama",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Pines",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Ulysses",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "defused",
+      "score": {
+        "CT": 8,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "defused"
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 5
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 4
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "name": "Panama",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Dios",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

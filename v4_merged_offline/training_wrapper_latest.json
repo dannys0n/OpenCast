@@ -1,0 +1,111 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Azul",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Harvey",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Hastings",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Mayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Panama",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 8,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 3,
+            "deaths": 6,
+            "kills": 9
+          },
+          "name": "Azul",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Niles",
+          "team": "T"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 2
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "Azul",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

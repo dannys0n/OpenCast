@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-04-18T18:58:48",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    }
+  ]
+}

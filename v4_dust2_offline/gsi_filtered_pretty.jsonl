@@ -1,0 +1,2271 @@
+{
+  "created_at": "2026-04-18T18:41:36",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:42:11",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:42:16",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:42:18",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Cross",
+        "name": "Panama",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Dashen",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:42:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Default",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Pines",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:42:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Vox",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:42:46",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Ferris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:42:48",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 3,
+      "killers": [
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 1
+          },
+          "map_callout": "Top Mid",
+          "name": "Efe",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 1,
+            "kills": 1
+          },
+          "map_callout": "T Spawn",
+          "name": "Bassey",
+          "round_kills": 1,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 0,
+            "kills": 2
+          },
+          "map_callout": "T Spawn",
+          "name": "Panama",
+          "round_kills": 1,
+          "team": "T"
+        }
+      ],
+      "victims": [
+        {
+          "name": "Pines",
+          "team": "CT"
+        },
+        {
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "name": "Vox",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3,
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:43:01",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "T Spawn",
+        "name": "Wesley",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Dashen",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:43:05",
+  "events": [
+    {
+      "detonation_callout": "Suicide",
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:43:08",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:43:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "Outside Long",
+        "name": "Efe",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Panama",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:43:32",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 3
+        },
+        "map_callout": "T Spawn",
+        "name": "Efe",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Wesley",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:43:32",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "T Plat",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Efe",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:43:37",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:43:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "T Spawn",
+        "name": "Tony",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:44:18",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 1
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:44:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "Ferris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:44:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Panama",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:44:44",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "Ferris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:44:47",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 3
+        },
+        "map_callout": "Top Mid",
+        "name": "Panama",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:44:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 4
+        },
+        "map_callout": "Top Mid",
+        "name": "Panama",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:44:50",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Panama",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:44:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 4
+        },
+        "map_callout": "Doors",
+        "name": "Efe",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bassey",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:45:00",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 5
+        },
+        "map_callout": "Mid",
+        "name": "Panama",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Efe",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:45:02",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:45:13",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 1
+        },
+        "map_callout": "Close",
+        "name": "Dashen",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:45:18",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Fence",
+        "name": "Dashen",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Wesley",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:45:33",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:45:38",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2,
+        "T": 2
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:45:45",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Close",
+        "name": "Dashen",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Panama",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:46:20",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "T Spawn",
+        "name": "Bassey",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:46:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Top Mid",
+        "name": "Pines",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:46:30",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "T Spawn",
+        "name": "Vox",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Dashen",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:46:31",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Outside Long",
+        "name": "Bassey",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Pines",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:46:35",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 1
+        },
+        "map_callout": "Long Doors",
+        "name": "Ferris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bassey",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:46:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Long Doors",
+        "name": "Ferris",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vox",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:46:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Outside Long",
+        "name": "Wesley",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:47:24",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:48:05",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 1
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:48:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Ramp",
+        "name": "Dashen",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:48:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 6
+        },
+        "map_callout": "T Spawn",
+        "name": "Panama",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Dashen",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "T Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Dashen",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:48:53",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 3
+        },
+        "map_callout": "T Ramp",
+        "name": "Ferris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Panama",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:48:56",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:49:30",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 4
+        },
+        "map_callout": "Outside Long",
+        "name": "Ferris",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bassey",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:49:37",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3,
+        "T": 2
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 3
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:49:40",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 5
+        },
+        "map_callout": "Top Mid",
+        "name": "Ferris",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Wesley",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:50:19",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:50:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Dashen",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:50:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 3,
+          "kills": 3
+        },
+        "map_callout": "Close",
+        "name": "Pines",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Panama",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:50:49",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 3
+        },
+        "map_callout": "Back Site",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Pines",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:50:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 4,
+          "kills": 4
+        },
+        "map_callout": "Close",
+        "name": "Dashen",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bassey",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:50:56",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 6
+        },
+        "map_callout": "B Car",
+        "name": "Ferris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vox",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:51:00",
+  "events": [
+    {
+      "detonation_callout": "Fence",
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Dashen",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:51:00",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 4
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:51:00",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:51:52",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 5,
+          "kills": 3
+        },
+        "map_callout": "Doors",
+        "name": "Wesley",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Efe",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:51:55",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 4
+        },
+        "map_callout": "B Doors",
+        "name": "Pines",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bassey",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:52:08",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 2
+        },
+        "map_callout": "Doors",
+        "name": "Vox",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Pines",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:52:11",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 7
+        },
+        "map_callout": "Cross",
+        "name": "Ferris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:52:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 5,
+          "kills": 2
+        },
+        "map_callout": "CT Mid",
+        "name": "Tony",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Wesley",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:52:19",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 3
+        },
+        "map_callout": "CT Mid",
+        "name": "Vox",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:52:29",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 7
+        },
+        "map_callout": "CT Spawn",
+        "name": "Panama",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Dashen",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:53:17",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:53:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 8
+        },
+        "map_callout": "B Doors",
+        "name": "Ferris",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vox",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:53:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 8
+        },
+        "map_callout": "B Plat",
+        "name": "Panama",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 1
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:54:00",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 6,
+          "kills": 5
+        },
+        "map_callout": "Long Doors",
+        "name": "Dashen",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vox",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:54:06",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 6,
+          "kills": 4
+        },
+        "map_callout": "Top Mid",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:54:07",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 6,
+          "kills": 5
+        },
+        "map_callout": "Top Mid",
+        "name": "Yanni",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Dashen",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:54:15",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:54:38",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 6,
+          "kills": 4
+        },
+        "map_callout": "CT Spawn",
+        "name": "Bassey",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Efe",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:54:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 6,
+          "kills": 5
+        },
+        "map_callout": "CT Spawn",
+        "name": "Bassey",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Pines",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:54:57",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 6
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:55:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Ferris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:55:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Ferris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:55:34",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:55:35",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Ferris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:55:35",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 6,
+          "kills": 5
+        },
+        "map_callout": "Suicide",
+        "name": "Pines",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vox",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:55:41",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 7,
+          "kills": 4
+        },
+        "map_callout": "Long",
+        "name": "Wesley",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Dashen",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:55:53",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 6
+        },
+        "map_callout": "Ramp",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:56:02",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:56:18",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Boost",
+        "name": "Efe",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:56:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 6,
+          "kills": 6
+        },
+        "map_callout": "Cross",
+        "name": "Bassey",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Efe",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:56:42",
+  "events": [
+    {
+      "detonation_callout": "Boost",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:56:43",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1,
+        "T": 4
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 7
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:57:37",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 8,
+          "kills": 6
+        },
+        "map_callout": "Cross",
+        "name": "Dashen",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Panama",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:57:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 6,
+          "kills": 7
+        },
+        "map_callout": "B Doors",
+        "name": "Bassey",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:57:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 7
+        },
+        "map_callout": "CT Spawn",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Pines",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:58:08",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 6,
+          "kills": 8
+        },
+        "map_callout": "B Car",
+        "name": "Bassey",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:58:14",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 6,
+          "kills": 4
+        },
+        "map_callout": "Default",
+        "name": "Vox",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Dashen",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:58:19",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:58:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 6,
+          "kills": 5
+        },
+        "map_callout": "B Doors",
+        "name": "Efe",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bassey",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:58:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 7,
+          "kills": 5
+        },
+        "map_callout": "Boost",
+        "name": "Wesley",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Efe",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 2,
+        "T": 8
+      },
+      "map_phase_after": "gameover",
+      "winner": "T"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T18:58:48",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    }
+  ]
+}
+
