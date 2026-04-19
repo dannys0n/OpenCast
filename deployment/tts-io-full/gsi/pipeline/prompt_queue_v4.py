@@ -12,7 +12,7 @@ from collections import deque
 from datetime import datetime
 from pathlib import Path
 
-from gsi_prompt_pipeline_v2 import as_dict
+from gsi_prompt_pipeline_v2 import as_dict, normalize_team
 from text_llm_client import build_config as build_text_llm_config
 from text_llm_client import request_chat_completion
 from tts_client import (
@@ -552,6 +552,7 @@ def primary_event(current_events):
 
     priorities = {
         "kill": 100,
+        "kill_summary": 98,
         "kill_cluster": 95,
         "player_scored_kill": 90,
         "player_death": 85,
@@ -842,16 +843,193 @@ def enqueue_prompt_items(items, repo_root):
     return []
 
 
-def prepare_queue_for_event_trigger():
+def normalize_team_key(team):
+    team = str(normalize_team(team) or "").upper()
+    if team == "CT":
+        return "ct"
+    if team == "T":
+        return "t"
+    return None
+
+
+def empty_kill_counts():
+    return {"ct": 0, "t": 0}
+
+
+def add_kill_count(kill_counts, team, amount=1):
+    team_key = normalize_team_key(team)
+    if team_key is None:
+        return
+    try:
+        amount_value = int(amount)
+    except (TypeError, ValueError):
+        amount_value = 0
+    if amount_value <= 0:
+        return
+    kill_counts[team_key] = int(kill_counts.get(team_key, 0)) + amount_value
+
+
+def classify_event_family(current_events):
+    current_events = [as_dict(event) for event in current_events]
+    event_types = {event.get("event_type") for event in current_events}
+    if event_types & {"kill", "kill_summary", "kill_cluster", "player_scored_kill", "player_death"}:
+        return "kill"
+    if event_types & {"grenade_detonated", "grenade_thrown"}:
+        return "grenade"
+    return "other"
+
+
+def collect_event_types(current_events):
+    current_events = [as_dict(event) for event in current_events]
+    return sorted(
+        {
+            str(event.get("event_type") or "").strip()
+            for event in current_events
+            if str(event.get("event_type") or "").strip()
+        }
+    )
+
+
+def count_kills_by_team(current_events):
+    current_events = [as_dict(event) for event in current_events]
+    kill_counts = empty_kill_counts()
+
+    for event in current_events:
+        event_type = event.get("event_type")
+        if event_type == "kill":
+            add_kill_count(kill_counts, as_dict(event.get("killer")).get("team"))
+        elif event_type == "kill_summary":
+            add_kill_count(kill_counts, "CT", event.get("ct_kills", 0))
+            add_kill_count(kill_counts, "T", event.get("t_kills", 0))
+        elif event_type == "player_scored_kill":
+            add_kill_count(kill_counts, as_dict(event.get("player")).get("team"))
+        elif event_type == "kill_cluster":
+            for killer in as_dict(event).get("killers", []) or []:
+                add_kill_count(kill_counts, as_dict(killer).get("team"))
+
+    return kill_counts
+
+
+def total_kill_count(kill_counts):
+    kill_counts = as_dict(kill_counts)
+    return int(kill_counts.get("ct", 0)) + int(kill_counts.get("t", 0))
+
+
+def summarize_trade_burst(kill_counts, event_types=None):
+    kill_counts = as_dict(kill_counts)
+    event_types = {str(event_type or "").strip() for event_type in (event_types or []) if str(event_type or "").strip()}
+    ct_kills = int(kill_counts.get("ct", 0))
+    t_kills = int(kill_counts.get("t", 0))
+    details = []
+    if ct_kills and t_kills:
+        ct_suffix = "" if ct_kills == 1 else "s"
+        t_suffix = "" if t_kills == 1 else "s"
+        details.append(f"CT got {ct_kills} kill{ct_suffix}")
+        details.append(f"T got {t_kills} kill{t_suffix}")
+    elif ct_kills:
+        suffix = "" if ct_kills == 1 else "s"
+        details.append(f"CT got {ct_kills} kill{suffix}")
+    elif t_kills:
+        suffix = "" if t_kills == 1 else "s"
+        details.append(f"T got {t_kills} kill{suffix}")
+
+    if not details:
+        return ""
+
+    if "round_result" in event_types:
+        details.append("round ended")
+    if "game_over" in event_types:
+        details.append("game ended")
+
+    return f"Kill summary: {', '.join(details)}."
+
+
+def build_kill_summary_event(kill_counts, current_events):
+    kill_counts = as_dict(kill_counts)
+    return strip_empty(
+        {
+            "event_type": "kill_summary",
+            "ct_kills": int(kill_counts.get("ct", 0)),
+            "t_kills": int(kill_counts.get("t", 0)),
+        }
+    )
+
+
+def replace_kill_events_with_summary(current_events, kill_counts):
+    current_events = [copy.deepcopy(as_dict(event)) for event in (current_events or [])]
+    kill_summary_event = build_kill_summary_event(kill_counts, current_events)
+    replaced_events = []
+    inserted_summary = False
+
+    for event in current_events:
+        event_type = event.get("event_type")
+        if event_type in {"kill", "kill_summary", "kill_cluster", "player_scored_kill", "player_death"}:
+            if not inserted_summary:
+                replaced_events.append(kill_summary_event)
+                inserted_summary = True
+            continue
+        replaced_events.append(event)
+
+    if not inserted_summary and total_kill_count(kill_counts) > 0:
+        replaced_events.insert(0, kill_summary_event)
+
+    return replaced_events
+
+
+def should_compact_combat_backlog(current_events):
+    incoming_kill_counts = count_kills_by_team(current_events)
+    if total_kill_count(incoming_kill_counts) <= 0:
+        return False
+
+    with QUEUE_CONDITION:
+        if CURRENT_PLAYBACK is None or CURRENT_PLAYBACK.get("tag") != "event":
+            return False
+
+        for existing in PLAYBACK_QUEUE:
+            if existing.get("source") == "event" and existing.get("event_family") == "kill":
+                return True
+
+    return False
+
+
+def prepare_queue_for_event_trigger(current_events=None, *, compact_combat_backlog=False):
+    current_events = [as_dict(event) for event in (current_events or [])]
+    incoming_kill_counts = count_kills_by_team(current_events)
+    incoming_event_family = classify_event_family(current_events)
+    aggregated_event_types = set(collect_event_types(current_events))
     dropped_items = []
     interrupted_current = None
+    aggregated_kill_counts = dict(incoming_kill_counts)
+    counted_payloads = set()
+
     with QUEUE_CONDITION:
         kept = deque()
         for existing in PLAYBACK_QUEUE:
-            if existing["tag"] == "event":
+            existing_tag = existing.get("tag")
+            existing_family = existing.get("event_family")
+            existing_is_event_source = existing.get("source") == "event"
+
+            if compact_combat_backlog and existing_is_event_source and existing_family in {"kill", "grenade"}:
+                dropped_items.append(existing)
+                if existing_family == "kill":
+                    payload_key = existing.get("payload_sequence")
+                    if payload_key not in counted_payloads:
+                        counted_payloads.add(payload_key)
+                        existing_counts = as_dict(existing.get("kill_counts"))
+                        add_kill_count(aggregated_kill_counts, "CT", existing_counts.get("ct", 0))
+                        add_kill_count(aggregated_kill_counts, "T", existing_counts.get("t", 0))
+                        aggregated_event_types.update(existing.get("event_types") or [])
+                continue
+
+            if incoming_event_family == "kill" and existing_is_event_source and existing_family == "grenade":
+                dropped_items.append(existing)
+                continue
+
+            if existing_tag == "event":
                 kept.append(existing)
             else:
                 dropped_items.append(existing)
+
         PLAYBACK_QUEUE.clear()
         PLAYBACK_QUEUE.extend(kept)
 
@@ -865,11 +1043,22 @@ def prepare_queue_for_event_trigger():
 
         write_queue_state_locked()
 
-    return dropped_items, interrupted_current
+    return dropped_items, interrupted_current, aggregated_kill_counts, sorted(aggregated_event_types)
 
 
-def build_queue_item(*, commentary, caster, prompt_style, tag, payload_sequence, source):
-    return {
+def build_queue_item(
+    *,
+    commentary,
+    caster,
+    prompt_style,
+    tag,
+    payload_sequence,
+    source,
+    event_family=None,
+    kill_counts=None,
+    event_types=None,
+):
+    item = {
         "id": next_item_sequence(),
         "created_at": now_stamp(),
         "commentary": commentary,
@@ -881,11 +1070,25 @@ def build_queue_item(*, commentary, caster, prompt_style, tag, payload_sequence,
         "interrupt_event": threading.Event(),
         "done_event": threading.Event(),
     }
+    if event_family is not None:
+        item["event_family"] = event_family
+    if kill_counts is not None:
+        item["kill_counts"] = dict(kill_counts)
+    if event_types is not None:
+        item["event_types"] = list(event_types)
+    return item
 
 
 def is_spectator_mode(snapshot):
     snapshot = as_dict(snapshot)
     return bool(as_dict(snapshot.get("allplayers")))
+
+
+def current_playback_is_grenade_event():
+    with QUEUE_CONDITION:
+        if CURRENT_PLAYBACK is None:
+            return False
+        return CURRENT_PLAYBACK.get("source") == "event" and CURRENT_PLAYBACK.get("event_family") == "grenade"
 
 
 def should_ignore_event_prompt(wrapper, snapshot):
@@ -897,6 +1100,9 @@ def should_ignore_event_prompt(wrapper, snapshot):
     if all(event.get("event_type") == "grenade_thrown" for event in current_events) and is_spectator_mode(snapshot):
         return True
 
+    if classify_event_family(current_events) == "grenade" and current_playback_is_grenade_event():
+        return True
+
     return False
 
 
@@ -904,10 +1110,11 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
     if should_ignore_event_prompt(wrapper, snapshot):
         return None
 
-    text_config = build_text_llm_config(repo_root)
     current_events = as_dict(as_dict(wrapper).get("input")).get("current_events", [])
-    system_prompt = build_event_system_prompt(current_events)
-    user_prompt = build_event_user_prompt(wrapper)
+    event_family = classify_event_family(current_events)
+    kill_counts = count_kills_by_team(current_events)
+    event_types = collect_event_types(current_events)
+    compact_combat_backlog = should_compact_combat_backlog(current_events)
     record = {
         "created_at": now_stamp(),
         "mode": "event",
@@ -917,19 +1124,48 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
     }
 
     try:
-        result = request_chat_completion(text_config, system_prompt, user_prompt)
-        lines = extract_commentary_lines(result["raw_text"], expected_max=4)
-        lines = split_compound_event_lines(lines, expected_max=4)
-        dropped = []
-        interrupted_current = None
-        if lines:
-            dropped, interrupted_current = prepare_queue_for_event_trigger()
-            if dropped:
-                slim_log(
-                    "queue trim",
-                    commentary=format_trimmed_items(dropped),
-                    include_commentary=True,
-                )
+        result = None
+        prompt_wrapper = copy.deepcopy(wrapper)
+        queued_event_family = event_family
+        queued_kill_counts = kill_counts
+        queued_event_types = event_types
+        if compact_combat_backlog:
+            dropped, interrupted_current, aggregated_kill_counts, _ = prepare_queue_for_event_trigger(
+                current_events,
+                compact_combat_backlog=True,
+            )
+            compacted_current_events = replace_kill_events_with_summary(current_events, aggregated_kill_counts)
+            prompt_wrapper = copy.deepcopy(wrapper)
+            prompt_wrapper.setdefault("input", {})["current_events"] = compacted_current_events
+            text_config = build_text_llm_config(repo_root)
+            system_prompt = build_event_system_prompt(compacted_current_events)
+            user_prompt = build_event_user_prompt(prompt_wrapper)
+            result = request_chat_completion(text_config, system_prompt, user_prompt)
+            lines = extract_commentary_lines(result["raw_text"], expected_max=4)
+            lines = split_compound_event_lines(lines, expected_max=4)
+            record["collapsed_kill_counts"] = aggregated_kill_counts
+            record["compacted_current_events"] = compacted_current_events
+            queued_event_family = classify_event_family(compacted_current_events)
+            queued_kill_counts = aggregated_kill_counts
+            queued_event_types = collect_event_types(compacted_current_events)
+        else:
+            text_config = build_text_llm_config(repo_root)
+            system_prompt = build_event_system_prompt(current_events)
+            user_prompt = build_event_user_prompt(prompt_wrapper)
+            result = request_chat_completion(text_config, system_prompt, user_prompt)
+            lines = extract_commentary_lines(result["raw_text"], expected_max=4)
+            lines = split_compound_event_lines(lines, expected_max=4)
+            dropped = []
+            interrupted_current = None
+            if lines:
+                dropped, interrupted_current, _, _ = prepare_queue_for_event_trigger(current_events)
+
+        if lines and dropped:
+            slim_log(
+                "queue trim",
+                commentary=format_trimmed_items(dropped),
+                include_commentary=True,
+            )
         items = []
         if lines:
             items.append(
@@ -940,6 +1176,9 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                     tag="event",
                     payload_sequence=payload_sequence,
                     source="event",
+                    event_family=queued_event_family,
+                    kill_counts=queued_kill_counts,
+                    event_types=queued_event_types,
                 )
             )
         if len(lines) > 1:
@@ -952,6 +1191,9 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                         tag="followup",
                         payload_sequence=payload_sequence,
                         source="event",
+                        event_family=queued_event_family,
+                        kill_counts=queued_kill_counts,
+                        event_types=queued_event_types,
                     )
                 )
 
@@ -965,11 +1207,14 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                 include_commentary=True,
             )
         record["status"] = "completed"
-        record["llm"] = {
-            "request": result["request"],
-            "raw_text": result["raw_text"],
-            "lines": lines,
-        }
+        if result is not None:
+            record["llm"] = {
+                "request": result["request"],
+                "raw_text": result["raw_text"],
+                "lines": lines,
+            }
+        if compact_combat_backlog:
+            record["compacted_combat_backlog"] = True
         record["queued_items"] = [
             {
                 "id": item["id"],

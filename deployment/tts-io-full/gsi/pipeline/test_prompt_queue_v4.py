@@ -64,6 +64,36 @@ class PromptQueueV4Tests(unittest.TestCase):
             ["Colin drops Maru.", "CT close the round."],
         )
 
+    def test_replace_kill_events_with_summary_keeps_other_recent_events(self):
+        replaced = MODULE.replace_kill_events_with_summary(
+            [
+                {
+                    "event_type": "kill",
+                    "killer": {"team": "T"},
+                },
+                {
+                    "event_type": "round_result",
+                    "winner": "T",
+                },
+            ],
+            {"ct": 1, "t": 2},
+        )
+
+        self.assertEqual(
+            replaced,
+            [
+                {
+                    "event_type": "kill_summary",
+                    "ct_kills": 1,
+                    "t_kills": 2,
+                },
+                {
+                    "event_type": "round_result",
+                    "winner": "T",
+                },
+            ],
+        )
+
     def test_should_ignore_pure_grenade_throw_during_spectate(self):
         wrapper = {
             "input": {
@@ -77,6 +107,32 @@ class PromptQueueV4Tests(unittest.TestCase):
         }
         snapshot = {"allplayers": {"2": {"name": "Uri"}}}
         self.assertTrue(MODULE.should_ignore_event_prompt(wrapper, snapshot))
+
+    def test_should_ignore_grenade_event_when_grenade_event_is_currently_in_tts(self):
+        MODULE.CURRENT_PLAYBACK = {
+            "id": 10,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Smoke blooms.",
+            "payload_sequence": 7,
+            "source": "event",
+            "event_family": "grenade",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        wrapper = {
+            "input": {
+                "current_events": [
+                    {
+                        "event_type": "grenade_detonated",
+                        "grenade_type": "flashbang",
+                    }
+                ]
+            }
+        }
+
+        self.assertTrue(MODULE.should_ignore_event_prompt(wrapper, {}))
 
     def test_prepare_queue_for_event_trigger_interrupts_current_non_event_and_drops_queued_non_events(self):
         current_non_event = {
@@ -104,12 +160,99 @@ class PromptQueueV4Tests(unittest.TestCase):
         MODULE.CURRENT_PLAYBACK = current_non_event
         MODULE.PLAYBACK_QUEUE.append(queued_non_event)
 
-        dropped, interrupted_current = MODULE.prepare_queue_for_event_trigger()
+        dropped, interrupted_current, kill_counts, event_types = MODULE.prepare_queue_for_event_trigger()
 
         self.assertTrue(current_non_event["interrupt_event"].is_set())
         self.assertEqual(interrupted_current["id"], 10)
         self.assertEqual([item["id"] for item in dropped], [11])
+        self.assertEqual(kill_counts, {"ct": 0, "t": 0})
+        self.assertEqual(event_types, [])
         self.assertEqual(list(MODULE.PLAYBACK_QUEUE), [])
+
+    def test_prepare_queue_for_event_trigger_compacts_queued_kill_and_grenade_events_during_active_event(self):
+        current_event = {
+            "id": 10,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Opening frag.",
+            "payload_sequence": 20,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_kill_event = {
+            "id": 11,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Second frag.",
+            "payload_sequence": 21,
+            "source": "event",
+            "event_family": "kill",
+            "kill_counts": {"ct": 1, "t": 0},
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_kill_followup = {
+            "id": 12,
+            "tag": "followup",
+            "caster": "caster1",
+            "prompt_style": "play_by_play_follow_up",
+            "commentary": "That opens the site.",
+            "payload_sequence": 21,
+            "source": "event",
+            "event_family": "kill",
+            "kill_counts": {"ct": 1, "t": 0},
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_grenade_event = {
+            "id": 13,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Flash in.",
+            "payload_sequence": 22,
+            "source": "event",
+            "event_family": "grenade",
+            "kill_counts": {"ct": 0, "t": 0},
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        kept_bomb_event = {
+            "id": 14,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Bomb goes down.",
+            "payload_sequence": 23,
+            "source": "event",
+            "event_family": "other",
+            "event_types": ["bomb_event"],
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.CURRENT_PLAYBACK = current_event
+        MODULE.PLAYBACK_QUEUE.extend(
+            [queued_kill_event, queued_kill_followup, queued_grenade_event, kept_bomb_event]
+        )
+
+        dropped, interrupted_current, kill_counts, event_types = MODULE.prepare_queue_for_event_trigger(
+            [
+                {
+                    "event_type": "kill",
+                    "killer": {"team": "T"},
+                }
+            ],
+            compact_combat_backlog=True,
+        )
+
+        self.assertIsNone(interrupted_current)
+        self.assertEqual([item["id"] for item in dropped], [11, 12, 13])
+        self.assertEqual(kill_counts, {"ct": 1, "t": 1})
+        self.assertEqual(event_types, ["kill"])
+        self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [14])
 
     def test_process_event_wrapper_queues_first_line_as_event_and_rest_as_followups(self):
         captured = {}
@@ -230,6 +373,261 @@ class PromptQueueV4Tests(unittest.TestCase):
         self.assertEqual([item["tag"] for item in record["queued_items"]], ["event", "followup"])
         self.assertEqual(record["queued_items"][0]["commentary"], "Yanni kills Tony.")
         self.assertEqual(record["queued_items"][1]["commentary"], "Triple for Yanni.")
+
+    def test_process_event_wrapper_compacts_backlog_by_rewriting_current_events_for_llm(self):
+        captured = {}
+
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            captured["user_prompt"] = user_prompt
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "Trades stack up.\nThat changes the round.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+
+        current_event = {
+            "id": 10,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Opening frag.",
+            "payload_sequence": 30,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_kill_event = {
+            "id": 11,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Follow-up frag.",
+            "payload_sequence": 31,
+            "source": "event",
+            "event_family": "kill",
+            "kill_counts": {"ct": 1, "t": 0},
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_grenade_event = {
+            "id": 12,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Molotov lands.",
+            "payload_sequence": 32,
+            "source": "event",
+            "event_family": "grenade",
+            "kill_counts": {"ct": 0, "t": 0},
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_followup = {
+            "id": 13,
+            "tag": "followup",
+            "caster": "caster1",
+            "prompt_style": "play_by_play_follow_up",
+            "commentary": "Space opens up.",
+            "payload_sequence": 31,
+            "source": "event",
+            "event_family": "kill",
+            "kill_counts": {"ct": 1, "t": 0},
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.CURRENT_PLAYBACK = current_event
+        MODULE.PLAYBACK_QUEUE.extend([queued_kill_event, queued_grenade_event, queued_followup])
+
+        wrapper = {
+            "input": {
+                "context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Yanni", "team": "CT", "map_callout": "Short"}],
+                },
+                "previous_events": [],
+                "current_events": [
+                    {
+                        "event_type": "kill",
+                        "killer": {"name": "Ropz", "team": "T", "map_callout": "Mid"},
+                        "victim": {"name": "Yanni", "team": "CT"},
+                    }
+                ],
+                "derived_tactical_summary": {"confidence": "medium"},
+            }
+        }
+
+        record = MODULE.process_event_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=33, snapshot={})
+
+        self.assertEqual(record["status"], "completed")
+        self.assertTrue(record["compacted_combat_backlog"])
+        self.assertEqual(record["collapsed_kill_counts"], {"ct": 1, "t": 1})
+        self.assertEqual(
+            record["compacted_current_events"],
+            [
+                {
+                    "event_type": "kill_summary",
+                    "ct_kills": 1,
+                    "t_kills": 1,
+                }
+            ],
+        )
+        self.assertEqual(record["llm"]["lines"], ["Trades stack up.", "That changes the round."])
+        self.assertEqual([item["tag"] for item in record["queued_items"]], ["event", "followup"])
+        self.assertEqual(record["queued_items"][0]["commentary"], "Trades stack up.")
+        self.assertIn('"event_type": "kill_summary"', captured["user_prompt"])
+        self.assertEqual([item["id"] for item in record["dropped_items"]], [11, 12, 13])
+
+    def test_process_event_wrapper_compacted_summary_keeps_round_end_event_in_prompt(self):
+        captured = {}
+
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            captured["user_prompt"] = user_prompt
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "The trades close the round.\nThat is the finish.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+
+        current_event = {
+            "id": 10,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Opening frag.",
+            "payload_sequence": 50,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_kill_event = {
+            "id": 11,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Closing frag.",
+            "payload_sequence": 51,
+            "source": "event",
+            "event_family": "kill",
+            "kill_counts": {"ct": 1, "t": 0},
+            "event_types": ["kill", "round_result"],
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.CURRENT_PLAYBACK = current_event
+        MODULE.PLAYBACK_QUEUE.append(queued_kill_event)
+
+        wrapper = {
+            "input": {
+                "context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Ropz", "team": "T", "map_callout": "Mid"}],
+                },
+                "previous_events": [],
+                "current_events": [
+                    {
+                        "event_type": "kill",
+                        "killer": {"name": "Ropz", "team": "T", "map_callout": "Mid"},
+                        "victim": {"name": "Yanni", "team": "CT"},
+                    },
+                    {
+                        "event_type": "round_result",
+                        "winner": "T",
+                    },
+                ],
+                "derived_tactical_summary": {"confidence": "medium"},
+            }
+        }
+
+        record = MODULE.process_event_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=52, snapshot={})
+
+        self.assertEqual(record["status"], "completed")
+        self.assertTrue(record["compacted_combat_backlog"])
+        self.assertEqual(record["collapsed_kill_counts"], {"ct": 1, "t": 1})
+        self.assertEqual(
+            record["compacted_current_events"],
+            [
+                {
+                    "event_type": "kill_summary",
+                    "ct_kills": 1,
+                    "t_kills": 1,
+                },
+                {
+                    "event_type": "round_result",
+                    "winner": "T",
+                },
+            ],
+        )
+        self.assertEqual(record["queued_items"][0]["commentary"], "The trades close the round.")
+        self.assertIn('"event_type": "kill_summary"', captured["user_prompt"])
+        self.assertIn('"event_type": "round_result"', captured["user_prompt"])
+
+    def test_process_event_wrapper_does_not_compact_when_only_current_event_is_active(self):
+        captured = {}
+
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            captured["called"] = True
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "Fresh frag.\nThat opens space.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+
+        current_event = {
+            "id": 10,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Opening frag.",
+            "payload_sequence": 40,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.CURRENT_PLAYBACK = current_event
+
+        wrapper = {
+            "input": {
+                "context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Ropz", "team": "T", "map_callout": "Mid"}],
+                },
+                "previous_events": [],
+                "current_events": [
+                    {
+                        "event_type": "kill",
+                        "killer": {"name": "Ropz", "team": "T", "map_callout": "Mid"},
+                        "victim": {"name": "Yanni", "team": "CT"},
+                    }
+                ],
+                "derived_tactical_summary": {"confidence": "medium"},
+            }
+        }
+
+        record = MODULE.process_event_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=41, snapshot={})
+
+        self.assertEqual(record["status"], "completed")
+        self.assertNotIn("compacted_combat_backlog", record)
+        self.assertTrue(captured.get("called"))
+        self.assertEqual(record["llm"]["lines"], ["Fresh frag.", "That opens space."])
+        self.assertEqual([item["commentary"] for item in record["queued_items"]], ["Fresh frag.", "That opens space."])
 
     def test_process_interval_wrapper_idle_color_keeps_three_lines_in_single_tts_item(self):
         captured = {}
