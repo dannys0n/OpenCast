@@ -1,0 +1,2448 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "米国最速伝説と裂颅の统领!敞篷永樂帝です!",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Exotic",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "RorBoy",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 3,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 2
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The round is still hiding its intentions.",
+      "That makes every decision feel expensive.",
+      "Correct. Bad assumptions become very expensive here."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "ARTHUR FUCKING READ",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The score still leaves no margin.",
+      "The next mistake could swing it.",
+      "The shape is still incomplete."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Jexry",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Mammy",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Silence_Is_Music",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "The Saint",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "WildSeagull",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "doosha",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "5k hours on rust",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Bread",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Bλgelz",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Mocha Joe",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Slimmeh|ULT|",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "hifi.wav",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 7,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "name": "Silence_Is_Music",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 7,
+        "t": 6
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "Jexry",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Fire is down.",
+      "CT can still lean on the extra body. CT still have room to slow this down."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Felix",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "GreenEggsAndHarm",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 9,
+        "t": 10
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "a_leaning",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_leaning"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Smoke on Suicide.",
+      "A still looks closer."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Mammy",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Silly Kinda Guy",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "WildSeagull",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "doosha",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "hifi.wav",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 6,
+        "T": 5
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 4,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "CT still need to protect a close score.",
+      "The next mistake could swing it.",
+      "The setup still needs more information."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "B Doors",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "Sword New New",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 3,
+            "deaths": 6,
+            "kills": 10
+          },
+          "map_callout": "CT Spawn",
+          "name": "cam",
+          "round_kills": 2,
+          "team": "T"
+        },
+        "victim": {
+          "name": "Felix",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 2
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 2,
+        "t": 7
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "t",
+        "mid": "t"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "map_callout": "CT Spawn",
+          "name": "Skittles",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "cam kills two.",
+      "That kill lands at CT Spawn on Felix. Both sites still need respect."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Be_Wanna_Be",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "米国最速伝説と裂颅の统领!敞篷永樂帝です!",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "ARTHUR FUCKING READ",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Billary clitton",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Exotic",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Slick Rick",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 4,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 4
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "Information remains frustratingly incomplete.",
+      "I do not enjoy uncertain peeks.",
+      "Yes. Ambiguity usually bills the first mistake."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Blue",
+          "name": "BOT Mummy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "Delamain",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Envy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Joerogan67",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "L30N15",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Null",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "RWicken",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Sun of Beach",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "pig gaming",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Alaskan",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Bison939",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Le0n",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "MrHippo01",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "ThirdPug",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "VITEK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "hahaha",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "hitoriki130",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "yehaifeng134",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "zeoliteXt",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "map_callout": "Blue",
+          "name": "BOT Mummy",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 9,
+        "t": 10
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Joerogan67 at Boost",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "t",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Doors",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Long",
+          "name": "BOT Mummy",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Fire on Blue.",
+      "That still keeps both sites honest. This still stretches the defense."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Jexry",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Mammy",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "NebularWinterRaven",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Silence_Is_Music",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Silly Kinda Guy",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "The Saint",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "WildSeagull",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "doosha",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "5k hours on rust",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Bread",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Bλgelz",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Mocha Joe",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Shaarky!!",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Slimmeh|ULT|",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "akt",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "hifi.wav",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 5,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "Shaarky!!",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 9,
+        "t": 8
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "name": "dullplayer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "HE connects.",
+      "CT can afford more patience here. CT can still lean on the extra body."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Schemer J",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "wildcard",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "米国最速伝説と裂颅の统领!敞篷永樂帝です!",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "ARTHUR FUCKING READ",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Billary clitton",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "RorBoy",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Slick Rick",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Wallpaper Memes 🇺🇦",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "milk's biggest fan",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 6,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 6,
+            "kills": 16
+          },
+          "name": "milk's biggest fan",
+          "round_kills": 1,
+          "team": "T"
+        },
+        "victim": {
+          "name": "TAC山中",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 6
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 6,
+        "t": 6
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "milk's biggest fan",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "milk's biggest fan gets the kill.",
+      "CT player is the casualty. CT are still guarding a thin edge."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Be_Wanna_Be",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Costco Hot Dog",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "TAC山中",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "wildcard",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "米国最速伝説と裂颅の统领!敞篷永樂帝です!",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "ARTHUR FUCKING READ",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Billary clitton",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Exotic",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "RorBoy",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Slick Rick",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Wallpaper Memes 🇺🇦",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "milk's biggest fan",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 3,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "name": "Wallpaper Memes 🇺🇦",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 8,
+        "t": 7
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "Be_Wanna_Be",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Smoke out.",
+      "CT can afford more patience here. CT can still lean on the extra body."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Be_Wanna_Be",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "TAC山中",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "wildcard",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "米国最速伝説と裂颅の统领!敞篷永樂帝です!",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "ARTHUR FUCKING READ",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Billary clitton",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Exotic",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "RorBoy",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Slick Rick",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Wallpaper Memes 🇺🇦",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "milk's biggest fan",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 5,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "name": "dullplayer",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 7,
+        "t": 7
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Fire is down.",
+      "The setup is still not fully clear. The picture is still incomplete."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Pit",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Felix",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "GreenEggsAndHarm",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Default",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "detonation_callout": "Long Doors",
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "Outside Long",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 9,
+        "t": 10
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Catwalk",
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "Catwalk",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Flash over Long Doors.",
+      "This still stretches the defense. B remains a serious threat."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Doors",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Short",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "Car",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "detonation_callout": "CT Spawn",
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "CT Mid",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 4,
+        "t": 7
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "t",
+        "mid": "ct"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "CT Mid",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Flash over CT Spawn.",
+      "Now the hold matters more than the entry. Now the hold matters more than routes."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Be_Wanna_Be",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "TAC山中",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "wildcard",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "米国最速伝説と裂颅の统领!敞篷永樂帝です!",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "ARTHUR FUCKING READ",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Billary clitton",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Exotic",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "RorBoy",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Slick Rick",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Wallpaper Memes 🇺🇦",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "milk's biggest fan",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 5,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "dullplayer",
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "name": "Exotic",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 7,
+        "t": 7
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Flash pops.",
+      "The picture is still incomplete. The setup is still not fully clear."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "BillyThe503Kid",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Delamain",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "L30N15",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Car",
+          "name": "Null",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "RWicken",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Roy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "hahaha",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "pig gaming",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Alaskan",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Bison939",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Bolin666666",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Le0n",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "MrHippo01",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "VITEK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "hitoriki130",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "yehaifeng134",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "zeoliteXt",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "✨ ắjniN ☯",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 1,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "Mid",
+          "name": "hahaha",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 8,
+        "t": 10
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Null at B Car",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "B Doors",
+          "name": "Null",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Flash over Mid.",
+      "This still stretches the defense. B remains a serious threat. One lane is still unsettled."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Side Pit",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Felix",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "GreenEggsAndHarm",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Side Pit",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "Long",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 9,
+        "t": 10
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Long Doors",
+        "event_type": "grenade_detonated",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Side Pit",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Flash over Long.",
+      "This still stretches the defense. Both sites still need respect."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Be_Wanna_Be",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Schemer J",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "TAC山中",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "wildcard",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "RorBoy",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "name": "TAC山中",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 7,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "name": "TAC山中",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Flash out.",
+      "CT can still lean on the extra body. The picture is still incomplete."
+    ]
+  }
+}
