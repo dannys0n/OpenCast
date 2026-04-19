@@ -1,0 +1,85 @@
+{
+  "payload": {
+    "auth": {
+      "token": "replace_this_with_a_secret"
+    },
+    "player": {
+      "activity": "menu",
+      "name": "BiscuitsAndGravy",
+      "steamid": "76561198237377678"
+    },
+    "previously": {
+      "allplayers": true,
+      "bomb": true,
+      "grenades": true,
+      "map": true,
+      "phase_countdowns": true,
+      "player": {
+        "activity": "playing",
+        "forward": "-0.342, -0.901, -0.266",
+        "match_stats": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 6,
+          "mvps": 0,
+          "score": 17
+        },
+        "name": "MrHippo01",
+        "observer_slot": 10,
+        "position": "497.8, 2443.8, 96.0",
+        "spectarget": "76561199048297766",
+        "state": {
+          "armor": 99,
+          "burning": 0,
+          "equip_value": 4100,
+          "flashed": 0,
+          "health": 16,
+          "helmet": true,
+          "money": 10000,
+          "round_killhs": 1,
+          "round_kills": 2,
+          "round_totaldmg": 143,
+          "smoked": 0
+        },
+        "steamid": "76561199048297766",
+        "team": "T",
+        "weapons": {
+          "weapon_0": {
+            "name": "weapon_knife_t",
+            "paintkit": "default",
+            "state": "active",
+            "type": "Knife"
+          },
+          "weapon_1": {
+            "ammo_clip": 20,
+            "ammo_clip_max": 20,
+            "ammo_reserve": 3,
+            "name": "weapon_glock",
+            "paintkit": "hye_topo",
+            "state": "holstered",
+            "type": "Pistol"
+          },
+          "weapon_2": {
+            "ammo_clip": 11,
+            "ammo_clip_max": 30,
+            "ammo_reserve": 3,
+            "name": "weapon_ak47",
+            "paintkit": "gs_ak47_professional",
+            "state": "holstered",
+            "type": "Rifle"
+          }
+        }
+      },
+      "round": true
+    },
+    "provider": {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "steamid": "76561198237377678",
+      "timestamp": 1776585153,
+      "version": 14141
+    }
+  },
+  "payload_sequence": 2462,
+  "received_at": "2026-04-19T00:52:33"
+}

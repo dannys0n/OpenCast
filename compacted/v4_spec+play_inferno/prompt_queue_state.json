@@ -1,0 +1,32 @@
+{
+  "current": {
+    "caster": "caster1",
+    "commentary": "This feels like a contact play.",
+    "id": 155,
+    "payload_sequence": 649,
+    "prompt_style": "idle_color",
+    "source": "idle_conversation",
+    "tag": "idle"
+  },
+  "queued": [
+    {
+      "caster": "caster0",
+      "commentary": "TAC\\u5c71\\u4e2d killed wildcard.",
+      "id": 159,
+      "payload_sequence": 675,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster1",
+      "commentary": "CT secured the win with a close score.",
+      "id": 160,
+      "payload_sequence": 675,
+      "prompt_style": "play_by_play_follow_up",
+      "source": "event",
+      "tag": "followup"
+    }
+  ],
+  "updated_at": "2026-04-18T23:54:51"
+}

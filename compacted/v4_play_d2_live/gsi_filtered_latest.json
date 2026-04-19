@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-04-19T00:28:42",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 3,
+          "deaths": 10,
+          "kills": 9
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 5,
+        "T": 8
+      },
+      "map_phase_after": "gameover",
+      "winner": "T"
+    }
+  ]
+}

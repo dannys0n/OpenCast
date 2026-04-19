@@ -1,0 +1,119 @@
+{
+  "payload": {
+    "auth": {
+      "token": "replace_this_with_a_secret"
+    },
+    "map": {
+      "mode": "casual",
+      "name": "de_inferno",
+      "num_matches_to_win_series": 0,
+      "phase": "gameover",
+      "round": 11,
+      "round_wins": {
+        "1": "ct_win_defuse",
+        "10": "t_win_elimination",
+        "11": "ct_win_elimination",
+        "2": "ct_win_defuse",
+        "3": "ct_win_elimination",
+        "4": "ct_win_elimination",
+        "5": "t_win_elimination",
+        "6": "t_win_elimination",
+        "7": "ct_win_elimination",
+        "8": "ct_win_defuse",
+        "9": "ct_win_elimination"
+      },
+      "team_ct": {
+        "consecutive_round_losses": 0,
+        "matches_won_this_series": 0,
+        "score": 8,
+        "timeouts_remaining": 1
+      },
+      "team_t": {
+        "consecutive_round_losses": 3,
+        "matches_won_this_series": 0,
+        "score": 3,
+        "timeouts_remaining": 1
+      }
+    },
+    "player": {
+      "activity": "playing",
+      "match_stats": {
+        "assists": 6,
+        "deaths": 6,
+        "kills": 18,
+        "mvps": 5,
+        "score": 57
+      },
+      "name": "Smitty",
+      "observer_slot": 1,
+      "state": {
+        "armor": 90,
+        "burning": 0,
+        "defusekit": true,
+        "equip_value": 5300,
+        "flashed": 0,
+        "health": 2,
+        "helmet": true,
+        "money": 4950,
+        "round_killhs": 2,
+        "round_kills": 2,
+        "smoked": 0
+      },
+      "steamid": "76561197980030464",
+      "team": "CT",
+      "weapons": {
+        "weapon_0": {
+          "name": "weapon_knife",
+          "paintkit": "default",
+          "state": "active",
+          "type": "Knife"
+        },
+        "weapon_1": {
+          "ammo_reserve": 1,
+          "name": "weapon_flashbang",
+          "paintkit": "default",
+          "state": "holstered",
+          "type": "Grenade"
+        }
+      }
+    },
+    "previously": {
+      "player": {
+        "weapons": {
+          "weapon_0": {
+            "state": "holstered"
+          },
+          "weapon_1": {
+            "ammo_clip": 12,
+            "ammo_clip_max": 12,
+            "ammo_reserve": 2,
+            "name": "weapon_usp_silencer",
+            "paintkit": "hy_varicamo_night",
+            "state": "active",
+            "type": "Pistol"
+          },
+          "weapon_2": {
+            "ammo_reserve": 1,
+            "name": "weapon_flashbang",
+            "paintkit": "default",
+            "state": "holstered",
+            "type": "Grenade"
+          }
+        }
+      }
+    },
+    "provider": {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "steamid": "76561198237377678",
+      "timestamp": 1776573849,
+      "version": 14141
+    },
+    "round": {
+      "phase": "freezetime",
+      "win_team": "CT"
+    }
+  },
+  "payload_sequence": 511,
+  "received_at": "2026-04-18T21:44:09"
+}

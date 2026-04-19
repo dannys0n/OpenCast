@@ -1,0 +1,111 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "ARTHUR FUCKING READ",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "RorBoy",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "TAC\u5c71\u4e2d",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 2,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 1,
+            "deaths": 3,
+            "kills": 6
+          },
+          "name": "TAC\u5c71\u4e2d",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "wildcard",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 5,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 2
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "wildcard",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

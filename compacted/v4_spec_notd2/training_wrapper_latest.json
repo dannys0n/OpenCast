@@ -1,0 +1,100 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Be_Wanna_Be",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "TAC\u5c71\u4e2d",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "wildcard",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 8,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "wildcard",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 6,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "RorBoy",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

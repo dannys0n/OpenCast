@@ -1,0 +1,3899 @@
+{
+  "created_at": "2026-04-18T22:54:25",
+  "events": [
+    {
+      "event_type": "round_result",
+      "round_phase_after": "live",
+      "winner": "CT",
+      "winner_score": 4
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:54:25",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:54:55",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1,
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:54:58",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 8,
+          "kills": 13
+        },
+        "name": "akt",
+        "round_kills": 4,
+        "team": "T"
+      },
+      "victim": {
+        "name": "doosha",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:06",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:20",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:20",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:22",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 18
+        },
+        "name": "Jexry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Iythronel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:27",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:28",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:29",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 7,
+          "kills": 14
+        },
+        "name": "Mammy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "5k hours on rust",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 7,
+          "kills": 15
+        },
+        "name": "Mammy",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:38",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 6
+        },
+        "name": "Slimmeh|ULT|",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:39",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:46",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:49",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 8,
+          "kills": 14
+        },
+        "name": "akt",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "doosha",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 12
+        },
+        "name": "B\u03bbgelz",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:53",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 8,
+          "kills": 15
+        },
+        "name": "akt",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "The Saint",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:54",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "B\u03bbgelz",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:55",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 7,
+          "kills": 7
+        },
+        "name": "WildSeagull",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:56",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 7,
+          "kills": 16
+        },
+        "name": "Mammy",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "akt",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:55:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 9,
+          "kills": 6
+        },
+        "name": "Mocha Joe",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:05",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 21
+        },
+        "name": "dullplayer",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "B\u03bbgelz",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:15",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 19
+        },
+        "name": "Jexry",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bread",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:17",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 22
+        },
+        "name": "dullplayer",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mocha Joe",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 20
+        },
+        "name": "Jexry",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:33",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:46",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:46",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:48",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:51",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:52",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:54",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 6,
+          "kills": 1
+        },
+        "name": "NebularWinterRaven",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "5k hours on rust",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:55",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:56",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:56",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 7,
+          "kills": 17
+        },
+        "name": "Mammy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "akt",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:58",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:56:58",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:07",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 10,
+          "kills": 13
+        },
+        "name": "B\u03bbgelz",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "The Saint",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:09",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:09",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 8,
+          "kills": 2
+        },
+        "name": "doosha",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:10",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:13",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:13",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 21
+        },
+        "name": "Jexry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "B\u03bbgelz",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:15",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 8,
+          "kills": 12
+        },
+        "name": "Shaarky!!",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:21",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:29",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 23
+        },
+        "name": "dullplayer",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mocha Joe",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:41",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 24
+        },
+        "name": "dullplayer",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:41",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:45",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 22
+        },
+        "name": "Jexry",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:57:56",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 2
+        },
+        "name": "Bread",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:03",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 3
+        },
+        "name": "Bread",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:13",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 23
+        },
+        "name": "Jexry",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bread",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 6
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:28",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "incendiary",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Mocha Joe",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:35",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Mocha Joe",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 24
+        },
+        "name": "Jexry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mocha Joe",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:37",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "The Saint",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:38",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 7,
+          "kills": 2
+        },
+        "name": "NebularWinterRaven",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:39",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "The Saint",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:40",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "5k hours on rust",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:41",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:41",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:41",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:42",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "5k hours on rust",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:43",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:48",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:52",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "name": "5k hours on rust",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:53",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:53",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:53",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:54",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:59",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:58:59",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:01",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:04",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Bread",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Bread",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Bread",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:05",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:08",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "name": "5k hours on rust",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:11",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 7,
+          "kills": 3
+        },
+        "name": "NebularWinterRaven",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "B\u03bbgelz",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:12",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Bread",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "doosha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:13",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 3
+        },
+        "name": "Silence_Is_Music",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bread",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:14",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "doosha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:15",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:18",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:21",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 10,
+          "kills": 16
+        },
+        "name": "akt",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 11,
+          "kills": 1
+        },
+        "name": "5k hours on rust",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:25",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:31",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 10,
+          "kills": 17
+        },
+        "name": "akt",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:34",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 7,
+          "kills": 18
+        },
+        "name": "Mammy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "5k hours on rust",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 8,
+          "kills": 8
+        },
+        "name": "WildSeagull",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "akt",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:38",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:44",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:48",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:54",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 7,
+          "kills": 8
+        },
+        "name": "hifi.wav",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:59:56",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 7,
+          "kills": 9
+        },
+        "name": "hifi.wav",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "The Saint",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "molotov",
+      "owner_player": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:04",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 7,
+          "kills": 19
+        },
+        "name": "Mammy",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 7
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:07",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:22",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:27",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Bread",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:28",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:28",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "incendiary",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 6,
+          "deaths": 8,
+          "kills": 4
+        },
+        "name": "NebularWinterRaven",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "akt",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:28",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Bread",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:32",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 7,
+          "kills": 25
+        },
+        "name": "Jexry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Shaarky!!",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:33",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Bread",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:34",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:36",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:36",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:38",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:39",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:40",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Bread",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:40",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 8,
+          "kills": 10
+        },
+        "name": "hifi.wav",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "NebularWinterRaven",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:42",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "doosha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:43",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:43",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 8,
+          "kills": 11
+        },
+        "name": "hifi.wav",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Silly Kinda Guy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:44",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "doosha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "B\u03bbgelz",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:52",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:00:54",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:00",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:00",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:09",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:10",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:12",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:13",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:16",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "B\u03bbgelz",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:17",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:20",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:22",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "doosha",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:23",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 7,
+          "kills": 26
+        },
+        "name": "Jexry",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hifi.wav",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:25",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 11,
+          "kills": 4
+        },
+        "name": "Bread",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Silence_Is_Music",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 7,
+          "kills": 27
+        },
+        "name": "Jexry",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bread",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:29",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "doosha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:29",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "dullplayer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:30",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:38",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 7,
+          "kills": 20
+        },
+        "name": "Mammy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "B\u03bbgelz",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 7,
+          "kills": 7
+        },
+        "name": "Slimmeh|ULT|",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "WildSeagull",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:51",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Mammy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:52",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 12,
+          "kills": 2
+        },
+        "name": "5k hours on rust",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Jexry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:55",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 6,
+          "kills": 25
+        },
+        "name": "dullplayer",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mocha Joe",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:01:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 12,
+          "kills": 2
+        },
+        "name": "The Saint",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "5k hours on rust",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:02:01",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 7,
+          "kills": 21
+        },
+        "name": "Mammy",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Slimmeh|ULT|",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 8,
+        "T": 5
+      },
+      "map_phase_after": "gameover",
+      "winner": "CT"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:02:15",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+

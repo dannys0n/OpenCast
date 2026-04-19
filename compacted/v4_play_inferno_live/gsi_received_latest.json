@@ -1,0 +1,87 @@
+{
+  "payload": {
+    "auth": {
+      "token": "replace_this_with_a_secret"
+    },
+    "map": {
+      "mode": "casual",
+      "name": "de_inferno",
+      "num_matches_to_win_series": 0,
+      "phase": "gameover",
+      "round": 15,
+      "round_wins": {
+        "1": "t_win_elimination",
+        "10": "ct_win_elimination",
+        "11": "t_win_bomb",
+        "12": "t_win_elimination",
+        "13": "t_win_elimination",
+        "14": "t_win_bomb",
+        "15": "t_win_elimination",
+        "2": "ct_win_elimination",
+        "3": "t_win_elimination",
+        "4": "ct_win_elimination",
+        "5": "ct_win_elimination",
+        "6": "ct_win_elimination",
+        "7": "t_win_elimination",
+        "8": "ct_win_elimination",
+        "9": "ct_win_defuse"
+      },
+      "team_ct": {
+        "consecutive_round_losses": 5,
+        "matches_won_this_series": 0,
+        "score": 7,
+        "timeouts_remaining": 1
+      },
+      "team_t": {
+        "consecutive_round_losses": 0,
+        "matches_won_this_series": 0,
+        "score": 8,
+        "timeouts_remaining": 1
+      }
+    },
+    "player": {
+      "activity": "playing",
+      "match_stats": {
+        "assists": 4,
+        "deaths": 12,
+        "kills": 19,
+        "mvps": 3,
+        "score": 49
+      },
+      "name": "Rean Schwarzer",
+      "state": {
+        "armor": 0,
+        "burning": 0,
+        "equip_value": 5300,
+        "flashed": 0,
+        "health": 0,
+        "helmet": false,
+        "money": 2550,
+        "round_killhs": 0,
+        "round_kills": 1,
+        "smoked": 0
+      },
+      "steamid": "76561198446113428",
+      "weapons": {}
+    },
+    "previously": {
+      "player": {
+        "observer_slot": 0,
+        "team": "CT"
+      }
+    },
+    "provider": {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "steamid": "76561198237377678",
+      "timestamp": 1776582778,
+      "version": 14141
+    },
+    "round": {
+      "phase": "freezetime",
+      "win_team": "T"
+    }
+  },
+  "payload_sequence": 553,
+  "received_at": "2026-04-19T00:12:58"
+}

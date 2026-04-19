@@ -1,0 +1,9560 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 1,
+            "kills": 0
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Vypa",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Shaur",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "T.R.A.C \u2655\u2620",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 1,
+            "kills": 19
+          },
+          "name": "T.R.A.C \u2655\u2620",
+          "round_kills": 3,
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 6
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "T.R.A.C \u2655\u2620",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 2,
+            "kills": 0
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 0
+          },
+          "name": "Nudeoolz",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 7
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "molotov",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "round_result",
+        "winner": "CT",
+        "winner_score": 7
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 3,
+            "kills": 0
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "molotov",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 8,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 0
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "molotov",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 0
+        },
+        "winner": "CT"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 1
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "molotov",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 2
+          },
+          "name": "GrowthHormones",
+          "round_kills": 2,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 3
+          },
+          "name": "GrowthHormones",
+          "round_kills": 3,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 4
+          },
+          "name": "GrowthHormones",
+          "round_kills": 4,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 5
+          },
+          "name": "GrowthHormones",
+          "round_kills": 5,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 1,
+            "kills": 5
+          },
+          "name": "GrowthHormones",
+          "round_kills": 5,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "molotov",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 1
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "molotov",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 1,
+            "kills": 1
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Smitty",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "defused",
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "defused"
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 1
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "defused"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 2,
+            "kills": 1
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "defused",
+      "score": {
+        "CT": 2,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "defused"
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 2
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "defused"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 3,
+            "kills": 1
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Smitty",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 3
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 3,
+            "kills": 2
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "round_result",
+        "winner": "CT",
+        "winner_score": 3
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "molotov",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 4,
+            "kills": 2
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "molotov",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 3,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 0
+          },
+          "name": "eth4n",
+          "round_kills": 0,
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 4
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "eth4n",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 4,
+            "kills": 3
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 5,
+            "kills": 3
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 2,
+            "kills": 5
+          },
+          "name": "Nudeoolz",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 1
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 5,
+            "kills": 4
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 6,
+            "kills": 4
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 4,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 3,
+            "kills": 6
+          },
+          "name": "Nudeoolz",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 2
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 7,
+            "kills": 4
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Hogarth",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 4,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 5,
+            "kills": 4
+          },
+          "name": "Hogarth",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 5
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "Hogarth",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "round_result",
+        "winner": "CT",
+        "winner_score": 5
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 7,
+            "kills": 5
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 8,
+            "kills": 5
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Vypa",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 5,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Vypa",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "defused",
+      "score": {
+        "CT": 6,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "defused"
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 6
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 9,
+            "kills": 5
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "defused"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 2,
+            "deaths": 4,
+            "kills": 7
+          },
+          "name": "Nudeoolz",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "CT",
+        "winner_score": 7
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "Nudeoolz",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "round_result",
+        "winner": "CT",
+        "winner_score": 7
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 9,
+            "kills": 6
+          },
+          "name": "GrowthHormones",
+          "round_kills": 1,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 7,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_scored_kill",
+        "kill_count": 1,
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 9,
+            "kills": 7
+          },
+          "name": "GrowthHormones",
+          "round_kills": 2,
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 3
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 10,
+            "kills": 7
+          },
+          "name": "GrowthHormones",
+          "round_kills": 2,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 1,
+            "deaths": 11,
+            "kills": 7
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Smitty",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Smitty",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "Smitty",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Smitty",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Smitty",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "Smitty",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "Smitty",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Smitty",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      "",
+      ""
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Smitty",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 8,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 3
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "Smitty",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
+

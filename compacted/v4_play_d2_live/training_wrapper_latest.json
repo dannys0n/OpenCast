@@ -1,0 +1,91 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 5,
+        "T": 8
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 3,
+            "deaths": 10,
+            "kills": 9
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 5,
+          "T": 8
+        },
+        "map_phase_after": "gameover",
+        "winner": "T"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

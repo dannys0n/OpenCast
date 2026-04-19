@@ -1,0 +1,80 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke"
+      },
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "iNdAfAcE",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 0
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "name": "Vladdroid",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Rick\u314b",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

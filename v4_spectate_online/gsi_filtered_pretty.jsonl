@@ -1,0 +1,6254 @@
+{
+  "created_at": "2026-04-18T21:59:35",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T21:59:35",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "name": "ZEEKO",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MDL",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T21:59:39",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "name": "ZEEKO",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:04",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:08",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:09",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:10",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:10",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:10",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:11",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "name": "Butt-Head",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:15",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:17",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "name": "Butt-Head",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Rick\u314b",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:18",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:19",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Chris",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:20",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "name": "Bibi Floyd",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 1
+        },
+        "name": "#BrokeLikeJoc",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bibi Floyd",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 3
+        },
+        "name": "iNdAfAcE",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 3
+        },
+        "name": "Butt-Head",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Chris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:26",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Chris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:30",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:30",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "name": "acid",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "TravGuy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:32",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:33",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:41",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 3
+        },
+        "name": "ZEEKO",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:45",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 4
+          },
+          "name": "ZEEKO",
+          "round_kills": 2,
+          "team": "CT"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 1,
+            "kills": 2
+          },
+          "name": "#BrokeLikeJoc",
+          "round_kills": 2,
+          "team": "CT"
+        }
+      ],
+      "victims": [
+        {
+          "name": "off brand salt shaker",
+          "team": "T"
+        },
+        {
+          "name": "acid",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 5
+        },
+        "name": "ZEEKO",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:49",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:50",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:54",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:00:56",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:00",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 1
+        },
+        "name": "Vladdroid",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:00",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 2
+        },
+        "name": "Vladdroid",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:01",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 1
+        },
+        "name": "\u2020 Yo mommA \u2020",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MDL",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:06",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 3
+        },
+        "name": "#BrokeLikeJoc",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:12",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "#BrokeLikeJoc",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:12",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "#BrokeLikeJoc",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:12",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:14",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:18",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:19",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2,
+        "T": 2
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:25",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 4
+        },
+        "name": "iNdAfAcE",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "#BrokeLikeJoc",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:29",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:42",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 2
+        },
+        "name": "SmartyMcPie",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 5
+        },
+        "name": "iNdAfAcE",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 2
+        },
+        "name": "acid",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "#BrokeLikeJoc",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:49",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:51",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:51",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:51",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:52",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:54",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 4
+        },
+        "name": "Butt-Head",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "TravGuy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:56",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:58",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:01:59",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Bibi Floyd",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:02",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Bibi Floyd",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 5
+        },
+        "name": "Butt-Head",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:09",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:11",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Chris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:11",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 6
+        },
+        "name": "ZEEKO",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:12",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 2,
+            "kills": 1
+          },
+          "name": "Azhure",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 3,
+            "kills": 2
+          },
+          "name": "off brand salt shaker",
+          "round_kills": 1,
+          "team": "T"
+        }
+      ],
+      "victims": [
+        {
+          "name": "\u2020 Yo mommA \u2020",
+          "team": "CT"
+        },
+        {
+          "name": "off brand salt shaker",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 1
+        },
+        "name": "MDL",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:14",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 2
+        },
+        "name": "Rick\u314b",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:15",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:15",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:17",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Chris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:20",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:21",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 2
+        },
+        "name": "MDL",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Rick\u314b",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:38",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 1
+        },
+        "name": "pluto_hd",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Stravinskadoo",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:40",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 2
+        },
+        "name": "Azhure",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bibi Floyd",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:02:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 3
+        },
+        "name": "MDL",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Chris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:01",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 2
+        },
+        "name": "pluto_hd",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:32",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:38",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:39",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:39",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:41",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:41",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:42",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:42",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 3
+        },
+        "name": "Rick\u314b",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:43",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 3
+        },
+        "name": "Azhure",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Windowlicker",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:44",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 3
+        },
+        "name": "pluto_hd",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:47",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "incendiary",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:52",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 2
+        },
+        "name": "TravGuy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:54",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 2,
+            "kills": 2
+          },
+          "name": "Bibi Floyd",
+          "round_kills": 1,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 3,
+            "kills": 3
+          },
+          "name": "acid",
+          "round_kills": 1,
+          "team": "T"
+        }
+      ],
+      "victims": [
+        {
+          "name": "Chris",
+          "team": "CT"
+        },
+        {
+          "name": "Rick\u314b",
+          "team": "CT"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:55",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 4
+        },
+        "name": "MDL",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "#BrokeLikeJoc",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:58",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:03:59",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:02",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:04",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:07",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:12",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 4
+        },
+        "name": "acid",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:19",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:20",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Bibi Floyd",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 7
+        },
+        "name": "ZEEKO",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:26",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Bibi Floyd",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:27",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 8
+        },
+        "name": "ZEEKO",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "off brand salt shaker",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:31",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:35",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 5
+        },
+        "name": "MDL",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:39",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 3
+        },
+        "name": "Bibi Floyd",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "TravGuy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:41",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 1
+        },
+        "name": "sh1ru_ka1",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:42",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:43",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 6
+        },
+        "name": "MDL",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 9
+        },
+        "name": "ZEEKO",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MDL",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:56",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:04:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "molotov",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:07",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:08",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:09",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:11",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 6,
+          "deaths": 1,
+          "kills": 6
+        },
+        "name": "iNdAfAcE",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 2
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:21",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Dennis Harrity",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Mr. Crumbler",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:37",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:38",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:40",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:41",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:41",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:42",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:42",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:43",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 4,
+          "kills": 6
+        },
+        "name": "Butt-Head",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Mr. Crumbler",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:43",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:44",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 3
+        },
+        "name": "SmartyMcPie",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:44",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:45",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:49",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 3
+        },
+        "name": "TravGuy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:51",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:51",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 4
+        },
+        "name": "SmartyMcPie",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Dennis Harrity",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:57",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:58",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:58",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Dennis Harrity",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:05:59",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:05",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 5
+        },
+        "name": "SmartyMcPie",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "wP",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:06",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 3
+        },
+        "name": "Vladdroid",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "TravGuy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:11",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:12",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 4,
+            "kills": 7
+          },
+          "name": "MDL",
+          "round_kills": 1,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 3,
+            "kills": 10
+          },
+          "name": "ZEEKO",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      ],
+      "victims": [
+        {
+          "name": "SmartyMcPie",
+          "team": "CT"
+        },
+        {
+          "name": "MDL",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6,
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:17",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:20",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 2
+        },
+        "name": "\u2020 Yo mommA \u2020",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:40",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 4
+        },
+        "name": "Bibi Floyd",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 4
+        },
+        "name": "Rick\u314b",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 5
+        },
+        "name": "Bibi Floyd",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:51",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 4,
+          "kills": 3
+        },
+        "name": "off brand salt shaker",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 5
+        },
+        "name": "Rick\u314b",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:06:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 4
+        },
+        "name": "Azhure",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bibi Floyd",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:04",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:10",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3,
+        "T": 1
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 3
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:17",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 5
+        },
+        "name": "Azhure",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "off brand salt shaker",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:32",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:39",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:41",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:41",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:42",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:42",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Mr. Crumbler",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "wP",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:49",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:49",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Mr. Crumbler",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:50",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:51",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 5,
+          "kills": 6
+        },
+        "name": "SmartyMcPie",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Og^",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:52",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:53",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:54",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:54",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "wP",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:56",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 6,
+          "deaths": 2,
+          "kills": 7
+        },
+        "name": "iNdAfAcE",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:56",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 4,
+          "kills": 4
+        },
+        "name": "pluto_hd",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Mr. Crumbler",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:58",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:07:59",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 11
+        },
+        "name": "ZEEKO",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:00",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:00",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:02",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 5,
+          "kills": 7
+        },
+        "name": "Butt-Head",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "TravGuy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:04",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 5,
+          "kills": 5
+        },
+        "name": "acid",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:04",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Chris",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:05",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:10",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 6
+        },
+        "name": "Rick\u314b",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MDL",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:11",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Chris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:15",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:15",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Og^",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:18",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 6
+        },
+        "name": "Azhure",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "off brand salt shaker",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:19",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:20",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "name": "Og^",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 6
+        },
+        "name": "Bibi Floyd",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "ZEEKO",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 3,
+          "kills": 3
+        },
+        "name": "\u2020 Yo mommA \u2020",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bibi Floyd",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:29",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 7
+        },
+        "name": "Rick\u314b",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "wP",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Og^",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:42",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Rick\u314b",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:42",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Rick\u314b",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:43",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Og^",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:49",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Rick\u314b",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 7
+        },
+        "name": "Azhure",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:08:58",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 8
+        },
+        "name": "Rick\u314b",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 4
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:21",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:22",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:22",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 1
+        },
+        "name": "wP",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "SmartyMcPie",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:25",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:25",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:27",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:28",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Og^",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:29",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:29",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "acid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:31",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "\u2020 Yo mommA \u2020",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:36",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Azhure",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 6,
+          "kills": 8
+        },
+        "name": "Butt-Head",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Og^",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:37",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:38",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:39",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 12
+        },
+        "name": "ZEEKO",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Butt-Head",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:42",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 3,
+      "killers": [
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 3,
+            "kills": 2
+          },
+          "name": "wP",
+          "round_kills": 2,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 4,
+            "deaths": 5,
+            "kills": 5
+          },
+          "name": "pluto_hd",
+          "round_kills": 1,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 5,
+            "kills": 4
+          },
+          "name": "TravGuy",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      ],
+      "victims": [
+        {
+          "name": "wP",
+          "team": "T"
+        },
+        {
+          "name": "Azhure",
+          "team": "CT"
+        },
+        {
+          "name": "\u2020 Yo mommA \u2020",
+          "team": "CT"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:44",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "MDL",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 5
+        },
+        "name": "TravGuy",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mr. Crumbler",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:45",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 3,
+          "kills": 3
+        },
+        "name": "Chris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "acid",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:45",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 5,
+          "kills": 4
+        },
+        "name": "Vladdroid",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "TravGuy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:47",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Vladdroid",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:51",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:52",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:54",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 9
+        },
+        "name": "Rick\u314b",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "pluto_hd",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:55",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 10
+        },
+        "name": "Rick\u314b",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MDL",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:56",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "sh1ru_ka1",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 5,
+          "kills": 5
+        },
+        "name": "Vladdroid",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Rick\u314b",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T22:09:57",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "iNdAfAcE",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+

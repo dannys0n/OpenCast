@@ -1,0 +1,221 @@
+{
+  "current": {
+    "caster": "caster0",
+    "commentary": "Line 1: acid detonates frag in T",
+    "id": 485,
+    "payload_sequence": 2229,
+    "prompt_style": "play_by_play_event",
+    "source": "event",
+    "tag": "event"
+  },
+  "queued": [
+    {
+      "caster": "caster0",
+      "commentary": "Line 1: frag grenade detonated in ct",
+      "id": 487,
+      "payload_sequence": 2233,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Vladdroid throws inferno grenade.",
+      "id": 489,
+      "payload_sequence": 2235,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Vladdroid's grenade detonates, frag.",
+      "id": 491,
+      "payload_sequence": 2237,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Azhure CT threw inferno grenade.",
+      "id": 496,
+      "payload_sequence": 2252,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Line 1: Butt-Head kills Og^ in T zone",
+      "id": 498,
+      "payload_sequence": 2253,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Line 1: MDL threw inferno grenade",
+      "id": 500,
+      "payload_sequence": 2255,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "MDL carried the bomb, frag detonated.",
+      "id": 502,
+      "payload_sequence": 2256,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Vladdroid detonated inferno grenade.",
+      "id": 504,
+      "payload_sequence": 2259,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "ZEEKO's kill in the current event, CT's close score margin, and the carried bomb state.",
+      "id": 506,
+      "payload_sequence": 2265,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Line 1: T killed in CT cluster",
+      "id": 508,
+      "payload_sequence": 2274,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "MDL carried inferno grenade",
+      "id": 511,
+      "payload_sequence": 2281,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "TravGuy kills Mr.",
+      "id": 513,
+      "payload_sequence": 2282,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Chris kills acid in a tight contest.",
+      "id": 516,
+      "payload_sequence": 2284,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Vladdroid's kill in the current event.",
+      "id": 518,
+      "payload_sequence": 2285,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Vladdroid detonated smoke grenade.",
+      "id": 520,
+      "payload_sequence": 2292,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "sh1ru_ka1 threw inferno grenade",
+      "id": 522,
+      "payload_sequence": 2306,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Line 1: grenade smoke detonated in ct",
+      "id": 524,
+      "payload_sequence": 2310,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Line 1: Rick\\u314b kills pluto_hd in CT",
+      "id": 529,
+      "payload_sequence": 2319,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Line 1: Rick kills pluto_hd in CT",
+      "id": 531,
+      "payload_sequence": 2322,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "sh1ru_ka1 detonated inferno grenade",
+      "id": 533,
+      "payload_sequence": 2326,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Vladdroid's kill in round 1000, T team, CT vs T.",
+      "id": 535,
+      "payload_sequence": 2328,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster0",
+      "commentary": "Line 1: smoke grenade detonated by T player iNdAfAcE",
+      "id": 537,
+      "payload_sequence": 2329,
+      "prompt_style": "play_by_play_event",
+      "source": "event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster1",
+      "commentary": "Line 2: team counter initiated as CT and T are both dead",
+      "id": 538,
+      "payload_sequence": 2329,
+      "prompt_style": "play_by_play_follow_up",
+      "source": "event",
+      "tag": "followup"
+    }
+  ],
+  "updated_at": "2026-04-18T22:10:12"
+}

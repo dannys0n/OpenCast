@@ -1,0 +1,60 @@
+{
+  "payload": {
+    "auth": {
+      "token": "replace_this_with_a_secret"
+    },
+    "player": {
+      "activity": "menu",
+      "name": "GrowthHormones",
+      "steamid": "76561198237377678"
+    },
+    "previously": {
+      "allplayers": true,
+      "bomb": true,
+      "grenades": true,
+      "map": true,
+      "phase_countdowns": true,
+      "player": {
+        "activity": "playing",
+        "forward": "-0.955, 0.297, -0.005",
+        "match_stats": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 10,
+          "mvps": 1,
+          "score": 26
+        },
+        "name": "Rick\u314b",
+        "observer_slot": 1,
+        "position": "1879.0, 2697.9, 124.0",
+        "spectarget": "76561198163794749",
+        "state": {
+          "armor": 0,
+          "burning": 0,
+          "equip_value": 5500,
+          "flashed": 0,
+          "health": 0,
+          "helmet": false,
+          "money": 5900,
+          "round_killhs": 0,
+          "round_kills": 2,
+          "round_totaldmg": 158,
+          "smoked": 0
+        },
+        "steamid": "76561198163794749",
+        "team": "CT",
+        "weapons": {}
+      },
+      "round": true
+    },
+    "provider": {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "steamid": "76561198237377678",
+      "timestamp": 1776575397,
+      "version": 14141
+    }
+  },
+  "payload_sequence": 2329,
+  "received_at": "2026-04-18T22:09:57"
+}

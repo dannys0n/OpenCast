@@ -1,0 +1,73 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "Smitty",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 8,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 8,
+          "T": 3
+        },
+        "map_phase_after": "gameover",
+        "winner": "CT"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "Smitty",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

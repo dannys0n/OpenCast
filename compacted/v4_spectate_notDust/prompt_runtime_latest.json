@@ -1,0 +1,115 @@
+{
+  "created_at": "2026-04-18T23:02:15",
+  "llm": {
+    "lines": [
+      "The Saint and doosha are in the CT zone, and the bomb is dropped.",
+      "The CT team has a clear lead with three players alive."
+    ],
+    "raw_text": "The Saint and doosha are in the CT zone, and the bomb is dropped.  \nThe CT team has a clear lead with three players alive.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the caster0 event trigger call. Line 2 is a short caster1 follow-up line. Keep both lines grounded in the supplied live state. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should fit caster0's rapid event-call style and be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should fit caster1's short follow-up style and stay speakable. Treat tactical_facts as structured tactical metadata, not as wording to repeat. If analysis_mode is generic or position_data is none, rely on alive_counts, score_context, bomb_state, and recent events instead of lane-control claims. Use previous_events and current_events for recency, and use Tactical context for persistent state. Line 2 may use Tactical context and Previous events, but only when the point is clearly supported by the input. Prefer one tactical implication instead of restating the event. Do not quote enum labels verbatim; translate them into natural commentary. Vary phrasing rather than reusing canned wording. If the tactical confidence is low, prefer cautious phrasing over certainty. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short caster0 event trigger call using only Focused context and Current events.\nLine 2: short caster1 follow-up line that may use Tactical context.\nUse tactical_facts as facts to reason from, not text to copy.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {}\n}\n\nTactical facts:\n{\n  \"global_context\": {\n    \"alive_players\": [\n      {\n        \"name\": \"The Saint\",\n        \"team\": \"CT\"\n      },\n      {\n        \"name\": \"doosha\",\n        \"team\": \"CT\"\n      },\n      {\n        \"name\": \"dullplayer\",\n        \"team\": \"CT\"\n      }\n    ],\n    \"bomb_state\": \"dropped\",\n    \"score\": {\n      \"CT\": 8,\n      \"T\": 5\n    }\n  },\n  \"tactical_facts\": {\n    \"alive_counts\": {\n      \"ct\": 3,\n      \"t\": 0\n    },\n    \"analysis_mode\": \"generic\",\n    \"confidence\": \"low\",\n    \"key_risk\": \"none\",\n    \"next_move_hint\": \"unclear\",\n    \"position_data\": \"none\",\n    \"score_context\": {\n      \"leader\": \"ct\",\n      \"margin\": \"clear\"\n    }\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"grenade_detonated\",\n      \"grenade_type\": \"smoke\"\n    }\n  ],\n  \"derived_tactical_summary\": {\n    \"alive_counts\": {\n      \"ct\": 3,\n      \"t\": 0\n    },\n    \"analysis_mode\": \"generic\",\n    \"confidence\": \"low\",\n    \"key_risk\": \"none\",\n    \"next_move_hint\": \"unclear\",\n    \"position_data\": \"none\",\n    \"score_context\": {\n      \"leader\": \"ct\",\n      \"margin\": \"clear\"\n    }\n  },\n  \"previous_events\": [\n    {\n      \"event_type\": \"kill\",\n      \"killer\": {\n        \"name\": \"Mammy\",\n        \"team\": \"CT\"\n      },\n      \"victim\": {\n        \"name\": \"Slimmeh|ULT|\",\n        \"team\": \"T\"\n      }\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"caster0\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"caster1\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 1666,
+  "prompt_input": {
+    "context": {
+      "alive_players": [
+        {
+          "name": "The Saint",
+          "team": "CT"
+        },
+        {
+          "name": "doosha",
+          "team": "CT"
+        },
+        {
+          "name": "dullplayer",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 8,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "name": "Mammy",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Slimmeh|ULT|",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "caster0",
+      "commentary": "The Saint and doosha are in the CT zone, and the bomb is dropped.",
+      "id": 262,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster1",
+      "commentary": "The CT team has a clear lead with three players alive.",
+      "id": 263,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}

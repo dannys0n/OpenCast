@@ -1,0 +1,942 @@
+{
+  "created_at": "2026-04-19T00:14:08",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 1
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:14:17",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 1
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:14:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "incendiary",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:14:47",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 2
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:15:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:15:29",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 0
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:16:05",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 0
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:16:12",
+  "events": [
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:16:16",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "name": "Slick Rick",
+        "round_kills": 1
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:16:38",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:16:57",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 1
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:17:07",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 2
+        },
+        "name": "GrowthHormones",
+        "round_kills": 2,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:17:10",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 2
+        },
+        "name": "GrowthHormones",
+        "round_kills": 2,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:17:44",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:18:03",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 2
+        },
+        "name": "Be_Wanna_Be",
+        "round_kills": 2,
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 3
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:18:50",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 0,
+          "deaths": 4,
+          "kills": 2
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:19:15",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:19:18",
+  "events": [
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 4
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:20:16",
+  "events": [
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:20:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:20:53",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "incendiary",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:21:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:21:12",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 3
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:21:53",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 4
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:21:59",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 5
+        },
+        "name": "GrowthHormones",
+        "round_kills": 2,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:22:12",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 5,
+          "kills": 5
+        },
+        "name": "GrowthHormones",
+        "round_kills": 2,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:22:32",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 4
+        },
+        "name": "What_is_Outside",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:22:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:23:06",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 5,
+          "kills": 6
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:23:12",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 6,
+          "kills": 6
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:23:27",
+  "events": [
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 6
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:24:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:24:22",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:24:33",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 6,
+          "kills": 7
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:24:36",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 7,
+          "kills": 7
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 7
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:25:02",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:25:06",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 7,
+          "kills": 8
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:25:13",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 8,
+          "kills": 8
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:25:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "FORFUN",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:25:34",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 5,
+          "kills": 13
+        },
+        "name": "FORFUN",
+        "round_kills": 3,
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:25:42",
+  "events": [
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 3
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:26:18",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:26:18",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 8
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:26:45",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 1,
+          "deaths": 9,
+          "kills": 3
+        },
+        "name": "juliamina47",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 4
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:27:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:27:15",
+  "events": [
+    {
+      "event_type": "player_scored_kill",
+      "kill_count": 1,
+      "player": {
+        "kda": {
+          "assists": 3,
+          "deaths": 9,
+          "kills": 9
+        },
+        "name": "GrowthHormones",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:27:32",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:27:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:27:45",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:28:17",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:28:20",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:28:42",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 3,
+          "deaths": 10,
+          "kills": 9
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 5,
+        "T": 8
+      },
+      "map_phase_after": "gameover",
+      "winner": "T"
+    }
+  ]
+}
+

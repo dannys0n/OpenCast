@@ -1,0 +1,7087 @@
+{
+  "created_at": "2026-04-19T00:41:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "BiscuitsAndGravy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag"
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8,
+        "T": 10
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:37",
+  "events": [
+    {
+      "detonation_callout": "Cross",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:39",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 2
+        },
+        "map_callout": "Window",
+        "name": "Envy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Alaskan",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 9,
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:40",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "ThirdPug",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:44",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "name": "ThirdPug",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:45",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Short",
+        "name": "Joerogan67",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hitoriki130",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Long",
+        "name": "L30N15",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hahaha",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:47",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "ThirdPug",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:49",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Lower Tunnels",
+        "name": "VITEK",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Delamain",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8,
+        "T": 10
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:49",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "Long",
+        "name": "L30N15",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "Doors",
+        "name": "Joerogan67",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "VITEK",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 9,
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:52",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 4
+        },
+        "map_callout": "Top Mid",
+        "name": "Le0n",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Null",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:52",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 2
+        },
+        "map_callout": "CT Mid",
+        "name": "Sun of Beach",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:53",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:54",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:41:59",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:00",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "Suicide",
+        "name": "RWicken",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Boost",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:06",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Boost",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:21",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:22",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:23",
+  "events": [
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Long",
+        "name": "L30N15",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:27",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:27",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:28",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:31",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 1,
+            "kills": 1
+          },
+          "map_callout": "Lower Tunnels",
+          "name": "Delamain",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 1
+          },
+          "map_callout": "Lower Tunnels",
+          "name": "MrHippo01",
+          "round_kills": 1,
+          "team": "T"
+        }
+      ],
+      "victims": [
+        {
+          "name": "Delamain",
+          "team": "CT"
+        },
+        {
+          "name": "hahaha",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8,
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:33",
+  "events": [
+    {
+      "detonation_callout": "Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:33",
+  "events": [
+    {
+      "detonation_callout": "Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Doors",
+        "name": "Joerogan67",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:37",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Catwalk",
+        "name": "VITEK",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:44",
+  "events": [
+    {
+      "detonation_callout": "CT Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:46",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:51",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:53",
+  "events": [
+    {
+      "detonation_callout": "Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:42:53",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:00",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:01",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Big Box",
+        "name": "RWicken",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hitoriki130",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "VITEK",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "Doors",
+        "name": "MrHippo01",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "BOT Mummy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "VITEK",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:10",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Top Mid",
+        "name": "Le0n",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Envy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:11",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "VITEK",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:13",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "Long Doors",
+        "name": "L30N15",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:18",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "VITEK",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:19",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Null",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "ThirdPug",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "yehaifeng134",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Null",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:25",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Sun of Beach",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "yehaifeng134",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:27",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 3
+        },
+        "map_callout": "Lower Tunnels",
+        "name": "MrHippo01",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "RWicken",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:33",
+  "events": [
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:39",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 4
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "MrHippo01",
+        "round_kills": 4,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Sun of Beach",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:39",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 3
+        },
+        "map_callout": "Outside Tunnels",
+        "name": "L30N15",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:43:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Alaskan",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:02",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "incendiary",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:04",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Outside Tunnels",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Outside Tunnels",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:08",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:09",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:10",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "RWicken",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:10",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "Close",
+        "name": "Alaskan",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Null",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:11",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:11",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "B Car",
+        "name": "RWicken",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Alaskan",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "RWicken",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:12",
+  "events": [
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:13",
+  "events": [
+    {
+      "detonation_callout": "B Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:15",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:16",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:19",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:20",
+  "events": [
+    {
+      "detonation_callout": "Fence",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:21",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "ThirdPug",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Delamain",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:28",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:29",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:29",
+  "events": [
+    {
+      "detonation_callout": "B Default",
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "Sun of Beach",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:32",
+  "events": [
+    {
+      "detonation_callout": "B Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:32",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:33",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "Long Doors",
+        "name": "hitoriki130",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:35",
+  "events": [
+    {
+      "detonation_callout": "B Default",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:35",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 1,
+            "kills": 1
+          },
+          "map_callout": "B Car",
+          "name": "zeoliteXt",
+          "round_kills": 1,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 1,
+            "kills": 1
+          },
+          "map_callout": "Long Doors",
+          "name": "Bison939",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      ],
+      "victims": [
+        {
+          "name": "hitoriki130",
+          "team": "T"
+        },
+        {
+          "name": "RWicken",
+          "team": "CT"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6,
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "hahaha",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:37",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Sun of Beach",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:38",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "hahaha",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:40",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 3
+        },
+        "map_callout": "CT Mid",
+        "name": "pig gaming",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hahaha",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:43",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Window",
+        "name": "zeoliteXt",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:43",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "CT Spawn",
+        "name": "Envy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:44",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "B Doors",
+        "name": "ThirdPug",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Envy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Doors",
+        "name": "Joerogan67",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "VITEK",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:58",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Window",
+        "name": "ThirdPug",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:44:58",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Window",
+        "name": "ThirdPug",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:05",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 3
+        },
+        "map_callout": "Window",
+        "name": "ThirdPug",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "T Spawn",
+        "name": "Le0n",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Bison939",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "yehaifeng134",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:23",
+  "events": [
+    {
+      "detonation_callout": "CT Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Scaffolding",
+        "name": "ThirdPug",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:23",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "yehaifeng134",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "CT Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "yehaifeng134",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "B Doors",
+        "name": "yehaifeng134",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Sun of Beach",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:28",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "yehaifeng134",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:34",
+  "events": [
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 4
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "hahaha",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:56",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Boost",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:56",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:57",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:45:58",
+  "events": [
+    {
+      "detonation_callout": "Side Pit",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:04",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:04",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:05",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:06",
+  "events": [
+    {
+      "detonation_callout": "Suicide",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:07",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:08",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:10",
+  "events": [
+    {
+      "detonation_callout": "Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:11",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "hahaha",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:13",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "hahaha",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:14",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:14",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 1
+        },
+        "map_callout": "Doors",
+        "name": "hahaha",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Joerogan67",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:19",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Short",
+        "name": "hahaha",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Envy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:19",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:21",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:22",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "hahaha",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:23",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Ramp",
+        "name": "Sun of Beach",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 10
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:24",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:25",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:26",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:26",
+  "events": [
+    {
+      "detonation_callout": "B Plat",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:27",
+  "events": [
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:30",
+  "events": [
+    {
+      "detonation_callout": "Side Pit",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:31",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 4
+        },
+        "map_callout": "Boost",
+        "name": "pig gaming",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hahaha",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:31",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 1,
+          "kills": 3
+        },
+        "map_callout": "Short",
+        "name": "yehaifeng134",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:32",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:33",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Default",
+        "name": "Alaskan",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Sun of Beach",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:40",
+  "events": [
+    {
+      "detonation_callout": "Outside Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:47",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 3
+        },
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Delamain",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:52",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 4
+        },
+        "map_callout": "Long Doors",
+        "name": "Le0n",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:53",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "CT Mid",
+        "name": "RWicken",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:46:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Plat",
+        "name": "Alaskan",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Null",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:06",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "Cross",
+        "name": "VITEK",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "RWicken",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 8
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:25",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "hahaha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:28",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:28",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:29",
+  "events": [
+    {
+      "detonation_callout": "Side Pit",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:31",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 3,
+          "kills": 3
+        },
+        "map_callout": "Mid",
+        "name": "hahaha",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "ThirdPug",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "hahaha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:38",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:38",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "hahaha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:40",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:41",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 4
+        },
+        "map_callout": "Blue",
+        "name": "Alaskan",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:41",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 1,
+          "kills": 4
+        },
+        "map_callout": "Long Doors",
+        "name": "yehaifeng134",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "hahaha",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:45",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:46",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:47",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:49",
+  "events": [
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Pit",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:51",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:52",
+  "events": [
+    {
+      "detonation_callout": "Suicide",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:54",
+  "events": [
+    {
+      "detonation_callout": "Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:54",
+  "events": [
+    {
+      "detonation_callout": "B Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:55",
+  "events": [
+    {
+      "detonation_callout": "Outside Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 5
+        },
+        "map_callout": "CT Mid",
+        "name": "pig gaming",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "VITEK",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:47:58",
+  "events": [
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Pit",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:00",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:02",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "hitoriki130",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:04",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 3
+        },
+        "map_callout": "Close",
+        "name": "zeoliteXt",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "RWicken",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:04",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 2
+        },
+        "map_callout": "Close",
+        "name": "Null",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Pit",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:08",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:10",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Car",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Car",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Delamain",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:14",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 6
+        },
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:15",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "CT Spawn",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:29",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "hitoriki130",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:30",
+  "events": [
+    {
+      "detonation_callout": "Cross",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Mid",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:30",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:30",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 0,
+          "kills": 3
+        },
+        "map_callout": "CT Mid",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Envy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:30",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 3
+        },
+        "map_callout": "Doors",
+        "name": "Null",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:34",
+  "events": [
+    {
+      "detonation_callout": "Car",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 4
+        },
+        "map_callout": "Doors",
+        "name": "Null",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:38",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 5
+        },
+        "map_callout": "Doors",
+        "name": "Null",
+        "round_kills": 4,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:48:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 5
+        },
+        "map_callout": "Doors",
+        "name": "Alaskan",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Null",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 3
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:04",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "hahaha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:10",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "hahaha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:12",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "hahaha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:12",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:13",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Long Doors",
+        "name": "Bolin666666",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:15",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:15",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 4,
+          "kills": 4
+        },
+        "map_callout": "Right Side Mid",
+        "name": "hahaha",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Alaskan",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:16",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Roy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:18",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:19",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:20",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:20",
+  "events": [
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "Blue",
+        "name": "Bolin666666",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Roy",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:22",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:23",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:23",
+  "events": [
+    {
+      "detonation_callout": "Blue",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Roy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 4,
+          "kills": 5
+        },
+        "map_callout": "Suicide",
+        "name": "hahaha",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Right Side Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:25",
+  "events": [
+    {
+      "detonation_callout": "Right Side Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:27",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 4,
+          "kills": 6
+        },
+        "map_callout": "Suicide",
+        "name": "hahaha",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "yehaifeng134",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Doors",
+        "name": "BillyThe503Kid",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hitoriki130",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 4,
+          "kills": 7
+        },
+        "map_callout": "Suicide",
+        "name": "hahaha",
+        "round_kills": 4,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "VITEK",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:29",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:30",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:30",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 1,
+          "kills": 4
+        },
+        "map_callout": "T Spawn",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "hahaha",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Boost",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:32",
+  "events": [
+    {
+      "detonation_callout": "Suicide",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "hahaha",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:32",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:34",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Boost",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "BillyThe503Kid",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:37",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:39",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:40",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:40",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Boost",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:41",
+  "events": [
+    {
+      "detonation_callout": "Back Plat",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:42",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "BillyThe503Kid",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:43",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:43",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:46",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 4,
+          "kills": 2
+        },
+        "map_callout": "Suicide",
+        "name": "Delamain",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:49",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 4
+        },
+        "map_callout": "Lower Tunnels",
+        "name": "zeoliteXt",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "RWicken",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 3
+        },
+        "map_callout": "Default",
+        "name": "Bolin666666",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "BillyThe503Kid",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 5
+        },
+        "map_callout": "Lower Tunnels",
+        "name": "zeoliteXt",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Null",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:49:57",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 7
+        },
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:01",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 4
+        },
+        "map_callout": "CT Spawn",
+        "name": "Bolin666666",
+        "round_kills": 4,
+        "team": "T"
+      },
+      "victim": {
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 5
+        },
+        "map_callout": "Boost",
+        "name": "Bolin666666",
+        "round_kills": 5,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Delamain",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 4
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:22",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:32",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Roy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:36",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Roy",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Roy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:37",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Roy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:37",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 5,
+          "kills": 8
+        },
+        "map_callout": "Lower Tunnels",
+        "name": "hahaha",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Alaskan",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Alaskan",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 9
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:38",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Long",
+        "name": "Roy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:42",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Bison939",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:43",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 5,
+          "kills": 9
+        },
+        "map_callout": "Lower Tunnels",
+        "name": "hahaha",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bison939",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:45",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:45",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 6
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "zeoliteXt",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "hahaha",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Roy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 8
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:49",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:50",
+  "events": [
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:51",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:50:59",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:00",
+  "events": [
+    {
+      "detonation_callout": "Pit",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:01",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "B Car",
+        "name": "Null",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Catwalk",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:01",
+  "events": [
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:02",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "hitoriki130",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:04",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 6
+        },
+        "map_callout": "Fence",
+        "name": "Null",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "zeoliteXt",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:06",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Long Doors",
+        "name": "Le0n",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "BillyThe503Kid",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:10",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 3,
+          "kills": 5
+        },
+        "map_callout": "Long Doors",
+        "name": "Le0n",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Fantus",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 7
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:11",
+  "events": [
+    {
+      "detonation_callout": "Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "BillyThe503Kid",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:11",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "CT Spawn",
+        "name": "L30N15",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:13",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Doors",
+        "name": "BillyThe503Kid",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Bolin666666",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:14",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 3
+        },
+        "map_callout": "Top Mid",
+        "name": "VITEK",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "BillyThe503Kid",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:15",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 5
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "RWicken",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "Lower Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:17",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "Blue",
+        "name": "Roy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "hitoriki130",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:18",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Delamain",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:20",
+  "events": [
+    {
+      "detonation_callout": "Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Cross",
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 5
+        },
+        "map_callout": "Right Side Mid",
+        "name": "yehaifeng134",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Delamain",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:22",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:23",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Roy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:25",
+  "events": [
+    {
+      "detonation_callout": "Catwalk",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:25",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Blue",
+        "name": "Roy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Long Doors",
+        "name": "Roy",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Le0n",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:27",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 4,
+          "kills": 4
+        },
+        "map_callout": "CT Mid",
+        "name": "L30N15",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "VITEK",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:29",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:30",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Lower Tunnels",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:32",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 2,
+          "kills": 6
+        },
+        "map_callout": "Right Side Mid",
+        "name": "yehaifeng134",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Roy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:33",
+  "events": [
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Null",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:37",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Close",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Doors",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:47",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 5
+        },
+        "map_callout": "Doors",
+        "name": "MrHippo01",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "L30N15",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:51:59",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:52:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:52:00",
+  "events": [
+    {
+      "detonation_callout": "Plat",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "MrHippo01",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:52:04",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 6
+        },
+        "map_callout": "Plat",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "pig gaming",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:52:05",
+  "events": [
+    {
+      "detonation_callout": "Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Plat",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:52:12",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:52:31",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 6
+        },
+        "map_callout": "Boost",
+        "name": "MrHippo01",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Null",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:52:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T00:52:33",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+

@@ -1,0 +1,148 @@
+{
+  "created_at": "2026-04-19T00:28:42",
+  "dropped_items": [
+    {
+      "commentary": "The team needs to stay alert and avoid giving away the lead.",
+      "id": 318,
+      "tag": "idle"
+    },
+    {
+      "commentary": "A rotation could solve several problems.",
+      "id": 319,
+      "tag": "idle"
+    },
+    {
+      "commentary": "It could also create new ones.",
+      "id": 320,
+      "tag": "idle"
+    },
+    {
+      "commentary": "Strategic movement is rude like that.",
+      "id": 321,
+      "tag": "idle"
+    }
+  ],
+  "llm": {
+    "lines": [
+      "CT secures the kill with a precise shot, GrowthHormones' round_kills are at zero.",
+      "The team is now ahead in the score."
+    ],
+    "raw_text": "CT secures the kill with a precise shot, GrowthHormones' round_kills are at zero. The team is now ahead in the score.",
+    "request": {
+      "max_tokens": 160,
+      "messages": [
+        {
+          "content": "You are generating Counter-Strike 2 caster lines for live TTS. Return plain text only. For event prompts, return exactly 2 lines. Line 1 is the caster0 event trigger call. Line 2 is a short caster1 follow-up line. Keep both lines grounded in the supplied live state. Keep every sentence short and speakable. No labels. No JSON. No markdown. This is Counter-Strike 2. Line 1 should fit caster0's rapid event-call style and be extremely short, ideally 2 to 5 words and never exceed 8 words. Line 2 should fit caster1's short follow-up style and stay speakable. All sentences must stay short. Prefer a single short sentence per line. Treat tactical_facts as structured tactical metadata, not as wording to repeat. If analysis_mode is generic or position_data is none, rely on alive_counts, score_context, bomb_state, and recent events instead of lane-control claims. Use previous_events and current_events for recency, and use Tactical context for persistent state. Line 2 may use Tactical context and Previous events, but only when the point is clearly supported by the input. Prefer one tactical implication instead of restating the event. Do not quote enum labels verbatim; translate them into natural commentary. Vary phrasing rather than reusing canned wording. If the tactical confidence is low, prefer cautious phrasing over certainty. If the event is a kill and the killer has round_kills of 2 or more, prefer double, triple, quad, or ace style phrasing when appropriate. If the event is grenade_detonated, almost always mention detonation_callout. Few-shot JSON examples:\n[]",
+          "role": "system"
+        },
+        {
+          "content": "Generate exactly 2 lines.\nLine 1: very short caster0 event trigger call using only Focused context and Current events.\nLine 2: short caster1 follow-up line that may use Tactical context.\nUse tactical_facts as facts to reason from, not text to copy.\nDo not add labels or numbering.\n\nFocused context:\n{\n  \"focused_player\": {\n    \"kda\": {\n      \"assists\": 3,\n      \"deaths\": 10,\n      \"kills\": 9\n    },\n    \"name\": \"GrowthHormones\",\n    \"round_kills\": 0,\n    \"team\": \"CT\"\n  }\n}\n\nTactical facts:\n{\n  \"global_context\": {\n    \"score\": {\n      \"CT\": 5,\n      \"T\": 8\n    }\n  },\n  \"tactical_facts\": {\n    \"alive_counts\": {\n      \"ct\": 0,\n      \"t\": 0\n    },\n    \"analysis_mode\": \"map_specific\",\n    \"confidence\": \"low\",\n    \"isolated_player\": \"none\",\n    \"key_risk\": \"none\",\n    \"map_control\": {\n      \"cat\": \"empty\",\n      \"long\": \"empty\",\n      \"mid\": \"empty\"\n    },\n    \"next_move_hint\": \"unclear\",\n    \"position_data\": \"none\",\n    \"pressure\": {\n      \"b\": \"unknown\",\n      \"site\": \"unclear\"\n    },\n    \"rotation_favor\": \"neutral\",\n    \"score_context\": {\n      \"leader\": \"t\",\n      \"margin\": \"clear\"\n    }\n  }\n}\n\nEvent input:\n{\n  \"current_events\": [\n    {\n      \"event_type\": \"player_death\",\n      \"player\": {\n        \"kda\": {\n          \"assists\": 3,\n          \"deaths\": 10,\n          \"kills\": 9\n        },\n        \"name\": \"GrowthHormones\",\n        \"round_kills\": 0,\n        \"team\": \"CT\"\n      }\n    },\n    {\n      \"event_type\": \"game_over\",\n      \"final_score\": {\n        \"CT\": 5,\n        \"T\": 8\n      },\n      \"map_phase_after\": \"gameover\",\n      \"winner\": \"T\"\n    }\n  ],\n  \"derived_tactical_summary\": {\n    \"alive_counts\": {\n      \"ct\": 0,\n      \"t\": 0\n    },\n    \"analysis_mode\": \"map_specific\",\n    \"confidence\": \"low\",\n    \"isolated_player\": \"none\",\n    \"key_risk\": \"none\",\n    \"map_control\": {\n      \"cat\": \"empty\",\n      \"long\": \"empty\",\n      \"mid\": \"empty\"\n    },\n    \"next_move_hint\": \"unclear\",\n    \"position_data\": \"none\",\n    \"pressure\": {\n      \"b\": \"unknown\",\n      \"site\": \"unclear\"\n    },\n    \"rotation_favor\": \"neutral\",\n    \"score_context\": {\n      \"leader\": \"t\",\n      \"margin\": \"clear\"\n    }\n  },\n  \"previous_events\": [\n    {\n      \"event_type\": \"grenade_thrown\",\n      \"grenade_type\": \"smoke\",\n      \"owner_player\": {\n        \"name\": \"GrowthHormones\",\n        \"team\": \"CT\"\n      }\n    }\n  ],\n  \"request\": {\n    \"lines\": [\n      {\n        \"caster\": \"caster0\",\n        \"style\": \"play_by_play_event\"\n      },\n      {\n        \"caster\": \"caster1\",\n        \"style\": \"play_by_play_follow_up\"\n      }\n    ],\n    \"mode\": \"event_bundle\"\n  }\n}\n/no_think",
+          "role": "user"
+        }
+      ],
+      "model": "hf.co/unsloth/Qwen3-1.7B-GGUF:Q4_K_M",
+      "stream": false,
+      "temperature": 0.4
+    }
+  },
+  "mode": "event",
+  "payload_sequence": 455,
+  "prompt_input": {
+    "context": {
+      "score": {
+        "CT": 5,
+        "T": 8
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 3,
+            "deaths": 10,
+            "kills": 9
+          },
+          "name": "GrowthHormones",
+          "round_kills": 0,
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 5,
+          "T": 8
+        },
+        "map_phase_after": "gameover",
+        "winner": "T"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "low",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "pressure": {
+        "b": "unknown",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "name": "GrowthHormones",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "queued_items": [
+    {
+      "caster": "caster0",
+      "commentary": "CT secures the kill with a precise shot, GrowthHormones' round_kills are at zero.",
+      "id": 322,
+      "prompt_style": "play_by_play_event",
+      "tag": "event"
+    },
+    {
+      "caster": "caster1",
+      "commentary": "The team is now ahead in the score.",
+      "id": 323,
+      "prompt_style": "play_by_play_follow_up",
+      "tag": "followup"
+    }
+  ],
+  "status": "completed"
+}

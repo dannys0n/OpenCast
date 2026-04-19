@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-04-18T21:44:07",
+  "events": [
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 8,
+        "T": 3
+      },
+      "map_phase_after": "gameover",
+      "winner": "CT"
+    }
+  ]
+}

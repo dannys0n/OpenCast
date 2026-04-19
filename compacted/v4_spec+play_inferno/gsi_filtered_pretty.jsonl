@@ -1,0 +1,2083 @@
+{
+  "created_at": "2026-04-18T23:50:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:50:40",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:51:08",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:51:10",
+  "events": [
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:51:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:51:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "GrowthHormones",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:17",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 2,
+          "deaths": 1,
+          "kills": 0
+        },
+        "name": "GrowthHormones",
+        "round_kills": 0,
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:20",
+  "events": [
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Exotic",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:46",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "RorBoy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:46",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:46",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Exotic",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Exotic",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:46",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "RorBoy",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Exotic",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:49",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:50",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:50",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:50",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:51",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:51",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:51",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:53",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:53",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:55",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:56",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:52:59",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:01",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:02",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:07",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:11",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 1,
+            "kills": 8
+          },
+          "name": "dullplayer",
+          "round_kills": 1,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 3,
+            "kills": 5
+          },
+          "name": "TAC\u5c71\u4e2d",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      ],
+      "victims": [
+        {
+          "name": "TAC\u5c71\u4e2d",
+          "team": "CT"
+        },
+        {
+          "name": "Exotic",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "RorBoy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6,
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:15",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 1
+        },
+        "name": "milk's biggest fan",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "ARTHUR FUCKING READ",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 1
+        },
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "name": "Be_Wanna_Be",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "RorBoy",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:28",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Billary clitton",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:30",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Billary clitton",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:31",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "milk's biggest fan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Slick Rick",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "milk's biggest fan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:33",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "milk's biggest fan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Slick Rick",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:34",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "name": "Billary clitton",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:34",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 2
+        },
+        "name": "milk's biggest fan",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:35",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Slick Rick",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "name": "Billary clitton",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:37",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "name": "Be_Wanna_Be",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 5
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:53:40",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "milk's biggest fan",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:01",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "RorBoy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:02",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:02",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:03",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:04",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:04",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:07",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 3
+        },
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 6
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:08",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 2
+        },
+        "name": "RorBoy",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Slick Rick",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:08",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 3
+        },
+        "name": "RorBoy",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "dullplayer",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Be_Wanna_Be",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:10",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:11",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:11",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:12",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:12",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:15",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:16",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "TAC\u5c71\u4e2d",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:18",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:19",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 4
+        },
+        "name": "ARTHUR FUCKING READ",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "milk's biggest fan",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:21",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:23",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:24",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:26",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "\u7c73\u56fd\u6700\u901f\u4f1d\u8aac\u3068\u88c2\u9885\u306e\u7edf\u9886!\u655e\u7bf7\u6c38\u6a02\u5e1d\u3067\u3059!",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:26",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "RorBoy",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:27",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "Rean Schwarzer",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 3,
+          "kills": 2
+        },
+        "name": "Rean Schwarzer",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Billary clitton",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:30",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:31",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:32",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:32",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:33",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:33",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Exotic",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:34",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "name": "Exotic",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:36",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 2,
+            "kills": 5
+          },
+          "name": "ARTHUR FUCKING READ",
+          "round_kills": 2,
+          "team": "CT"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 3,
+            "kills": 1
+          },
+          "name": "wildcard",
+          "round_kills": 1,
+          "team": "T"
+        }
+      ],
+      "victims": [
+        {
+          "name": "Wallpaper Memes \ud83c\uddfa\ud83c\udde6",
+          "team": "CT"
+        },
+        {
+          "name": "Exotic",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 6,
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:39",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:40",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 2
+        },
+        "name": "wildcard",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "1ooser\uff08\u6155\u5bb9\u6613\u5bd2)",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:46",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-18T23:54:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 6
+        },
+        "name": "TAC\u5c71\u4e2d",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "wildcard",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 2
+    }
+  ]
+}
+

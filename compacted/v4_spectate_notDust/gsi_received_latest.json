@@ -1,0 +1,38 @@
+{
+  "payload": {
+    "auth": {
+      "token": "replace_this_with_a_secret"
+    },
+    "map": {
+      "mode": "casual",
+      "name": "de_dust2",
+      "num_matches_to_win_series": 0,
+      "phase": "warmup",
+      "round": 0,
+      "team_ct": {
+        "consecutive_round_losses": 0,
+        "matches_won_this_series": 0,
+        "score": 0,
+        "timeouts_remaining": 1
+      },
+      "team_t": {
+        "consecutive_round_losses": 0,
+        "matches_won_this_series": 0,
+        "score": 0,
+        "timeouts_remaining": 1
+      }
+    },
+    "previously": {
+      "player": true
+    },
+    "provider": {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "steamid": "76561198237377678",
+      "timestamp": 1776578551,
+      "version": 14141
+    }
+  },
+  "payload_sequence": 1714,
+  "received_at": "2026-04-18T23:02:31"
+}

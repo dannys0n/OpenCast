@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-04-19T00:52:33",
+  "events": [
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Default",
+        "name": "\u2728 \u1eafjniN \u262f",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}

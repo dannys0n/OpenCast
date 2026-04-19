@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-04-19T00:12:46",
+  "events": [
+    {
+      "event_type": "player_death",
+      "player": {
+        "kda": {
+          "assists": 4,
+          "deaths": 12,
+          "kills": 19
+        },
+        "name": "Rean Schwarzer",
+        "round_kills": 1,
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 7,
+        "T": 8
+      },
+      "map_phase_after": "gameover",
+      "winner": "T"
+    }
+  ]
+}

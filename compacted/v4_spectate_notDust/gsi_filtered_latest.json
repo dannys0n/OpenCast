@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-04-18T23:02:15",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke"
+    }
+  ]
+}

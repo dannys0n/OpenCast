@@ -1,0 +1,79 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 8
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 4,
+            "deaths": 12,
+            "kills": 19
+          },
+          "name": "Rean Schwarzer",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 7,
+          "T": 8
+        },
+        "map_phase_after": "gameover",
+        "winner": "T"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Car",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "cam",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "exploded",
+      "score": {
+        "CT": 2,
+        "T": 8
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "exploded"
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 2,
+          "T": 8
+        },
+        "map_phase_after": "gameover",
+        "winner": "T"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "t",
+        "mid": "t"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Blue",
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "Long",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}

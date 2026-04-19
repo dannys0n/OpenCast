@@ -1,0 +1,95 @@
+{
+  "payload": {
+    "added": {
+      "player": {
+        "match_stats": true,
+        "observer_slot": true,
+        "state": true,
+        "team": true,
+        "weapons": true
+      }
+    },
+    "auth": {
+      "token": "replace_this_with_a_secret"
+    },
+    "map": {
+      "mode": "casual",
+      "name": "de_inferno",
+      "num_matches_to_win_series": 0,
+      "phase": "warmup",
+      "round": 0,
+      "team_ct": {
+        "consecutive_round_losses": 0,
+        "matches_won_this_series": 0,
+        "score": 0,
+        "timeouts_remaining": 1
+      },
+      "team_t": {
+        "consecutive_round_losses": 0,
+        "matches_won_this_series": 0,
+        "score": 0,
+        "timeouts_remaining": 1
+      }
+    },
+    "player": {
+      "activity": "playing",
+      "match_stats": {
+        "assists": 0,
+        "deaths": 0,
+        "kills": 0,
+        "mvps": 0,
+        "score": 0
+      },
+      "name": "Doc",
+      "observer_slot": 1,
+      "state": {
+        "armor": 100,
+        "burning": 0,
+        "defusekit": true,
+        "equip_value": 1600,
+        "flashed": 0,
+        "health": 100,
+        "helmet": true,
+        "money": 10000,
+        "round_killhs": 0,
+        "round_kills": 0,
+        "smoked": 0
+      },
+      "steamid": "343",
+      "team": "CT",
+      "weapons": {
+        "weapon_0": {
+          "name": "weapon_knife",
+          "paintkit": "default",
+          "state": "holstered",
+          "type": "Knife"
+        },
+        "weapon_1": {
+          "ammo_clip": 13,
+          "ammo_clip_max": 13,
+          "ammo_reserve": 4,
+          "name": "weapon_hkp2000",
+          "paintkit": "default",
+          "state": "active",
+          "type": "Pistol"
+        }
+      }
+    },
+    "previously": {
+      "player": {
+        "activity": "menu",
+        "name": "GrowthHormones",
+        "steamid": "76561198237377678"
+      }
+    },
+    "provider": {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "steamid": "76561198237377678",
+      "timestamp": 1776581327,
+      "version": 14141
+    }
+  },
+  "payload_sequence": 2520,
+  "received_at": "2026-04-18T23:48:47"
+}

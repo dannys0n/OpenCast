@@ -1,0 +1,145 @@
+{
+  "payload": {
+    "added": {
+      "map": {
+        "round_wins": {
+          "13": true
+        }
+      },
+      "round": {
+        "win_team": true
+      }
+    },
+    "auth": {
+      "token": "replace_this_with_a_secret"
+    },
+    "map": {
+      "mode": "casual",
+      "name": "de_dust2",
+      "num_matches_to_win_series": 0,
+      "phase": "gameover",
+      "round": 13,
+      "round_wins": {
+        "1": "t_win_elimination",
+        "10": "ct_win_elimination",
+        "11": "ct_win_elimination",
+        "12": "ct_win_defuse",
+        "13": "t_win_elimination",
+        "2": "t_win_elimination",
+        "3": "t_win_elimination",
+        "4": "t_win_elimination",
+        "5": "ct_win_elimination",
+        "6": "ct_win_elimination",
+        "7": "t_win_elimination",
+        "8": "t_win_elimination",
+        "9": "t_win_elimination"
+      },
+      "team_ct": {
+        "consecutive_round_losses": 1,
+        "matches_won_this_series": 0,
+        "score": 5,
+        "timeouts_remaining": 1
+      },
+      "team_t": {
+        "consecutive_round_losses": 1,
+        "matches_won_this_series": 0,
+        "score": 8,
+        "timeouts_remaining": 1
+      }
+    },
+    "player": {
+      "activity": "playing",
+      "match_stats": {
+        "assists": 3,
+        "deaths": 10,
+        "kills": 9,
+        "mvps": 0,
+        "score": 28
+      },
+      "name": "GrowthHormones",
+      "observer_slot": 0,
+      "state": {
+        "armor": 0,
+        "burning": 0,
+        "equip_value": 5100,
+        "flashed": 0,
+        "health": 0,
+        "helmet": false,
+        "money": 10000,
+        "round_killhs": 0,
+        "round_kills": 0,
+        "smoked": 0
+      },
+      "steamid": "76561198237377678",
+      "team": "CT",
+      "weapons": {}
+    },
+    "previously": {
+      "map": {
+        "phase": "live",
+        "round": 12,
+        "team_ct": {
+          "consecutive_round_losses": 0
+        },
+        "team_t": {
+          "consecutive_round_losses": 3,
+          "score": 7
+        }
+      },
+      "player": {
+        "match_stats": {
+          "deaths": 9
+        },
+        "state": {
+          "armor": 100,
+          "defusekit": true,
+          "health": 100,
+          "helmet": true,
+          "money": 7900
+        },
+        "weapons": {
+          "weapon_0": {
+            "name": "weapon_knife",
+            "paintkit": "default",
+            "state": "holstered",
+            "type": "Knife"
+          },
+          "weapon_1": {
+            "ammo_clip": 13,
+            "ammo_clip_max": 13,
+            "ammo_reserve": 4,
+            "name": "weapon_hkp2000",
+            "paintkit": "default",
+            "state": "holstered",
+            "type": "Pistol"
+          },
+          "weapon_2": {
+            "ammo_clip": 17,
+            "ammo_clip_max": 20,
+            "ammo_reserve": 3,
+            "name": "weapon_m4a1_silencer",
+            "paintkit": "default",
+            "state": "active",
+            "type": "Rifle"
+          }
+        }
+      },
+      "round": {
+        "phase": "live"
+      }
+    },
+    "provider": {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "steamid": "76561198237377678",
+      "timestamp": 1776583722,
+      "version": 14141
+    },
+    "round": {
+      "phase": "freezetime",
+      "win_team": "T"
+    }
+  },
+  "payload_sequence": 455,
+  "received_at": "2026-04-19T00:28:42"
+}

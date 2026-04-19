@@ -1,0 +1,81 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "The Saint",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "doosha",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 8,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "name": "Mammy",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "Slimmeh|ULT|",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
