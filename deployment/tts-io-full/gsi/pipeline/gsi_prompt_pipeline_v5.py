@@ -20,6 +20,7 @@ from gsi_prompt_pipeline_v2 import (
     filter_important_events,
     normalize_player,
     normalize_team,
+    strip_empty,
 )
 from prompt_queue_v5 import (
     load_prompt_config as load_prompt_runtime_config,
@@ -179,16 +180,85 @@ def build_match_context(snapshot):
         },
         "win_team": normalize_team(round_data.get("win_team")),
         "alive_players": build_alive_players(snapshot),
+        "local_player": build_local_player_context(snapshot),
     }
 
 
 def build_training_context(snapshot):
     match_context = build_match_context(snapshot)
-    return {
-        "bomb_state": match_context.get("bomb_state"),
-        "score": copy.deepcopy(match_context.get("score")),
-        "alive_players": copy.deepcopy(match_context.get("alive_players")),
-    }
+    return strip_empty(
+        {
+            "bomb_state": match_context.get("bomb_state"),
+            "score": copy.deepcopy(match_context.get("score")),
+            "alive_players": copy.deepcopy(match_context.get("alive_players")),
+            "local_player": copy.deepcopy(match_context.get("local_player")),
+        }
+    )
+
+
+def has_full_player_context(snapshot):
+    snapshot = as_dict(snapshot)
+    return bool(as_dict(snapshot.get("allplayers")))
+
+
+def build_local_player_context(snapshot):
+    snapshot = as_dict(snapshot)
+    player_raw = as_dict(snapshot.get("player"))
+    if not player_raw:
+        return {}
+
+    map_name = as_dict(snapshot.get("map")).get("name")
+    normalized = normalize_player(None, player_raw, map_name=map_name)
+    if not normalized:
+        return {}
+
+    state = as_dict(player_raw.get("state"))
+    weapons = []
+    active_weapon = None
+    all_weapons = as_dict(player_raw.get("weapons"))
+    for weapon_key in sorted(all_weapons.keys()):
+        weapon = as_dict(all_weapons.get(weapon_key))
+        simplified_weapon = strip_empty(
+            {
+                "name": weapon.get("name"),
+                "type": weapon.get("type"),
+                "state": weapon.get("state"),
+                "ammo_clip": weapon.get("ammo_clip"),
+                "ammo_clip_max": weapon.get("ammo_clip_max"),
+                "ammo_reserve": weapon.get("ammo_reserve"),
+            }
+        )
+        if not simplified_weapon.get("name"):
+            continue
+        weapons.append(simplified_weapon)
+        if simplified_weapon.get("state") == "active":
+            active_weapon = copy.deepcopy(simplified_weapon)
+
+    return strip_empty(
+        {
+            "name": normalized.get("name"),
+            "team": normalized.get("team"),
+            "map_callout": normalized.get("map_callout"),
+            "health": normalized.get("health"),
+            "armor": normalized.get("armor"),
+            "helmet": state.get("helmet"),
+            "money": state.get("money"),
+            "equip_value": state.get("equip_value"),
+            "burning": state.get("burning"),
+            "flashed": state.get("flashed"),
+            "smoked": state.get("smoked"),
+            "round_kills": normalized.get("round_kills"),
+            "kda": strip_empty(
+                {
+                    "kills": normalized.get("match_kills"),
+                    "deaths": normalized.get("match_deaths"),
+                    "assists": normalized.get("match_assists"),
+                }
+            ),
+            "active_weapon": active_weapon,
+            "weapons": weapons,
+        }
+    )
 
 
 def build_alive_players(snapshot):
@@ -197,30 +267,19 @@ def build_alive_players(snapshot):
     alive_players = []
 
     allplayers = as_dict(snapshot.get("allplayers"))
-    if allplayers:
-        for entity_id, player in allplayers.items():
-            normalized = normalize_player(entity_id, player, map_name=map_name)
-            if not normalized:
-                continue
-            if int(normalized.get("health") or 0) <= 0:
-                continue
-            alive_players.append(
-                {
-                    "name": normalized.get("name"),
-                    "team": normalized.get("team"),
-                    "map_callout": normalized.get("map_callout"),
-                }
-            )
-    else:
-        local_player = normalize_player(None, snapshot.get("player"), map_name=map_name)
-        if local_player and int(local_player.get("health") or 0) > 0:
-            alive_players.append(
-                {
-                    "name": local_player.get("name"),
-                    "team": local_player.get("team"),
-                    "map_callout": local_player.get("map_callout"),
-                }
-            )
+    for entity_id, player in allplayers.items():
+        normalized = normalize_player(entity_id, player, map_name=map_name)
+        if not normalized:
+            continue
+        if int(normalized.get("health") or 0) <= 0:
+            continue
+        alive_players.append(
+            {
+                "name": normalized.get("name"),
+                "team": normalized.get("team"),
+                "map_callout": normalized.get("map_callout"),
+            }
+        )
 
     alive_players = [player for player in alive_players if player.get("name")]
     alive_players.sort(key=lambda player: (str(player.get("team") or ""), str(player.get("name") or "")))

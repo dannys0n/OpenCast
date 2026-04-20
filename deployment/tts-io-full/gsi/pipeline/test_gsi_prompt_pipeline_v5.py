@@ -178,7 +178,7 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
             ],
         )
 
-    def test_build_match_context_adds_alive_players_from_local_player_when_allplayers_missing(self):
+    def test_build_match_context_omits_alive_players_when_allplayers_missing(self):
         snapshot = {
             "map": {
                 "name": "de_dust2",
@@ -206,13 +206,17 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                 "bomb_state": "carried",
                 "score": {"CT": 1, "T": 0},
                 "win_team": None,
-                "alive_players": [
-                    {"name": "GrowthHormones", "team": "T", "map_callout": "T Spawn"},
-                ],
+                "alive_players": [],
+                "local_player": {
+                    "name": "GrowthHormones",
+                    "team": "T",
+                    "map_callout": "T Spawn",
+                    "health": 100,
+                },
             },
         )
 
-    def test_build_idle_wrapper_omits_previous_events_and_bomb_state_from_summary(self):
+    def test_build_idle_wrapper_omits_previous_events_and_uses_empty_alive_player_context_without_allplayers(self):
         snapshot = {
             "map": {
                 "name": "de_dust2",
@@ -238,16 +242,19 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                     "context": {
                         "bomb_state": "carried",
                         "score": {"CT": 1, "T": 0},
-                        "alive_players": [
-                            {"name": "GrowthHormones", "team": "T", "map_callout": "T Spawn"},
-                        ],
+                        "local_player": {
+                            "name": "GrowthHormones",
+                            "team": "T",
+                            "map_callout": "T Spawn",
+                            "health": 100,
+                        },
                     },
                     "previous_events": [],
                     "current_events": [],
                     "derived_tactical_summary": {
                         "alive_counts": {
                             "ct": 0,
-                            "t": 1,
+                            "t": 0,
                         },
                         "analysis_mode": "map_specific",
                         "confidence": "low",
@@ -260,10 +267,10 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                         },
                         "next_move_hint": "unclear",
                         "pressure": {
-                            "b": "low",
+                            "b": "unknown",
                             "site": "unclear",
                         },
-                        "position_data": "full",
+                        "position_data": "none",
                         "rotation_favor": "neutral",
                         "score_context": {
                             "leader": "ct",
@@ -283,6 +290,32 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                     "lines": ["", "", ""],
                 },
             },
+        )
+
+    def test_has_full_player_context_requires_allplayers(self):
+        self.assertFalse(
+            MODULE.has_full_player_context(
+                {
+                    "player": {
+                        "name": "GrowthHormones",
+                        "team": "T",
+                        "state": {"health": 100},
+                    }
+                }
+            )
+        )
+        self.assertTrue(
+            MODULE.has_full_player_context(
+                {
+                    "allplayers": {
+                        "2": {
+                            "name": "Walt",
+                            "team": "CT",
+                            "state": {"health": 100},
+                        }
+                    }
+                }
+            )
         )
 
     def test_build_training_wrapper_uses_generic_fallback_summary_for_unsupported_map(self):

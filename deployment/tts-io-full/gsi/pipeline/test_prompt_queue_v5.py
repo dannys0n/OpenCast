@@ -919,6 +919,69 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertNotIn('"previous_events"', captured["user_prompt"])
         self.assertIn('"tactical_facts"', captured["user_prompt"])
 
+    def test_build_interval_user_prompt_uses_local_player_note_when_team_visibility_is_unavailable(self):
+        wrapper = {
+            "input": {
+                "context": {
+                    "bomb_state": "carried",
+                    "score": {"CT": 3, "T": 4},
+                    "alive_players": [],
+                    "local_player": {
+                        "name": "Uncle Rogers",
+                        "team": "T",
+                        "map_callout": "Palace",
+                        "health": 1,
+                        "armor": 98,
+                        "money": 2900,
+                        "active_weapon": {
+                            "name": "weapon_ak47",
+                            "type": "Rifle",
+                            "state": "active",
+                        },
+                        "weapons": [
+                            {
+                                "name": "weapon_ak47",
+                                "type": "Rifle",
+                                "state": "active",
+                            },
+                            {
+                                "name": "weapon_smokegrenade",
+                                "type": "Grenade",
+                                "state": "holstered",
+                            },
+                        ],
+                    },
+                },
+                "derived_tactical_summary": {
+                    "alive_counts": {"ct": 0, "t": 0},
+                    "analysis_mode": "map_specific",
+                    "confidence": "low",
+                    "isolated_player": "none",
+                    "key_risk": "none",
+                    "map_control": {"cat": "empty", "long": "empty", "mid": "empty"},
+                    "next_move_hint": "unclear",
+                    "pressure": {"b": "unknown", "site": "unclear"},
+                    "position_data": "none",
+                    "rotation_favor": "neutral",
+                    "score_context": {"leader": "t", "margin": "close"},
+                },
+                "request": {
+                    "mode": "idle_color",
+                    "lines": [
+                        {"caster": "caster1", "style": "idle_color"},
+                        {"caster": "caster0", "style": "idle_color"},
+                        {"caster": "caster1", "style": "idle_color"},
+                    ],
+                },
+            }
+        }
+
+        user_prompt = MODULE.build_interval_user_prompt(wrapper, conversation_mode=False)
+
+        self.assertIn("Full team visibility is unavailable.", user_prompt)
+        self.assertIn('"local_player"', user_prompt)
+        self.assertIn('"active_weapon"', user_prompt)
+
     def test_process_interval_wrapper_idle_color_supports_structured_json_output(self):
         def fake_build_text_llm_config(repo_root):
             return type("FakeTextConfig", (), {})()

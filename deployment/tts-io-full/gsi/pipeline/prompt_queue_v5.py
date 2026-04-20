@@ -540,6 +540,7 @@ def build_global_context(context):
             "bomb_state": context.get("bomb_state"),
             "score": context.get("score"),
             "alive_players": context.get("alive_players"),
+            "local_player": context.get("local_player"),
         }
     )
 
@@ -713,6 +714,9 @@ def build_event_user_prompt(wrapper):
 def build_interval_user_prompt(wrapper, conversation_mode):
     wrapper_input = as_dict(as_dict(wrapper).get("input"))
     caster_sequence = interval_casters_from_wrapper(wrapper, conversation_mode=conversation_mode)
+    context = as_dict(wrapper_input.get("context"))
+    local_player = as_dict(context.get("local_player"))
+    limited_player_view = bool(local_player) and not context.get("alive_players")
     prompt_input = strip_empty(
         {
             "derived_tactical_summary": wrapper_input.get("derived_tactical_summary"),
@@ -725,10 +729,16 @@ def build_interval_user_prompt(wrapper, conversation_mode):
         else "Generate exactly 3 short idle analysis lines following the requested caster order."
     )
     requested_caster_order = ", ".join(caster_sequence)
+    limited_view_note = (
+        "Full team visibility is unavailable. Use local_player state, health, armor, money, active weapon, and carried utility as the primary live context.\n"
+        if limited_player_view
+        else ""
+    )
     return (
         f"{mode_text}\n"
         "Use the Live context below.\n"
         "Use tactical_facts as facts to reason from, not text to copy.\n"
+        f"{limited_view_note}"
         "Do not add labels or numbering.\n\n"
         f"Requested caster order: {requested_caster_order}\n\n"
         "Live context:\n"
