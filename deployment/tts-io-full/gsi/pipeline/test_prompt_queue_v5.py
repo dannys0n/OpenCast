@@ -83,6 +83,26 @@ class PromptQueueV5Tests(unittest.TestCase):
             ["Niko doubles up.", "That opens A. Rotation is late."],
         )
 
+    def test_extract_commentary_lines_strips_line_labels_from_plain_text_and_structured_output(self):
+        plain_text = "Line 1: Niko doubles up.\nLine 2: That opens A."
+        structured_text = json.dumps(
+            {
+                "lines": [
+                    "Line 1: Yanni kills Tony.",
+                    "Line 2: Triple for Yanni.",
+                ]
+            }
+        )
+
+        self.assertEqual(
+            MODULE.extract_commentary_lines(plain_text, expected_max=2),
+            ["Niko doubles up.", "That opens A."],
+        )
+        self.assertEqual(
+            MODULE.extract_commentary_lines(structured_text, expected_max=2),
+            ["Yanni kills Tony.", "Triple for Yanni."],
+        )
+
     def test_should_ignore_pure_grenade_throw_during_spectate(self):
         wrapper = {
             "input": {
@@ -123,7 +143,7 @@ class PromptQueueV5Tests(unittest.TestCase):
 
         self.assertTrue(MODULE.should_ignore_event_prompt(wrapper, {}))
 
-    def test_prepare_queue_for_event_trigger_interrupts_current_non_event_and_drops_queued_non_events(self):
+    def test_prepare_queue_for_event_trigger_keeps_front_of_queue_followup(self):
         current_non_event = {
             "id": 10,
             "tag": "idle",
@@ -153,10 +173,10 @@ class PromptQueueV5Tests(unittest.TestCase):
 
         self.assertFalse(current_non_event["interrupt_event"].is_set())
         self.assertIsNone(interrupted_current)
-        self.assertEqual([item["id"] for item in dropped], [11])
+        self.assertEqual([item["id"] for item in dropped], [])
         self.assertEqual(kill_counts, {"ct": 0, "t": 0})
         self.assertEqual(event_types, [])
-        self.assertEqual(list(MODULE.PLAYBACK_QUEUE), [])
+        self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [11])
 
     def test_prepare_queue_for_event_trigger_keeps_queued_event_items(self):
         current_event = {
@@ -237,14 +257,92 @@ class PromptQueueV5Tests(unittest.TestCase):
         )
 
         self.assertIsNone(interrupted_current)
-        self.assertEqual([item["id"] for item in dropped], [12])
+        self.assertEqual([item["id"] for item in dropped], [])
         self.assertEqual(kill_counts, {"ct": 0, "t": 1})
         self.assertEqual(event_types, ["kill"])
-        self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [11, 13, 14])
+        self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [11, 12, 13, 14])
 
-    def test_prepare_queue_for_event_trigger_cancels_prefetch_for_trimmed_item(self):
-        prefetched_item = {
+    def test_prepare_queue_for_event_trigger_keeps_grenade_event_without_other_queued_kill(self):
+        current_event = {
+            "id": 40,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Opening frag.",
+            "payload_sequence": 70,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_grenade_event = {
+            "id": 41,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Flash in.",
+            "payload_sequence": 71,
+            "source": "event",
+            "event_family": "grenade",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        kept_bomb_event = {
+            "id": 42,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Bomb goes down.",
+            "payload_sequence": 72,
+            "source": "event",
+            "event_family": "other",
+            "event_types": ["bomb_event"],
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.CURRENT_PLAYBACK = current_event
+        MODULE.PLAYBACK_QUEUE.extend([queued_grenade_event, kept_bomb_event])
+
+        dropped, interrupted_current, kill_counts, event_types = MODULE.prepare_queue_for_event_trigger(
+            [{"event_type": "kill", "killer": {"team": "T"}}]
+        )
+
+        self.assertIsNone(interrupted_current)
+        self.assertEqual([item["id"] for item in dropped], [])
+        self.assertEqual(kill_counts, {"ct": 0, "t": 1})
+        self.assertEqual(event_types, ["kill"])
+        self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [41, 42])
+
+    def test_prepare_queue_for_event_trigger_cancels_prefetch_for_trimmed_tail_item(self):
+        kept_event = {
             "id": 21,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Bomb goes down.",
+            "payload_sequence": 42,
+            "source": "event",
+            "event_family": "other",
+            "event_types": ["bomb_event"],
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+            "prefetch_started": False,
+            "prefetch_cleanup_pending": False,
+        }
+        queued_idle = {
+            "id": 22,
+            "tag": "idle",
+            "caster": "caster1",
+            "prompt_style": "idle_color",
+            "commentary": "Still waiting.",
+            "payload_sequence": 42,
+            "source": "idle_color",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+            "prefetch_started": False,
+            "prefetch_cleanup_pending": False,
+        }
+        prefetched_item = {
+            "id": 23,
             "tag": "followup",
             "caster": "caster1",
             "prompt_style": "play_by_play_follow_up",
@@ -259,21 +357,6 @@ class PromptQueueV5Tests(unittest.TestCase):
             "prefetch_cleanup_pending": False,
             "prefetch_cancel_event": threading.Event(),
         }
-        kept_bomb_event = {
-            "id": 22,
-            "tag": "event",
-            "caster": "caster0",
-            "prompt_style": "play_by_play_event",
-            "commentary": "Bomb goes down.",
-            "payload_sequence": 42,
-            "source": "event",
-            "event_family": "other",
-            "event_types": ["bomb_event"],
-            "interrupt_event": threading.Event(),
-            "done_event": threading.Event(),
-            "prefetch_started": False,
-            "prefetch_cleanup_pending": False,
-        }
         MODULE.CURRENT_PLAYBACK = {
             "id": 20,
             "tag": "event",
@@ -285,11 +368,106 @@ class PromptQueueV5Tests(unittest.TestCase):
             "interrupt_event": threading.Event(),
             "done_event": threading.Event(),
         }
-        MODULE.PLAYBACK_QUEUE.extend([prefetched_item, kept_bomb_event])
+        MODULE.PLAYBACK_QUEUE.extend([kept_event, queued_idle, prefetched_item])
 
         MODULE.prepare_queue_for_event_trigger([{"event_type": "kill", "killer": {"team": "T"}}])
 
         self.assertTrue(prefetched_item["prefetch_cancel_event"].is_set())
+        self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [21])
+
+    def test_prepare_queue_for_event_trigger_preserves_front_followup_while_popping_trailing_idle(self):
+        current_event = {
+            "id": 30,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Opening frag.",
+            "payload_sequence": 60,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        next_followup = {
+            "id": 31,
+            "tag": "followup",
+            "caster": "caster1",
+            "prompt_style": "play_by_play_follow_up",
+            "commentary": "That opens the site.",
+            "payload_sequence": 60,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        later_idle = {
+            "id": 32,
+            "tag": "idle",
+            "caster": "caster1",
+            "prompt_style": "idle_color",
+            "commentary": "Still waiting.",
+            "payload_sequence": 60,
+            "source": "idle_color",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.CURRENT_PLAYBACK = current_event
+        MODULE.PLAYBACK_QUEUE.extend([next_followup, later_idle])
+
+        dropped, interrupted_current, kill_counts, event_types = MODULE.prepare_queue_for_event_trigger(
+            [{"event_type": "kill", "killer": {"team": "T"}}]
+        )
+
+        self.assertIsNone(interrupted_current)
+        self.assertEqual([item["id"] for item in dropped], [32])
+        self.assertEqual(kill_counts, {"ct": 0, "t": 1})
+        self.assertEqual(event_types, ["kill"])
+        self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [31])
+
+    def test_prepare_queue_for_event_trigger_preserves_tail_followup_when_event_is_in_front(self):
+        current_event = {
+            "id": 50,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Opening frag.",
+            "payload_sequence": 80,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_event = {
+            "id": 51,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Second frag.",
+            "payload_sequence": 81,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_followup = {
+            "id": 52,
+            "tag": "followup",
+            "caster": "caster1",
+            "prompt_style": "play_by_play_follow_up",
+            "commentary": "That opens the site.",
+            "payload_sequence": 81,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.CURRENT_PLAYBACK = current_event
+        MODULE.PLAYBACK_QUEUE.extend([queued_event, queued_followup])
+
+        dropped, interrupted_current, kill_counts, event_types = MODULE.prepare_queue_for_event_trigger(
+            [{"event_type": "kill", "killer": {"team": "T"}}]
+        )
+
+        self.assertIsNone(interrupted_current)
+        self.assertEqual([item["id"] for item in dropped], [])
+        self.assertEqual(kill_counts, {"ct": 0, "t": 1})
+        self.assertEqual(event_types, ["kill"])
+        self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [51, 52])
 
     def test_enqueue_prompt_items_starts_prefetch_for_head_of_queue(self):
         started = []
@@ -542,6 +720,46 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertEqual(record["status"], "completed")
         self.assertEqual([item["caster"] for item in record["queued_items"]], ["caster0", "caster0"])
         self.assertIn("Line 2: short caster0 follow-up line", captured["user_prompt"])
+
+    def test_process_event_wrapper_forbids_kill_confirmed_in_line1_prompt(self):
+        captured = {}
+
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            captured["system_prompt"] = system_prompt
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "Fresh frag.\nThat opens space.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+
+        wrapper = {
+            "input": {
+                "context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Ropz", "team": "T", "map_callout": "Mid"}],
+                },
+                "previous_events": [],
+                "current_events": [
+                    {
+                        "event_type": "kill",
+                        "killer": {"name": "Ropz", "team": "T", "map_callout": "Mid"},
+                        "victim": {"name": "Yanni", "team": "CT"},
+                    }
+                ],
+                "derived_tactical_summary": {"confidence": "medium"},
+            }
+        }
+
+        record = MODULE.process_event_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=19, snapshot={})
+
+        self.assertEqual(record["status"], "completed")
+        self.assertIn("For Line 1, never say 'kill confirmed'.", captured["system_prompt"])
 
     def test_process_event_wrapper_keeps_original_current_events_in_prompt(self):
         captured = {}

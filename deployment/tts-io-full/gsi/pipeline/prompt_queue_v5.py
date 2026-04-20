@@ -643,7 +643,7 @@ def build_event_system_prompt(current_events, *, followup_caster=CASTER1):
         limit=3,
     )
     config = load_prompt_config()
-    return render_prompt_template(
+    prompt = render_prompt_template(
         config.get("event_system_prompt_template", ""),
         {
             "event_instruction": config.get("event_instruction", "").strip(),
@@ -652,6 +652,11 @@ def build_event_system_prompt(current_events, *, followup_caster=CASTER1):
             "few_shots_json": json.dumps(few_shots, indent=2, sort_keys=True),
         },
     )
+    prompt = (
+        f"{prompt} "
+        "For Line 1, never say 'kill confirmed'."
+    ).strip()
+    return prompt
 
 
 def build_interval_system_prompt(conversation_mode):
@@ -731,6 +736,12 @@ def build_interval_user_prompt(wrapper, conversation_mode):
     )
 
 
+def strip_line_label_prefix(text):
+    candidate = str(text or "")
+    candidate = re.sub(r"(?i)^.*?\bline\s*[12]\s*:\s*", "", candidate).strip()
+    return candidate
+
+
 def extract_commentary_lines(raw_text, expected_max):
     raw_text = str(raw_text or "")
 
@@ -745,6 +756,7 @@ def extract_commentary_lines(raw_text, expected_max):
             cleaned = []
             for line in structured_lines:
                 candidate = " ".join(str(line or "").split()).strip().strip("`")
+                candidate = strip_line_label_prefix(candidate)
                 if not candidate:
                     continue
                 cleaned.append(candidate)
@@ -767,6 +779,7 @@ def extract_commentary_lines(raw_text, expected_max):
     cleaned = []
     for line in lines:
         candidate = line.strip().strip("`")
+        candidate = strip_line_label_prefix(candidate)
         if not candidate:
             continue
         if candidate.lower().startswith("json"):
@@ -1118,17 +1131,24 @@ def prepare_queue_for_event_trigger(current_events=None):
     aggregated_kill_counts = dict(incoming_kill_counts)
 
     with QUEUE_CONDITION:
-        kept = deque()
-        for existing in PLAYBACK_QUEUE:
-            existing_tag = existing.get("tag")
+        while PLAYBACK_QUEUE:
+            tail_index = len(PLAYBACK_QUEUE) - 1
+            tail_item = PLAYBACK_QUEUE[tail_index]
+            tail_tag = tail_item.get("tag")
 
-            if existing_tag == "event":
-                kept.append(existing)
-            else:
-                dropped_items.append(existing)
+            if tail_tag not in {"idle", "followup"}:
+                break
 
-        PLAYBACK_QUEUE.clear()
-        PLAYBACK_QUEUE.extend(kept)
+            if tail_tag == "followup":
+                if tail_index == 0:
+                    break
+                previous_item = PLAYBACK_QUEUE[tail_index - 1]
+                if previous_item.get("tag") == "event":
+                    break
+
+            dropped_items.append(PLAYBACK_QUEUE.pop())
+
+        dropped_items.reverse()
 
         write_queue_state_locked()
 
@@ -1224,7 +1244,10 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
         queued_kill_counts = kill_counts
         queued_event_types = event_types
         text_config = build_v5_text_llm_config(repo_root)
-        system_prompt = build_event_system_prompt(current_events, followup_caster=followup_caster)
+        system_prompt = build_event_system_prompt(
+            current_events,
+            followup_caster=followup_caster,
+        )
         user_prompt = build_event_user_prompt(prompt_wrapper)
         result = request_chat_completion(text_config, system_prompt, user_prompt)
         lines = extract_commentary_lines(result["raw_text"], expected_max=4)
