@@ -46,6 +46,19 @@ class TTSConfig:
     voice_name: str
     timeout_seconds: float
     sample_rate: int
+    omnivoice_num_step: int | None = None
+    omnivoice_guidance_scale: float | None = None
+    omnivoice_denoise: bool | None = None
+    omnivoice_t_shift: float | None = None
+    omnivoice_position_temperature: float | None = None
+    omnivoice_class_temperature: float | None = None
+    omnivoice_duration: float | None = None
+    omnivoice_language: str | None = None
+    omnivoice_layer_penalty_factor: float | None = None
+    omnivoice_preprocess_prompt: bool | None = None
+    omnivoice_postprocess_output: bool | None = None
+    omnivoice_audio_chunk_duration: float | None = None
+    omnivoice_audio_chunk_threshold: float | None = None
 
 
 def normalize_voice_name(raw_voice_name):
@@ -57,10 +70,52 @@ def normalize_voice_name(raw_voice_name):
     return f"clone:{voice_name}"
 
 
+def env_optional_float(name, *sources):
+    value = first_value(name, "", *sources)
+    if value in ("", None):
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def env_optional_int(name, *sources):
+    value = first_value(name, "", *sources)
+    if value in ("", None):
+        return None
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def env_optional_bool(name, *sources):
+    value = first_value(name, "", *sources)
+    if value in ("", None):
+        return None
+    normalized = str(value).strip().lower()
+    if normalized in {"1", "true", "yes", "on"}:
+        return True
+    if normalized in {"0", "false", "no", "off"}:
+        return False
+    return None
+
+
+def env_optional_text(name, *sources):
+    value = first_value(name, "", *sources)
+    if value in ("", None):
+        return None
+    text = str(value).strip()
+    return text or None
+
+
 def build_config(repo_root):
     repo_root = Path(repo_root).resolve()
     text_llm_env = load_env_file(repo_root / "deployment" / "text-llm" / ".env")
     tts_env = load_env_file(repo_root / "deployment" / "tts-io-full" / ".env")
+    omnivoice_env = load_env_file(repo_root / "deployment" / "tts-io-full" / "omnivoice-server" / ".env")
+    omnivoice_opencast_env = load_env_file(repo_root / "deployment" / "tts-io-full" / "omnivoice-server" / ".opencast.env")
 
     api_base = first_value("TTS_API_BASE", "http://127.0.0.1:8880", tts_env, text_llm_env)
     model = first_value("TTS_MODEL", "tts-1", tts_env, text_llm_env)
@@ -76,6 +131,19 @@ def build_config(repo_root):
         voice_name=voice_name,
         timeout_seconds=timeout_seconds,
         sample_rate=sample_rate,
+        omnivoice_num_step=env_optional_int("OMNIVOICE_TTS_NUM_STEP", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_guidance_scale=env_optional_float("OMNIVOICE_TTS_GUIDANCE_SCALE", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_denoise=env_optional_bool("OMNIVOICE_TTS_DENOISE", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_t_shift=env_optional_float("OMNIVOICE_TTS_T_SHIFT", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_position_temperature=env_optional_float("OMNIVOICE_TTS_POSITION_TEMPERATURE", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_class_temperature=env_optional_float("OMNIVOICE_TTS_CLASS_TEMPERATURE", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_duration=env_optional_float("OMNIVOICE_TTS_DURATION", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_language=env_optional_text("OMNIVOICE_TTS_LANGUAGE", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_layer_penalty_factor=env_optional_float("OMNIVOICE_TTS_LAYER_PENALTY_FACTOR", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_preprocess_prompt=env_optional_bool("OMNIVOICE_TTS_PREPROCESS_PROMPT", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_postprocess_output=env_optional_bool("OMNIVOICE_TTS_POSTPROCESS_OUTPUT", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_audio_chunk_duration=env_optional_float("OMNIVOICE_TTS_AUDIO_CHUNK_DURATION", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
+        omnivoice_audio_chunk_threshold=env_optional_float("OMNIVOICE_TTS_AUDIO_CHUNK_THRESHOLD", omnivoice_opencast_env, omnivoice_env, tts_env, text_llm_env),
     )
 
 
@@ -100,15 +168,35 @@ def build_tts_instruct(tts_prompt):
 
 def build_tts_payload(config, tts_prompt):
     speed = float(tts_prompt.get("speed") or 1.0)
-    return {
+    payload = {
         "model": config.model,
         "voice": normalize_voice_name(tts_prompt.get("voice_name") or config.voice_name),
         "input": tts_prompt["commentary"],
         "instruct": build_tts_instruct(tts_prompt),
+        "instructions": build_tts_instruct(tts_prompt),
         "speed": speed,
         "stream": True,
         "response_format": "pcm",
     }
+    optional_fields = {
+        "num_step": config.omnivoice_num_step,
+        "guidance_scale": config.omnivoice_guidance_scale,
+        "denoise": config.omnivoice_denoise,
+        "t_shift": config.omnivoice_t_shift,
+        "position_temperature": config.omnivoice_position_temperature,
+        "class_temperature": config.omnivoice_class_temperature,
+        "duration": config.omnivoice_duration,
+        "language": config.omnivoice_language,
+        "layer_penalty_factor": config.omnivoice_layer_penalty_factor,
+        "preprocess_prompt": config.omnivoice_preprocess_prompt,
+        "postprocess_output": config.omnivoice_postprocess_output,
+        "audio_chunk_duration": config.omnivoice_audio_chunk_duration,
+        "audio_chunk_threshold": config.omnivoice_audio_chunk_threshold,
+    }
+    for key, value in optional_fields.items():
+        if value is not None:
+            payload[key] = value
+    return payload
 
 
 def play_pcm_stream(response, sample_rate, speed=1.0):

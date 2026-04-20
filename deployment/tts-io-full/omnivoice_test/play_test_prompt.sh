@@ -7,12 +7,28 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 ENV_FILE="$ROOT_DIR/.env"
+OMNIVOICE_ENV_FILE="${OMNIVOICE_SERVER_ENV_FILE:-$ROOT_DIR/omnivoice-server/.env}"
+OPENCAST_OMNIVOICE_ENV_FILE="${OPENCAST_OMNIVOICE_ENV_FILE:-$ROOT_DIR/omnivoice-server/.opencast.env}"
 VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 
 if [[ -f "$ENV_FILE" ]]; then
   set -a
   # shellcheck disable=SC1090
   source "$ENV_FILE"
+  set +a
+fi
+
+if [[ -f "$OMNIVOICE_ENV_FILE" ]]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "$OMNIVOICE_ENV_FILE"
+  set +a
+fi
+
+if [[ -f "$OPENCAST_OMNIVOICE_ENV_FILE" ]]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "$OPENCAST_OMNIVOICE_ENV_FILE"
   set +a
 fi
 
@@ -64,6 +80,14 @@ REQUEST_JSON="$(
 import json
 import os
 
+def env_bool(name):
+    value = os.environ.get(name, "").strip().lower()
+    if value in {"1", "true", "yes", "on"}:
+        return True
+    if value in {"0", "false", "no", "off"}:
+        return False
+    return None
+
 payload = {
     "model": os.environ["MODEL_NAME"],
     "input": os.environ["TEXT"],
@@ -73,6 +97,22 @@ payload = {
 }
 if os.environ.get("INSTRUCTIONS"):
     payload["instructions"] = os.environ["INSTRUCTIONS"]
+optional = {
+    "num_step": int(os.environ["OMNIVOICE_TTS_NUM_STEP"]) if os.environ.get("OMNIVOICE_TTS_NUM_STEP") else None,
+    "guidance_scale": float(os.environ["OMNIVOICE_TTS_GUIDANCE_SCALE"]) if os.environ.get("OMNIVOICE_TTS_GUIDANCE_SCALE") else None,
+    "denoise": env_bool("OMNIVOICE_TTS_DENOISE"),
+    "t_shift": float(os.environ["OMNIVOICE_TTS_T_SHIFT"]) if os.environ.get("OMNIVOICE_TTS_T_SHIFT") else None,
+    "position_temperature": float(os.environ["OMNIVOICE_TTS_POSITION_TEMPERATURE"]) if os.environ.get("OMNIVOICE_TTS_POSITION_TEMPERATURE") else None,
+    "class_temperature": float(os.environ["OMNIVOICE_TTS_CLASS_TEMPERATURE"]) if os.environ.get("OMNIVOICE_TTS_CLASS_TEMPERATURE") else None,
+    "duration": float(os.environ["OMNIVOICE_TTS_DURATION"]) if os.environ.get("OMNIVOICE_TTS_DURATION") else None,
+    "language": os.environ.get("OMNIVOICE_TTS_LANGUAGE") or None,
+    "layer_penalty_factor": float(os.environ["OMNIVOICE_TTS_LAYER_PENALTY_FACTOR"]) if os.environ.get("OMNIVOICE_TTS_LAYER_PENALTY_FACTOR") else None,
+    "preprocess_prompt": env_bool("OMNIVOICE_TTS_PREPROCESS_PROMPT"),
+    "postprocess_output": env_bool("OMNIVOICE_TTS_POSTPROCESS_OUTPUT"),
+    "audio_chunk_duration": float(os.environ["OMNIVOICE_TTS_AUDIO_CHUNK_DURATION"]) if os.environ.get("OMNIVOICE_TTS_AUDIO_CHUNK_DURATION") else None,
+    "audio_chunk_threshold": float(os.environ["OMNIVOICE_TTS_AUDIO_CHUNK_THRESHOLD"]) if os.environ.get("OMNIVOICE_TTS_AUDIO_CHUNK_THRESHOLD") else None,
+}
+payload.update({k: v for k, v in optional.items() if v is not None})
 print(json.dumps(payload))
 PY
 )"

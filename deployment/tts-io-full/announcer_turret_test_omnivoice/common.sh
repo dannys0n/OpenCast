@@ -7,6 +7,8 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 ENV_FILE="$ROOT_DIR/.env"
+OMNIVOICE_ENV_FILE="${OMNIVOICE_SERVER_ENV_FILE:-$ROOT_DIR/omnivoice-server/.env}"
+OPENCAST_OMNIVOICE_ENV_FILE="${OPENCAST_OMNIVOICE_ENV_FILE:-$ROOT_DIR/omnivoice-server/.opencast.env}"
 TEXT_LLM_ENV_FILE="${TEXT_LLM_ENV_FILE:-$ROOT_DIR/../text-llm/.env}"
 VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 START_SCRIPT="${OMNIVOICE_START_SCRIPT:-$ROOT_DIR/start_omnivoice_model.sh}"
@@ -15,6 +17,20 @@ if [[ -f "$ENV_FILE" ]]; then
   set -a
   # shellcheck disable=SC1090
   source "$ENV_FILE"
+  set +a
+fi
+
+if [[ -f "$OMNIVOICE_ENV_FILE" ]]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "$OMNIVOICE_ENV_FILE"
+  set +a
+fi
+
+if [[ -f "$OPENCAST_OMNIVOICE_ENV_FILE" ]]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "$OPENCAST_OMNIVOICE_ENV_FILE"
   set +a
 fi
 
@@ -41,6 +57,24 @@ MODEL_TIMEOUT="${MODEL_TIMEOUT:-45}"
 
 ANNOUNCER_VOICE_NAME="${ANNOUNCER_VOICE_NAME:-clone:announcer_e0}"
 TURRET_VOICE_NAME="${TURRET_VOICE_NAME:-clone:turret_e0}"
+
+voice_name_for_caster() {
+  local caster_name="$1"
+  local normalized
+  normalized="$(printf '%s' "${caster_name:-}" | tr '[:upper:]' '[:lower:]' | xargs)"
+
+  case "$normalized" in
+    caster0|play_by_play)
+      printf '%s\n' "$ANNOUNCER_VOICE_NAME"
+      ;;
+    caster1|color)
+      printf '%s\n' "$TURRET_VOICE_NAME"
+      ;;
+    *)
+      printf '%s\n' "$caster_name"
+      ;;
+  esac
+}
 
 normalize_omnivoice_voice_name() {
   local voice_name="$1"
@@ -151,6 +185,35 @@ print(json.dumps({
     "input": os.environ["TEXT"],
     "stream": True,
     "response_format": "pcm",
+    **{
+        key: value for key, value in {
+            "num_step": int(os.environ["OMNIVOICE_TTS_NUM_STEP"]) if os.environ.get("OMNIVOICE_TTS_NUM_STEP") else None,
+            "guidance_scale": float(os.environ["OMNIVOICE_TTS_GUIDANCE_SCALE"]) if os.environ.get("OMNIVOICE_TTS_GUIDANCE_SCALE") else None,
+            "denoise": (
+                True if os.environ.get("OMNIVOICE_TTS_DENOISE", "").strip().lower() in {"1", "true", "yes", "on"}
+                else False if os.environ.get("OMNIVOICE_TTS_DENOISE", "").strip().lower() in {"0", "false", "no", "off"}
+                else None
+            ),
+            "t_shift": float(os.environ["OMNIVOICE_TTS_T_SHIFT"]) if os.environ.get("OMNIVOICE_TTS_T_SHIFT") else None,
+            "position_temperature": float(os.environ["OMNIVOICE_TTS_POSITION_TEMPERATURE"]) if os.environ.get("OMNIVOICE_TTS_POSITION_TEMPERATURE") else None,
+            "class_temperature": float(os.environ["OMNIVOICE_TTS_CLASS_TEMPERATURE"]) if os.environ.get("OMNIVOICE_TTS_CLASS_TEMPERATURE") else None,
+            "duration": float(os.environ["OMNIVOICE_TTS_DURATION"]) if os.environ.get("OMNIVOICE_TTS_DURATION") else None,
+            "language": os.environ["OMNIVOICE_TTS_LANGUAGE"] if os.environ.get("OMNIVOICE_TTS_LANGUAGE") else None,
+            "layer_penalty_factor": float(os.environ["OMNIVOICE_TTS_LAYER_PENALTY_FACTOR"]) if os.environ.get("OMNIVOICE_TTS_LAYER_PENALTY_FACTOR") else None,
+            "preprocess_prompt": (
+                True if os.environ.get("OMNIVOICE_TTS_PREPROCESS_PROMPT", "").strip().lower() in {"1", "true", "yes", "on"}
+                else False if os.environ.get("OMNIVOICE_TTS_PREPROCESS_PROMPT", "").strip().lower() in {"0", "false", "no", "off"}
+                else None
+            ),
+            "postprocess_output": (
+                True if os.environ.get("OMNIVOICE_TTS_POSTPROCESS_OUTPUT", "").strip().lower() in {"1", "true", "yes", "on"}
+                else False if os.environ.get("OMNIVOICE_TTS_POSTPROCESS_OUTPUT", "").strip().lower() in {"0", "false", "no", "off"}
+                else None
+            ),
+            "audio_chunk_duration": float(os.environ["OMNIVOICE_TTS_AUDIO_CHUNK_DURATION"]) if os.environ.get("OMNIVOICE_TTS_AUDIO_CHUNK_DURATION") else None,
+            "audio_chunk_threshold": float(os.environ["OMNIVOICE_TTS_AUDIO_CHUNK_THRESHOLD"]) if os.environ.get("OMNIVOICE_TTS_AUDIO_CHUNK_THRESHOLD") else None,
+        }.items() if value is not None
+    }
 }))
 PY
 }

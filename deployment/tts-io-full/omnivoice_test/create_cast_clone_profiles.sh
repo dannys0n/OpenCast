@@ -7,6 +7,8 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 ENV_FILE="$ROOT_DIR/.env"
+OMNIVOICE_ENV_FILE="${OMNIVOICE_SERVER_ENV_FILE:-$ROOT_DIR/omnivoice-server/.env}"
+OPENCAST_OMNIVOICE_ENV_FILE="${OPENCAST_OMNIVOICE_ENV_FILE:-$ROOT_DIR/omnivoice-server/.opencast.env}"
 VENV_PYTHON="$ROOT_DIR/.venv/bin/python"
 VOICE_SOURCE_DIR="${OMNIVOICE_CAST_VOICE_SOURCE_DIR:-$ROOT_DIR/voices}"
 STATE_DIR="${OMNIVOICE_CAST_STATE_DIR:-$ROOT_DIR/.state/omnivoice-cast-clones}"
@@ -16,6 +18,20 @@ if [[ -f "$ENV_FILE" ]]; then
   set -a
   # shellcheck disable=SC1090
   source "$ENV_FILE"
+  set +a
+fi
+
+if [[ -f "$OMNIVOICE_ENV_FILE" ]]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "$OMNIVOICE_ENV_FILE"
+  set +a
+fi
+
+if [[ -f "$OPENCAST_OMNIVOICE_ENV_FILE" ]]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "$OPENCAST_OMNIVOICE_ENV_FILE"
   set +a
 fi
 
