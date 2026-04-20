@@ -11,7 +11,7 @@ ensure_test_prereqs
 ensure_omnivoice_server
 
 LINE_COUNT="${LINE_COUNT:-4}"
-VOICE_NAME="${VOICE_NAME:-$ANNOUNCER_VOICE_NAME}"
+VOICE_NAME="${OMNIVOICE_TEST_VOICE_NAME:-$ANNOUNCER_VOICE_NAME}"
 SCENARIO_TEXT="${SCENARIO_TEXT:-On Mirage in a packed arena, the star rifler cracks open A with two instant headshots, the lurker catches the rotate through connector, and the last defender is denied on the smoke defuse as the crowd erupts.}"
 
 SYSTEM_PROMPT="You are an elite Counter-Strike 2 play-by-play caster. Return short spoken lines for live commentary."

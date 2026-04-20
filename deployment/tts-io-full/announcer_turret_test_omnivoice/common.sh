@@ -27,7 +27,7 @@ fi
 
 OMNIVOICE_HOST="${OMNIVOICE_HOST:-${TTS_SERVER_HOST:-127.0.0.1}}"
 OMNIVOICE_PORT="${OMNIVOICE_PORT:-${TTS_SERVER_PORT:-8881}}"
-OMNIVOICE_API_BASE="${OMNIVOICE_API_BASE:-http://${OMNIVOICE_HOST}:${OMNIVOICE_PORT}}"
+OMNIVOICE_API_BASE="${OMNIVOICE_API_BASE:-${TTS_API_BASE:-http://${OMNIVOICE_HOST}:${OMNIVOICE_PORT}}}"
 OMNIVOICE_MODEL_NAME="${OMNIVOICE_MODEL_NAME:-tts-1}"
 OMNIVOICE_SAMPLE_RATE="${OMNIVOICE_SAMPLE_RATE:-24000}"
 OMNIVOICE_SERVER_LOG="${OMNIVOICE_SERVER_LOG:-/tmp/omnivoice_announcer_turret_test.log}"
@@ -41,6 +41,30 @@ MODEL_TIMEOUT="${MODEL_TIMEOUT:-45}"
 
 ANNOUNCER_VOICE_NAME="${ANNOUNCER_VOICE_NAME:-clone:announcer_e0}"
 TURRET_VOICE_NAME="${TURRET_VOICE_NAME:-clone:turret_e0}"
+
+normalize_omnivoice_voice_name() {
+  local voice_name="$1"
+  local trimmed
+  trimmed="$(printf '%s' "${voice_name:-}" | xargs)"
+
+  case "$trimmed" in
+    "" )
+      printf '%s\n' "$ANNOUNCER_VOICE_NAME"
+      ;;
+    auto|alloy|ash|ballad|cedar|coral|echo|fable|marin|nova|onyx|sage|shimmer|verse)
+      printf '%s\n' "$trimmed"
+      ;;
+    clone:*|design:*)
+      printf '%s\n' "$trimmed"
+      ;;
+    *","*|*" accent"*|*" pitch"* )
+      printf 'design:%s\n' "$trimmed"
+      ;;
+    * )
+      printf 'clone:%s\n' "$trimmed"
+      ;;
+  esac
+}
 
 SERVER_PID=""
 REQUEST_PIDS=()
@@ -111,8 +135,10 @@ ensure_omnivoice_server() {
 build_tts_request_json() {
   local voice_name="$1"
   local text="$2"
+  local normalized_voice_name
+  normalized_voice_name="$(normalize_omnivoice_voice_name "$voice_name")"
 
-  VOICE_NAME="$voice_name" \
+  VOICE_NAME="$normalized_voice_name" \
   TEXT="$text" \
   MODEL_NAME="$OMNIVOICE_MODEL_NAME" \
   "$VENV_PYTHON" - <<'PY'
@@ -133,11 +159,14 @@ stream_voice() {
   local voice_name="$1"
   local text="$2"
   local request_json
+  local normalized_voice_name
 
-  request_json="$(build_tts_request_json "$voice_name" "$text")"
+  normalized_voice_name="$(normalize_omnivoice_voice_name "$voice_name")"
+
+  request_json="$(build_tts_request_json "$normalized_voice_name" "$text")"
 
   echo
-  echo "Prompting $voice_name"
+  echo "Prompting $normalized_voice_name"
   echo "Text: $text"
 
   curl -fsS \
@@ -151,10 +180,12 @@ stream_voice_async() {
   local voice_name="$1"
   local text="$2"
   local request_json
+  local normalized_voice_name
 
-  request_json="$(build_tts_request_json "$voice_name" "$text")"
+  normalized_voice_name="$(normalize_omnivoice_voice_name "$voice_name")"
+  request_json="$(build_tts_request_json "$normalized_voice_name" "$text")"
 
-  echo "Dispatching $voice_name"
+  echo "Dispatching $normalized_voice_name"
   curl -fsS \
     -H "Content-Type: application/json" \
     -d "$request_json" \

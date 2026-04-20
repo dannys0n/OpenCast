@@ -18,7 +18,7 @@ fi
 
 HOST="${OMNIVOICE_HOST:-${TTS_SERVER_HOST:-127.0.0.1}}"
 PORT="${OMNIVOICE_PORT:-${TTS_SERVER_PORT:-8881}}"
-API_BASE="${OMNIVOICE_API_BASE:-http://$HOST:$PORT}"
+API_BASE="${OMNIVOICE_API_BASE:-${TTS_API_BASE:-http://$HOST:$PORT}}"
 VOICE_NAME="${OMNIVOICE_TEST_VOICE:-ballad}"
 TEXT="${*:-This is a simple OmniVoice streaming test. The audio should start playing as PCM as soon as the first chunk arrives.}"
 INSTRUCTIONS="${OMNIVOICE_TEST_INSTRUCTIONS:-}"
