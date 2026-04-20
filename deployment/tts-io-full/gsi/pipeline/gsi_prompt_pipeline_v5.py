@@ -49,6 +49,7 @@ class PipelineState:
     latest_snapshot: dict | None = None
     previous_snapshot: dict | None = None
     payload_count: int = 0
+    event_followup_toggle: int = 0
     previous_event_summary: list | None = None
     last_event_prompt_at: float = 0.0
     last_interval_prompt_at: float = 0.0
@@ -105,6 +106,7 @@ def reset_runtime_session_state(*, keep_current_snapshot=False):
     if not keep_current_snapshot:
         PIPELINE_STATE.previous_snapshot = None
         PIPELINE_STATE.latest_snapshot = None
+    PIPELINE_STATE.event_followup_toggle = 0
     PIPELINE_STATE.previous_event_summary = []
     PIPELINE_STATE.last_event_prompt_at = 0.0
     PIPELINE_STATE.last_interval_prompt_at = 0.0
@@ -230,13 +232,19 @@ def simplify_filtered_batch_for_training(filtered_batch):
     return copy.deepcopy(filtered_batch.get("events", []))
 
 
-def build_request(mode):
+def next_event_followup_caster():
+    caster = "caster1" if PIPELINE_STATE.event_followup_toggle % 2 == 0 else "caster0"
+    PIPELINE_STATE.event_followup_toggle += 1
+    return caster
+
+
+def build_request(mode, *, followup_caster="caster1"):
     if mode == "event_bundle":
         return {
             "mode": "event_bundle",
             "lines": [
                 {"caster": "caster0", "style": "play_by_play_event"},
-                {"caster": "caster1", "style": "play_by_play_follow_up"},
+                {"caster": followup_caster, "style": "play_by_play_follow_up"},
             ],
         }
 
@@ -254,7 +262,7 @@ def build_request(mode):
         "mode": "idle_color",
         "lines": [
             {"caster": "caster1", "style": "idle_color"},
-            {"caster": "caster1", "style": "idle_color"},
+            {"caster": "caster0", "style": "idle_color"},
             {"caster": "caster1", "style": "idle_color"},
         ],
     }
@@ -370,11 +378,11 @@ def build_previous_events_summary(events):
     return [simplified] if simplified else []
 
 
-def build_training_wrapper(filtered_batch, current_snapshot, payload_sequence, previous_events):
+def build_training_wrapper(filtered_batch, current_snapshot, payload_sequence, previous_events, *, followup_caster="caster1"):
     current_events = simplify_filtered_batch_for_training(filtered_batch)
     context = build_training_context(current_snapshot)
     map_name = as_dict(as_dict(current_snapshot).get("map")).get("name")
-    request = build_request("event_bundle")
+    request = build_request("event_bundle", followup_caster=followup_caster)
     derived_tactical_summary = build_derived_tactical_summary(
         map_name=map_name,
         alive_players=context.get("alive_players", []),
@@ -615,12 +623,14 @@ class Handler(BaseHTTPRequestHandler):
         if filtered_batch["events"]:
             with STATE_LOCK:
                 previous_events = copy.deepcopy(PIPELINE_STATE.previous_event_summary or [])
+                followup_caster = next_event_followup_caster()
 
             training_wrapper = build_training_wrapper(
                 filtered_batch,
                 current_snapshot,
                 payload_sequence,
                 previous_events,
+                followup_caster=followup_caster,
             )
 
             append_pretty_json_record(FILTERED_EVENTS_PATH, filtered_batch)

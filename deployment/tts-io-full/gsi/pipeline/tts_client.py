@@ -404,6 +404,120 @@ def stream_buffer_file_to_stdin(player_stdin, buffer_path, result):
         time.sleep(0.01)
 
 
+def stream_prefetched_tts_playback_interruptibly(
+    config,
+    tts_prompt,
+    buffer_path,
+    fetch_result,
+    interrupt_event,
+    *,
+    startup_timeout_seconds=8.0,
+    stall_timeout_seconds=5.0,
+    max_playback_seconds=None,
+):
+    bytes_per_frame = 2
+    player = None
+    interrupted = False
+    offset = 0
+    started_at = time.monotonic()
+    last_progress_at = started_at
+    playback_seconds = 0.0
+
+    if max_playback_seconds is None:
+        commentary = str(tts_prompt.get("commentary") or "")
+        max_playback_seconds = max(8.0, min(30.0, 4.0 + (len(commentary) * 0.09)))
+
+    def close_player_immediately():
+        nonlocal player
+        if player is None:
+            return
+        if player.stdin is not None:
+            try:
+                player.stdin.close()
+            except Exception:
+                pass
+            player.stdin = None
+        if player.poll() is None:
+            try:
+                player.kill()
+            except Exception:
+                pass
+            try:
+                player.wait(timeout=0.5)
+            except Exception:
+                pass
+
+    try:
+        player = open_play_process(config.sample_rate, speed=float(tts_prompt.get("speed") or 1.0))
+        if player.stdin is None:
+            raise RuntimeError("failed to open stdin for SoX play")
+
+        while True:
+            if interrupt_event.is_set():
+                interrupted = True
+                return {"interrupted": True}
+
+            size = buffer_path.stat().st_size if buffer_path.exists() else 0
+            available = size - offset
+            playable = available - (available % bytes_per_frame)
+
+            if playable > 0:
+                with buffer_path.open("rb") as handle:
+                    handle.seek(offset)
+                    remaining = playable
+                    while remaining > 0:
+                        if interrupt_event.is_set():
+                            interrupted = True
+                            return {"interrupted": True}
+                        chunk = handle.read(min(16384, remaining))
+                        if not chunk:
+                            break
+                        if len(chunk) % bytes_per_frame != 0:
+                            interrupt_event.set()
+                            raise RuntimeError("prefetched TTS buffer returned misaligned PCM data")
+                        player.stdin.write(chunk)
+                        player.stdin.flush()
+                        offset += len(chunk)
+                        remaining -= len(chunk)
+                        last_progress_at = time.monotonic()
+                        playback_seconds += len(chunk) / (config.sample_rate * bytes_per_frame)
+                        if playback_seconds > max_playback_seconds:
+                            interrupt_event.set()
+                            raise RuntimeError(
+                                f"TTS playback exceeded safety limit of {max_playback_seconds:.1f}s"
+                            )
+                continue
+
+            if fetch_result.get("done"):
+                if not fetch_result.get("ok"):
+                    if fetch_result.get("cancelled"):
+                        interrupted = True
+                        return {"interrupted": True}
+                    raise RuntimeError(fetch_result.get("error") or "TTS request failed")
+                break
+
+            now = time.monotonic()
+            if playback_seconds == 0.0 and now - started_at > startup_timeout_seconds:
+                interrupt_event.set()
+                raise RuntimeError("prefetched TTS stream timed out before any audio arrived")
+            if playback_seconds > 0.0 and now - last_progress_at > stall_timeout_seconds:
+                interrupt_event.set()
+                raise RuntimeError("prefetched TTS stream stalled during playback")
+
+            time.sleep(0.01)
+
+        player.stdin.close()
+        player.stdin = None
+        return_code = player.wait()
+        if return_code != 0:
+            raise RuntimeError(f"SoX play exited with status {return_code}")
+        return {"interrupted": False}
+    finally:
+        close_player_immediately()
+        if interrupt_event.is_set():
+            interrupted = True
+
+
 def stream_tts_sequence_playback(config, tts_prompts):
     if not tts_prompts:
         return {"line_count": 0}

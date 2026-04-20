@@ -12,6 +12,9 @@ SPEC.loader.exec_module(MODULE)
 
 
 class GsiPromptPipelineV5Tests(unittest.TestCase):
+    def setUp(self):
+        MODULE.PIPELINE_STATE.event_followup_toggle = 0
+
     def test_build_training_wrapper_adds_tactical_summary_and_request(self):
         filtered_batch = {
             "created_at": "2026-04-12T07:30:00",
@@ -122,6 +125,24 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                 "output": {
                     "lines": ["", ""],
                 },
+            },
+        )
+
+    def test_next_event_followup_caster_alternates_between_casters(self):
+        self.assertEqual(MODULE.next_event_followup_caster(), "caster1")
+        self.assertEqual(MODULE.next_event_followup_caster(), "caster0")
+        self.assertEqual(MODULE.next_event_followup_caster(), "caster1")
+
+    def test_build_request_idle_color_alternates_casters(self):
+        self.assertEqual(
+            MODULE.build_request("idle_color"),
+            {
+                "mode": "idle_color",
+                "lines": [
+                    {"caster": "caster1", "style": "idle_color"},
+                    {"caster": "caster0", "style": "idle_color"},
+                    {"caster": "caster1", "style": "idle_color"},
+                ],
             },
         )
 

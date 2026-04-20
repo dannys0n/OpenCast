@@ -32,12 +32,15 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.original_build_text_llm_config = MODULE.build_text_llm_config
         self.original_interval_mode_index = MODULE.INTERVAL_MODE_INDEX
         self.original_choose_chemistry_line_set = MODULE.choose_chemistry_line_set
+        self.original_start_prefetch_for_item = MODULE.start_prefetch_for_item
+        self.original_ensure_head_prefetch = MODULE.ensure_head_prefetch
 
         MODULE.STATE_DIR = self.state_dir
         MODULE.PROMPT_RUNTIME_HISTORY_PATH = self.state_dir / "prompt_runtime_pretty.jsonl"
         MODULE.PROMPT_RUNTIME_LATEST_PATH = self.state_dir / "prompt_runtime_latest.json"
         MODULE.PROMPT_QUEUE_STATE_PATH = self.state_dir / "prompt_queue_state.json"
         MODULE.ensure_queue_worker = lambda repo_root: None
+        MODULE.ensure_head_prefetch = lambda repo_root, *, tts_config=None: False
         MODULE.PLAYBACK_QUEUE = deque()
         MODULE.CURRENT_PLAYBACK = None
         MODULE.ITEM_SEQUENCE = 0
@@ -55,6 +58,8 @@ class PromptQueueV5Tests(unittest.TestCase):
         MODULE.build_text_llm_config = self.original_build_text_llm_config
         MODULE.INTERVAL_MODE_INDEX = self.original_interval_mode_index
         MODULE.choose_chemistry_line_set = self.original_choose_chemistry_line_set
+        MODULE.start_prefetch_for_item = self.original_start_prefetch_for_item
+        MODULE.ensure_head_prefetch = self.original_ensure_head_prefetch
         self.temp_dir.cleanup()
 
     def test_extract_commentary_lines_prefers_clean_lines(self):
@@ -268,6 +273,90 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertEqual(event_types, ["kill"])
         self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [14])
 
+    def test_prepare_queue_for_event_trigger_cancels_prefetch_for_trimmed_item(self):
+        prefetched_item = {
+            "id": 21,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Second frag.",
+            "payload_sequence": 41,
+            "source": "event",
+            "event_family": "kill",
+            "kill_counts": {"ct": 1, "t": 0},
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+            "prefetch_started": True,
+            "prefetch_cleanup_pending": False,
+            "prefetch_cancel_event": threading.Event(),
+        }
+        kept_bomb_event = {
+            "id": 22,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Bomb goes down.",
+            "payload_sequence": 42,
+            "source": "event",
+            "event_family": "other",
+            "event_types": ["bomb_event"],
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+            "prefetch_started": False,
+            "prefetch_cleanup_pending": False,
+        }
+        MODULE.CURRENT_PLAYBACK = {
+            "id": 20,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Opening frag.",
+            "payload_sequence": 40,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.PLAYBACK_QUEUE.extend([prefetched_item, kept_bomb_event])
+
+        MODULE.prepare_queue_for_event_trigger(
+            [{"event_type": "kill", "killer": {"team": "T"}}],
+            compact_combat_backlog=True,
+        )
+
+        self.assertTrue(prefetched_item["prefetch_cancel_event"].is_set())
+
+    def test_enqueue_prompt_items_starts_prefetch_for_head_of_queue(self):
+        started = []
+
+        def fake_start_prefetch_for_item(item, repo_root, *, tts_config=None):
+            started.append((item["id"], str(repo_root)))
+            item["prefetch_started"] = True
+            return True
+
+        MODULE.start_prefetch_for_item = fake_start_prefetch_for_item
+        MODULE.ensure_head_prefetch = self.original_ensure_head_prefetch
+
+        first_item = MODULE.build_queue_item(
+            commentary="First sentence.",
+            caster="caster0",
+            prompt_style="play_by_play_event",
+            tag="event",
+            payload_sequence=50,
+            source="event",
+        )
+        second_item = MODULE.build_queue_item(
+            commentary="Second sentence.",
+            caster="caster1",
+            prompt_style="play_by_play_follow_up",
+            tag="followup",
+            payload_sequence=50,
+            source="event",
+        )
+
+        MODULE.enqueue_prompt_items([first_item, second_item], Path("/tmp/opencast"))
+
+        self.assertEqual(started, [(first_item["id"], "/tmp/opencast")])
+
     def test_process_event_wrapper_queues_first_line_as_event_and_rest_as_followups(self):
         captured = {}
 
@@ -438,6 +527,55 @@ class PromptQueueV5Tests(unittest.TestCase):
             [item["tag"] for item in record["queued_items"]],
             ["event", "followup", "followup"],
         )
+
+    def test_process_event_wrapper_uses_followup_caster_from_request(self):
+        captured = {}
+
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            captured["system_prompt"] = system_prompt
+            captured["user_prompt"] = user_prompt
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "Bread kills Felix.\nThat keeps Long under pressure.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+
+        wrapper = {
+            "input": {
+                "context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Bread", "team": "CT", "map_callout": "Long"}],
+                },
+                "previous_events": [],
+                "current_events": [
+                    {
+                        "event_type": "kill",
+                        "killer": {"name": "Bread", "team": "CT", "map_callout": "Long"},
+                        "victim": {"name": "Felix", "team": "T"},
+                    }
+                ],
+                "derived_tactical_summary": {"confidence": "medium"},
+                "request": {
+                    "mode": "event_bundle",
+                    "lines": [
+                        {"caster": "caster0", "style": "play_by_play_event"},
+                        {"caster": "caster0", "style": "play_by_play_follow_up"},
+                    ],
+                },
+            }
+        }
+
+        record = MODULE.process_event_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=18, snapshot={})
+
+        self.assertEqual(record["status"], "completed")
+        self.assertEqual([item["caster"] for item in record["queued_items"]], ["caster0", "caster0"])
+        self.assertIn("Line 2: short caster0 follow-up line", captured["user_prompt"])
 
     def test_process_event_wrapper_compacts_backlog_by_rewriting_current_events_for_llm(self):
         captured = {}
@@ -734,13 +872,14 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertEqual(record["status"], "completed")
         self.assertEqual(record["mode"], "idle_color")
         self.assertEqual(len(record["queued_items"]), 3)
-        self.assertEqual([item["caster"] for item in record["queued_items"]], ["caster1", "caster1", "caster1"])
+        self.assertEqual([item["caster"] for item in record["queued_items"]], ["caster1", "caster0", "caster1"])
         self.assertEqual([item["tag"] for item in record["queued_items"]], ["idle", "idle", "idle"])
         self.assertEqual(
             [item["commentary"] for item in record["queued_items"]],
             ["Mid is quiet.", "CT are spread thin.", "This could turn fast."],
         )
         self.assertIn("Live context:", captured["user_prompt"])
+        self.assertIn("Requested caster order: caster1, caster0, caster1", captured["user_prompt"])
         self.assertNotIn('"previous_events"', captured["user_prompt"])
         self.assertIn('"tactical_facts"', captured["user_prompt"])
 
@@ -789,6 +928,10 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertEqual(
             [item["commentary"] for item in record["queued_items"]],
             ["Mid is quiet.", "CT are spread thin.", "This could turn fast."],
+        )
+        self.assertEqual(
+            [item["caster"] for item in record["queued_items"]],
+            ["caster1", "caster0", "caster0"],
         )
 
     def test_process_interval_wrapper_conversation_uses_chemistry_lines_without_model_call(self):

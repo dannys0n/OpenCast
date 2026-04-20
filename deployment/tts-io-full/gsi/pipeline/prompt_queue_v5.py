@@ -19,6 +19,7 @@ from tts_client import (
     build_config as build_tts_config,
     fetch_tts_audio_to_file,
     open_play_process,
+    stream_prefetched_tts_playback_interruptibly,
     stream_tts_playback_interruptibly as stream_tts_playback_interruptibly_direct,
 )
 
@@ -421,11 +422,16 @@ def reset_prompt_runtime_state():
         path.write_text("", encoding="utf-8")
     reset_log_clock()
     with QUEUE_CONDITION:
+        items_to_cleanup = list(PLAYBACK_QUEUE)
+        if CURRENT_PLAYBACK is not None:
+            items_to_cleanup.append(CURRENT_PLAYBACK)
         PLAYBACK_QUEUE = deque()
         CURRENT_PLAYBACK = None
         QUEUE_WORKER_THREAD = None
         INTERVAL_MODE_INDEX = 0
         ITEM_SEQUENCE = 0
+    for item in items_to_cleanup:
+        finalize_item_prefetch(item, cancel=True, wait=False)
 
 
 def next_item_sequence():
@@ -606,9 +612,32 @@ def build_focused_context(current_events):
     return {}
 
 
-def build_event_system_prompt(current_events):
+def event_followup_caster_from_wrapper(wrapper):
+    request = as_dict(as_dict(as_dict(wrapper).get("input")).get("request"))
+    request_lines = request.get("lines") or []
+    if len(request_lines) > 1:
+        caster = normalize_caster_id(as_dict(request_lines[1]).get("caster"))
+        if caster in {CASTER0, CASTER1}:
+            return caster
+    return CASTER1
+
+
+def interval_casters_from_wrapper(wrapper):
+    request = as_dict(as_dict(as_dict(wrapper).get("input")).get("request"))
+    request_lines = request.get("lines") or []
+    casters = []
+    for request_line in request_lines:
+        caster = normalize_caster_id(as_dict(request_line).get("caster"))
+        if caster in {CASTER0, CASTER1}:
+            casters.append(caster)
+    if casters:
+        return casters
+    return [CASTER1, CASTER0, CASTER1]
+
+
+def build_event_system_prompt(current_events, *, followup_caster=CASTER1):
     few_shots = select_few_shot_examples(
-        casters={CASTER0, CASTER1},
+        casters={CASTER0, followup_caster},
         prompt_styles={"play_by_play_event", "play_by_play_follow_up"},
         current_events=current_events,
         limit=3,
@@ -619,7 +648,7 @@ def build_event_system_prompt(current_events):
         {
             "event_instruction": config.get("event_instruction", "").strip(),
             "caster0": CASTER0,
-            "caster1": CASTER1,
+            "caster1": followup_caster,
             "few_shots_json": json.dumps(few_shots, indent=2, sort_keys=True),
         },
     )
@@ -650,6 +679,7 @@ def build_interval_system_prompt(conversation_mode):
 
 def build_event_user_prompt(wrapper):
     wrapper_input = as_dict(as_dict(wrapper).get("input"))
+    followup_caster = event_followup_caster_from_wrapper(wrapper)
     prompt_input = strip_empty(
         {
             "previous_events": wrapper_input.get("previous_events"),
@@ -661,7 +691,7 @@ def build_event_user_prompt(wrapper):
     return (
         "Generate exactly 2 lines.\n"
         f"Line 1: very short {CASTER0} event trigger call using only Focused context and Current events.\n"
-        f"Line 2: short {CASTER1} follow-up line that may use Tactical context.\n"
+        f"Line 2: short {followup_caster} follow-up line that may use Tactical context.\n"
         "Use tactical_facts as facts to reason from, not text to copy.\n"
         "Do not add labels or numbering.\n\n"
         "Focused context:\n"
@@ -675,6 +705,7 @@ def build_event_user_prompt(wrapper):
 
 def build_interval_user_prompt(wrapper, conversation_mode):
     wrapper_input = as_dict(as_dict(wrapper).get("input"))
+    caster_sequence = interval_casters_from_wrapper(wrapper)
     prompt_input = strip_empty(
         {
             "derived_tactical_summary": wrapper_input.get("derived_tactical_summary"),
@@ -684,13 +715,15 @@ def build_interval_user_prompt(wrapper, conversation_mode):
     mode_text = (
         f"Generate exactly 3 lines for a short {CASTER0}/{CASTER1} idle exchange."
         if conversation_mode
-        else f"Generate exactly 3 short idle {CASTER1} lines."
+        else "Generate exactly 3 short idle analysis lines following the requested caster order."
     )
+    requested_caster_order = ", ".join(caster_sequence)
     return (
         f"{mode_text}\n"
         "Use the Live context below.\n"
         "Use tactical_facts as facts to reason from, not text to copy.\n"
         "Do not add labels or numbering.\n\n"
+        f"Requested caster order: {requested_caster_order}\n\n"
         "Live context:\n"
         f"{json.dumps(build_idle_prompt_context(wrapper_input), indent=2, sort_keys=True)}\n\n"
         "Prompt input:\n"
@@ -819,6 +852,102 @@ def play_tts_prompt_interruptibly(tts_config, tts_prompt, interrupt_event):
     return stream_tts_playback_interruptibly_direct(tts_config, tts_prompt, interrupt_event)
 
 
+def _cleanup_prefetch_resources(item, *, wait=False):
+    temp_dir_obj = item.get("prefetch_temp_dir_obj")
+    thread = item.get("prefetch_thread")
+    if temp_dir_obj is None:
+        return
+
+    if wait:
+        if thread is not None:
+            thread.join()
+        temp_dir_obj.cleanup()
+        item["prefetch_temp_dir_obj"] = None
+        item["prefetch_cleanup_pending"] = False
+        return
+
+    if thread is None or not thread.is_alive():
+        temp_dir_obj.cleanup()
+        item["prefetch_temp_dir_obj"] = None
+        item["prefetch_cleanup_pending"] = False
+        return
+
+    if item.get("prefetch_cleanup_pending"):
+        return
+
+    item["prefetch_cleanup_pending"] = True
+
+    def cleanup_worker():
+        thread.join()
+        temp_dir_obj.cleanup()
+        item["prefetch_temp_dir_obj"] = None
+        item["prefetch_cleanup_pending"] = False
+
+    threading.Thread(
+        target=cleanup_worker,
+        daemon=True,
+        name=f"gsi-v5-prefetch-cleanup-{item.get('id')}",
+    ).start()
+
+
+def finalize_item_prefetch(item, *, cancel=False, wait=False):
+    if cancel:
+        cancel_event = item.get("prefetch_cancel_event")
+        if cancel_event is not None:
+            cancel_event.set()
+    _cleanup_prefetch_resources(item, wait=wait)
+
+
+def start_prefetch_for_item(item, repo_root, *, tts_config=None):
+    with QUEUE_CONDITION:
+        if item.get("prefetch_started"):
+            return False
+
+    if tts_config is None:
+        tts_config = build_tts_config(repo_root)
+
+    temp_dir_obj = tempfile.TemporaryDirectory(prefix="gsi_v5_tts_prefetch_")
+    buffer_path = Path(temp_dir_obj.name) / f"item_{item['id']}.pcm"
+    buffer_path.touch()
+    cancel_event = threading.Event()
+    result = {"done": False, "ok": False}
+    tts_prompt = build_tts_prompt(
+        item["commentary"],
+        item["caster"],
+        item["prompt_style"],
+        tts_config,
+    )
+    thread = threading.Thread(
+        target=fetch_tts_audio_to_file,
+        args=(tts_config, tts_prompt, buffer_path, result, cancel_event),
+        daemon=True,
+        name=f"gsi-v5-prefetch-{item['id']}",
+    )
+
+    with QUEUE_CONDITION:
+        if item.get("prefetch_started"):
+            temp_dir_obj.cleanup()
+            return False
+        item["prefetch_started"] = True
+        item["prefetch_buffer_path"] = buffer_path
+        item["prefetch_cancel_event"] = cancel_event
+        item["prefetch_result"] = result
+        item["prefetch_thread"] = thread
+        item["prefetch_temp_dir_obj"] = temp_dir_obj
+        item["prefetch_cleanup_pending"] = False
+
+    thread.start()
+    return True
+
+
+def ensure_head_prefetch(repo_root, *, tts_config=None):
+    with QUEUE_CONDITION:
+        candidate = PLAYBACK_QUEUE[0] if PLAYBACK_QUEUE else None
+    if candidate is None:
+        return False
+    return start_prefetch_for_item(candidate, repo_root, tts_config=tts_config)
+
+
 def ensure_queue_worker(repo_root):
     global QUEUE_WORKER_THREAD
     with QUEUE_CONDITION:
@@ -837,23 +966,37 @@ def ensure_queue_worker(repo_root):
                     CURRENT_PLAYBACK = PLAYBACK_QUEUE.popleft()
                     write_queue_state_locked()
 
+                ensure_head_prefetch(repo_root, tts_config=tts_config)
+
+                cancel_prefetch = False
                 try:
+                    tts_prompt = build_tts_prompt(
+                        CURRENT_PLAYBACK["commentary"],
+                        CURRENT_PLAYBACK["caster"],
+                        CURRENT_PLAYBACK["prompt_style"],
+                        tts_config,
+                    )
                     slim_log_tts_start(
                         CURRENT_PLAYBACK["id"],
                         tag=CURRENT_PLAYBACK["tag"],
                         caster=CURRENT_PLAYBACK["caster"],
                     )
-                    playback = play_tts_prompt_interruptibly(
-                        tts_config,
-                        build_tts_prompt(
-                            CURRENT_PLAYBACK["commentary"],
-                            CURRENT_PLAYBACK["caster"],
-                            CURRENT_PLAYBACK["prompt_style"],
+                    if CURRENT_PLAYBACK.get("prefetch_started") and CURRENT_PLAYBACK.get("prefetch_buffer_path") is not None:
+                        playback = stream_prefetched_tts_playback_interruptibly(
                             tts_config,
-                        ),
-                        CURRENT_PLAYBACK["interrupt_event"],
-                    )
+                            tts_prompt,
+                            CURRENT_PLAYBACK["prefetch_buffer_path"],
+                            CURRENT_PLAYBACK.get("prefetch_result") or {},
+                            CURRENT_PLAYBACK["interrupt_event"],
+                        )
+                    else:
+                        playback = play_tts_prompt_interruptibly(
+                            tts_config,
+                            tts_prompt,
+                            CURRENT_PLAYBACK["interrupt_event"],
+                        )
                 except Exception as error:
+                    cancel_prefetch = True
                     CURRENT_PLAYBACK["playback_error"] = str(error)
                     CURRENT_PLAYBACK["playback_result"] = {"failed": True}
                     slim_log_tts_finish(
@@ -865,10 +1008,12 @@ def ensure_queue_worker(repo_root):
                 else:
                     CURRENT_PLAYBACK["playback_result"] = playback
                     if playback.get("interrupted"):
+                        cancel_prefetch = True
                         slim_log_tts_finish(CURRENT_PLAYBACK["id"], "tts interrupted")
                     else:
                         slim_log_tts_finish(CURRENT_PLAYBACK["id"], "tts end")
                 finally:
+                    finalize_item_prefetch(CURRENT_PLAYBACK, cancel=cancel_prefetch, wait=True)
                     CURRENT_PLAYBACK["done_event"].set()
                     with QUEUE_CONDITION:
                         CURRENT_PLAYBACK = None
@@ -886,6 +1031,8 @@ def enqueue_prompt_items(items, repo_root):
 
         write_queue_state_locked()
         QUEUE_CONDITION.notify_all()
+
+    ensure_head_prefetch(repo_root)
 
     return []
 
@@ -1082,6 +1229,9 @@ def prepare_queue_for_event_trigger(current_events=None, *, compact_combat_backl
 
         write_queue_state_locked()
 
+    for item in dropped_items:
+        finalize_item_prefetch(item, cancel=True, wait=False)
+
     return dropped_items, interrupted_current, aggregated_kill_counts, sorted(aggregated_event_types)
 
 
@@ -1108,6 +1258,8 @@ def build_queue_item(
         "source": source,
         "interrupt_event": threading.Event(),
         "done_event": threading.Event(),
+        "prefetch_started": False,
+        "prefetch_cleanup_pending": False,
     }
     if event_family is not None:
         item["event_family"] = event_family
@@ -1150,6 +1302,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
         return None
 
     current_events = as_dict(as_dict(wrapper).get("input")).get("current_events", [])
+    followup_caster = event_followup_caster_from_wrapper(wrapper)
     event_family = classify_event_family(current_events)
     kill_counts = count_kills_by_team(current_events)
     event_types = collect_event_types(current_events)
@@ -1177,7 +1330,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
             prompt_wrapper = copy.deepcopy(wrapper)
             prompt_wrapper.setdefault("input", {})["current_events"] = compacted_current_events
             text_config = build_v5_text_llm_config(repo_root)
-            system_prompt = build_event_system_prompt(compacted_current_events)
+            system_prompt = build_event_system_prompt(compacted_current_events, followup_caster=followup_caster)
             user_prompt = build_event_user_prompt(prompt_wrapper)
             result = request_chat_completion(text_config, system_prompt, user_prompt)
             lines = extract_commentary_lines(result["raw_text"], expected_max=4)
@@ -1189,7 +1342,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
             queued_event_types = collect_event_types(compacted_current_events)
         else:
             text_config = build_v5_text_llm_config(repo_root)
-            system_prompt = build_event_system_prompt(current_events)
+            system_prompt = build_event_system_prompt(current_events, followup_caster=followup_caster)
             user_prompt = build_event_user_prompt(prompt_wrapper)
             result = request_chat_completion(text_config, system_prompt, user_prompt)
             lines = extract_commentary_lines(result["raw_text"], expected_max=4)
@@ -1225,7 +1378,7 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                 items.append(
                     build_queue_item(
                         commentary=followup_line,
-                        caster=CASTER1,
+                        caster=followup_caster,
                         prompt_style="play_by_play_follow_up",
                         tag="followup",
                         payload_sequence=payload_sequence,
@@ -1303,6 +1456,7 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
     if interval_mode is None:
         interval_mode = as_dict(as_dict(wrapper).get("input")).get("request", {}).get("mode") or next_interval_mode()
     conversation_mode = interval_mode == "idle_conversation"
+    requested_casters = interval_casters_from_wrapper(wrapper)
     record = {
         "created_at": now_stamp(),
         "mode": interval_mode,
@@ -1341,18 +1495,20 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
             user_prompt = build_interval_user_prompt(wrapper, conversation_mode)
             result = request_chat_completion(text_config, system_prompt, user_prompt)
             lines = extract_commentary_lines(result["raw_text"], expected_max=3)
-            sentence_lines = split_compound_event_lines(lines)
-            for sentence in sentence_lines:
-                items.append(
-                    build_queue_item(
-                        commentary=sentence,
-                        caster=CASTER1,
-                        prompt_style="idle_color",
-                        tag="idle",
-                        payload_sequence=payload_sequence,
-                        source=interval_mode,
+            for index, line in enumerate(lines):
+                caster = requested_casters[index] if index < len(requested_casters) else requested_casters[-1]
+                sentence_lines = split_compound_event_lines([line])
+                for sentence in sentence_lines:
+                    items.append(
+                        build_queue_item(
+                            commentary=sentence,
+                            caster=caster,
+                            prompt_style="idle_color",
+                            tag="idle",
+                            payload_sequence=payload_sequence,
+                            source=interval_mode,
+                        )
                     )
-                )
 
         dropped = enqueue_prompt_items(items, repo_root) if items else []
         for item in items:
