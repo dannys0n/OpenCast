@@ -1,0 +1,451 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Cross",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Felix",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "GreenEggsAndHarm",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Suicide",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 9,
+        "t": 10
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "a_leaning",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_leaning"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Smoke on Suicide.",
+      "Interesting choice, post-plant. Mid is still contested."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "B Doors",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "Sword New New",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 3,
+            "deaths": 6,
+            "kills": 10
+          },
+          "map_callout": "CT Spawn",
+          "name": "cam",
+          "round_kills": 2,
+          "team": "T"
+        },
+        "victim": {
+          "name": "Felix",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 2
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 2,
+        "t": 7
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "t",
+        "mid": "t"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "map_callout": "CT Spawn",
+          "name": "Skittles",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "cam kills two.",
+      "Felix down CT Spawn. Mid still leans T. Both entries stay open."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "ARTHUR FUCKING READ",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "A close match.",
+      "The next mistake could swing it.",
+      "The shape is still incomplete."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "米国最速伝説と裂颅の统领!敞篷永樂帝です!",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Exotic",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "RorBoy",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 3,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 2
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The round is still hiding its plan.",
+      "That makes every choice feel expensive.",
+      "Bad assumptions get punished quickly."
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Rivers",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Colin at Long",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "ct",
+        "mid": "empty"
+      },
+      "next_move_hint": "a_leaning",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_leaning"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "A still has the lean.",
+      "Long and Cat are pulling opposite directions.",
+      "That keeps CT from planting both feet anywhere."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "CT Mid",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Big Box",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Uri",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 3,
+        "T": 6
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 4,
+        "t": 4
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Larry at Big Box",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "ct",
+        "mid": "ct"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The post-plant still favors T.",
+      "That sounds exhausting for CT.",
+      "It is. Cat pressure keeps the retake route narrow."
+    ]
+  }
+}

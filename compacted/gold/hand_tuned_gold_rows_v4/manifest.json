@@ -1,0 +1,241 @@
+{
+  "description": "Small hand-tuned few-shot gold set for v4 synthetic generation.",
+  "counts": {
+    "train_pretty.jsonl": 20,
+    "validation_pretty.jsonl": 4,
+    "test_pretty.jsonl": 4
+  },
+  "rows": {
+    "train_pretty.jsonl": [
+      {
+        "source_split": "train",
+        "source_row_index": 0,
+        "mode": "event_bundle",
+        "event_types": [
+          "grenade_thrown",
+          "grenade_thrown",
+          "team_counter"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 1,
+        "mode": "event_bundle",
+        "event_types": [
+          "player_death",
+          "game_over"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 2,
+        "mode": "event_bundle",
+        "event_types": [
+          "player_death",
+          "team_counter"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 4,
+        "mode": "event_bundle",
+        "event_types": [
+          "bomb_event"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 6,
+        "mode": "event_bundle",
+        "event_types": [
+          "kill",
+          "grenade_detonated",
+          "team_counter"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 9,
+        "mode": "event_bundle",
+        "event_types": [
+          "kill",
+          "round_result"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 10,
+        "mode": "event_bundle",
+        "event_types": [
+          "grenade_thrown",
+          "grenade_detonated"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 17,
+        "mode": "event_bundle",
+        "event_types": [
+          "kill",
+          "grenade_thrown",
+          "team_counter"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 18,
+        "mode": "event_bundle",
+        "event_types": [
+          "kill_cluster",
+          "team_counter"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 21,
+        "mode": "event_bundle",
+        "event_types": [
+          "kill",
+          "bomb_event",
+          "round_result"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 23,
+        "mode": "event_bundle",
+        "event_types": [
+          "kill",
+          "team_counter"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 30,
+        "mode": "event_bundle",
+        "event_types": [
+          "grenade_detonated",
+          "grenade_detonated"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 44,
+        "mode": "event_bundle",
+        "event_types": [
+          "grenade_thrown",
+          "grenade_detonated"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 48,
+        "mode": "event_bundle",
+        "event_types": [
+          "grenade_detonated"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 49,
+        "mode": "event_bundle",
+        "event_types": [
+          "bomb_event"
+        ]
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 55,
+        "mode": "idle_color",
+        "event_types": []
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 66,
+        "mode": "idle_color",
+        "event_types": []
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 11,
+        "mode": "idle_conversation",
+        "event_types": []
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 24,
+        "mode": "idle_conversation",
+        "event_types": []
+      },
+      {
+        "source_split": "train",
+        "source_row_index": 47,
+        "mode": "idle_conversation",
+        "event_types": []
+      }
+    ],
+    "validation_pretty.jsonl": [
+      {
+        "source_split": "validation",
+        "source_row_index": 0,
+        "mode": "event_bundle",
+        "event_types": [
+          "kill",
+          "team_counter"
+        ]
+      },
+      {
+        "source_split": "validation",
+        "source_row_index": 6,
+        "mode": "idle_color",
+        "event_types": []
+      },
+      {
+        "source_split": "validation",
+        "source_row_index": 3,
+        "mode": "idle_conversation",
+        "event_types": []
+      },
+      {
+        "source_split": "validation",
+        "source_row_index": 12,
+        "mode": "event_bundle",
+        "event_types": [
+          "kill",
+          "team_counter"
+        ]
+      }
+    ],
+    "test_pretty.jsonl": [
+      {
+        "source_split": "test",
+        "source_row_index": 3,
+        "mode": "event_bundle",
+        "event_types": [
+          "grenade_thrown"
+        ]
+      },
+      {
+        "source_split": "test",
+        "source_row_index": 5,
+        "mode": "event_bundle",
+        "event_types": [
+          "kill",
+          "team_counter"
+        ]
+      },
+      {
+        "source_split": "test",
+        "source_row_index": 1,
+        "mode": "idle_color",
+        "event_types": []
+      },
+      {
+        "source_split": "test",
+        "source_row_index": 0,
+        "mode": "idle_conversation",
+        "event_types": []
+      }
+    ]
+  }
+}

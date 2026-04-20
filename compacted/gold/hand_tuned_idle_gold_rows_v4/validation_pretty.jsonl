@@ -1,0 +1,231 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Boost",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Uri",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "contested",
+        "long": "contested",
+        "mid": "t"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "A still looks heavy.",
+      "Mid is giving T too much help.",
+      "Long is not clean enough for CT to relax."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Scaffolding",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Doors",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Uri",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 3,
+        "T": 6
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "ct",
+        "mid": "empty"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "unclear"
+      },
+      "rotation_favor": "ct",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "CT finally own Long and Cat.",
+      "That sounds much safer. I approve.",
+      "It is. T need a fresh lane before this can move."
+    ]
+  }
+}

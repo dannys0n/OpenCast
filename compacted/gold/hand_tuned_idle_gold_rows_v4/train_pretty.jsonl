@@ -1,0 +1,1590 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Right Side Mid",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Uri",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Colin at Long Doors",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "contested",
+        "mid": "ct"
+      },
+      "next_move_hint": "a_leaning",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_leaning"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "A pressure remains noncommittal.",
+      "That is not reassuring at all.",
+      "Correct. Long pressure keeps Cat available behind it."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Uri",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Larry at Long Doors",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "ct",
+        "mid": "t"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "Long is covered. Mid is not.",
+      "Oh. That seems unfair for one person.",
+      "Yes. One Long anchor cannot answer a Mid split alone."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "T Ramp",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Ramp",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Rivers",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 0,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 2
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "t",
+        "mid": "empty"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "A pressure is now credible.",
+      "I do not trust how open Long sounds.",
+      "Reasonable. Once Long is lost, the finish becomes simple."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "T Spawn",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Default",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Window",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Big Box",
+          "name": "Uri",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 1,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Tony at Outside Long",
+      "key_risk": "b_hit_readable",
+      "map_control": {
+        "cat": "empty",
+        "long": "ct",
+        "mid": "ct"
+      },
+      "next_move_hint": "b_hit",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "b_heavy"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "B pressure is substantial.",
+      "That sounds alarmingly direct.",
+      "Not entirely. Mid is closed, so CT can read the route."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "B Doors",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Doors",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Doors",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Doors",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "B Car",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 1,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 2
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "b_hit_readable",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "ct"
+      },
+      "next_move_hint": "b_leaning",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "b_leaning"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "B still carries the lean.",
+      "Mid sounds far too quiet for CT.",
+      "Fair. That makes a B finish easier to read."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Mid",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Uri",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 4,
+        "t": 4
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Tony at Catwalk",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "t",
+        "mid": "contested"
+      },
+      "next_move_hint": "a_leaning",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_leaning"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "A remains the more probable outcome.",
+      "Cat sounds annoying. I dislike annoying.",
+      "Accurate. Cat control keeps the defense from over-rotating Long."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "CT Mid",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Doors",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Uri",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 2,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Larry at B Doors",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "t",
+        "mid": "ct"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The setup still resembles a split.",
+      "That is unpleasant for the B hold.",
+      "Yes. B Doors gets thin. once Mid and Long both stay live."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "B Doors",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "B Default",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Uri",
+          "team": "T"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 4
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Larry at B Doors",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "empty",
+        "mid": "t"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "The post-plant is favorable for T.",
+      "I do not enjoy B Doors as a retake route.",
+      "Understandable. Mid and Cat control squeeze the retake pathing."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Boost",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Uri",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 3
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "contested",
+        "long": "ct",
+        "mid": "t"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "A pressure is increasing again.",
+      "Long still does not sound solved.",
+      "No. Mid support keeps the Long fight from settling."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Default",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Goose",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Side Pit",
+          "name": "Rivers",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Larry at Upper Tunnels",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "empty"
+      },
+      "next_move_hint": "a_leaning",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_leaning"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "A still holds the stronger lean.",
+      "Upper Tunnels sounds very lonely.",
+      "It is. That position can get stranded if Long pressure stays active."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "CT Mid",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Rivers",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "ct",
+        "mid": "ct"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "This post-plant still belongs to T.",
+      "That sounds medically unfavorable.",
+      "Accurate. Cat and Mid control make the retake feel narrow."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "B Car",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 3,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 3
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Colin at B Car",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "t"
+      },
+      "next_move_hint": "b_hit",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "b_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "B pressure appears committed.",
+      "I am worried about B Car already.",
+      "Fair. Once B Car is isolated, the hit gets much cleaner."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Boost",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Uri",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Colin at Boost",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "empty",
+        "mid": "ct"
+      },
+      "next_move_hint": "unclear",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "unclear"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "CT own Mid and Cat for now.",
+      "Boost still feels a little exposed.",
+      "T have not created a clean lane yet."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "Miguel",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 0,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 1
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "medium",
+      "isolated_player": "Colin at Outside Tunnels",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "b_leaning",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "b_leaning"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "B is starting to pull attention.",
+      "Outside Tunnels sounds thin.",
+      "One fast swing could leave that side isolated."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Mid",
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Larry",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Tunnels",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Uri",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "t",
+        "mid": "ct"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "This still pulls toward a split.",
+      "Mid control keeps the defense honest.",
+      "Long remains a live second route."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Top Mid",
+          "name": "York",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Uri",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 1
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 4
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "t",
+        "mid": "contested"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "A pressure is getting serious.",
+      "Long and Cat both feel active.",
+      "CT do not have an easy way to settle."
+    ]
+  }
+}

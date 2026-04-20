@@ -1,0 +1,2745 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "CT Spawn",
+          "name": "BOT Mummy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Window",
+          "name": "Envy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Default",
+          "name": "Joerogan67",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "L30N15",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Null",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "RWicken",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Sun of Beach",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "pig gaming",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Car",
+          "name": "Alaskan",
+          "team": "T"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Bison939",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Le0n",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "MrHippo01",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "ThirdPug",
+          "team": "T"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "VITEK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "hahaha",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "hitoriki130",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "yehaifeng134",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "zeoliteXt",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag"
+      },
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "CT Spawn",
+          "name": "BOT Mummy",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 8,
+          "T": 10
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 8,
+        "t": 10
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Envy at Window",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "contested",
+        "long": "t",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "BiscuitsAndGravy",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Smokes thrown CT.",
+      "Grenades and horseshoes. Mid stays contested. B pressure is high."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 8
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "kda": {
+            "assists": 4,
+            "deaths": 12,
+            "kills": 19
+          },
+          "name": "Rean Schwarzer",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 7,
+          "T": 8
+        },
+        "map_phase_after": "gameover",
+        "winner": "T"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "player_scored_kill",
+        "player": {
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Rean Schwarzer goes down.",
+      "Congradulations T side. It was a close match."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long",
+          "name": "BOT Mummy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Delamain",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Double Stack",
+          "name": "Envy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Joerogan67",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "L30N15",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Null",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "RWicken",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Sun of Beach",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "pig gaming",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Alaskan",
+          "team": "T"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Bison939",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Le0n",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "MrHippo01",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "VITEK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "hahaha",
+          "team": "T"
+        },
+        {
+          "map_callout": "Short",
+          "name": "hitoriki130",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "yehaifeng134",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Ramp",
+          "name": "zeoliteXt",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "player_death",
+        "player": {
+          "name": "ThirdPug",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 9
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 9,
+        "t": 9
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Envy at Double Stack",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "contested",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "map_callout": "Long Doors",
+          "name": "ThirdPug",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "ThirdPug goes down.",
+      "A still carries the weight. Long is not settled yet."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Doors",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Default",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Default",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Short",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "Car",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 4,
+        "t": 8
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "ToyEveryAugust at Lower Tunnels",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "t",
+        "mid": "contested"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Catwalk",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {}
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Bomb is planted.",
+      "The post-plant is on. T has map control. ToyEveryAugust isolated at Lower Tunnels."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Felix",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Side Pit",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "Sword New New",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Plat",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 6
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 2,
+            "deaths": 5,
+            "kills": 7
+          },
+          "map_callout": "Doors",
+          "name": "cam",
+          "round_kills": 1,
+          "team": "T"
+        },
+        "victim": {
+          "name": "arcteryx85",
+          "team": "CT"
+        }
+      },
+      {
+        "detonation_callout": "Catwalk",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Top Mid",
+          "name": "X",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 7
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 7,
+        "t": 8
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Doors",
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "Top Mid",
+          "name": "X",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "cam kills arcteryx85 at Doors.",
+      "A-side looks close. Mid is still contested."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Close",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Default",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "X",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planting",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 1,
+            "deaths": 1,
+            "kills": 4
+          },
+          "map_callout": "Top Mid",
+          "name": "IIIIIIIIII",
+          "round_kills": 1,
+          "team": "T"
+        },
+        "victim": {
+          "name": "FISHER",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 7
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 3
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 7
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "t",
+        "mid": "t"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Short",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {}
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "IIIIIIIIII kills FISHER Top Mid.",
+      "That seals the round. Impressive results from T."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Blue",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Window",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Felix",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Plat",
+          "name": "GreenEggsAndHarm",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "Short",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "map_callout": "Upper Tunnels",
+          "name": "cam",
+          "team": "T"
+        }
+      },
+      {
+        "detonation_callout": "Close",
+        "event_type": "grenade_detonated",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Upper Tunnels",
+          "name": "cam",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 9,
+        "t": 10
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "contested",
+        "long": "ct",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Upper Tunnels",
+          "name": "cam",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Fire on Close.",
+      "High activity split push. Cat still leans CT."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Catwalk",
+          "name": "BillyThe503Kid",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Delamain",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Null",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "RWicken",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "pig gaming",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Bison939",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Bolin666666",
+          "team": "T"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "MrHippo01",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "zeoliteXt",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "✨ ắjniN ☯",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 1,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 1,
+            "deaths": 1,
+            "kills": 4
+          },
+          "map_callout": "T Spawn",
+          "name": "✨ ắjniN ☯",
+          "round_kills": 1,
+          "team": "T"
+        },
+        "victim": {
+          "name": "hahaha",
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Cross",
+          "name": "pig gaming",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 5
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Long",
+        "event_type": "grenade_detonated",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Blue",
+          "name": "Bison939",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "hahaha is killed.",
+      "pig gaming firebomb's Cross. No side owns the rotate yet."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Long Doors",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Plat",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Felix",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "Short",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill_cluster",
+        "kill_count": 2,
+        "killers": [
+          {
+            "kda": {
+              "assists": 2,
+              "deaths": 6,
+              "kills": 3
+            },
+            "map_callout": "Short",
+            "name": "Felix",
+            "round_kills": 1,
+            "team": "CT"
+          },
+          {
+            "kda": {
+              "assists": 2,
+              "deaths": 3,
+              "kills": 7
+            },
+            "map_callout": "Catwalk",
+            "name": "IIIIIIIIII",
+            "round_kills": 2,
+            "team": "T"
+          }
+        ],
+        "victims": [
+          {
+            "name": "Kia Kitty Cat",
+            "team": "CT"
+          },
+          {
+            "name": "IIIIIIIIII",
+            "team": "T"
+          }
+        ]
+      },
+      {
+        "alive_counts_after": {
+          "CT": 5,
+          "T": 9
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 9
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "FISHER at B Plat",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "contested",
+        "long": "contested",
+        "mid": "t"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Short",
+        "event_type": "grenade_detonated",
+        "grenade_type": "frag",
+        "owner_player": {
+          "map_callout": "Lower Tunnels",
+          "name": "cam",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Two kills land.",
+      "Mid still leans T. Both entries stay open."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "CT Spawn",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Pit",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 1,
+            "deaths": 0,
+            "kills": 2
+          },
+          "map_callout": "CT Spawn",
+          "name": "Skittles",
+          "round_kills": 2,
+          "team": "T"
+        },
+        "victim": {
+          "name": "arcteryx85",
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      },
+      {
+        "alive_counts_after": {
+          "CT": 0,
+          "T": 5
+        },
+        "event_type": "round_result",
+        "round_phase_after": "over",
+        "winner": "T",
+        "winner_score": 4
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "t",
+        "mid": "t"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "CT Spawn",
+          "name": "Skittles",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Batman",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Skittles kills two.",
+      "That closes it. T still own the post-plant shape."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Default",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Pit",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Pit Plat",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "SyrixAK",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 6,
+            "deaths": 6,
+            "kills": 4
+          },
+          "map_callout": "Mid",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "hiyo",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 5
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 4,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "FISHER at Upper Tunnels",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "t",
+        "mid": "contested"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Catwalk",
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "Catwalk",
+          "name": "hiyo",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "hiyo goes down.",
+      "A still looks heavy. Upper Tunnels is left thin."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Felix",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Ramp",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 5
+      }
+    },
+    "current_events": [
+      {
+        "detonation_callout": "Doors",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "T Spawn",
+          "name": "hiyo",
+          "team": "T"
+        }
+      },
+      {
+        "event_type": "grenade_detonated",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "map_callout": "Lower Tunnels",
+          "name": "FISHER",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 7,
+        "t": 8
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "t",
+        "mid": "ct"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Ramp",
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "Long",
+          "name": "X",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Smoke on Doors.",
+      "A still feels near. T still have the easier move."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Blue",
+          "name": "Batman",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Back Site",
+          "name": "Felix",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Kia Kitty Cat",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "NiWo",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "Sword New New",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Car",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Pit",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "Suicide",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 7
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "grenade_thrown",
+        "grenade_type": "inferno",
+        "owner_player": {
+          "map_callout": "Pit",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        }
+      },
+      {
+        "detonation_callout": "Long Doors",
+        "event_type": "grenade_detonated",
+        "grenade_type": "firebomb",
+        "owner_player": {
+          "map_callout": "Pit",
+          "name": "【﻿ｍｅｏｗｅｚ】詠",
+          "team": "CT"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 9,
+        "t": 9
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Long Doors",
+        "event_type": "grenade_detonated",
+        "grenade_type": "flashbang",
+        "owner_player": {
+          "map_callout": "Long Doors",
+          "name": "FUNGGE",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Fire on Long Doors.",
+      "And a flashbang too. Cat still leans CT."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Scaffolding",
+          "name": "Envy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Null",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Alaskan",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Le0n",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "MrHippo01",
+          "team": "T"
+        },
+        {
+          "map_callout": "Default",
+          "name": "hitoriki130",
+          "team": "T"
+        },
+        {
+          "map_callout": "Default",
+          "name": "yehaifeng134",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Mid",
+          "name": "✨ ắjniN ☯",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planting",
+      "score": {
+        "CT": 1,
+        "T": 2
+      }
+    },
+    "current_events": [
+      {
+        "detonation_callout": "Cross",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "CT Mid",
+          "name": "✨ ắjniN ☯",
+          "team": "T"
+        }
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 2,
+        "t": 6
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Envy at Scaffolding",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "empty",
+        "mid": "contested"
+      },
+      "next_move_hint": "a_commit",
+      "position_data": "full",
+      "pressure": {
+        "b": "low",
+        "site": "a_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": "Doors",
+        "event_type": "grenade_detonated",
+        "grenade_type": "smoke",
+        "owner_player": {
+          "map_callout": "Default",
+          "name": "hitoriki130",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Smoke on Cross.",
+      "A, carries the pressure. Mid is still contested."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Close",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Default",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Boost",
+          "name": "X",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "planted",
+      "score": {
+        "CT": 2,
+        "T": 3
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "bomb_event",
+        "state_after": "planted"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 7
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "t",
+        "mid": "empty"
+      },
+      "next_move_hint": "post_plant_hold",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "post_plant"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Top Mid",
+          "name": "IIIIIIIIII",
+          "team": "T"
+        },
+        "victim": {
+          "name": "FISHER",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "Bomb is planted.",
+      "CT wiped out. Time to defuse."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Catwalk",
+          "name": "BillyThe503Kid",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Top Mid",
+          "name": "Delamain",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "Null",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Close",
+          "name": "RWicken",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "pig gaming",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Bison939",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long",
+          "name": "Bolin666666",
+          "team": "T"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "MrHippo01",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "zeoliteXt",
+          "team": "T"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "✨ ắjniN ☯",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 1,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 5
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "Both sites stay honest.",
+      "Mid still matters here.",
+      "Rotations stay tight."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "GrowthHormones",
+          "team": "T"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 6,
+        "T": 3
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 1
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "ct",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "The setup is not clear yet.",
+      "The next duel could decide the pace.",
+      "This still needs more information."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "CT Spawn",
+          "name": "BOT Mummy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "T Spawn",
+          "name": "Le0n",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "MrHippo01",
+          "team": "T"
+        },
+        {
+          "map_callout": "Scaffolding",
+          "name": "ThirdPug",
+          "team": "T"
+        },
+        {
+          "map_callout": "B Doors",
+          "name": "yehaifeng134",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 4
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "empty",
+        "long": "empty",
+        "mid": "t"
+      },
+      "next_move_hint": "b_hit",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "b_heavy"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "B pressure is hardening.",
+      "That sounds unsafe. I would prefer less of that.",
+      "Correct. Tunnel control makes slow reads expensive."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "CT Spawn",
+          "name": "BOT Mummy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Blue",
+          "name": "Bison939",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Default",
+          "name": "Envy",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Short",
+          "name": "Joerogan67",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "L30N15",
+          "team": "CT"
+        },
+        {
+          "map_callout": "B Car",
+          "name": "RWicken",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "Sun of Beach",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "pig gaming",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Le0n",
+          "team": "T"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "MrHippo01",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "ThirdPug",
+          "team": "T"
+        },
+        {
+          "map_callout": "Right Side Mid",
+          "name": "VITEK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "hahaha",
+          "team": "T"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "hitoriki130",
+          "team": "T"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "yehaifeng134",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "zeoliteXt",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 1,
+        "T": 0
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 8,
+        "t": 8
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "RWicken at B Car",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "ct",
+        "long": "contested",
+        "mid": "contested"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "high",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "ct",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "One hold is doing too much.",
+      "That seems uncomfortably fragile.",
+      "Yes. Bad timing breaks a solo anchor fast."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "ARTHUR FUCKING READ",
+          "team": "CT"
+        }
+      ],
+      "bomb_state": null,
+      "score": {
+        "CT": 2,
+        "T": 2
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 1,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "Clarity has not arrived yet.",
+      "I dislike that. I like instructions.",
+      "Reasonable. Unclear space punishes the first guess."
+    ]
+  }
+}

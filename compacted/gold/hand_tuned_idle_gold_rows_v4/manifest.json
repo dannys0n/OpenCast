@@ -1,0 +1,383 @@
+{
+  "description": "Dust2 idle gold set sourced from compacted/v4_spec_d2_offline, weighted toward idle_conversation.",
+  "counts": {
+    "train_pretty.jsonl": 16,
+    "validation_pretty.jsonl": 2,
+    "test_pretty.jsonl": 2
+  },
+  "mode_counts": {
+    "idle_color": 6,
+    "idle_conversation": 14
+  },
+  "analysis_counts": {
+    "map_specific": 20
+  },
+  "rows": {
+    "train_pretty.jsonl": [
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 1,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "a_leaning"
+        },
+        "map_control": {
+          "cat": "empty",
+          "long": "contested",
+          "mid": "ct"
+        },
+        "rotation_favor": "neutral",
+        "isolated_player": "Colin at Long Doors",
+        "next_move_hint": "a_leaning"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 7,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "unclear"
+        },
+        "map_control": {
+          "cat": "empty",
+          "long": "ct",
+          "mid": "t"
+        },
+        "rotation_favor": "neutral",
+        "isolated_player": "Larry at Long Doors",
+        "next_move_hint": "unclear"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 24,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "a_heavy"
+        },
+        "map_control": {
+          "cat": "empty",
+          "long": "t",
+          "mid": "empty"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "none",
+        "next_move_hint": "a_commit"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 34,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "high",
+          "site": "b_heavy"
+        },
+        "map_control": {
+          "cat": "empty",
+          "long": "ct",
+          "mid": "ct"
+        },
+        "rotation_favor": "neutral",
+        "isolated_player": "Tony at Outside Long",
+        "next_move_hint": "b_hit"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 40,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "medium",
+          "site": "b_leaning"
+        },
+        "map_control": {
+          "cat": "empty",
+          "long": "empty",
+          "mid": "ct"
+        },
+        "rotation_favor": "neutral",
+        "isolated_player": "none",
+        "next_move_hint": "b_leaning"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 59,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "a_leaning"
+        },
+        "map_control": {
+          "cat": "ct",
+          "long": "t",
+          "mid": "contested"
+        },
+        "rotation_favor": "neutral",
+        "isolated_player": "Tony at Catwalk",
+        "next_move_hint": "a_leaning"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 73,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "high",
+          "site": "split"
+        },
+        "map_control": {
+          "cat": "empty",
+          "long": "t",
+          "mid": "ct"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "Larry at B Doors",
+        "next_move_hint": "split"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 79,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "medium",
+          "site": "post_plant"
+        },
+        "map_control": {
+          "cat": "t",
+          "long": "empty",
+          "mid": "t"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "Larry at B Doors",
+        "next_move_hint": "post_plant_hold"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 89,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "a_heavy"
+        },
+        "map_control": {
+          "cat": "contested",
+          "long": "ct",
+          "mid": "t"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "none",
+        "next_move_hint": "a_commit"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 94,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "a_leaning"
+        },
+        "map_control": {
+          "cat": "ct",
+          "long": "contested",
+          "mid": "empty"
+        },
+        "rotation_favor": "neutral",
+        "isolated_player": "Larry at Upper Tunnels",
+        "next_move_hint": "a_leaning"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 105,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "post_plant"
+        },
+        "map_control": {
+          "cat": "t",
+          "long": "ct",
+          "mid": "ct"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "none",
+        "next_move_hint": "post_plant_hold"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 138,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "high",
+          "site": "b_heavy"
+        },
+        "map_control": {
+          "cat": "empty",
+          "long": "empty",
+          "mid": "t"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "Colin at B Car",
+        "next_move_hint": "b_hit"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 0,
+        "mode": "idle_color",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "unclear"
+        },
+        "map_control": {
+          "cat": "ct",
+          "long": "empty",
+          "mid": "ct"
+        },
+        "rotation_favor": "neutral",
+        "isolated_player": "Colin at Boost",
+        "next_move_hint": "unclear"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 30,
+        "mode": "idle_color",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "medium",
+          "site": "b_leaning"
+        },
+        "map_control": {
+          "cat": "empty",
+          "long": "empty",
+          "mid": "empty"
+        },
+        "rotation_favor": "neutral",
+        "isolated_player": "Colin at Outside Tunnels",
+        "next_move_hint": "b_leaning"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 50,
+        "mode": "idle_color",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "high",
+          "site": "split"
+        },
+        "map_control": {
+          "cat": "empty",
+          "long": "t",
+          "mid": "ct"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "none",
+        "next_move_hint": "split"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 63,
+        "mode": "idle_color",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "a_heavy"
+        },
+        "map_control": {
+          "cat": "t",
+          "long": "t",
+          "mid": "contested"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "none",
+        "next_move_hint": "a_commit"
+      }
+    ],
+    "validation_pretty.jsonl": [
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 84,
+        "mode": "idle_color",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "a_heavy"
+        },
+        "map_control": {
+          "cat": "contested",
+          "long": "contested",
+          "mid": "t"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "none",
+        "next_move_hint": "a_commit"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 168,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "unclear"
+        },
+        "map_control": {
+          "cat": "ct",
+          "long": "ct",
+          "mid": "empty"
+        },
+        "rotation_favor": "ct",
+        "isolated_player": "none",
+        "next_move_hint": "unclear"
+      }
+    ],
+    "test_pretty.jsonl": [
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 101,
+        "mode": "idle_color",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "a_leaning"
+        },
+        "map_control": {
+          "cat": "t",
+          "long": "ct",
+          "mid": "empty"
+        },
+        "rotation_favor": "neutral",
+        "isolated_player": "Colin at Long",
+        "next_move_hint": "a_leaning"
+      },
+      {
+        "source_file": "compacted/v4_spec_d2_offline/training_wrapper_pretty.jsonl",
+        "source_row_index": 177,
+        "mode": "idle_conversation",
+        "analysis_mode": "map_specific",
+        "pressure": {
+          "b": "low",
+          "site": "post_plant"
+        },
+        "map_control": {
+          "cat": "t",
+          "long": "ct",
+          "mid": "ct"
+        },
+        "rotation_favor": "t",
+        "isolated_player": "Larry at Big Box",
+        "next_move_hint": "post_plant_hold"
+      }
+    ]
+  }
+}

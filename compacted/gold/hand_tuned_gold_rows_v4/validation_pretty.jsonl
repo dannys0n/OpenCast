@@ -1,0 +1,442 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "T Spawn",
+          "name": "L30N15",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "Sun of Beach",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "pig gaming",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Plat",
+          "name": "Alaskan",
+          "team": "T"
+        },
+        {
+          "map_callout": "Lower Tunnels",
+          "name": "MrHippo01",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "dropped",
+      "score": {
+        "CT": 0,
+        "T": 0
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 0,
+            "deaths": 0,
+            "kills": 3
+          },
+          "map_callout": "Lower Tunnels",
+          "name": "MrHippo01",
+          "round_kills": 3,
+          "team": "T"
+        },
+        "victim": {
+          "name": "RWicken",
+          "team": "CT"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "CT": 3
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 2
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "Sun of Beach at Upper Tunnels",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "empty",
+        "mid": "empty"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "neutral",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "Upper Tunnels",
+          "name": "Sun of Beach",
+          "team": "CT"
+        },
+        "victim": {
+          "name": "yehaifeng134",
+          "team": "T"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "MrHippo01 kills three.",
+      "The split still stays open. Upper Tunnels is left thin."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Back Site",
+          "name": "FISHER",
+          "team": "CT"
+        },
+        {
+          "map_callout": "CT Spawn",
+          "name": "ToyEveryAugust",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Long Doors",
+          "name": "arcteryx85",
+          "team": "CT"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Corwin Wilfred Donald Adams",
+          "team": "T"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "FUNGGE",
+          "team": "T"
+        },
+        {
+          "map_callout": "Doors",
+          "name": "FerdA",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Mr. Bust",
+          "team": "T"
+        },
+        {
+          "map_callout": "Outside Long",
+          "name": "Skittles",
+          "team": "T"
+        },
+        {
+          "map_callout": "Upper Tunnels",
+          "name": "SyrixAK",
+          "team": "T"
+        },
+        {
+          "map_callout": "Short",
+          "name": "X",
+          "team": "T"
+        },
+        {
+          "map_callout": "Mid",
+          "name": "cam",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "hiyo",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 2,
+        "T": 4
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 3,
+        "t": 9
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "high",
+      "isolated_player": "FISHER at Back Site",
+      "key_risk": "isolated_anchor",
+      "map_control": {
+        "cat": "t",
+        "long": "contested",
+        "mid": "t"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_color"
+    }
+  },
+  "output": {
+    "lines": [
+      "Both sites still matter.",
+      "Mid remains a T lever.",
+      "One anchor is carrying too much."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [],
+      "bomb_state": null,
+      "score": {
+        "CT": 7,
+        "T": 7
+      }
+    },
+    "current_events": [],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 0
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "tied",
+        "margin": "close"
+      }
+    },
+    "previous_events": [],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster1",
+          "style": "idle_color"
+        },
+        {
+          "caster": "caster0",
+          "style": "idle_color"
+        }
+      ],
+      "mode": "idle_conversation"
+    }
+  },
+  "output": {
+    "lines": [
+      "Information remains incomplete.",
+      "I do not enjoy uncertain peeks.",
+      "Correct. Bad assumptions get expensive fast."
+    ]
+  }
+}
+
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": null,
+          "name": "1ooser（慕容易寒)",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Rean Schwarzer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "dullplayer",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "wildcard",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "米国最速伝説と裂颅の统领!敞篷永樂帝です!",
+          "team": "CT"
+        },
+        {
+          "map_callout": null,
+          "name": "Billary clitton",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Exotic",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "RorBoy",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Slick Rick",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "Wallpaper Memes 🇺🇦",
+          "team": "T"
+        },
+        {
+          "map_callout": null,
+          "name": "milk's biggest fan",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 3,
+        "T": 4
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 1,
+            "deaths": 2,
+            "kills": 7
+          },
+          "name": "dullplayer",
+          "round_kills": 1,
+          "team": "CT"
+        },
+        "victim": {
+          "name": "ARTHUR FUCKING READ",
+          "team": "T"
+        }
+      },
+      {
+        "alive_counts_after": {
+          "T": 6
+        },
+        "event_type": "team_counter"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 5,
+        "t": 6
+      },
+      "analysis_mode": "generic",
+      "confidence": "low",
+      "key_risk": "none",
+      "next_move_hint": "unclear",
+      "position_data": "none",
+      "score_context": {
+        "leader": "t",
+        "margin": "close"
+      }
+    },
+    "previous_events": [
+      {
+        "detonation_callout": null,
+        "event_type": "grenade_detonated",
+        "grenade_type": "frag",
+        "owner_player": {
+          "name": "米国最速伝説と裂颅の统领!敞篷永樂帝です!",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "dullplayer kills ARTHUR FUCKING READ.",
+      "The score is still tight. The read is still cloudy."
+    ]
+  }
+}
