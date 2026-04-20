@@ -1,0 +1,3563 @@
+{
+  "created_at": "2026-04-19T19:39:01",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "Long Doors",
+        "name": "Miguel",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Colin",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:39:04",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "T Spawn",
+        "name": "Uri",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:39:06",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "T Spawn",
+        "name": "Mayer",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:39:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "T Spawn",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:39:24",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "Top Mid",
+        "name": "Miguel",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Larry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 5
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:03",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Ramp",
+        "name": "Ferris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:05",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "Larry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Uri",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:09",
+  "events": [
+    {
+      "detonation_callout": "T Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "Ferris",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:12",
+  "events": [
+    {
+      "detonation_callout": "T Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "Larry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "T Plat",
+        "name": "Larry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mayer",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "T Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Uri",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:18",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "T Spawn",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:19",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "T Plat",
+        "name": "York",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "T Spawn",
+        "name": "Uri",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 1
+        },
+        "map_callout": "T Ramp",
+        "name": "Colin",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Uri",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 1
+        },
+        "map_callout": "T Plat",
+        "name": "Rivers",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Larry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 0,
+          "kills": 2
+        },
+        "map_callout": "T Ramp",
+        "name": "Rivers",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:40:58",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 2
+        },
+        "map_callout": "Outside Tunnels",
+        "name": "Colin",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Rivers",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:41:07",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 1,
+          "kills": 3
+        },
+        "map_callout": "Outside Tunnels",
+        "name": "Colin",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Miguel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 1
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:41:52",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "B Default",
+        "name": "Larry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Uri",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:41:53",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 2
+        },
+        "map_callout": "B Doors",
+        "name": "York",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mayer",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:41:58",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "B Doors",
+        "name": "York",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Miguel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:42:00",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Tony",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:42:07",
+  "events": [
+    {
+      "detonation_callout": "B Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "B Doors",
+        "name": "Tony",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:42:13",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Close",
+        "name": "Larry",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:42:35",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Rivers",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:42:38",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 1
+        },
+        "map_callout": "Outside Long",
+        "name": "Ferris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Rivers",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:42:48",
+  "events": [
+    {
+      "detonation_callout": "Outside Long",
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:04",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Larry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:07",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Yanni",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:08",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Long Doors",
+        "name": "Miguel",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Colin",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 2,
+          "kills": 4
+        },
+        "map_callout": "Top Mid",
+        "name": "Larry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:09",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "York",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:10",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Mayer",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:11",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Mayer",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "Larry",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:13",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "Rivers",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:14",
+  "events": [
+    {
+      "detonation_callout": "Top Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Mid",
+        "name": "Rivers",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:22",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 2,
+            "kills": 4
+          },
+          "map_callout": "Long Doors",
+          "name": "Miguel",
+          "round_kills": 2,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 0,
+            "deaths": 2,
+            "kills": 4
+          },
+          "map_callout": "Catwalk",
+          "name": "Rivers",
+          "round_kills": 2,
+          "team": "T"
+        }
+      ],
+      "victims": [
+        {
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "name": "Larry",
+          "team": "CT"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:26",
+  "events": [
+    {
+      "detonation_callout": "Long Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Top Mid",
+        "name": "York",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:33",
+  "events": [
+    {
+      "detonation_callout": "Right Side Mid",
+      "event_type": "grenade_detonated",
+      "grenade_type": "decoy",
+      "owner_player": {
+        "map_callout": "Mid",
+        "name": "Rivers",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:43:33",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 5
+        },
+        "map_callout": "Long Doors",
+        "name": "Miguel",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 4
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 2
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:02",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Colin",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:03",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 6
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Miguel",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Colin",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:05",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 7
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Miguel",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:08",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 2,
+          "kills": 3
+        },
+        "map_callout": "Long",
+        "name": "Uri",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:09",
+  "events": [
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:22",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:28",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 2,
+          "kills": 5
+        },
+        "map_callout": "CT Spawn",
+        "name": "Rivers",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:29",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 3,
+          "kills": 5
+        },
+        "map_callout": "B Doors",
+        "name": "Larry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Rivers",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:32",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 3,
+          "kills": 6
+        },
+        "map_callout": "B Doors",
+        "name": "Larry",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Miguel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:44:40",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 3,
+          "kills": 3
+        },
+        "map_callout": "B Doors",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Larry",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 3
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:45:11",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Yanni",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:45:12",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "molotov",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Short",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Short",
+        "name": "Yanni",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:45:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 4
+        },
+        "map_callout": "Boost",
+        "name": "Colin",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:45:14",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 4,
+          "kills": 4
+        },
+        "map_callout": "Cross",
+        "name": "York",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mayer",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:45:19",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:45:23",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 1
+        },
+        "map_callout": "Ramp",
+        "name": "Tony",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Miguel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:45:25",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 2
+        },
+        "map_callout": "Ramp",
+        "name": "Tony",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Uri",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:45:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 6
+        },
+        "map_callout": "Long",
+        "name": "Rivers",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:46:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 7
+        },
+        "map_callout": "Long",
+        "name": "Rivers",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:46:50",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:47:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 0,
+          "deaths": 3,
+          "kills": 8
+        },
+        "map_callout": "Plat",
+        "name": "Rivers",
+        "round_kills": 3,
+        "team": "T"
+      },
+      "victim": {
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:47:19",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 3,
+          "kills": 5
+        },
+        "map_callout": "Ramp",
+        "name": "Colin",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Rivers",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 0
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:47:20",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:47:24",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 3
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:47:52",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Uri",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:47:53",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Tony",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:47:54",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Mayer",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:47:59",
+  "events": [
+    {
+      "detonation_callout": "T Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Uri",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:00",
+  "events": [
+    {
+      "detonation_callout": "Suicide",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Mayer",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:08",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 4,
+          "kills": 4
+        },
+        "map_callout": "Right Side Mid",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Larry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:09",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 4,
+            "kills": 8
+          },
+          "map_callout": "Outside Long",
+          "name": "Miguel",
+          "round_kills": 1,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 5,
+            "kills": 2
+          },
+          "map_callout": "Suicide",
+          "name": "Ferris",
+          "round_kills": 1,
+          "team": "CT"
+        }
+      ],
+      "victims": [
+        {
+          "name": "Colin",
+          "team": "CT"
+        },
+        {
+          "name": "Mayer",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3,
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:10",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 3
+        },
+        "map_callout": "Suicide",
+        "name": "Ferris",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Rivers",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 9
+        },
+        "map_callout": "Outside Long",
+        "name": "Miguel",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:15",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 2,
+            "deaths": 3,
+            "kills": 4
+          },
+          "map_callout": "Outside Long",
+          "name": "Uri",
+          "round_kills": 1,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 4,
+            "kills": 10
+          },
+          "map_callout": "Outside Long",
+          "name": "Miguel",
+          "round_kills": 3,
+          "team": "T"
+        }
+      ],
+      "victims": [
+        {
+          "name": "Tony",
+          "team": "CT"
+        },
+        {
+          "name": "York",
+          "team": "CT"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 4
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:18",
+  "events": [
+    {
+      "detonation_callout": "Suicide",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Tony",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:44",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Uri",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:45",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Uri",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Upper Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Upper Tunnels",
+        "name": "Uri",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 4,
+          "kills": 6
+        },
+        "map_callout": "Close",
+        "name": "Colin",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Uri",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 5
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Uri",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Larry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:47",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 6
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Uri",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:50",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 5,
+          "kills": 9
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Rivers",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:48:51",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 2,
+            "deaths": 6,
+            "kills": 10
+          },
+          "map_callout": "Upper Tunnels",
+          "name": "Rivers",
+          "round_kills": 2,
+          "team": "T"
+        },
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 4,
+            "kills": 7
+          },
+          "map_callout": "Close",
+          "name": "Colin",
+          "round_kills": 2,
+          "team": "CT"
+        }
+      ],
+      "victims": [
+        {
+          "name": "Ferris",
+          "team": "CT"
+        },
+        {
+          "name": "Rivers",
+          "team": "T"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1,
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:49:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Miguel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:49:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Close",
+        "name": "Miguel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:49:08",
+  "events": [
+    {
+      "event_type": "kill_cluster",
+      "kill_count": 2,
+      "killers": [
+        {
+          "kda": {
+            "assists": 1,
+            "deaths": 5,
+            "kills": 8
+          },
+          "map_callout": "B Doors",
+          "name": "Colin",
+          "round_kills": 3,
+          "team": "CT"
+        },
+        {
+          "kda": {
+            "assists": 10,
+            "deaths": 4,
+            "kills": 2
+          },
+          "map_callout": "B Car",
+          "name": "Mayer",
+          "round_kills": 1,
+          "team": "T"
+        }
+      ],
+      "victims": [
+        {
+          "name": "Miguel",
+          "team": "T"
+        },
+        {
+          "name": "Colin",
+          "team": "CT"
+        }
+      ]
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 2
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:49:13",
+  "events": [
+    {
+      "detonation_callout": "B Doors",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:49:37",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 4,
+          "deaths": 6,
+          "kills": 7
+        },
+        "map_callout": "Long Doors",
+        "name": "Larry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Miguel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:49:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 10,
+          "deaths": 4,
+          "kills": 3
+        },
+        "map_callout": "Right Side Mid",
+        "name": "Mayer",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:49:42",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 10,
+          "deaths": 4,
+          "kills": 4
+        },
+        "map_callout": "Right Side Mid",
+        "name": "Mayer",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:49:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 9
+        },
+        "map_callout": "Long Doors",
+        "name": "Colin",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:49:46",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 11
+        },
+        "map_callout": "Outside Long",
+        "name": "Rivers",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Larry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:50:03",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 10
+        },
+        "map_callout": "Cross",
+        "name": "Colin",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mayer",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:50:07",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 6,
+          "kills": 12
+        },
+        "map_callout": "Boost",
+        "name": "Rivers",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:50:30",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:50:35",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 5,
+          "kills": 11
+        },
+        "map_callout": "Default",
+        "name": "Colin",
+        "round_kills": 3,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Rivers",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:50:56",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 7
+        },
+        "map_callout": "Blue",
+        "name": "Uri",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Colin",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 1
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 6
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:52:08",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 8,
+          "kills": 4
+        },
+        "map_callout": "B Doors",
+        "name": "Ferris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:52:53",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 8
+        },
+        "map_callout": "Boost",
+        "name": "Uri",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:52:53",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:53:07",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 6,
+          "kills": 11
+        },
+        "map_callout": "Ramp",
+        "name": "Miguel",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:53:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 8,
+          "kills": 5
+        },
+        "map_callout": "Cross",
+        "name": "Ferris",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Miguel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:53:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 4,
+          "kills": 9
+        },
+        "map_callout": "Default",
+        "name": "Uri",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:53:22",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 13,
+          "deaths": 5,
+          "kills": 5
+        },
+        "map_callout": "Goose",
+        "name": "Mayer",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Colin",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:53:26",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 13,
+          "deaths": 5,
+          "kills": 6
+        },
+        "map_callout": "Goose",
+        "name": "Mayer",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Larry",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 0,
+        "T": 3
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "T",
+      "winner_score": 7
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:53:34",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "exploded"
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:54:06",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "York",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:54:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 5
+        },
+        "map_callout": "T Plat",
+        "name": "York",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Uri",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:54:15",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 6
+        },
+        "map_callout": "T Plat",
+        "name": "York",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Rivers",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:54:30",
+  "events": [
+    {
+      "detonation_callout": "T Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "smoke",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "York",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:54:32",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:54:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 6
+        },
+        "map_callout": "Catwalk",
+        "name": "Ferris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Miguel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:54:51",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "planted"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:54:56",
+  "events": [
+    {
+      "event_type": "bomb_event",
+      "state_after": "defused"
+    },
+    {
+      "alive_counts_after": {
+        "CT": 5,
+        "T": 2
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 4
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:55:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Plat",
+        "name": "Yanni",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:55:34",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "Plat",
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "detonation_callout": "Default",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "Plat",
+        "name": "Yanni",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:55:36",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 7
+        },
+        "map_callout": "Ramp",
+        "name": "Ferris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Yanni",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:55:40",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 6,
+          "kills": 10
+        },
+        "map_callout": "Long",
+        "name": "Uri",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:55:41",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:56:12",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 7
+        },
+        "map_callout": "CT Mid",
+        "name": "York",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Miguel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:56:21",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 7,
+          "kills": 12
+        },
+        "map_callout": "Boost",
+        "name": "Colin",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Rivers",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:56:32",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 9,
+          "kills": 3
+        },
+        "map_callout": "Double Stack",
+        "name": "Tony",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Uri",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:56:43",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "Mayer",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:56:44",
+  "events": [
+    {
+      "detonation_callout": "Outside Tunnels",
+      "event_type": "grenade_detonated",
+      "grenade_type": "flashbang",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "Mayer",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:56:49",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 13,
+          "deaths": 6,
+          "kills": 7
+        },
+        "map_callout": "T Plat",
+        "name": "Mayer",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:56:50",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 1,
+          "deaths": 7,
+          "kills": 13
+        },
+        "map_callout": "Upper Tunnels",
+        "name": "Colin",
+        "round_kills": 2,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Mayer",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3,
+        "T": 0
+      },
+      "event_type": "round_result",
+      "round_phase_after": "over",
+      "winner": "CT",
+      "winner_score": 5
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:18",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "T Spawn",
+        "name": "Miguel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:19",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 6,
+          "deaths": 7,
+          "kills": 5
+        },
+        "map_callout": "T Spawn",
+        "name": "Yanni",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Colin",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Suicide",
+        "name": "Colin",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:24",
+  "events": [
+    {
+      "detonation_callout": "T Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag",
+      "owner_player": {
+        "map_callout": "Outside Long",
+        "name": "Miguel",
+        "team": "T"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:25",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 7,
+          "kills": 11
+        },
+        "map_callout": "Top Mid",
+        "name": "Uri",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Tony",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:25",
+  "events": [
+    {
+      "detonation_callout": "Suicide",
+      "event_type": "grenade_detonated",
+      "grenade_type": "frag"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:47",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "York",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "molotov",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "York",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:48",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 5,
+          "deaths": 8,
+          "kills": 8
+        },
+        "map_callout": "Back Site",
+        "name": "Larry",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Uri",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 4
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:48",
+  "events": [
+    {
+      "event_type": "grenade_thrown",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "detonation_callout": "T Spawn",
+      "event_type": "grenade_detonated",
+      "grenade_type": "firebomb",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "York",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:55",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 2,
+          "deaths": 10,
+          "kills": 8
+        },
+        "map_callout": "Plat",
+        "name": "Ferris",
+        "round_kills": 1,
+        "team": "CT"
+      },
+      "victim": {
+        "name": "Miguel",
+        "team": "T"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "T": 3
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:57:55",
+  "events": [
+    {
+      "event_type": "grenade_detonated",
+      "grenade_type": "inferno",
+      "owner_player": {
+        "map_callout": "T Plat",
+        "name": "York",
+        "team": "CT"
+      }
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:58:09",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 3,
+          "deaths": 9,
+          "kills": 13
+        },
+        "map_callout": "Ramp",
+        "name": "Rivers",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Ferris",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 2
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:58:11",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 13,
+          "deaths": 7,
+          "kills": 8
+        },
+        "map_callout": "B Default",
+        "name": "Mayer",
+        "round_kills": 1,
+        "team": "T"
+      },
+      "victim": {
+        "name": "Larry",
+        "team": "CT"
+      }
+    },
+    {
+      "alive_counts_after": {
+        "CT": 1
+      },
+      "event_type": "team_counter"
+    }
+  ]
+}
+
+{
+  "created_at": "2026-04-19T19:58:16",
+  "events": [
+    {
+      "event_type": "kill",
+      "killer": {
+        "kda": {
+          "assists": 6,
+          "deaths": 7,
+          "kills": 6
+        },
+        "map_callout": "Catwalk",
+        "name": "Yanni",
+        "round_kills": 2,
+        "team": "T"
+      },
+      "victim": {
+        "name": "York",
+        "team": "CT"
+      }
+    },
+    {
+      "event_type": "game_over",
+      "final_score": {
+        "CT": 5,
+        "T": 8
+      },
+      "map_phase_after": "gameover",
+      "winner": "T"
+    }
+  ]
+}
+

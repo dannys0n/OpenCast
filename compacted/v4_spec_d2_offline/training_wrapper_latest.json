@@ -1,0 +1,116 @@
+{
+  "input": {
+    "context": {
+      "alive_players": [
+        {
+          "map_callout": "Double Stack",
+          "name": "Mayer",
+          "team": "T"
+        },
+        {
+          "map_callout": "Cross",
+          "name": "Rivers",
+          "team": "T"
+        },
+        {
+          "map_callout": "Catwalk",
+          "name": "Yanni",
+          "team": "T"
+        }
+      ],
+      "bomb_state": "carried",
+      "score": {
+        "CT": 5,
+        "T": 8
+      }
+    },
+    "current_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "kda": {
+            "assists": 6,
+            "deaths": 7,
+            "kills": 6
+          },
+          "map_callout": "Catwalk",
+          "name": "Yanni",
+          "round_kills": 2,
+          "team": "T"
+        },
+        "victim": {
+          "name": "York",
+          "team": "CT"
+        }
+      },
+      {
+        "event_type": "game_over",
+        "final_score": {
+          "CT": 5,
+          "T": 8
+        },
+        "map_phase_after": "gameover",
+        "winner": "T"
+      }
+    ],
+    "derived_tactical_summary": {
+      "alive_counts": {
+        "ct": 0,
+        "t": 3
+      },
+      "analysis_mode": "map_specific",
+      "confidence": "medium",
+      "isolated_player": "none",
+      "key_risk": "none",
+      "map_control": {
+        "cat": "t",
+        "long": "t",
+        "mid": "empty"
+      },
+      "next_move_hint": "split",
+      "position_data": "full",
+      "pressure": {
+        "b": "medium",
+        "site": "split"
+      },
+      "rotation_favor": "t",
+      "score_context": {
+        "leader": "t",
+        "margin": "clear"
+      }
+    },
+    "previous_events": [
+      {
+        "event_type": "kill",
+        "killer": {
+          "map_callout": "B Default",
+          "name": "Mayer",
+          "team": "T"
+        },
+        "victim": {
+          "name": "Larry",
+          "team": "CT"
+        }
+      }
+    ],
+    "request": {
+      "lines": [
+        {
+          "caster": "caster0",
+          "style": "play_by_play_event"
+        },
+        {
+          "caster": "caster1",
+          "style": "play_by_play_follow_up"
+        }
+      ],
+      "mode": "event_bundle"
+    }
+  },
+  "output": {
+    "lines": [
+      "",
+      ""
+    ]
+  }
+}
