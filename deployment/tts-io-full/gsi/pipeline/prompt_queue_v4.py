@@ -676,6 +676,27 @@ def build_interval_user_prompt(wrapper, conversation_mode):
 
 
 def extract_commentary_lines(raw_text, expected_max):
+    raw_text = str(raw_text or "")
+
+    try:
+        parsed = json.loads(raw_text)
+    except json.JSONDecodeError:
+        parsed = None
+
+    if isinstance(parsed, dict):
+        structured_lines = parsed.get("lines")
+        if isinstance(structured_lines, list):
+            cleaned = []
+            for line in structured_lines:
+                candidate = " ".join(str(line or "").split()).strip().strip("`")
+                if not candidate:
+                    continue
+                cleaned.append(candidate)
+                if len(cleaned) >= expected_max:
+                    break
+            if cleaned:
+                return cleaned
+
     lines = []
     for block in raw_text.splitlines():
         line = re.sub(r"^[\-\*\d\.\)\s]+", "", " ".join(block.strip().split()))
