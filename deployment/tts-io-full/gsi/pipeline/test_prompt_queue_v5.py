@@ -919,16 +919,23 @@ class PromptQueueV5Tests(unittest.TestCase):
             ["caster1", "caster0", "caster0"],
         )
 
-    def test_process_interval_wrapper_conversation_uses_chemistry_lines_without_model_call(self):
-        def fail_request_chat_completion(config, system_prompt, user_prompt):
-            raise AssertionError("idle_conversation should not call the text model")
+    def test_process_interval_wrapper_conversation_uses_text_model(self):
+        captured = {}
 
-        MODULE.request_chat_completion = fail_request_chat_completion
-        MODULE.choose_chemistry_line_set = lambda: [
-            {"caster": "caster1", "text": "They are slowing down."},
-            {"caster": "caster0", "text": "That smoke changed the pace."},
-            {"caster": "caster1", "text": "B might still be live."},
-        ]
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            captured["system_prompt"] = system_prompt
+            captured["user_prompt"] = user_prompt
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "A pressure remains noncommittal.\nThat is not reassuring at all.\nCorrect. Long pressure keeps Cat available behind it.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
         MODULE.INTERVAL_MODE_INDEX = 1
 
         wrapper = {
@@ -951,13 +958,28 @@ class PromptQueueV5Tests(unittest.TestCase):
 
         self.assertEqual(record["status"], "completed")
         self.assertEqual(record["mode"], "idle_conversation")
-        self.assertEqual([item["caster"] for item in record["queued_items"]], ["caster1", "caster0", "caster1"])
-        self.assertEqual([item["tag"] for item in record["queued_items"]], ["idle", "idle", "idle"])
+        self.assertEqual([item["caster"] for item in record["queued_items"]], ["caster0", "caster1", "caster0", "caster0"])
+        self.assertEqual([item["tag"] for item in record["queued_items"]], ["idle", "idle", "idle", "idle"])
         self.assertEqual(
             [item["commentary"] for item in record["queued_items"]],
-            ["They are slowing down.", "That smoke changed the pace.", "B might still be live."],
+            [
+                "A pressure remains noncommittal.",
+                "That is not reassuring at all.",
+                "Correct.",
+                "Long pressure keeps Cat available behind it.",
+            ],
         )
-        self.assertNotIn("llm", record)
+        self.assertIn("Generate exactly 3 lines for a short caster0/caster1 idle exchange.", captured["user_prompt"])
+        self.assertIn("Requested caster order: caster0, caster1, caster0", captured["user_prompt"])
+        self.assertIn("Portal 2 style contrast", captured["system_prompt"])
+        self.assertEqual(
+            record["llm"]["lines"],
+            [
+                "A pressure remains noncommittal.",
+                "That is not reassuring at all.",
+                "Correct. Long pressure keeps Cat available behind it.",
+            ],
+        )
 
 
 if __name__ == "__main__":

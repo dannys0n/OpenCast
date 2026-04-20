@@ -622,7 +622,7 @@ def event_followup_caster_from_wrapper(wrapper):
     return CASTER1
 
 
-def interval_casters_from_wrapper(wrapper):
+def interval_casters_from_wrapper(wrapper, *, conversation_mode=False):
     request = as_dict(as_dict(as_dict(wrapper).get("input")).get("request"))
     request_lines = request.get("lines") or []
     casters = []
@@ -632,6 +632,8 @@ def interval_casters_from_wrapper(wrapper):
             casters.append(caster)
     if casters:
         return casters
+    if conversation_mode:
+        return [CASTER0, CASTER1, CASTER0]
     return [CASTER1, CASTER0, CASTER1]
 
 
@@ -710,7 +712,7 @@ def build_event_user_prompt(wrapper):
 
 def build_interval_user_prompt(wrapper, conversation_mode):
     wrapper_input = as_dict(as_dict(wrapper).get("input"))
-    caster_sequence = interval_casters_from_wrapper(wrapper)
+    caster_sequence = interval_casters_from_wrapper(wrapper, conversation_mode=conversation_mode)
     prompt_input = strip_empty(
         {
             "derived_tactical_summary": wrapper_input.get("derived_tactical_summary"),
@@ -1359,7 +1361,7 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
     if interval_mode is None:
         interval_mode = as_dict(as_dict(wrapper).get("input")).get("request", {}).get("mode") or next_interval_mode()
     conversation_mode = interval_mode == "idle_conversation"
-    requested_casters = interval_casters_from_wrapper(wrapper)
+    requested_casters = interval_casters_from_wrapper(wrapper, conversation_mode=conversation_mode)
     record = {
         "created_at": now_stamp(),
         "mode": interval_mode,
@@ -1370,48 +1372,25 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
 
     try:
         items = []
-        if conversation_mode:
-            selected_set = choose_chemistry_line_set()
-            lines = []
-            for line_entry in selected_set[:3]:
-                commentary = " ".join(str(as_dict(line_entry).get("text") or "").split()).strip()
-                if not commentary:
-                    continue
-                caster = normalize_caster_id(as_dict(line_entry).get("caster") or CASTER1)
-                sentence_lines = split_compound_event_lines([commentary])
-                lines.extend(sentence_lines)
-                for sentence in sentence_lines:
-                    items.append(
-                        build_queue_item(
-                            commentary=sentence,
-                            caster=caster,
-                            prompt_style="idle_color",
-                            tag="idle",
-                            payload_sequence=payload_sequence,
-                            source=interval_mode,
-                        )
+        text_config = build_v5_text_llm_config(repo_root)
+        system_prompt = build_interval_system_prompt(conversation_mode)
+        user_prompt = build_interval_user_prompt(wrapper, conversation_mode)
+        result = request_chat_completion(text_config, system_prompt, user_prompt)
+        lines = extract_commentary_lines(result["raw_text"], expected_max=3)
+        for index, line in enumerate(lines):
+            caster = requested_casters[index] if index < len(requested_casters) else requested_casters[-1]
+            sentence_lines = split_compound_event_lines([line])
+            for sentence in sentence_lines:
+                items.append(
+                    build_queue_item(
+                        commentary=sentence,
+                        caster=caster,
+                        prompt_style="idle_color",
+                        tag="idle",
+                        payload_sequence=payload_sequence,
+                        source=interval_mode,
                     )
-            record["chemistry_set"] = selected_set
-        else:
-            text_config = build_v5_text_llm_config(repo_root)
-            system_prompt = build_interval_system_prompt(conversation_mode)
-            user_prompt = build_interval_user_prompt(wrapper, conversation_mode)
-            result = request_chat_completion(text_config, system_prompt, user_prompt)
-            lines = extract_commentary_lines(result["raw_text"], expected_max=3)
-            for index, line in enumerate(lines):
-                caster = requested_casters[index] if index < len(requested_casters) else requested_casters[-1]
-                sentence_lines = split_compound_event_lines([line])
-                for sentence in sentence_lines:
-                    items.append(
-                        build_queue_item(
-                            commentary=sentence,
-                            caster=caster,
-                            prompt_style="idle_color",
-                            tag="idle",
-                            payload_sequence=payload_sequence,
-                            source=interval_mode,
-                        )
-                    )
+                )
 
         dropped = enqueue_prompt_items(items, repo_root) if items else []
         for item in items:
@@ -1423,14 +1402,11 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
                 include_commentary=True,
             )
         record["status"] = "completed"
-        if conversation_mode:
-            record["lines"] = lines
-        else:
-            record["llm"] = {
-                "request": result["request"],
-                "raw_text": result["raw_text"],
-                "lines": lines,
-            }
+        record["llm"] = {
+            "request": result["request"],
+            "raw_text": result["raw_text"],
+            "lines": lines,
+        }
         record["queued_items"] = [
             {
                 "id": item["id"],
