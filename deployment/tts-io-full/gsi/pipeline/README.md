@@ -37,6 +37,12 @@ Current design:
 - that sentence is sent straight into TTS playback
 - prompt/runtime inputs and outputs are stored locally for inspection
 
+TTS backend notes:
+
+- the runtime expects an OpenAI-compatible `POST /v1/audio/speech` server
+- the live queue/playback path requires true audio streaming and PCM chunks
+- the current supported local backend is the Qwen OpenAI-compatible FastAPI server under `deployment/tts-io-full/Qwen3-TTS-Openai-Fastapi`
+
 Important constraints:
 
 - same caster voice for now
