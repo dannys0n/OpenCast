@@ -1109,115 +1109,18 @@ def total_kill_count(kill_counts):
     return int(kill_counts.get("ct", 0)) + int(kill_counts.get("t", 0))
 
 
-def summarize_trade_burst(kill_counts, event_types=None):
-    kill_counts = as_dict(kill_counts)
-    event_types = {str(event_type or "").strip() for event_type in (event_types or []) if str(event_type or "").strip()}
-    ct_kills = int(kill_counts.get("ct", 0))
-    t_kills = int(kill_counts.get("t", 0))
-    details = []
-    if ct_kills and t_kills:
-        ct_suffix = "" if ct_kills == 1 else "s"
-        t_suffix = "" if t_kills == 1 else "s"
-        details.append(f"CT got {ct_kills} kill{ct_suffix}")
-        details.append(f"T got {t_kills} kill{t_suffix}")
-    elif ct_kills:
-        suffix = "" if ct_kills == 1 else "s"
-        details.append(f"CT got {ct_kills} kill{suffix}")
-    elif t_kills:
-        suffix = "" if t_kills == 1 else "s"
-        details.append(f"T got {t_kills} kill{suffix}")
-
-    if not details:
-        return ""
-
-    if "round_result" in event_types:
-        details.append("round ended")
-    if "game_over" in event_types:
-        details.append("game ended")
-
-    return f"Kill summary: {', '.join(details)}."
-
-
-def build_kill_summary_event(kill_counts, current_events):
-    kill_counts = as_dict(kill_counts)
-    return strip_empty(
-        {
-            "event_type": "kill_summary",
-            "ct_kills": int(kill_counts.get("ct", 0)),
-            "t_kills": int(kill_counts.get("t", 0)),
-        }
-    )
-
-
-def replace_kill_events_with_summary(current_events, kill_counts):
-    current_events = [copy.deepcopy(as_dict(event)) for event in (current_events or [])]
-    kill_summary_event = build_kill_summary_event(kill_counts, current_events)
-    replaced_events = []
-    inserted_summary = False
-
-    for event in current_events:
-        event_type = event.get("event_type")
-        if event_type in {"kill", "kill_summary", "kill_cluster", "player_scored_kill", "player_death"}:
-            if not inserted_summary:
-                replaced_events.append(kill_summary_event)
-                inserted_summary = True
-            continue
-        replaced_events.append(event)
-
-    if not inserted_summary and total_kill_count(kill_counts) > 0:
-        replaced_events.insert(0, kill_summary_event)
-
-    return replaced_events
-
-
-def should_compact_combat_backlog(current_events):
-    incoming_kill_counts = count_kills_by_team(current_events)
-    if total_kill_count(incoming_kill_counts) <= 0:
-        return False
-
-    with QUEUE_CONDITION:
-        if CURRENT_PLAYBACK is None or CURRENT_PLAYBACK.get("tag") != "event":
-            return False
-
-        for existing in PLAYBACK_QUEUE:
-            if existing.get("source") == "event" and existing.get("event_family") == "kill":
-                return True
-
-    return False
-
-
-def prepare_queue_for_event_trigger(current_events=None, *, compact_combat_backlog=False):
+def prepare_queue_for_event_trigger(current_events=None):
     current_events = [as_dict(event) for event in (current_events or [])]
     incoming_kill_counts = count_kills_by_team(current_events)
-    incoming_event_family = classify_event_family(current_events)
     aggregated_event_types = set(collect_event_types(current_events))
     dropped_items = []
     interrupted_current = None
     aggregated_kill_counts = dict(incoming_kill_counts)
-    counted_payloads = set()
 
     with QUEUE_CONDITION:
         kept = deque()
         for existing in PLAYBACK_QUEUE:
             existing_tag = existing.get("tag")
-            existing_family = existing.get("event_family")
-            existing_is_event_source = existing.get("source") == "event"
-
-            if compact_combat_backlog and existing_is_event_source and existing_family in {"kill", "grenade"}:
-                dropped_items.append(existing)
-                if existing_family == "kill":
-                    payload_key = existing.get("payload_sequence")
-                    if payload_key not in counted_payloads:
-                        counted_payloads.add(payload_key)
-                        existing_counts = as_dict(existing.get("kill_counts"))
-                        add_kill_count(aggregated_kill_counts, "CT", existing_counts.get("ct", 0))
-                        add_kill_count(aggregated_kill_counts, "T", existing_counts.get("t", 0))
-                        aggregated_event_types.update(existing.get("event_types") or [])
-                continue
-
-            if incoming_event_family == "kill" and existing_is_event_source and existing_family == "grenade":
-                dropped_items.append(existing)
-                continue
 
             if existing_tag == "event":
                 kept.append(existing)
@@ -1306,7 +1209,6 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
     event_family = classify_event_family(current_events)
     kill_counts = count_kills_by_team(current_events)
     event_types = collect_event_types(current_events)
-    compact_combat_backlog = should_compact_combat_backlog(current_events)
     record = {
         "created_at": now_stamp(),
         "mode": "event",
@@ -1321,36 +1223,16 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
         queued_event_family = event_family
         queued_kill_counts = kill_counts
         queued_event_types = event_types
-        if compact_combat_backlog:
-            dropped, interrupted_current, aggregated_kill_counts, _ = prepare_queue_for_event_trigger(
-                current_events,
-                compact_combat_backlog=True,
-            )
-            compacted_current_events = replace_kill_events_with_summary(current_events, aggregated_kill_counts)
-            prompt_wrapper = copy.deepcopy(wrapper)
-            prompt_wrapper.setdefault("input", {})["current_events"] = compacted_current_events
-            text_config = build_v5_text_llm_config(repo_root)
-            system_prompt = build_event_system_prompt(compacted_current_events, followup_caster=followup_caster)
-            user_prompt = build_event_user_prompt(prompt_wrapper)
-            result = request_chat_completion(text_config, system_prompt, user_prompt)
-            lines = extract_commentary_lines(result["raw_text"], expected_max=4)
-            lines = split_compound_event_lines(lines, expected_max=4)
-            record["collapsed_kill_counts"] = aggregated_kill_counts
-            record["compacted_current_events"] = compacted_current_events
-            queued_event_family = classify_event_family(compacted_current_events)
-            queued_kill_counts = aggregated_kill_counts
-            queued_event_types = collect_event_types(compacted_current_events)
-        else:
-            text_config = build_v5_text_llm_config(repo_root)
-            system_prompt = build_event_system_prompt(current_events, followup_caster=followup_caster)
-            user_prompt = build_event_user_prompt(prompt_wrapper)
-            result = request_chat_completion(text_config, system_prompt, user_prompt)
-            lines = extract_commentary_lines(result["raw_text"], expected_max=4)
-            lines = split_compound_event_lines(lines, expected_max=4)
-            dropped = []
-            interrupted_current = None
-            if lines:
-                dropped, interrupted_current, _, _ = prepare_queue_for_event_trigger(current_events)
+        text_config = build_v5_text_llm_config(repo_root)
+        system_prompt = build_event_system_prompt(current_events, followup_caster=followup_caster)
+        user_prompt = build_event_user_prompt(prompt_wrapper)
+        result = request_chat_completion(text_config, system_prompt, user_prompt)
+        lines = extract_commentary_lines(result["raw_text"], expected_max=4)
+        lines = split_compound_event_lines(lines, expected_max=4)
+        dropped = []
+        interrupted_current = None
+        if lines:
+            dropped, interrupted_current, _, _ = prepare_queue_for_event_trigger(current_events)
 
         if lines and dropped:
             slim_log(
@@ -1405,8 +1287,6 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
                 "raw_text": result["raw_text"],
                 "lines": lines,
             }
-        if compact_combat_backlog:
-            record["compacted_combat_backlog"] = True
         record["queued_items"] = [
             {
                 "id": item["id"],
