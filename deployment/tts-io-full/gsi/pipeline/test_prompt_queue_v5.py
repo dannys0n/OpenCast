@@ -103,6 +103,10 @@ class PromptQueueV5Tests(unittest.TestCase):
             ["Yanni kills Tony.", "Triple for Yanni."],
         )
 
+    def test_extract_commentary_lines_rejects_blank_array_output(self):
+        with self.assertRaises(RuntimeError):
+            MODULE.extract_commentary_lines("[]", expected_max=2)
+
     def test_should_ignore_pure_grenade_throw_during_spectate(self):
         wrapper = {
             "input": {
@@ -817,6 +821,53 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertEqual([item["commentary"] for item in record["queued_items"]], ["Fresh frag.", "That opens space."])
         self.assertNotIn("compacted_combat_backlog", record)
 
+    def test_process_event_wrapper_retries_after_blank_array_output(self):
+        calls = {"count": 0}
+
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            calls["count"] += 1
+            if calls["count"] == 1:
+                return {
+                    "request": {"model": "fake-model"},
+                    "response": {},
+                    "raw_text": "[]",
+                }
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "Fresh frag.\nThat opens space.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+
+        wrapper = {
+            "input": {
+                "context": {
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Ropz", "team": "T", "map_callout": "Mid"}],
+                },
+                "previous_events": [],
+                "current_events": [
+                    {
+                        "event_type": "kill",
+                        "killer": {"name": "Ropz", "team": "T", "map_callout": "Mid"},
+                        "victim": {"name": "Yanni", "team": "CT"},
+                    }
+                ],
+                "derived_tactical_summary": {"confidence": "medium"},
+            }
+        }
+
+        record = MODULE.process_event_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=42, snapshot={})
+
+        self.assertEqual(record["status"], "completed")
+        self.assertEqual(calls["count"], 2)
+        self.assertEqual([item["commentary"] for item in record["queued_items"]], ["Fresh frag.", "That opens space."])
+
     def test_process_interval_wrapper_idle_color_queues_each_sentence_separately(self):
         captured = {}
 
@@ -979,6 +1030,56 @@ class PromptQueueV5Tests(unittest.TestCase):
                 "That is not reassuring at all.",
                 "Correct. Long pressure keeps Cat available behind it.",
             ],
+        )
+
+    def test_process_interval_wrapper_retries_after_blank_array_output(self):
+        calls = {"count": 0}
+
+        def fake_build_text_llm_config(repo_root):
+            return type("FakeTextConfig", (), {})()
+
+        def fake_request_chat_completion(config, system_prompt, user_prompt):
+            calls["count"] += 1
+            if calls["count"] == 1:
+                return {
+                    "request": {"model": "fake-model"},
+                    "response": {},
+                    "raw_text": "[]",
+                }
+            return {
+                "request": {"model": "fake-model"},
+                "response": {},
+                "raw_text": "Mid is quiet.\nCT are spread thin.\nThis could turn fast.",
+            }
+
+        MODULE.build_text_llm_config = fake_build_text_llm_config
+        MODULE.request_chat_completion = fake_request_chat_completion
+        MODULE.INTERVAL_MODE_INDEX = 0
+
+        wrapper = {
+            "input": {
+                "context": {
+                    "bomb_state": "carried",
+                    "score": {"CT": 5, "T": 7},
+                    "alive_players": [{"name": "Niko", "team": "T", "map_callout": "A Ramp"}],
+                },
+                "previous_events": [],
+                "current_events": [],
+                "derived_tactical_summary": {
+                    "next_move_hint": "a_leaning",
+                    "pressure": {"site": "a_leaning"},
+                    "confidence": "medium",
+                },
+            }
+        }
+
+        record = MODULE.process_interval_wrapper(wrapper, Path("/tmp/opencast"), payload_sequence=43)
+
+        self.assertEqual(record["status"], "completed")
+        self.assertEqual(calls["count"], 2)
+        self.assertEqual(
+            [item["commentary"] for item in record["queued_items"]],
+            ["Mid is quiet.", "CT are spread thin.", "This could turn fast."],
         )
 
 

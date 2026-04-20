@@ -744,6 +744,25 @@ def strip_line_label_prefix(text):
     return candidate
 
 
+def is_retryable_blank_output(raw_text, lines=None):
+    raw_text = str(raw_text or "").strip()
+    if raw_text in {"[]", "[ ]", "{}"}:
+        return True
+
+    try:
+        parsed = json.loads(raw_text)
+    except json.JSONDecodeError:
+        parsed = None
+
+    if isinstance(parsed, list) and not parsed:
+        return True
+    if isinstance(parsed, dict) and isinstance(parsed.get("lines"), list) and not parsed.get("lines"):
+        return True
+
+    normalized_lines = [" ".join(str(line or "").split()).strip() for line in (lines or [])]
+    return bool(normalized_lines) and all(line in {"[]", "{}"} for line in normalized_lines)
+
+
 def extract_commentary_lines(raw_text, expected_max):
     raw_text = str(raw_text or "")
 
@@ -793,7 +812,34 @@ def extract_commentary_lines(raw_text, expected_max):
     if not cleaned:
         raise RuntimeError("text model returned no usable commentary lines")
 
+    if is_retryable_blank_output(raw_text, cleaned):
+        raise RuntimeError("text model returned blank array output")
+
     return cleaned
+
+
+def request_commentary_lines_with_retry(
+    text_config,
+    system_prompt,
+    user_prompt,
+    *,
+    expected_max,
+    retry_attempts=1,
+):
+    last_error = None
+    attempts = max(1, int(retry_attempts) + 1)
+    for _ in range(attempts):
+        result = request_chat_completion(text_config, system_prompt, user_prompt)
+        try:
+            lines = extract_commentary_lines(result["raw_text"], expected_max=expected_max)
+        except RuntimeError as error:
+            last_error = error
+            if is_retryable_blank_output(result.get("raw_text")):
+                continue
+            raise
+        return result, lines
+
+    raise last_error or RuntimeError("text model returned no usable commentary lines")
 
 
 def split_compound_event_lines(lines, expected_max=None):
@@ -1251,8 +1297,12 @@ def process_event_wrapper(wrapper, repo_root, *, payload_sequence=None, snapshot
             followup_caster=followup_caster,
         )
         user_prompt = build_event_user_prompt(prompt_wrapper)
-        result = request_chat_completion(text_config, system_prompt, user_prompt)
-        lines = extract_commentary_lines(result["raw_text"], expected_max=4)
+        result, lines = request_commentary_lines_with_retry(
+            text_config,
+            system_prompt,
+            user_prompt,
+            expected_max=4,
+        )
         lines = split_compound_event_lines(lines, expected_max=4)
         dropped = []
         interrupted_current = None
@@ -1375,8 +1425,12 @@ def process_interval_wrapper(wrapper, repo_root, *, payload_sequence=None, inter
         text_config = build_v5_text_llm_config(repo_root)
         system_prompt = build_interval_system_prompt(conversation_mode)
         user_prompt = build_interval_user_prompt(wrapper, conversation_mode)
-        result = request_chat_completion(text_config, system_prompt, user_prompt)
-        lines = extract_commentary_lines(result["raw_text"], expected_max=3)
+        result, lines = request_commentary_lines_with_retry(
+            text_config,
+            system_prompt,
+            user_prompt,
+            expected_max=3,
+        )
         for index, line in enumerate(lines):
             caster = requested_casters[index] if index < len(requested_casters) else requested_casters[-1]
             sentence_lines = split_compound_event_lines([line])
