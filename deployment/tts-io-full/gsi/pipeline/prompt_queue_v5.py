@@ -55,6 +55,7 @@ TTS_FIRST_PCM_STATS_PATH = STATE_DIR / "tts_first_pcm_stats.json"
 FEW_SHOT_EXAMPLES_PATH = SCRIPT_DIR / "few_shot_examples.json"
 PROMPT_CONFIG_PATH = SCRIPT_DIR / "prompt_config_v5.json"
 CHEMISTRY_LINES_PATH = SCRIPT_DIR / "chemistry_lines_v5.json"
+QUEUE_PROMPT_EXPIRATION_SECONDS = 5.0
 
 QUEUE_LOCK = threading.Lock()
 QUEUE_CONDITION = threading.Condition(QUEUE_LOCK)
@@ -1203,6 +1204,43 @@ def ensure_head_prefetch(repo_root, *, tts_config=None):
     return start_prefetch_for_item(candidate, repo_root, tts_config=tts_config)
 
 
+def prune_expired_queue_items_locked(*, now_monotonic=None):
+    if now_monotonic is None:
+        now_monotonic = time.monotonic()
+
+    dropped_items = []
+    for index in range(len(PLAYBACK_QUEUE) - 1, 0, -1):
+        item = PLAYBACK_QUEUE[index]
+        queued_at = item.get("queued_at_monotonic")
+        if not isinstance(queued_at, (int, float)):
+            continue
+        if now_monotonic - queued_at <= QUEUE_PROMPT_EXPIRATION_SECONDS:
+            continue
+        dropped_items.append(PLAYBACK_QUEUE[index])
+        del PLAYBACK_QUEUE[index]
+
+    if dropped_items:
+        write_queue_state_locked()
+
+    return list(reversed(dropped_items))
+
+
+def drop_expired_queue_items(*, now_monotonic=None):
+    with QUEUE_CONDITION:
+        dropped_items = prune_expired_queue_items_locked(now_monotonic=now_monotonic)
+
+    if dropped_items:
+        for item in dropped_items:
+            finalize_item_prefetch(item, cancel=True, wait=False)
+        slim_log(
+            "queue trim",
+            commentary=format_trimmed_items(dropped_items),
+            include_commentary=True,
+        )
+
+    return dropped_items
+
+
 def ensure_queue_worker(repo_root):
     global QUEUE_WORKER_THREAD
     with QUEUE_CONDITION:
@@ -1213,11 +1251,24 @@ def ensure_queue_worker(repo_root):
             global CURRENT_PLAYBACK
             tts_config = build_tts_config(repo_root)
             while True:
+                drop_expired_queue_items()
+                dropped_items = []
                 with QUEUE_CONDITION:
                     while not PLAYBACK_QUEUE:
                         CURRENT_PLAYBACK = None
                         write_queue_state_locked()
                         QUEUE_CONDITION.wait()
+                        dropped_items = prune_expired_queue_items_locked()
+                if dropped_items:
+                    for item in dropped_items:
+                        finalize_item_prefetch(item, cancel=True, wait=False)
+                    slim_log(
+                        "queue trim",
+                        commentary=format_trimmed_items(dropped_items),
+                        include_commentary=True,
+                    )
+                    continue
+                with QUEUE_CONDITION:
                     CURRENT_PLAYBACK = PLAYBACK_QUEUE.popleft()
                     write_queue_state_locked()
 
@@ -1285,8 +1336,19 @@ def enqueue_prompt_items(items, repo_root):
         for item in items:
             PLAYBACK_QUEUE.append(item)
 
-        write_queue_state_locked()
+        dropped_items = prune_expired_queue_items_locked()
+        if not dropped_items:
+            write_queue_state_locked()
         QUEUE_CONDITION.notify_all()
+
+    for item in dropped_items:
+        finalize_item_prefetch(item, cancel=True, wait=False)
+    if dropped_items:
+        slim_log(
+            "queue trim",
+            commentary=format_trimmed_items(dropped_items),
+            include_commentary=True,
+        )
 
     ensure_head_prefetch(repo_root)
 
@@ -1416,6 +1478,7 @@ def build_queue_item(
     item = {
         "id": next_item_sequence(),
         "created_at": now_stamp(),
+        "queued_at_monotonic": time.monotonic(),
         "commentary": commentary,
         "caster": normalize_caster_id(caster),
         "prompt_style": prompt_style,

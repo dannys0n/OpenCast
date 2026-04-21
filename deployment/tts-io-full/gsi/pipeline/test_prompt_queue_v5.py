@@ -3,6 +3,7 @@ import json
 import sys
 import tempfile
 import threading
+import time
 import unittest
 from collections import deque
 from pathlib import Path
@@ -210,6 +211,84 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertEqual(kill_counts, {"ct": 0, "t": 0})
         self.assertEqual(event_types, [])
         self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [11])
+
+    def test_prune_expired_queue_items_keeps_front_item(self):
+        front_item = MODULE.build_queue_item(
+            commentary="Front line.",
+            caster="caster0",
+            prompt_style="play_by_play_event",
+            tag="event",
+            payload_sequence=1,
+            source="event",
+        )
+        expired_second = MODULE.build_queue_item(
+            commentary="Old followup.",
+            caster="caster1",
+            prompt_style="play_by_play_follow_up",
+            tag="followup",
+            payload_sequence=1,
+            source="event",
+        )
+        fresh_third = MODULE.build_queue_item(
+            commentary="Fresh idle.",
+            caster="caster1",
+            prompt_style="idle_color",
+            tag="idle",
+            payload_sequence=2,
+            source="idle_color",
+        )
+
+        front_item["queued_at_monotonic"] = 1.0
+        expired_second["queued_at_monotonic"] = 1.0
+        fresh_third["queued_at_monotonic"] = 8.0
+
+        MODULE.PLAYBACK_QUEUE.extend([front_item, expired_second, fresh_third])
+
+        dropped = MODULE.drop_expired_queue_items(now_monotonic=10.0)
+
+        self.assertEqual([item["commentary"] for item in dropped], ["Old followup."])
+        self.assertEqual(
+            [item["commentary"] for item in MODULE.PLAYBACK_QUEUE],
+            ["Front line.", "Fresh idle."],
+        )
+
+    def test_enqueue_prompt_items_drops_expired_nonfront_items(self):
+        existing_front = MODULE.build_queue_item(
+            commentary="Front line.",
+            caster="caster0",
+            prompt_style="play_by_play_event",
+            tag="event",
+            payload_sequence=1,
+            source="event",
+        )
+        expired_second = MODULE.build_queue_item(
+            commentary="Stale idle.",
+            caster="caster1",
+            prompt_style="idle_color",
+            tag="idle",
+            payload_sequence=2,
+            source="idle_color",
+        )
+        new_item = MODULE.build_queue_item(
+            commentary="Fresh followup.",
+            caster="caster1",
+            prompt_style="play_by_play_follow_up",
+            tag="followup",
+            payload_sequence=3,
+            source="event",
+        )
+
+        existing_front["queued_at_monotonic"] = time.monotonic()
+        expired_second["queued_at_monotonic"] = time.monotonic() - 10.0
+
+        MODULE.PLAYBACK_QUEUE.extend([existing_front, expired_second])
+
+        MODULE.enqueue_prompt_items([new_item], Path("/tmp/opencast"))
+
+        self.assertEqual(
+            [item["commentary"] for item in MODULE.PLAYBACK_QUEUE],
+            ["Front line.", "Fresh followup."],
+        )
 
     def test_prepare_queue_for_event_trigger_keeps_queued_event_items(self):
         current_event = {

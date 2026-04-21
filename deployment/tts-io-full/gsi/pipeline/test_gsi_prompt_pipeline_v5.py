@@ -133,6 +133,11 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
         self.assertEqual(MODULE.next_event_followup_caster(), "caster0")
         self.assertEqual(MODULE.next_event_followup_caster(), "caster1")
 
+    def test_prompting_is_ready_when_map_name_is_non_empty(self):
+        self.assertTrue(MODULE.prompting_is_ready({"map": {"name": "de_dust2"}}))
+        self.assertFalse(MODULE.prompting_is_ready({"map": {"name": ""}}))
+        self.assertFalse(MODULE.prompting_is_ready({"map": {}}))
+
     def test_build_request_idle_color_alternates_casters(self):
         self.assertEqual(
             MODULE.build_request("idle_color"),

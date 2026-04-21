@@ -73,6 +73,12 @@ def snapshot_map_identity(snapshot):
     }
 
 
+def prompting_is_ready(snapshot):
+    snapshot = as_dict(snapshot)
+    map_name = str(as_dict(snapshot.get("map")).get("name") or "").strip()
+    return bool(map_name)
+
+
 def should_reset_for_new_session(previous_snapshot, current_snapshot):
     previous_snapshot = as_dict(previous_snapshot)
     current_snapshot = as_dict(current_snapshot)
@@ -522,11 +528,7 @@ def interval_prompt_loop():
 
         if not current_snapshot:
             continue
-
-        match_context = build_match_context(current_snapshot)
-        if match_context.get("map_phase") != "live":
-            continue
-        if match_context.get("round_phase") != "live":
+        if not prompting_is_ready(current_snapshot):
             continue
 
         now_ts = time.time()
@@ -678,6 +680,13 @@ class Handler(BaseHTTPRequestHandler):
             payload_sequence=payload_sequence,
             payload=payload,
         )
+
+        if filtered_batch["events"]:
+            if not prompting_is_ready(current_snapshot):
+                filtered_batch = {
+                    **filtered_batch,
+                    "events": [],
+                }
 
         if filtered_batch["events"]:
             with STATE_LOCK:
