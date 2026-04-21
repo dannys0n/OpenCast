@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -165,8 +166,10 @@ def request_chat_completion(config, system_prompt, user_prompt, *, temperature=N
     )
 
     try:
+        started_at = time.monotonic()
         with urllib.request.urlopen(request, timeout=config.timeout_seconds) as response:
             response_json = json.loads(response.read().decode("utf-8"))
+        completed_at = time.monotonic()
     except urllib.error.HTTPError as error:
         body = error.read().decode("utf-8", errors="replace")
         raise RuntimeError(f"text model HTTP {error.code}: {body}") from error
@@ -179,6 +182,7 @@ def request_chat_completion(config, system_prompt, user_prompt, *, temperature=N
         "request": request_body,
         "response": response_json,
         "raw_text": raw_text,
+        "text_generation_completion_latency_seconds": completed_at - started_at,
     }
 
 

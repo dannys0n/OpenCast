@@ -51,6 +51,7 @@ STATE_DIR = SCRIPT_DIR / ".state" / "v5"
 PROMPT_RUNTIME_HISTORY_PATH = STATE_DIR / "prompt_runtime_pretty.jsonl"
 PROMPT_RUNTIME_LATEST_PATH = STATE_DIR / "prompt_runtime_latest.json"
 PROMPT_QUEUE_STATE_PATH = STATE_DIR / "prompt_queue_state.json"
+TTS_FIRST_PCM_STATS_PATH = STATE_DIR / "tts_first_pcm_stats.json"
 FEW_SHOT_EXAMPLES_PATH = SCRIPT_DIR / "few_shot_examples.json"
 PROMPT_CONFIG_PATH = SCRIPT_DIR / "prompt_config_v5.json"
 CHEMISTRY_LINES_PATH = SCRIPT_DIR / "chemistry_lines_v5.json"
@@ -64,6 +65,7 @@ INTERVAL_MODE_INDEX = 0
 ITEM_SEQUENCE = 0
 LAST_LOG_MONOTONIC = None
 LOG_OUTPUT_LOCK = threading.Lock()
+TTS_STATS_LOCK = threading.Lock()
 OPEN_TTS_LOG_ITEM_ID = None
 OPEN_TTS_LOG_STARTED_AT = None
 ANSI_RESET = "\033[0m"
@@ -281,6 +283,7 @@ def ensure_state_dir():
         PROMPT_RUNTIME_HISTORY_PATH,
         PROMPT_RUNTIME_LATEST_PATH,
         PROMPT_QUEUE_STATE_PATH,
+        TTS_FIRST_PCM_STATS_PATH,
     ]:
         path.touch(exist_ok=True)
 
@@ -296,6 +299,181 @@ def append_pretty_json_record(path, record):
 def write_pretty_json_file(path, record):
     ensure_state_dir()
     path.write_text(f"{json.dumps(record, indent=2, sort_keys=True)}\n", encoding="utf-8")
+
+
+def load_json_file(path, default):
+    if not path.exists():
+        return copy.deepcopy(default)
+    try:
+        loaded = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return copy.deepcopy(default)
+    return loaded if isinstance(loaded, type(default)) else copy.deepcopy(default)
+
+
+def _median(values):
+    if not values:
+        return None
+    ordered = sorted(values)
+    mid = len(ordered) // 2
+    if len(ordered) % 2 == 1:
+        return float(ordered[mid])
+    return float((ordered[mid - 1] + ordered[mid]) / 2.0)
+
+
+def compute_filtered_latency_stats(samples):
+    samples = [float(sample) for sample in samples if isinstance(sample, (int, float)) and sample >= 0.0]
+    if not samples:
+        return {
+            "raw_count": 0,
+            "filtered_count": 0,
+            "average_seconds": None,
+            "median_seconds": None,
+            "kept_samples_seconds": [],
+        }
+
+    median = _median(samples)
+    deviations = [abs(sample - median) for sample in samples]
+    mad = _median(deviations)
+
+    if len(samples) >= 5 and mad is not None and mad > 0:
+        filtered = []
+        for sample in samples:
+            modified_z = 0.6745 * abs(sample - median) / mad
+            if modified_z <= 3.5:
+                filtered.append(sample)
+    elif len(samples) >= 10:
+        ordered = sorted(samples)
+        trim = max(1, int(len(ordered) * 0.1))
+        filtered = ordered[trim:-trim] if len(ordered) > trim * 2 else ordered
+    else:
+        filtered = list(samples)
+
+    if not filtered:
+        filtered = list(samples)
+
+    return {
+        "raw_count": len(samples),
+        "filtered_count": len(filtered),
+        "average_seconds": sum(filtered) / len(filtered),
+        "median_seconds": _median(filtered),
+        "kept_samples_seconds": filtered,
+    }
+
+
+def record_tts_first_pcm_latency(fetch_result):
+    if not isinstance(fetch_result, dict):
+        return
+    if fetch_result.get("_latency_recorded"):
+        return
+
+    latency = fetch_result.get("first_pcm_latency_seconds")
+    if not isinstance(latency, (int, float)) or latency < 0.0:
+        return
+
+    with TTS_STATS_LOCK:
+        payload = load_json_file(TTS_FIRST_PCM_STATS_PATH, {})
+        samples = payload.get("recent_first_pcm_latency_seconds")
+        if not isinstance(samples, list):
+            samples = []
+        samples.append(float(latency))
+        samples = samples[-100:]
+        stats = compute_filtered_latency_stats(samples)
+
+        text_samples = payload.get("recent_text_generation_completion_latency_seconds")
+        if not isinstance(text_samples, list):
+            text_samples = []
+        text_stats = compute_filtered_latency_stats(text_samples)
+
+        record = {
+            "updated_at": now_stamp(),
+            "recent_first_pcm_latency_seconds": [round(sample, 4) for sample in samples],
+            "raw_sample_count": stats["raw_count"],
+            "filtered_sample_count": stats["filtered_count"],
+            "average_first_pcm_latency_seconds": round(stats["average_seconds"], 4)
+            if stats["average_seconds"] is not None
+            else None,
+            "median_first_pcm_latency_seconds": round(stats["median_seconds"], 4)
+            if stats["median_seconds"] is not None
+            else None,
+            "recent_text_generation_completion_latency_seconds": [
+                round(sample, 4) for sample in text_samples
+            ],
+            "text_generation_raw_sample_count": text_stats["raw_count"],
+            "text_generation_filtered_sample_count": text_stats["filtered_count"],
+            "average_text_generation_completion_latency_seconds": round(
+                text_stats["average_seconds"], 4
+            )
+            if text_stats["average_seconds"] is not None
+            else None,
+            "median_text_generation_completion_latency_seconds": round(
+                text_stats["median_seconds"], 4
+            )
+            if text_stats["median_seconds"] is not None
+            else None,
+            "outlier_strategy": "median_mad_then_trimmed_fallback",
+        }
+        write_pretty_json_file(TTS_FIRST_PCM_STATS_PATH, record)
+
+    fetch_result["_latency_recorded"] = True
+
+
+def record_text_generation_completion_latency(result):
+    if not isinstance(result, dict):
+        return
+    if result.get("_text_generation_latency_recorded"):
+        return
+
+    latency = result.get("text_generation_completion_latency_seconds")
+    if not isinstance(latency, (int, float)) or latency < 0.0:
+        return
+
+    with TTS_STATS_LOCK:
+        payload = load_json_file(TTS_FIRST_PCM_STATS_PATH, {})
+
+        first_pcm_samples = payload.get("recent_first_pcm_latency_seconds")
+        if not isinstance(first_pcm_samples, list):
+            first_pcm_samples = []
+        first_pcm_stats = compute_filtered_latency_stats(first_pcm_samples)
+
+        text_samples = payload.get("recent_text_generation_completion_latency_seconds")
+        if not isinstance(text_samples, list):
+            text_samples = []
+        text_samples.append(float(latency))
+        text_samples = text_samples[-100:]
+        text_stats = compute_filtered_latency_stats(text_samples)
+
+        record = {
+            "updated_at": now_stamp(),
+            "recent_first_pcm_latency_seconds": [round(sample, 4) for sample in first_pcm_samples],
+            "raw_sample_count": first_pcm_stats["raw_count"],
+            "filtered_sample_count": first_pcm_stats["filtered_count"],
+            "average_first_pcm_latency_seconds": round(first_pcm_stats["average_seconds"], 4)
+            if first_pcm_stats["average_seconds"] is not None
+            else None,
+            "median_first_pcm_latency_seconds": round(first_pcm_stats["median_seconds"], 4)
+            if first_pcm_stats["median_seconds"] is not None
+            else None,
+            "recent_text_generation_completion_latency_seconds": [
+                round(sample, 4) for sample in text_samples
+            ],
+            "text_generation_raw_sample_count": text_stats["raw_count"],
+            "text_generation_filtered_sample_count": text_stats["filtered_count"],
+            "average_text_generation_completion_latency_seconds": round(
+                text_stats["average_seconds"], 4
+            )
+            if text_stats["average_seconds"] is not None
+            else None,
+            "median_text_generation_completion_latency_seconds": round(
+                text_stats["median_seconds"], 4
+            )
+            if text_stats["median_seconds"] is not None
+            else None,
+            "outlier_strategy": "median_mad_then_trimmed_fallback",
+        }
+        write_pretty_json_file(TTS_FIRST_PCM_STATS_PATH, record)
+
+    result["_text_generation_latency_recorded"] = True
 
 
 def strip_empty(value):
@@ -418,6 +596,7 @@ def reset_prompt_runtime_state():
         PROMPT_RUNTIME_HISTORY_PATH,
         PROMPT_RUNTIME_LATEST_PATH,
         PROMPT_QUEUE_STATE_PATH,
+        TTS_FIRST_PCM_STATS_PATH,
     ]:
         path.write_text("", encoding="utf-8")
     reset_log_clock()
@@ -840,6 +1019,7 @@ def request_commentary_lines_with_retry(
     attempts = max(1, int(retry_attempts) + 1)
     for _ in range(attempts):
         result = request_chat_completion(text_config, system_prompt, user_prompt)
+        record_text_generation_completion_latency(result)
         try:
             lines = extract_commentary_lines(result["raw_text"], expected_max=expected_max)
         except RuntimeError as error:
@@ -926,18 +1106,21 @@ def play_tts_prompt_interruptibly(tts_config, tts_prompt, interrupt_event):
 def _cleanup_prefetch_resources(item, *, wait=False):
     temp_dir_obj = item.get("prefetch_temp_dir_obj")
     thread = item.get("prefetch_thread")
+    result = item.get("prefetch_result") or {}
     if temp_dir_obj is None:
         return
 
     if wait:
         if thread is not None:
             thread.join()
+        record_tts_first_pcm_latency(result)
         temp_dir_obj.cleanup()
         item["prefetch_temp_dir_obj"] = None
         item["prefetch_cleanup_pending"] = False
         return
 
     if thread is None or not thread.is_alive():
+        record_tts_first_pcm_latency(result)
         temp_dir_obj.cleanup()
         item["prefetch_temp_dir_obj"] = None
         item["prefetch_cleanup_pending"] = False
@@ -950,6 +1133,7 @@ def _cleanup_prefetch_resources(item, *, wait=False):
 
     def cleanup_worker():
         thread.join()
+        record_tts_first_pcm_latency(result)
         temp_dir_obj.cleanup()
         item["prefetch_temp_dir_obj"] = None
         item["prefetch_cleanup_pending"] = False
@@ -1078,6 +1262,7 @@ def ensure_queue_worker(repo_root):
                     )
                 else:
                     CURRENT_PLAYBACK["playback_result"] = playback
+                    record_tts_first_pcm_latency(playback.get("fetch_result") or {})
                     if playback.get("interrupted"):
                         cancel_prefetch = True
                         slim_log_tts_finish(CURRENT_PLAYBACK["id"], "tts interrupted")

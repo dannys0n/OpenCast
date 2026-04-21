@@ -24,6 +24,7 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.original_runtime_history_path = MODULE.PROMPT_RUNTIME_HISTORY_PATH
         self.original_runtime_latest_path = MODULE.PROMPT_RUNTIME_LATEST_PATH
         self.original_queue_state_path = MODULE.PROMPT_QUEUE_STATE_PATH
+        self.original_tts_first_pcm_stats_path = MODULE.TTS_FIRST_PCM_STATS_PATH
         self.original_ensure_queue_worker = MODULE.ensure_queue_worker
         self.original_playback_queue = MODULE.PLAYBACK_QUEUE
         self.original_current_playback = MODULE.CURRENT_PLAYBACK
@@ -39,6 +40,7 @@ class PromptQueueV5Tests(unittest.TestCase):
         MODULE.PROMPT_RUNTIME_HISTORY_PATH = self.state_dir / "prompt_runtime_pretty.jsonl"
         MODULE.PROMPT_RUNTIME_LATEST_PATH = self.state_dir / "prompt_runtime_latest.json"
         MODULE.PROMPT_QUEUE_STATE_PATH = self.state_dir / "prompt_queue_state.json"
+        MODULE.TTS_FIRST_PCM_STATS_PATH = self.state_dir / "tts_first_pcm_stats.json"
         MODULE.ensure_queue_worker = lambda repo_root: None
         MODULE.ensure_head_prefetch = lambda repo_root, *, tts_config=None: False
         MODULE.PLAYBACK_QUEUE = deque()
@@ -50,6 +52,7 @@ class PromptQueueV5Tests(unittest.TestCase):
         MODULE.PROMPT_RUNTIME_HISTORY_PATH = self.original_runtime_history_path
         MODULE.PROMPT_RUNTIME_LATEST_PATH = self.original_runtime_latest_path
         MODULE.PROMPT_QUEUE_STATE_PATH = self.original_queue_state_path
+        MODULE.TTS_FIRST_PCM_STATS_PATH = self.original_tts_first_pcm_stats_path
         MODULE.ensure_queue_worker = self.original_ensure_queue_worker
         MODULE.PLAYBACK_QUEUE = self.original_playback_queue
         MODULE.CURRENT_PLAYBACK = self.original_current_playback
@@ -106,6 +109,32 @@ class PromptQueueV5Tests(unittest.TestCase):
     def test_extract_commentary_lines_rejects_blank_array_output(self):
         with self.assertRaises(RuntimeError):
             MODULE.extract_commentary_lines("[]", expected_max=2)
+
+    def test_record_tts_first_pcm_latency_writes_trimmed_average(self):
+        for latency in [0.20, 0.22, 0.24, 0.21, 5.0]:
+            MODULE.record_tts_first_pcm_latency({"first_pcm_latency_seconds": latency})
+
+        payload = json.loads(MODULE.TTS_FIRST_PCM_STATS_PATH.read_text(encoding="utf-8"))
+
+        self.assertEqual(payload["raw_sample_count"], 5)
+        self.assertEqual(payload["filtered_sample_count"], 4)
+        self.assertAlmostEqual(payload["average_first_pcm_latency_seconds"], 0.2175, places=4)
+        self.assertEqual(payload["outlier_strategy"], "median_mad_then_trimmed_fallback")
+
+    def test_record_text_generation_completion_latency_writes_trimmed_average(self):
+        for latency in [0.40, 0.42, 0.44, 0.41, 8.0]:
+            MODULE.record_text_generation_completion_latency(
+                {"text_generation_completion_latency_seconds": latency}
+            )
+
+        payload = json.loads(MODULE.TTS_FIRST_PCM_STATS_PATH.read_text(encoding="utf-8"))
+
+        self.assertEqual(payload["text_generation_raw_sample_count"], 5)
+        self.assertEqual(payload["text_generation_filtered_sample_count"], 4)
+        self.assertAlmostEqual(
+            payload["average_text_generation_completion_latency_seconds"], 0.4175, places=4
+        )
+        self.assertEqual(payload["outlier_strategy"], "median_mad_then_trimmed_fallback")
 
     def test_should_ignore_pure_grenade_throw_during_spectate(self):
         wrapper = {
@@ -834,11 +863,13 @@ class PromptQueueV5Tests(unittest.TestCase):
                     "request": {"model": "fake-model"},
                     "response": {},
                     "raw_text": "[]",
+                    "text_generation_completion_latency_seconds": 0.2,
                 }
             return {
                 "request": {"model": "fake-model"},
                 "response": {},
                 "raw_text": "Fresh frag.\nThat opens space.",
+                "text_generation_completion_latency_seconds": 0.4,
             }
 
         MODULE.build_text_llm_config = fake_build_text_llm_config
@@ -867,6 +898,11 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertEqual(record["status"], "completed")
         self.assertEqual(calls["count"], 2)
         self.assertEqual([item["commentary"] for item in record["queued_items"]], ["Fresh frag.", "That opens space."])
+        payload = json.loads(MODULE.TTS_FIRST_PCM_STATS_PATH.read_text(encoding="utf-8"))
+        self.assertEqual(payload["text_generation_raw_sample_count"], 2)
+        self.assertAlmostEqual(
+            payload["average_text_generation_completion_latency_seconds"], 0.3, places=4
+        )
 
     def test_process_interval_wrapper_idle_color_queues_each_sentence_separately(self):
         captured = {}

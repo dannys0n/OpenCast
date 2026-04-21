@@ -268,6 +268,8 @@ def open_play_process(sample_rate, speed=1.0):
 
 def fetch_tts_audio_to_file(config, tts_prompt, buffer_path, result, cancel_event=None):
     payload = build_tts_payload(config, tts_prompt)
+    request_started_at = time.monotonic()
+    result["request_started_at_monotonic"] = request_started_at
     request = urllib.request.Request(
         f"{config.api_base}/v1/audio/speech",
         data=json.dumps(payload).encode("utf-8"),
@@ -286,6 +288,8 @@ def fetch_tts_audio_to_file(config, tts_prompt, buffer_path, result, cancel_even
                     chunk = response.read(16384)
                     if not chunk:
                         break
+                    if "first_pcm_latency_seconds" not in result:
+                        result["first_pcm_latency_seconds"] = time.monotonic() - request_started_at
                     handle.write(chunk)
                     handle.flush()
         if result.get("cancelled"):
@@ -308,6 +312,8 @@ def fetch_tts_audio_to_file(config, tts_prompt, buffer_path, result, cancel_even
 
 def fetch_tts_audio_to_queue(config, tts_prompt, chunk_queue, result, cancel_event=None, bytes_per_frame=2):
     payload = build_tts_payload(config, tts_prompt)
+    request_started_at = time.monotonic()
+    result["request_started_at_monotonic"] = request_started_at
     request = urllib.request.Request(
         f"{config.api_base}/v1/audio/speech",
         data=json.dumps(payload).encode("utf-8"),
@@ -327,6 +333,8 @@ def fetch_tts_audio_to_queue(config, tts_prompt, chunk_queue, result, cancel_eve
                 chunk = response.read(16384)
                 if not chunk:
                     break
+                if "first_pcm_latency_seconds" not in result:
+                    result["first_pcm_latency_seconds"] = time.monotonic() - request_started_at
 
                 data = carry + chunk
                 remainder = len(data) % bytes_per_frame
@@ -455,7 +463,7 @@ def stream_prefetched_tts_playback_interruptibly(
         while True:
             if interrupt_event.is_set():
                 interrupted = True
-                return {"interrupted": True}
+                return {"interrupted": True, "fetch_result": dict(result)}
 
             size = buffer_path.stat().st_size if buffer_path.exists() else 0
             available = size - offset
@@ -694,7 +702,7 @@ def stream_tts_playback_interruptibly(
                     if not result.get("ok"):
                         if result.get("cancelled"):
                             interrupted = True
-                            return {"interrupted": True}
+                            return {"interrupted": True, "fetch_result": dict(result)}
                         raise RuntimeError(result.get("error") or "TTS request failed")
                     break
                 continue
@@ -717,7 +725,7 @@ def stream_tts_playback_interruptibly(
         return_code = player.wait()
         if return_code != 0:
             raise RuntimeError(f"SoX play exited with status {return_code}")
-        return {"interrupted": False}
+        return {"interrupted": False, "fetch_result": dict(result)}
     finally:
         close_player_immediately()
         if interrupt_event.is_set():
