@@ -1,0 +1,27 @@
+OpenCast Academic Use Notice
+
+This repository is shared for academic, research, and portfolio-review purposes.
+
+This root notice applies only to original OpenCast-specific materials in this repository that are not covered by a separate third-party license, notice, or upstream terms. It does not replace, override, or relicense any third-party code, models, assets, datasets, or documentation included in or referenced by this repository.
+
+No claim of full ownership is made over bundled, adapted, or referenced third-party works. Those materials remain the property of their respective authors, copyright holders, and licensors.
+
+Subject to the limits above, permission is granted to view, clone, study, and modify the original OpenCast-specific portions of this repository for:
+
+- academic coursework
+- research
+- private study
+- non-commercial evaluation
+- portfolio or employer review
+
+The following conditions apply:
+
+1. You must keep this notice and any existing attribution or third-party license notices with the relevant materials.
+2. You must clearly preserve credit to third-party authors and upstream projects where applicable.
+3. You may not use the original OpenCast-specific portions of this repository for commercial sale, commercial hosting, or paid productization without prior written permission from the repository maintainer(s).
+4. You may not represent third-party code or assets in this repository as your own original work.
+5. Your use of any third-party material remains subject to that material's own license and terms, even when it appears inside this repository.
+
+If a file or subdirectory includes its own license, README notice, or upstream attribution, that more specific notice controls for that material.
+
+THE REPOSITORY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
