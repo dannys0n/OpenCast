@@ -59,10 +59,8 @@ def build_score_context(score):
         leader = "ct"
     else:
         leader = "t"
-    margin = "close" if abs(ct_score - t_score) <= 2 else "clear"
     return {
         "leader": leader,
-        "margin": margin,
     }
 
 

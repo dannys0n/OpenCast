@@ -17,12 +17,14 @@ from gsi_prompt_pipeline_v2 import (
     PORT,
     as_dict,
     compute_score,
+    extract_changed_paths,
     filter_important_events,
     normalize_player,
     normalize_team,
     strip_empty,
 )
 from prompt_queue_v5 import (
+    flush_prompt_queue_runtime,
     load_prompt_config as load_prompt_runtime_config,
     next_interval_mode,
     process_event_wrapper,
@@ -54,9 +56,11 @@ class PipelineState:
     previous_event_summary: list | None = None
     last_event_prompt_at: float = 0.0
     last_interval_prompt_at: float = 0.0
+    bomb_planted_round_key: tuple[str, str] | None = None
 
 
 PIPELINE_STATE = PipelineState()
+LIMITED_CONTEXT_DERIVED_PLACEHOLDER_VALUES = {"unknown", "unclear", "none", "empty", "neutral"}
 
 
 def now_stamp():
@@ -73,10 +77,55 @@ def snapshot_map_identity(snapshot):
     }
 
 
-def prompting_is_ready(snapshot):
+def has_valid_map(snapshot):
     snapshot = as_dict(snapshot)
     map_name = str(as_dict(snapshot.get("map")).get("name") or "").strip()
     return bool(map_name)
+
+
+def current_round_key(snapshot):
+    identity = snapshot_map_identity(snapshot)
+    map_name = str(identity.get("map_name") or "").strip()
+    map_round = identity.get("map_round")
+    if not map_name or map_round in (None, ""):
+        return None
+    return (map_name, str(map_round))
+
+
+def has_valid_phase_countdown(snapshot):
+    snapshot = as_dict(snapshot)
+    phase_countdowns = as_dict(snapshot.get("phase_countdowns"))
+    phase_ends_in = str(phase_countdowns.get("phase_ends_in") or "").strip()
+    if not phase_ends_in:
+        return False
+    try:
+        float(phase_ends_in)
+        return True
+    except (TypeError, ValueError):
+        return False
+
+
+def prompting_is_ready(snapshot):
+    return has_valid_phase_countdown(snapshot)
+
+
+def prompting_became_invalid(previous_snapshot, current_snapshot):
+    return prompting_is_ready(previous_snapshot) and not prompting_is_ready(current_snapshot)
+
+
+def raw_gsi_has_event_activity(payload):
+    payload = as_dict(payload)
+    added_paths = extract_changed_paths(payload.get("added"))
+    previous_paths = extract_changed_paths(payload.get("previously"))
+    return bool(added_paths or previous_paths)
+
+
+def should_bootstrap_prompting_from_event(previous_snapshot, current_snapshot, payload):
+    if not raw_gsi_has_event_activity(payload):
+        return False
+    if prompting_is_ready(current_snapshot):
+        return False
+    return not has_valid_map(previous_snapshot) and has_valid_map(current_snapshot)
 
 
 def should_reset_for_new_session(previous_snapshot, current_snapshot):
@@ -117,6 +166,7 @@ def reset_runtime_session_state(*, keep_current_snapshot=False):
     PIPELINE_STATE.previous_event_summary = []
     PIPELINE_STATE.last_event_prompt_at = 0.0
     PIPELINE_STATE.last_interval_prompt_at = 0.0
+    PIPELINE_STATE.bomb_planted_round_key = None
 
 
 def ensure_state_dir():
@@ -185,7 +235,6 @@ def build_match_context(snapshot):
             "T": score["t"],
         },
         "win_team": normalize_team(round_data.get("win_team")),
-        "alive_players": build_alive_players(snapshot),
         "local_player": build_local_player_context(snapshot),
     }
 
@@ -196,7 +245,6 @@ def build_training_context(snapshot):
         {
             "bomb_state": match_context.get("bomb_state"),
             "score": copy.deepcopy(match_context.get("score")),
-            "alive_players": copy.deepcopy(match_context.get("alive_players")),
             "local_player": copy.deepcopy(match_context.get("local_player")),
         }
     )
@@ -265,6 +313,25 @@ def build_local_player_context(snapshot):
             "weapons": weapons,
         }
     )
+
+
+def prune_limited_context_derived_summary(value):
+    if isinstance(value, dict):
+        cleaned = {
+            key: prune_limited_context_derived_summary(item)
+            for key, item in value.items()
+        }
+        return {
+            key: item
+            for key, item in cleaned.items()
+            if key not in {"confidence", "alive_counts"} and item not in (None, "", [], {})
+        }
+    if isinstance(value, list):
+        cleaned = [prune_limited_context_derived_summary(item) for item in value]
+        return [item for item in cleaned if item not in (None, "", [], {})]
+    if isinstance(value, str) and value in LIMITED_CONTEXT_DERIVED_PLACEHOLDER_VALUES:
+        return None
+    return value
 
 
 def build_alive_players(snapshot):
@@ -443,19 +510,59 @@ def build_previous_events_summary(events):
     return [simplified] if simplified else []
 
 
+def filter_duplicate_round_bomb_plants(filtered_batch, current_snapshot):
+    filtered_batch = as_dict(filtered_batch)
+    events = [as_dict(event) for event in filtered_batch.get("events", [])]
+    round_key = current_round_key(current_snapshot)
+    if not events or round_key is None:
+        return filtered_batch
+
+    cleaned_events = []
+    dropped_count = 0
+    with STATE_LOCK:
+        planted_round_key = PIPELINE_STATE.bomb_planted_round_key
+        saw_new_plant_this_batch = False
+        for event in events:
+            is_planted_event = (
+                str(event.get("event_type") or "").strip() == "bomb_event"
+                and str(event.get("state_after") or "").strip() == "planted"
+            )
+            if is_planted_event:
+                if planted_round_key == round_key or saw_new_plant_this_batch:
+                    dropped_count += 1
+                    continue
+                saw_new_plant_this_batch = True
+            cleaned_events.append(copy.deepcopy(event))
+
+        if saw_new_plant_this_batch:
+            PIPELINE_STATE.bomb_planted_round_key = round_key
+
+    if not dropped_count:
+        return filtered_batch
+    return {
+        **copy.deepcopy(filtered_batch),
+        "events": cleaned_events,
+    }
+
+
 def build_training_wrapper(filtered_batch, current_snapshot, payload_sequence, previous_events, *, followup_caster="caster1"):
     current_events = simplify_filtered_batch_for_training(filtered_batch)
     context = build_training_context(current_snapshot)
     map_name = as_dict(as_dict(current_snapshot).get("map")).get("name")
+    alive_players = build_alive_players(current_snapshot)
     request = build_request("event_bundle", followup_caster=followup_caster)
     derived_tactical_summary = build_derived_tactical_summary(
         map_name=map_name,
-        alive_players=context.get("alive_players", []),
+        alive_players=alive_players,
         current_events=current_events,
         previous_events=previous_events,
         bomb_state=context.get("bomb_state"),
         score=context.get("score"),
     )
+    if not has_full_player_context(current_snapshot):
+        derived_tactical_summary = strip_empty(
+            prune_limited_context_derived_summary(derived_tactical_summary)
+        )
     return {
         "input": {
             "context": context,
@@ -476,15 +583,20 @@ def build_recent_event_summary(training_wrapper):
 def build_idle_wrapper(current_snapshot, previous_events, mode):
     context = build_training_context(current_snapshot)
     map_name = as_dict(as_dict(current_snapshot).get("map")).get("name")
+    alive_players = build_alive_players(current_snapshot)
     request = build_request(mode)
     derived_tactical_summary = build_derived_tactical_summary(
         map_name=map_name,
-        alive_players=context.get("alive_players", []),
+        alive_players=alive_players,
         current_events=[],
         previous_events=[],
         bomb_state=context.get("bomb_state"),
         score=context.get("score"),
     )
+    if not has_full_player_context(current_snapshot):
+        derived_tactical_summary = strip_empty(
+            prune_limited_context_derived_summary(derived_tactical_summary)
+        )
     return {
         "input": {
             "context": context,
@@ -665,6 +777,22 @@ class Handler(BaseHTTPRequestHandler):
                     ),
                     include_commentary=True,
                 )
+            elif prompting_became_invalid(previous_snapshot, current_snapshot):
+                flush_result = flush_prompt_queue_runtime()
+                reset_runtime_session_state(keep_current_snapshot=True)
+                slim_log(
+                    "session reset",
+                    commentary=(
+                        "Map context became invalid; flushed queued prompts and interrupted active TTS."
+                    ),
+                    include_commentary=True,
+                )
+                if flush_result.get("interrupted_current"):
+                    slim_log(
+                        "queue trim",
+                        commentary=flush_result["interrupted_current"].get("commentary"),
+                        include_commentary=True,
+                    )
 
         raw_record = {
             "received_at": now_stamp(),
@@ -680,9 +808,26 @@ class Handler(BaseHTTPRequestHandler):
             payload_sequence=payload_sequence,
             payload=payload,
         )
+        filtered_batch = filter_duplicate_round_bomb_plants(filtered_batch, current_snapshot)
+        bootstrap_from_event = should_bootstrap_prompting_from_event(
+            previous_snapshot,
+            current_snapshot,
+            payload,
+        )
+
+        if bootstrap_from_event:
+            with STATE_LOCK:
+                reset_runtime_session_state(keep_current_snapshot=True)
+            slim_log(
+                "session reset",
+                commentary=(
+                    "Received a new event while outside an active match countdown; valid map detected, bootstrapping prompt runtime."
+                ),
+                include_commentary=True,
+            )
 
         if filtered_batch["events"]:
-            if not prompting_is_ready(current_snapshot):
+            if not prompting_is_ready(current_snapshot) and not bootstrap_from_event:
                 filtered_batch = {
                     **filtered_batch,
                     "events": [],

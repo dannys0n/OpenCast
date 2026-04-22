@@ -32,6 +32,7 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.original_item_sequence = MODULE.ITEM_SEQUENCE
         self.original_request_chat_completion = MODULE.request_chat_completion
         self.original_build_text_llm_config = MODULE.build_text_llm_config
+        self.original_load_prompt_config = MODULE.load_prompt_config
         self.original_interval_mode_index = MODULE.INTERVAL_MODE_INDEX
         self.original_choose_chemistry_line_set = MODULE.choose_chemistry_line_set
         self.original_start_prefetch_for_item = MODULE.start_prefetch_for_item
@@ -60,6 +61,7 @@ class PromptQueueV5Tests(unittest.TestCase):
         MODULE.ITEM_SEQUENCE = self.original_item_sequence
         MODULE.request_chat_completion = self.original_request_chat_completion
         MODULE.build_text_llm_config = self.original_build_text_llm_config
+        MODULE.load_prompt_config = self.original_load_prompt_config
         MODULE.INTERVAL_MODE_INDEX = self.original_interval_mode_index
         MODULE.choose_chemistry_line_set = self.original_choose_chemistry_line_set
         MODULE.start_prefetch_for_item = self.original_start_prefetch_for_item
@@ -88,12 +90,12 @@ class PromptQueueV5Tests(unittest.TestCase):
         )
 
     def test_extract_commentary_lines_strips_line_labels_from_plain_text_and_structured_output(self):
-        plain_text = "Line 1: Niko doubles up.\nLine 2: That opens A."
+        plain_text = "caster0: Line 1: Niko doubles up.\ncaster1: Line 2: That opens A."
         structured_text = json.dumps(
             {
                 "lines": [
-                    "Line 1: Yanni kills Tony.",
-                    "Line 2: Triple for Yanni.",
+                    "caster0: Line 1: Yanni kills Tony.",
+                    "caster1: Line 2: Triple for Yanni.",
                 ]
             }
         )
@@ -110,6 +112,23 @@ class PromptQueueV5Tests(unittest.TestCase):
     def test_extract_commentary_lines_rejects_blank_array_output(self):
         with self.assertRaises(RuntimeError):
             MODULE.extract_commentary_lines("[]", expected_max=2)
+
+    def test_build_global_context_omits_alive_players(self):
+        context = {
+            "bomb_state": "carried",
+            "score": {"CT": 3, "T": 8},
+            "alive_players": [{"name": "Walt", "team": "CT", "map_callout": "Top Mid"}],
+            "local_player": {"name": "GrowthHormones", "team": "T"},
+        }
+
+        self.assertEqual(
+            MODULE.build_global_context(context),
+            {
+                "bomb_state": "carried",
+                "score": {"CT": 3, "T": 8},
+                "local_player": {"name": "GrowthHormones", "team": "T"},
+            },
+        )
 
     def test_record_tts_first_pcm_latency_writes_trimmed_average(self):
         for latency in [0.20, 0.22, 0.24, 0.21, 5.0]:
@@ -250,6 +269,43 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertEqual(
             [item["commentary"] for item in MODULE.PLAYBACK_QUEUE],
             ["Front line.", "Fresh idle."],
+        )
+
+    def test_flush_prompt_queue_runtime_clears_queue_and_interrupts_current(self):
+        current_playback = {
+            "id": 70,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Round wraps up.",
+            "payload_sequence": 100,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_item = MODULE.build_queue_item(
+            commentary="Old followup.",
+            caster="caster1",
+            prompt_style="play_by_play_follow_up",
+            tag="followup",
+            payload_sequence=101,
+            source="event",
+        )
+
+        MODULE.CURRENT_PLAYBACK = current_playback
+        MODULE.PLAYBACK_QUEUE.append(queued_item)
+
+        result = MODULE.flush_prompt_queue_runtime()
+
+        self.assertTrue(current_playback["interrupt_event"].is_set())
+        self.assertEqual(list(MODULE.PLAYBACK_QUEUE), [])
+        self.assertEqual(
+            result["interrupted_current"],
+            {"id": 70, "tag": "event", "commentary": "Round wraps up."},
+        )
+        self.assertEqual(
+            result["dropped_items"],
+            [{"id": queued_item["id"], "tag": "followup", "commentary": "Old followup."}],
         )
 
     def test_enqueue_prompt_items_drops_expired_nonfront_items(self):
@@ -581,6 +637,57 @@ class PromptQueueV5Tests(unittest.TestCase):
         self.assertEqual(event_types, ["kill"])
         self.assertEqual([item["id"] for item in MODULE.PLAYBACK_QUEUE], [51, 52])
 
+    def test_prepare_queue_for_event_trigger_flushes_queue_for_round_result(self):
+        current_playback = {
+            "id": 60,
+            "tag": "idle",
+            "caster": "caster1",
+            "prompt_style": "idle_color",
+            "commentary": "Mid is quiet.",
+            "payload_sequence": 90,
+            "source": "idle_color",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_event = {
+            "id": 61,
+            "tag": "event",
+            "caster": "caster0",
+            "prompt_style": "play_by_play_event",
+            "commentary": "Opening frag.",
+            "payload_sequence": 91,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        queued_followup = {
+            "id": 62,
+            "tag": "followup",
+            "caster": "caster1",
+            "prompt_style": "play_by_play_follow_up",
+            "commentary": "That opens the site.",
+            "payload_sequence": 91,
+            "source": "event",
+            "interrupt_event": threading.Event(),
+            "done_event": threading.Event(),
+        }
+        MODULE.CURRENT_PLAYBACK = current_playback
+        MODULE.PLAYBACK_QUEUE.extend([queued_event, queued_followup])
+
+        dropped, interrupted_current, kill_counts, event_types = MODULE.prepare_queue_for_event_trigger(
+            [{"event_type": "round_result", "winner": "T"}]
+        )
+
+        self.assertTrue(current_playback["interrupt_event"].is_set())
+        self.assertEqual([item["id"] for item in dropped], [61, 62])
+        self.assertEqual(
+            interrupted_current,
+            {"id": 60, "tag": "idle", "commentary": "Mid is quiet."},
+        )
+        self.assertEqual(kill_counts, {"ct": 0, "t": 0})
+        self.assertEqual(event_types, ["round_result"])
+        self.assertEqual(list(MODULE.PLAYBACK_QUEUE), [])
+
     def test_enqueue_prompt_items_starts_prefetch_for_head_of_queue(self):
         started = []
 
@@ -872,6 +979,33 @@ class PromptQueueV5Tests(unittest.TestCase):
 
         self.assertEqual(record["status"], "completed")
         self.assertIn("For Line 1, never say 'kill confirmed'.", captured["system_prompt"])
+
+    def test_build_event_system_prompt_uses_round_and_game_end_templates(self):
+        MODULE.load_prompt_config = lambda: {
+            "event_instruction": "Base instruction.",
+            "event_system_prompt_template": "EVENT TEMPLATE",
+            "round_end_system_prompt_template": "ROUND END TEMPLATE congratulate the winner",
+            "game_end_system_prompt_template": "GAME END TEMPLATE congratulate the winner",
+        }
+
+        round_prompt = MODULE.build_event_system_prompt(
+            [{"event_type": "round_result", "winner": "T"}],
+            followup_caster="caster1",
+        )
+        game_prompt = MODULE.build_event_system_prompt(
+            [{"event_type": "game_over", "winner": "CT"}],
+            followup_caster="caster1",
+        )
+        normal_prompt = MODULE.build_event_system_prompt(
+            [{"event_type": "kill", "killer": {"name": "Ropz"}, "victim": {"name": "Yanni"}}],
+            followup_caster="caster1",
+        )
+
+        self.assertIn("ROUND END TEMPLATE", round_prompt)
+        self.assertIn("GAME END TEMPLATE", game_prompt)
+        self.assertIn("EVENT TEMPLATE", normal_prompt)
+        self.assertIn("congratulate the winner", round_prompt)
+        self.assertIn("congratulate the winner", game_prompt)
 
     def test_process_event_wrapper_keeps_original_current_events_in_prompt(self):
         captured = {}
@@ -1200,7 +1334,7 @@ class PromptQueueV5Tests(unittest.TestCase):
         )
         self.assertIn("Generate exactly 3 lines for a short caster0/caster1 idle exchange.", captured["user_prompt"])
         self.assertIn("Requested caster order: caster0, caster1, caster0", captured["user_prompt"])
-        self.assertIn("Portal 2 style contrast", captured["system_prompt"])
+        self.assertIn("short exchange: idle comment, response, response back", captured["system_prompt"])
         self.assertEqual(
             record["llm"]["lines"],
             [

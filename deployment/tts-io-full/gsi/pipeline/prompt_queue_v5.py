@@ -525,6 +525,26 @@ def load_prompt_config():
                 "If the event is grenade_detonated, almost always mention detonation_callout. "
                 "Few-shot JSON examples:\n{few_shots_json}"
             ),
+            "round_end_system_prompt_template": (
+                "{event_instruction} "
+                "This is Counter-Strike 2. "
+                "This is a round-end prompt. Name the winning team clearly and congratulate them. "
+                "Line 1 should be very short, event-first, and winner-first, usually 2 to 5 words and never more than 8. "
+                "Line 2 should add a short follow-up that reinforces the round win using the live state. "
+                "Do not repeat enum labels or copy the input wording. "
+                "Keep every sentence short and speakable. "
+                "Few-shot JSON examples:\n{few_shots_json}"
+            ),
+            "game_end_system_prompt_template": (
+                "{event_instruction} "
+                "This is Counter-Strike 2. "
+                "This is a game-end prompt. Name the winning team clearly and congratulate them. "
+                "Line 1 should be very short, event-first, and winner-first, usually 2 to 5 words and never more than 8. "
+                "Line 2 should add a short follow-up that reinforces the match win using the live state. "
+                "Do not repeat enum labels or copy the input wording. "
+                "Keep every sentence short and speakable. "
+                "Few-shot JSON examples:\n{few_shots_json}"
+            ),
             "interval_system_prompt_idle_template": (
                 "{interval_instruction} "
                 "This is Counter-Strike 2. "
@@ -612,6 +632,43 @@ def reset_prompt_runtime_state():
         ITEM_SEQUENCE = 0
     for item in items_to_cleanup:
         finalize_item_prefetch(item, cancel=True, wait=False)
+
+
+def flush_prompt_queue_runtime():
+    with QUEUE_CONDITION:
+        dropped_items = list(PLAYBACK_QUEUE)
+        interrupted_current = None
+        if CURRENT_PLAYBACK is not None:
+            CURRENT_PLAYBACK["interrupt_event"].set()
+            interrupted_current = {
+                "id": CURRENT_PLAYBACK.get("id"),
+                "tag": CURRENT_PLAYBACK.get("tag"),
+                "commentary": CURRENT_PLAYBACK.get("commentary"),
+            }
+        PLAYBACK_QUEUE.clear()
+        write_queue_state_locked()
+
+    for item in dropped_items:
+        finalize_item_prefetch(item, cancel=True, wait=False)
+
+    if dropped_items:
+        slim_log(
+            "queue trim",
+            commentary=format_trimmed_items(dropped_items),
+            include_commentary=True,
+        )
+
+    return {
+        "dropped_items": [
+            {
+                "id": item.get("id"),
+                "tag": item.get("tag"),
+                "commentary": item.get("commentary"),
+            }
+            for item in dropped_items
+        ],
+        "interrupted_current": interrupted_current,
+    }
 
 
 def next_item_sequence():
@@ -719,26 +776,29 @@ def build_global_context(context):
         {
             "bomb_state": context.get("bomb_state"),
             "score": context.get("score"),
-            "alive_players": context.get("alive_players"),
             "local_player": context.get("local_player"),
         }
     )
 
 
 def build_tactical_prompt_context(wrapper_input):
+    tactical_facts = strip_empty(copy.deepcopy(as_dict(wrapper_input.get("derived_tactical_summary"))))
+    tactical_facts.pop("confidence", None)
     return strip_empty(
         {
             "global_context": build_global_context(wrapper_input.get("context")),
-            "tactical_facts": wrapper_input.get("derived_tactical_summary"),
+            "tactical_facts": tactical_facts,
         }
     )
 
 
 def build_idle_prompt_context(wrapper_input):
+    tactical_facts = strip_empty(copy.deepcopy(as_dict(wrapper_input.get("derived_tactical_summary"))))
+    tactical_facts.pop("confidence", None)
     return strip_empty(
         {
             "global_context": build_global_context(wrapper_input.get("context")),
-            "tactical_facts": wrapper_input.get("derived_tactical_summary"),
+            "tactical_facts": tactical_facts,
         }
     )
 
@@ -826,8 +886,14 @@ def build_event_system_prompt(current_events, *, followup_caster=CASTER1):
         limit=3,
     )
     config = load_prompt_config()
+    event_types = {str(as_dict(event).get("event_type") or "").strip() for event in (current_events or [])}
+    template_key = "event_system_prompt_template"
+    if "game_over" in event_types:
+        template_key = "game_end_system_prompt_template"
+    elif "round_result" in event_types:
+        template_key = "round_end_system_prompt_template"
     prompt = render_prompt_template(
-        config.get("event_system_prompt_template", ""),
+        config.get(template_key, config.get("event_system_prompt_template", "")),
         {
             "event_instruction": config.get("event_instruction", "").strip(),
             "caster0": CASTER0,
@@ -931,6 +997,7 @@ def build_interval_user_prompt(wrapper, conversation_mode):
 def strip_line_label_prefix(text):
     candidate = str(text or "")
     candidate = re.sub(r"(?i)^.*?\bline\s*[12]\s*:\s*", "", candidate).strip()
+    candidate = re.sub(r"(?i)^.*?\bcaster[01]\s*:\s*", "", candidate).strip()
     return candidate
 
 
@@ -1427,6 +1494,12 @@ def total_kill_count(kill_counts):
     return int(kill_counts.get("ct", 0)) + int(kill_counts.get("t", 0))
 
 
+def has_terminal_round_event(current_events):
+    current_events = [as_dict(event) for event in current_events]
+    event_types = {str(event.get("event_type") or "").strip() for event in current_events}
+    return bool(event_types & {"round_result", "game_over"})
+
+
 def prepare_queue_for_event_trigger(current_events=None):
     current_events = [as_dict(event) for event in (current_events or [])]
     incoming_kill_counts = count_kills_by_team(current_events)
@@ -1434,26 +1507,38 @@ def prepare_queue_for_event_trigger(current_events=None):
     dropped_items = []
     interrupted_current = None
     aggregated_kill_counts = dict(incoming_kill_counts)
+    terminal_round_event = has_terminal_round_event(current_events)
 
     with QUEUE_CONDITION:
-        while PLAYBACK_QUEUE:
-            tail_index = len(PLAYBACK_QUEUE) - 1
-            tail_item = PLAYBACK_QUEUE[tail_index]
-            tail_tag = tail_item.get("tag")
+        if terminal_round_event:
+            dropped_items = list(PLAYBACK_QUEUE)
+            PLAYBACK_QUEUE.clear()
+            if CURRENT_PLAYBACK is not None:
+                CURRENT_PLAYBACK["interrupt_event"].set()
+                interrupted_current = {
+                    "id": CURRENT_PLAYBACK.get("id"),
+                    "tag": CURRENT_PLAYBACK.get("tag"),
+                    "commentary": CURRENT_PLAYBACK.get("commentary"),
+                }
+        else:
+            while PLAYBACK_QUEUE:
+                tail_index = len(PLAYBACK_QUEUE) - 1
+                tail_item = PLAYBACK_QUEUE[tail_index]
+                tail_tag = tail_item.get("tag")
 
-            if tail_tag not in {"idle", "followup"}:
-                break
-
-            if tail_tag == "followup":
-                if tail_index == 0:
+                if tail_tag not in {"idle", "followup"}:
                     break
-                previous_item = PLAYBACK_QUEUE[tail_index - 1]
-                if previous_item.get("tag") == "event":
-                    break
 
-            dropped_items.append(PLAYBACK_QUEUE.pop())
+                if tail_tag == "followup":
+                    if tail_index == 0:
+                        break
+                    previous_item = PLAYBACK_QUEUE[tail_index - 1]
+                    if previous_item.get("tag") == "event":
+                        break
 
-        dropped_items.reverse()
+                dropped_items.append(PLAYBACK_QUEUE.pop())
+
+            dropped_items.reverse()
 
         write_queue_state_locked()
 

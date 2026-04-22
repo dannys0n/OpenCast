@@ -14,6 +14,7 @@ SPEC.loader.exec_module(MODULE)
 class GsiPromptPipelineV5Tests(unittest.TestCase):
     def setUp(self):
         MODULE.PIPELINE_STATE.event_followup_toggle = 0
+        MODULE.PIPELINE_STATE.bomb_planted_round_key = None
 
     def test_build_training_wrapper_adds_tactical_summary_and_request(self):
         filtered_batch = {
@@ -75,10 +76,6 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                     "context": {
                         "bomb_state": "carried",
                         "score": {"CT": 3, "T": 8},
-                        "alive_players": [
-                            {"name": "Walt", "team": "CT", "map_callout": "Top Mid"},
-                            {"name": "Uri", "team": "T", "map_callout": "B Car"},
-                        ],
                     },
                     "previous_events": previous_events,
                     "current_events": [
@@ -111,7 +108,6 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                         "rotation_favor": "neutral",
                         "score_context": {
                             "leader": "t",
-                            "margin": "clear",
                         },
                     },
                     "request": {
@@ -133,10 +129,90 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
         self.assertEqual(MODULE.next_event_followup_caster(), "caster0")
         self.assertEqual(MODULE.next_event_followup_caster(), "caster1")
 
-    def test_prompting_is_ready_when_map_name_is_non_empty(self):
-        self.assertTrue(MODULE.prompting_is_ready({"map": {"name": "de_dust2"}}))
-        self.assertFalse(MODULE.prompting_is_ready({"map": {"name": ""}}))
-        self.assertFalse(MODULE.prompting_is_ready({"map": {}}))
+    def test_prompting_is_ready_when_phase_countdown_is_present_and_numeric(self):
+        self.assertTrue(
+            MODULE.prompting_is_ready(
+                {"phase_countdowns": {"phase_ends_in": "82.3"}}
+            )
+        )
+        self.assertTrue(
+            MODULE.prompting_is_ready(
+                {"phase_countdowns": {"phase_ends_in": "0"}}
+            )
+        )
+        self.assertFalse(
+            MODULE.prompting_is_ready(
+                {"phase_countdowns": {"phase_ends_in": ""}}
+            )
+        )
+        self.assertFalse(
+            MODULE.prompting_is_ready(
+                {"phase_countdowns": {"phase_ends_in": "not-a-number"}}
+            )
+        )
+        self.assertFalse(MODULE.prompting_is_ready({"phase_countdowns": {}}))
+
+    def test_prompting_became_invalid_when_phase_countdown_drops_out(self):
+        self.assertTrue(
+            MODULE.prompting_became_invalid(
+                {"phase_countdowns": {"phase_ends_in": "12.7"}},
+                {"phase_countdowns": {"phase_ends_in": ""}},
+            )
+        )
+        self.assertFalse(
+            MODULE.prompting_became_invalid(
+                {"phase_countdowns": {"phase_ends_in": ""}},
+                {"phase_countdowns": {"phase_ends_in": "12.7"}},
+            )
+        )
+
+    def test_should_bootstrap_prompting_from_event_when_entering_valid_map(self):
+        previous_snapshot = {
+            "map": {"name": ""},
+            "phase_countdowns": {"phase_ends_in": ""},
+        }
+        current_snapshot = {
+            "map": {"name": "de_dust2"},
+            "phase_countdowns": {"phase_ends_in": ""},
+        }
+        payload = {
+            "previously": {
+                "player": {
+                    "state": {
+                        "round_kills": 0,
+                    }
+                }
+            }
+        }
+
+        self.assertTrue(
+            MODULE.should_bootstrap_prompting_from_event(
+                previous_snapshot,
+                current_snapshot,
+                payload,
+            )
+        )
+
+    def test_should_not_bootstrap_prompting_without_raw_gsi_activity_or_valid_map(self):
+        previous_snapshot = {
+            "map": {"name": ""},
+            "phase_countdowns": {"phase_ends_in": ""},
+        }
+
+        self.assertFalse(
+            MODULE.should_bootstrap_prompting_from_event(
+                previous_snapshot,
+                {"map": {"name": "de_dust2"}, "phase_countdowns": {"phase_ends_in": ""}},
+                {},
+            )
+        )
+        self.assertFalse(
+            MODULE.should_bootstrap_prompting_from_event(
+                previous_snapshot,
+                {"map": {"name": ""}, "phase_countdowns": {"phase_ends_in": ""}},
+                {"previously": {"player": {"state": {"round_kills": 0}}}},
+            )
+        )
 
     def test_build_request_idle_color_alternates_casters(self):
         self.assertEqual(
@@ -183,7 +259,7 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
             ],
         )
 
-    def test_build_match_context_omits_alive_players_when_allplayers_missing(self):
+    def test_build_match_context_omits_alive_players(self):
         snapshot = {
             "map": {
                 "name": "de_dust2",
@@ -211,7 +287,6 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                 "bomb_state": "carried",
                 "score": {"CT": 1, "T": 0},
                 "win_team": None,
-                "alive_players": [],
                 "local_player": {
                     "name": "GrowthHormones",
                     "team": "T",
@@ -257,29 +332,9 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                     "previous_events": [],
                     "current_events": [],
                     "derived_tactical_summary": {
-                        "alive_counts": {
-                            "ct": 0,
-                            "t": 0,
-                        },
                         "analysis_mode": "map_specific",
-                        "confidence": "low",
-                        "isolated_player": "none",
-                        "key_risk": "none",
-                        "map_control": {
-                            "cat": "empty",
-                            "long": "empty",
-                            "mid": "empty",
-                        },
-                        "next_move_hint": "unclear",
-                        "pressure": {
-                            "b": "unknown",
-                            "site": "unclear",
-                        },
-                        "position_data": "none",
-                        "rotation_favor": "neutral",
                         "score_context": {
                             "leader": "ct",
-                            "margin": "close",
                         },
                     },
                     "request": {
@@ -375,7 +430,6 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
                 "position_data": "none",
                 "score_context": {
                     "leader": "t",
-                    "margin": "close",
                 },
             },
         )
@@ -385,6 +439,60 @@ class GsiPromptPipelineV5Tests(unittest.TestCase):
         self.assertEqual(MODULE.build_blank_output("event_bundle"), {"lines": ["", ""]})
         self.assertEqual(MODULE.build_blank_output("idle_color"), {"lines": ["", "", ""]})
         self.assertEqual(MODULE.build_blank_output("idle_conversation"), {"lines": ["", "", ""]})
+
+    def test_filter_duplicate_round_bomb_plants_drops_duplicate_plant_in_same_round(self):
+        snapshot = {
+            "map": {
+                "name": "de_dust2",
+                "round": 12,
+            }
+        }
+        first_batch = {
+            "events": [
+                {"event_type": "bomb_event", "state_after": "planted"},
+                {"event_type": "kill", "killer": {"name": "Walt"}, "victim": {"name": "Uri"}},
+            ]
+        }
+        second_batch = {
+            "events": [
+                {"event_type": "bomb_event", "state_after": "planted"},
+                {"event_type": "kill", "killer": {"name": "Bread"}, "victim": {"name": "Felix"}},
+            ]
+        }
+
+        filtered_first = MODULE.filter_duplicate_round_bomb_plants(first_batch, snapshot)
+        filtered_second = MODULE.filter_duplicate_round_bomb_plants(second_batch, snapshot)
+
+        self.assertEqual(len(filtered_first["events"]), 2)
+        self.assertEqual(
+            filtered_second["events"],
+            [{"event_type": "kill", "killer": {"name": "Bread"}, "victim": {"name": "Felix"}}],
+        )
+
+    def test_filter_duplicate_round_bomb_plants_allows_plant_in_new_round(self):
+        round_twelve_snapshot = {
+            "map": {
+                "name": "de_dust2",
+                "round": 12,
+            }
+        }
+        round_thirteen_snapshot = {
+            "map": {
+                "name": "de_dust2",
+                "round": 13,
+            }
+        }
+        batch = {
+            "events": [
+                {"event_type": "bomb_event", "state_after": "planted"},
+            ]
+        }
+
+        filtered_first = MODULE.filter_duplicate_round_bomb_plants(batch, round_twelve_snapshot)
+        filtered_second = MODULE.filter_duplicate_round_bomb_plants(batch, round_thirteen_snapshot)
+
+        self.assertEqual(filtered_first["events"], [{"event_type": "bomb_event", "state_after": "planted"}])
+        self.assertEqual(filtered_second["events"], [{"event_type": "bomb_event", "state_after": "planted"}])
 
 
 if __name__ == "__main__":
