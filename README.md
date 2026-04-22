@@ -1,69 +1,74 @@
 # OpenCast
 
-Real-time CS2 esports commentary pipeline: CS2 GSI events -> event-first prompting -> text LLM -> streamed Qwen3-TTS playback.
+OpenCast is a real-time Counter-Strike 2 commentary stack for turning live match state into spoken caster lines.
 
-This repo wires three local components into an end-to-end “caster line” system:
+At a high level, the repo takes CS2 Game State Integration payloads, turns them into short event-aware prompts, generates commentary with a local text model, and speaks the result through streamed TTS. The current default stack is built around the `v5` GSI prompt pipeline and `omnivoice-server`.
 
-- **GSI listener + prompt pipeline** (`deployment/tts-io-full/gsi/pipeline/`): receives gameplay snapshots, filters important events, and produces a short prompt.
-- **Text LLM** (`deployment/text-llm/`): serves an **OpenAI-compatible** `POST /v1/chat/completions` API that returns structured commentary metadata.
-- **Qwen3-TTS server** (`deployment/tts-io-full/`): serves an **OpenAI-compatible** `POST /v1/audio/speech` API that streams PCM to the audio output.
-
-## Architecture
+## Current Pipeline
 
 ```text
-            CS2 GSI (JSON)
-                   |
-                   v
-        [ gsi_prompt_pipeline_v3.py ]
-          - stores raw/filtered snapshots (event + interval prompts)
-          - builds prompt (training wrapper + gameplay snapshot)
-                   |
-                   v
-        [ Text LLM: /v1/chat/completions ]
-          - returns one short caster line (+ metadata)
-                   |
-                   v
-        [ Qwen3-TTS: /v1/audio/speech ]
-          - stream=true + response_format=pcm
-                   |
-                   v
-            SoX `play` (PCM streaming)
+CS2 GSI payloads
+    ->
+gsi_prompt_pipeline_v5.py
+    - filters meaningful events
+    - builds compact match context
+    - derives tactical summary
+    - alternates event and idle commentary modes
+    ->
+local text LLM (/v1/chat/completions)
+    - generates short caster-ready lines
+    ->
+prompt_queue_v5.py
+    - assigns lines to caster0 / caster1
+    - routes each line to the right voice
+    ->
+omnivoice-server (/v1/audio/speech)
+    - streams PCM audio
+    ->
+SoX play
+    - immediate local playback
 ```
 
-## Key Highlights
+## What Makes This Version Different
 
-- **Event-first prompting**: keeps the GSI listener “dumb” and isolates prompting/runtime logic outside the HTTP handler.
-- **Structured model output**: the text LLM is instructed to return JSON with consistent keys (`commentary`, `caster`, `emotion`).
-- **Streaming TTS**: the TTS server streams PCM chunks; playback starts immediately (lower latency).
-- **Voice cloning support**: TTS uses Qwen3-TTS’s voice-library profiles (`clone:<profile>` style voices).
-- **Local-only & OpenAI-compatible endpoints**: both the text and TTS services can be consumed with OpenAI-style API calls.
+- Event-first commentary: the pipeline reacts to kills, bomb states, round ends, and other meaningful match changes instead of narrating every snapshot.
+- Two-caster flow: `v5` supports short event bundles plus quieter in-round exchanges between `caster0` and `caster1`.
+- Voice-routed playback: play-by-play and color lines can use different cloned voices.
+- OpenAI-style interfaces: both the text model and TTS layer expose familiar API shapes, which keeps the pipeline modular.
+- Inspectable state: raw payloads, filtered batches, training wrappers, queue state, and runtime logs are written under `deployment/tts-io-full/gsi/pipeline/.state/v5/`.
 
-## Getting Started (Local)
+## Default Local Stack
 
-These scripts are bash- and Linux/WSL-oriented (they install SoX and use `apt` in `setup_venv.sh`). If you run on Windows directly, use WSL or adapt the setup.
+- GSI prompt runtime: `deployment/tts-io-full/gsi/pipeline/gsi_prompt_pipeline_v5.py`
+- Text model: `deployment/text-llm/start_text_model.sh`
+- TTS server: `deployment/tts-io-full/start_omnivoice_model.sh`
+- Cast voice sources: `deployment/tts-io-full/voices/`
 
-### 1) Start Qwen3-TTS (audio server)
+Default cast pairing in the current runtime:
+
+- `caster0`: announcer-style play-by-play
+- `caster1`: turret-style color/follow-up
+
+## Quick Start
+
+These scripts are Linux/WSL-oriented. The OmniVoice setup installs system packages like `sox`, `ffmpeg`, and `libportaudio2`.
+
+### 1) Start OmniVoice
 
 ```bash
 cd deployment/tts-io-full
-cp .env.example .env
-./setup_venv.sh
-./start_tts_model.sh
+cp omnivoice-server/.env.example omnivoice-server/.env
+./setup_venv_omnivoice.sh
+./start_omnivoice_model.sh
 ```
 
-Default server:
+Default local endpoint:
 
-- HTTP base: `http://127.0.0.1:8880`
+- `http://127.0.0.1:8880`
 - `GET /health`
-- `POST /v1/audio/speech` (set `stream=true`, `response_format=pcm` for PCM streaming)
-- `GET /v1/voices`
+- `POST /v1/audio/speech`
 
-Notes:
-
-- Update paths in `.env` if you are not using the same repo location as in the example.
-- `start_tts_model.sh` preloads clone voices into cache by default.
-
-### 2) Start the Text LLM (commentary generator)
+### 2) Start the Text Model
 
 ```bash
 cd deployment/text-llm
@@ -71,69 +76,33 @@ cp .env.example .env
 ./start_text_model.sh
 ```
 
-Default endpoint:
+Default local endpoint:
 
 - `http://127.0.0.1:12434/v1/chat/completions`
 
-The text LLM is configured (via `SYSTEM_PROMPT` in `.env`) to return a **single short** commentary line plus `caster` and `emotion` labels.
-
-### 3) Run the GSI Prompt Pipeline (CS2 -> LLM -> TTS)
+### 3) Start the Live Pipeline
 
 ```bash
 cd deployment/tts-io-full/gsi/pipeline
-python gsi_prompt_pipeline_v3.py
+python gsi_prompt_pipeline_v5.py
 ```
 
 Default listener:
 
-- `CS2_GSI_HOST=127.0.0.1`
-- `CS2_GSI_PORT=3000`
-
-So your CS2 GSI should POST JSON to:
-
 - `http://127.0.0.1:3000/`
 
-Optional:
+Point your CS2 GSI config at that listener and the pipeline will handle filtering, prompting, generation, queueing, and playback locally.
 
-- Set `CS2_GSI_AUTH_TOKEN` (pipeline checks `payload["auth"]["token"]` and returns `403` on mismatch).
-- Set `CS2_GSI_KILL_EXISTING_LISTENER=true` to reclaim the port automatically.
+## Repo Map
 
-Pipeline behavior (v3):
+- `deployment/tts-io-full/gsi/pipeline/`: live CS2 listener, prompt building, queueing, tests, and runtime state
+- `deployment/tts-io-full/omnivoice-server/`: OpenAI-compatible OmniVoice server checkout and config
+- `deployment/tts-io-full/voices/`: local source clips for cloned caster voices
+- `deployment/text-llm/`: local text generation service config and launcher
+- `prototype/`: earlier notes and experiments
 
-- stores raw payloads and filtered event batches under `pipeline/.state/v3/`
-- writes prompt “training wrapper” snapshots for prompt/runtime iteration
-- sends filtered batches to the text LLM
-- dispatches the resulting commentary to the TTS server
-- plays audio immediately via SoX `play`
+## Notes
 
-## Customization
-
-### Default voice / caster identity
-
-The TTS playback uses a default voice set in `deployment/tts-io-full/.env`:
-
-- `TTS_DEFAULT_VOICE_NAME` (example default: `clone:scrawny_e0`)
-
-Voices live under:
-
-- `deployment/tts-io-full/Qwen3-TTS-Openai-Fastapi/voice_library/`
-
-### Prompt & gameplay-event filtering
-
-Prompt instructions and event shaping live in:
-
-- `deployment/tts-io-full/gsi/pipeline/prompt_config_v3.json`
-- `deployment/tts-io-full/gsi/pipeline/gsi_prompt_pipeline_v3.py`
-
-## Project Structure (high level)
-
-- `deployment/tts-io-full/`: TTS server + GSI integration + voice library
-- `deployment/text-llm/`: OpenAI-compatible text LLM service
-- `deployment/tts-io-full/gsi/pipeline/`: GSI listener, event filtering, prompt runtime, and TTS dispatch
-- `prototype/`: earlier local-stack notes and experiments
-
-## Testing
-
-The GSI pipeline includes test modules next to the runtime scripts (e.g. `test_gsi_prompt_pipeline_v3.py`).
-If you run tests from this folder, you can start with the v3 tests to validate the prompt runtime + queueing behavior.
-
+- The older Qwen3 TTS path is still checked in under `deployment/tts-io-full/Qwen3-TTS-Openai-Fastapi/`, but it is no longer the default path described here.
+- OmniVoice request-time tuning for OpenCast lives in `deployment/tts-io-full/omnivoice-server/.opencast.env`.
+- The best quick reference for the live runtime behavior is the `v5` pipeline code and tests under `deployment/tts-io-full/gsi/pipeline/`.
