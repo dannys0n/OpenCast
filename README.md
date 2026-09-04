@@ -12,8 +12,6 @@ https://github.com/user-attachments/assets/6b047f1e-c135-4177-996b-72f81e5fb923
 
 [![OpenCast presentation title slide](docs/slides/slide-1.png)](https://dannys0n.github.io/OpenCast/)
 
-[View the interactive presentation](https://dannys0n.github.io/OpenCast/) or [download the PowerPoint](Presentation/OpenCast.pptx).
-
 ## Models & Datasets
 
 - [Qwen3-1.7B CS2 Commentators model](https://huggingface.co/Dannys0n/Qwen3-1.7B-cs2-commentators) on Hugging Face
