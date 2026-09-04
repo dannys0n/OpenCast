@@ -1,8 +1,20 @@
+
+
 # OpenCast
 
 OpenCast is a real-time Counter-Strike 2 commentary stack for turning live match state into spoken caster lines.
 
 At a high level, the repo takes CS2 Game State Integration payloads, turns them into short event-aware prompts, generates commentary with a local text model, and speaks the result through streamed TTS. The current default stack is built around the `v5` GSI prompt pipeline and `omnivoice-server`.
+
+## Voice Demo
+
+
+
+https://github.com/user-attachments/assets/6b047f1e-c135-4177-996b-72f81e5fb923
+
+
+
+
 
 ## Use and Attribution
 
