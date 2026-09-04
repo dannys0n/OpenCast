@@ -14,6 +14,11 @@ https://github.com/user-attachments/assets/6b047f1e-c135-4177-996b-72f81e5fb923
 
 [View the interactive presentation](https://dannys0n.github.io/OpenCast/) or [download the PowerPoint](Presentation/OpenCast.pptx).
 
+## Models & Datasets
+
+- [Qwen3-1.7B CS2 Commentators model](https://huggingface.co/Dannys0n/Qwen3-1.7B-cs2-commentators) on Hugging Face
+- [CS2 Commentators dataset](https://huggingface.co/datasets/Dannys0n/cs2-commentators) on Hugging Face
+
 ## Use and Attribution
 
 This repository is presented as an academic and portfolio project, not as a claim of full authorship over every component inside it.
