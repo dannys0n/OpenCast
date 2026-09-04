@@ -114,6 +114,18 @@ Default listener:
 
 - `http://127.0.0.1:3000/`
 
-Point your CS2 GSI ���������Ёѡ�Ё���ѕ��ȁ����ѡ�����������ݥ�������������ѕɥ�����ɽ��ѥ��������Ʌѥ�����ՕՕ������������剅����������((���I����5��((��������嵕�н��̵����ձ���ͤ�����������聱�ٔ�
-Lȁ���ѕ��Ȱ��ɽ��Ё�ե��������ՕՕ�����ѕ��̰������չѥ����хє(��������嵕�н��̵����ձ������ٽ����͕�ٕȽ��=���$������ѥ����=���Y�����͕�ٕȁ�������Ё����������(��������嵕�н��̵����ձ��ٽ���̽�聱�����ͽ�ɍ������́��ȁ����������ѕȁٽ����(��������嵕�нѕ�е�����聱�����ѕ�Ё����Ʌѥ���͕�٥����������������չ����(����ɽѽ������聕�ɱ��ȁ��ѕ́��������ɥ�����((���9�ѕ�((��Q�������ȁEݕ�́QQL���Ѡ��́�ѥ��������������չ��ȁ������嵕�н��̵����ձ��Eݕ�̵QQL�=��������х��������Ё�Ё�́��������ȁѡ������ձЁ��Ѡ���͍ɥ������ɔ�(��=���Y�����ɕ�Օ�еѥ����չ������ȁ=���
-��Ё��ٕ́���������嵕�н��̵����ձ������ٽ����͕�ٕȼ��������й��ـ�(��Q������Ё�ե���ɕ��ɕ������ȁѡ����ٔ��չѥ�������٥�ȁ�́ѡ����Հ�������������������ѕ��́չ��ȁ������嵕�н��̵����ձ���ͤ������������
+Point your CS2 GSI config at that listener and the pipeline will handle filtering, prompting, generation, queueing, and playback locally.
+
+## Repo Map
+
+- `deployment/tts-io-full/gsi/pipeline/`: live CS2 listener, prompt building, queueing, tests, and runtime state
+- `deployment/tts-io-full/omnivoice-server/`: OpenAI-compatible OmniVoice server checkout and config
+- `deployment/tts-io-full/voices/`: local source clips for cloned caster voices
+- `deployment/text-llm/`: local text generation service config and launcher
+- `prototype/`: earlier notes and experiments
+
+## Notes
+
+- The older Qwen3 TTS path is still checked in under `deployment/tts-io-full/Qwen3-TTS-Openai-Fastapi/`, but it is no longer the default path described here.
+- OmniVoice request-time tuning for OpenCast lives in `deployment/tts-io-full/omnivoice-server/.opencast.env`.
+- The best quick reference for the live runtime behavior is the `v5` pipeline code and tests under `deployment/tts-io-full/gsi/pipeline/`.
