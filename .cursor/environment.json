@@ -1,0 +1,17 @@
+{
+  "name": "OpenCast",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "gsi-pipeline",
+      "command": "cd deployment/tts-io-full/gsi/pipeline && CS2_GSI_KILL_EXISTING_LISTENER=false python3 gsi_prompt_pipeline_v5.py",
+      "description": "CS2 GSI prompt pipeline (v5). HTTP listener on http://127.0.0.1:3000 that ingests Game State Integration POSTs, filters meaningful events, and builds prompt/training wrappers. Downstream text-LLM and TTS calls require a GPU-backed model server and are skipped when unavailable."
+    }
+  ],
+  "ports": [
+    {
+      "name": "gsi-listener",
+      "port": 3000
+    }
+  ]
+}
